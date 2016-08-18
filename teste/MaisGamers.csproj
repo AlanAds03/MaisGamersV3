@@ -101,6 +101,12 @@
   <ItemGroup>
     <Folder Include="Formularios\Cadastro\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Frameworks\Frameworks.csproj">
+      <Project>{fb1ae4f9-abce-451d-9f0e-7cb005172f3f}</Project>
+      <Name>Frameworks</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

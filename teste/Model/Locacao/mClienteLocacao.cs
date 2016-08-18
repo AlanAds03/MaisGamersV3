@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Frameworks;
-
+using System.Reflection;
 namespace MaisGamersV2.Model.Locacao
 {
     public class mClienteLocacao
     {
-        [Atributos("rNome",200)]
+        //[Atributos("rNome",200)]
         public string  Nome { get; set; }
  //       @Nome VARCHAR(300) = NULL,
 	//@DataNascimento DATETIME = NULL,

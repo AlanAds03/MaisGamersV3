@@ -99,7 +99,7 @@ namespace Frameworks
 
             reader = command.ExecuteReader();
             table.Load(reader);
-            return table;
+            return true ;
 
         }
 

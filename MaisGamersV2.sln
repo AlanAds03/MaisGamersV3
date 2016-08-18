@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaisGamers", "teste\MaisGamers.csproj", "{94C75404-A92F-4912-9E98-4720263CE6CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{A25F04DA-0A6F-40EE-9DC2-77E6288E7AE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks", "Frameworks\Frameworks.csproj", "{FB1AE4F9-ABCE-451D-9F0E-7CB005172F3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{94C75404-A92F-4912-9E98-4720263CE6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C75404-A92F-4912-9E98-4720263CE6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C75404-A92F-4912-9E98-4720263CE6CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A25F04DA-0A6F-40EE-9DC2-77E6288E7AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A25F04DA-0A6F-40EE-9DC2-77E6288E7AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A25F04DA-0A6F-40EE-9DC2-77E6288E7AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A25F04DA-0A6F-40EE-9DC2-77E6288E7AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1AE4F9-ABCE-451D-9F0E-7CB005172F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1AE4F9-ABCE-451D-9F0E-7CB005172F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1AE4F9-ABCE-451D-9F0E-7CB005172F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1AE4F9-ABCE-451D-9F0E-7CB005172F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
