@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using teste.Formularios.Cadastro;
 
 namespace teste
 {
@@ -25,29 +26,33 @@ namespace teste
         private void Form1_Load(object sender, EventArgs e)
         {
             pnlMenuCadastro.Visible = false;
-            pnlMenuLocacao.Visible = false;
+            pnlMenuCadastro.BackColor = Color.Fuchsia;
+            //pnlContent.Width = Screen.PrimaryScreen.Bounds.Width;
+            //pnlContent.Height = Screen.PrimaryScreen.Bounds.Height;
             CentralizaMenus();
+        }
+
+        private void posicionarBotoesFechar()
+        {
+            iconeFecharMenuCadastro.Left = 200;
         }
 
         private void CentralizaMenus()
         {
             pnlMenuCadastro.Top = 24;
-            pnlMenuLocacao.Top = 24;
             pnlMenuCadastro.Width = menuStrip1.Width;
-            pnlMenuLocacao.Width = menuStrip1.Width;
+            
 
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = true;
-            pnlMenuLocacao.Visible = false;
+            pnlMenuCadastro.Visible = true;            
         }
 
         private void locacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlMenuCadastro.Visible = false;
-            pnlMenuLocacao.Visible = true;
         }
 
         private void pnlMenuCadastro_Paint(object sender, PaintEventArgs e)
@@ -79,9 +84,35 @@ namespace teste
             this.BackColor = SystemColors.ActiveCaption;
             this.Cursor = Cursors.Default;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmCadastroJogo _frmJogo = new frmCadastroJogo();
+
+            MostraFormulario(_frmJogo);
+
+        }
         
 
-        
+        private void MostraFormulario(Form _nameFormulario)
+        {
+            _nameFormulario.MdiParent = this;
+            _nameFormulario.Width = Screen.PrimaryScreen.Bounds.Width;
+            _nameFormulario.Height = Screen.PrimaryScreen.Bounds.Height - 24;
+            _nameFormulario.Show();
+            pnlMenuCadastro.Visible = false;
+            
+        }
+
+        enum tela
+        {
+            CadastroDeJogo = 1 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            pnlMenuCadastro.Visible = false;
+        }
 
 
     }

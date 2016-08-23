@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>teste</RootNamespace>
     <AssemblyName>teste</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
+    <Compile Include="Formularios\Cadastro\frmCadastroJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmCadastroJogo.Designer.cs">
+      <DependentUpon>frmCadastroJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +70,9 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastro\frmCadastroJogo.resx">
+      <DependentUpon>frmCadastroJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,14 +108,19 @@
   <ItemGroup>
     <None Include="Resources\11292_32x32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios\Cadastro\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Frameworks\Frameworks.csproj">
       <Project>{fb1ae4f9-abce-451d-9f0e-7cb005172f3f}</Project>
       <Name>Frameworks</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagens\iconeCada.fw.png" />
+    <Content Include="Imagens\iconeCadastro.png" />
+    <Content Include="Imagens\iconeConsole.fw.png" />
+    <Content Include="Imagens\iconeFechar16.png" />
+    <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

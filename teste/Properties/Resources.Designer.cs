@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MaisGamersV2.Properties {
+namespace teste.Properties {
     using System;
     
     
@@ -86,6 +86,46 @@ namespace MaisGamersV2.Properties {
         internal static System.Drawing.Bitmap _8394_32x32 {
             get {
                 object obj = ResourceManager.GetObject("8394_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeCada_fw {
+            get {
+                object obj = ResourceManager.GetObject("iconeCada.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeConsole_fw {
+            get {
+                object obj = ResourceManager.GetObject("iconeConsole.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeFechar16 {
+            get {
+                object obj = ResourceManager.GetObject("iconeFechar16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeSearch32X32 {
+            get {
+                object obj = ResourceManager.GetObject("iconeSearch32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
