@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using teste.Formularios.Cadastro;
+using MaisGamersV2.Formularios.Cadastro;
+using MaisGamersV2.Modulos;
 
 namespace teste
 {
@@ -26,7 +27,7 @@ namespace teste
         private void Form1_Load(object sender, EventArgs e)
         {
             pnlMenuCadastro.Visible = false;
-            pnlMenuCadastro.BackColor = Color.Fuchsia;
+            //pnlMenuCadastro.BackColor = Color.Fuchsia;
             //pnlContent.Width = Screen.PrimaryScreen.Bounds.Width;
             //pnlContent.Height = Screen.PrimaryScreen.Bounds.Height;
             CentralizaMenus();
@@ -87,9 +88,9 @@ namespace teste
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmCadastroJogo _frmJogo = new frmCadastroJogo();
+            frmCliente _cliente = new frmCliente();
 
-            MostraFormulario(_frmJogo);
+            MostraFormulario(_cliente);
 
         }
         
@@ -114,6 +115,9 @@ namespace teste
             pnlMenuCadastro.Visible = false;
         }
 
-
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+            pnlMenuCadastro.Visible = false;
+        }
     }
 }

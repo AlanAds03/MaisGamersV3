@@ -37,13 +37,15 @@
             this.finançasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lembretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMenuCadastro = new System.Windows.Forms.Panel();
-            this.iconeFecharMenuCadastro = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.janelasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMenuCadastro = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconeFecharMenuCadastro = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlMenuCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconeFecharMenuCadastro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             this.janelasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1470, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1354, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -118,22 +120,48 @@
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
+            // janelasToolStripMenuItem
+            // 
+            this.janelasToolStripMenuItem.Name = "janelasToolStripMenuItem";
+            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.janelasToolStripMenuItem.Text = "Janelas";
+            // 
             // pnlMenuCadastro
             // 
-            this.pnlMenuCadastro.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlMenuCadastro.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlMenuCadastro.Controls.Add(this.pictureBox1);
             this.pnlMenuCadastro.Controls.Add(this.iconeFecharMenuCadastro);
             this.pnlMenuCadastro.Controls.Add(this.button2);
             this.pnlMenuCadastro.Controls.Add(this.button1);
-            this.pnlMenuCadastro.Location = new System.Drawing.Point(0, 24);
+            this.pnlMenuCadastro.Location = new System.Drawing.Point(0, 23);
             this.pnlMenuCadastro.Name = "pnlMenuCadastro";
             this.pnlMenuCadastro.Size = new System.Drawing.Size(905, 87);
             this.pnlMenuCadastro.TabIndex = 2;
             this.pnlMenuCadastro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenuCadastro_Paint);
             // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.button2.Location = new System.Drawing.Point(93, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 72);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.Image = global::teste.Properties.Resources.iconeFechar161;
+            this.pictureBox1.Location = new System.Drawing.Point(888, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_2);
+            // 
             // iconeFecharMenuCadastro
             // 
             this.iconeFecharMenuCadastro.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconeFecharMenuCadastro.Image = global::teste.Properties.Resources.iconeFechar16;
             this.iconeFecharMenuCadastro.Location = new System.Drawing.Point(888, 0);
             this.iconeFecharMenuCadastro.Name = "iconeFecharMenuCadastro";
             this.iconeFecharMenuCadastro.Size = new System.Drawing.Size(17, 87);
@@ -141,38 +169,22 @@
             this.iconeFecharMenuCadastro.TabStop = false;
             this.iconeFecharMenuCadastro.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.Image = global::teste.Properties.Resources.iconeConsole_fw;
-            this.button2.Location = new System.Drawing.Point(93, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 72);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Image = global::teste.Properties.Resources.iconeCada_fw;
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Image = global::teste.Properties.Resources.iconesCliente;
+            this.button1.Location = new System.Drawing.Point(12, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 72);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // janelasToolStripMenuItem
-            // 
-            this.janelasToolStripMenuItem.Name = "janelasToolStripMenuItem";
-            this.janelasToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.janelasToolStripMenuItem.Text = "Janelas";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 574);
+            this.ClientSize = new System.Drawing.Size(1354, 574);
             this.Controls.Add(this.pnlMenuCadastro);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -185,6 +197,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlMenuCadastro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconeFecharMenuCadastro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,6 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem lembretesToolStripMenuItem;
         private System.Windows.Forms.PictureBox iconeFecharMenuCadastro;
         private System.Windows.Forms.ToolStripMenuItem janelasToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

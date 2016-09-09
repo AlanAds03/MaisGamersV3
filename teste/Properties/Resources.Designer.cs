@@ -93,29 +93,39 @@ namespace teste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconeCada_fw {
-            get {
-                object obj = ResourceManager.GetObject("iconeCada.fw", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconeConsole_fw {
-            get {
-                object obj = ResourceManager.GetObject("iconeConsole.fw", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap iconeFechar16 {
             get {
                 object obj = ResourceManager.GetObject("iconeFechar16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeFechar161 {
+            get {
+                object obj = ResourceManager.GetObject("iconeFechar161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeLimpar {
+            get {
+                object obj = ResourceManager.GetObject("iconeLimpar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconesCliente {
+            get {
+                object obj = ResourceManager.GetObject("iconesCliente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

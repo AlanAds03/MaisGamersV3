@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
-    <Compile Include="Formularios\Cadastro\frmCadastroJogo.cs">
+    <Compile Include="Formularios\Cadastro\frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cadastro\frmCadastroJogo.Designer.cs">
-      <DependentUpon>frmCadastroJogo.cs</DependentUpon>
+    <Compile Include="Formularios\Cadastro\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -70,26 +70,26 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Cadastro\frmCadastroJogo.resx">
-      <DependentUpon>frmCadastroJogo.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cadastro\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -116,10 +116,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Imagens\iconeCada.fw.png" />
-    <Content Include="Imagens\iconeCadastro.png" />
-    <Content Include="Imagens\iconeConsole.fw.png" />
     <Content Include="Imagens\iconeFechar16.png" />
+    <None Include="Imagens\iconeLimpar.png" />
+    <Content Include="Imagens\iconesCliente.png" />
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
