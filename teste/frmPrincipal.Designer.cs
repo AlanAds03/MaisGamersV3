@@ -1,4 +1,4 @@
-﻿namespace teste
+﻿namespace MaisGamers
 {
     partial class frmPrincipal
     {

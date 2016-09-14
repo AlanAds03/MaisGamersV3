@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaisGamersV2.Formularios.Cadastro;
-using MaisGamersV2.Modulos;
+using MaisGamers.Model;
 
-namespace teste
+namespace MaisGamers
 {
     public partial class frmPrincipal : Form
     {
         public frmPrincipal()
         {
+
+           
             InitializeComponent();
         }
 
@@ -31,6 +32,14 @@ namespace teste
             //pnlContent.Width = Screen.PrimaryScreen.Bounds.Width;
             //pnlContent.Height = Screen.PrimaryScreen.Bounds.Height;
             CentralizaMenus();
+
+
+            var db = new Contexto();
+
+            db.Database.CreateIfNotExists();
+
+
+
         }
 
         private void posicionarBotoesFechar()
@@ -42,13 +51,13 @@ namespace teste
         {
             pnlMenuCadastro.Top = 24;
             pnlMenuCadastro.Width = menuStrip1.Width;
-            
+
 
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = true;            
+            pnlMenuCadastro.Visible = true;
         }
 
         private void locacaoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,9 +80,9 @@ namespace teste
 
         }
 
-      
 
-      
+
+
         private void pnlIcone1_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.Yellow;
@@ -88,12 +97,12 @@ namespace teste
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmCliente _cliente = new frmCliente();
+            
 
-            MostraFormulario(_cliente);
+            //MostraFormulario(_cliente);
 
         }
-        
+
 
         private void MostraFormulario(Form _nameFormulario)
         {
@@ -102,12 +111,12 @@ namespace teste
             _nameFormulario.Height = Screen.PrimaryScreen.Bounds.Height - 24;
             _nameFormulario.Show();
             pnlMenuCadastro.Visible = false;
-            
+
         }
 
         enum tela
         {
-            CadastroDeJogo = 1 
+            CadastroDeJogo = 1
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>teste</RootNamespace>
-    <AssemblyName>teste</AssemblyName>
+    <AssemblyName>MaisGamers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,12 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
-    <Compile Include="Formularios\Cadastro\frmCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Cadastro\frmCliente.Designer.cs">
-      <DependentUpon>frmCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,21 +69,29 @@
     <Compile Include="Formularios\Locacao\frmClienteLocacao.Designer.cs">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609141637397_InitialCreate.cs" />
+    <Compile Include="Migrations\201609141637397_InitialCreate.Designer.cs">
+      <DependentUpon>201609141637397_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Contexto.cs" />
+    <Compile Include="Model\DBConfiguracao.cs" />
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Cadastro\frmCliente.resx">
-      <DependentUpon>frmCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609141637397_InitialCreate.resx">
+      <DependentUpon>201609141637397_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,7 +119,9 @@
   <ItemGroup>
     <None Include="Resources\11292_32x32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Formularios\Cadastro\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Frameworks\Frameworks.csproj">
       <Project>{fb1ae4f9-abce-451d-9f0e-7cb005172f3f}</Project>

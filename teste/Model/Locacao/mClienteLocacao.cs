@@ -5,12 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Frameworks;
 using System.Reflection;
-namespace MaisGamersV2.Model.Locacao
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace MaisGamers.Model.Locacao
 {
+    [Table("ClienteLocacao")]
     public class mClienteLocacao
     {
         //[Atributos("rNome",200)]
+        [Key]
+        public int idClienteLocacao { get; set; }
         public string  Nome { get; set; }
+
+
  //       @Nome VARCHAR(300) = NULL,
 	//@DataNascimento DATETIME = NULL,
  //   @Telefone VARCHAR(12) = NULL,
