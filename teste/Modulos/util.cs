@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MaisGamersV2.Modulos
+namespace MaisGamers.Modulos
 {
     public class util
     {
@@ -18,10 +18,10 @@ namespace MaisGamersV2.Modulos
             try
             {
 
-               width = Screen.PrimaryScreen.Bounds.Width;
+                width = Screen.PrimaryScreen.Bounds.Width;
                 height = Screen.PrimaryScreen.Bounds.Height;
 
-                group.Left = width/2 - group.Width /2;
+                group.Left = width / 2 - group.Width / 2;
 
 
             }

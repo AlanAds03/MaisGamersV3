@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaisGamers.Model;
+using MaisGamers.Formularios.Cadastro;
 
 namespace MaisGamers
 {
@@ -97,9 +98,9 @@ namespace MaisGamers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            frmClienteLocacao frmCliente = new frmClienteLocacao();
 
-            //MostraFormulario(_cliente);
+            MostraFormulario(frmCliente);
 
         }
 

@@ -7,7 +7,7 @@
     <ProjectGuid>{94C75404-A92F-4912-9E98-4720263CE6CF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>teste</RootNamespace>
+    <RootNamespace>MaisGamers</RootNamespace>
     <AssemblyName>MaisGamers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
+    <Compile Include="Formularios\Cadastro\frmClienteLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmClienteLocacao.Designer.cs">
+      <DependentUpon>frmClienteLocacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastro\frmClienteLocacao.resx">
+      <DependentUpon>frmClienteLocacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,9 +128,7 @@
   <ItemGroup>
     <None Include="Resources\11292_32x32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios\Cadastro\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Frameworks\Frameworks.csproj">
       <Project>{fb1ae4f9-abce-451d-9f0e-7cb005172f3f}</Project>
