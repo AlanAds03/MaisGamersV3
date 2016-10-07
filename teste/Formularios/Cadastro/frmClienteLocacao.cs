@@ -25,5 +25,10 @@ namespace MaisGamers.Formularios.Cadastro
             
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
