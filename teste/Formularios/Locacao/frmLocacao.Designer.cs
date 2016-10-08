@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmClienteLocacao
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(980, 440);
+            this.Name = "frmClienteLocacao";
             this.Text = "frmClienteLocacao";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

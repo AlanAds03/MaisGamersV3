@@ -10,6 +10,15 @@ namespace MaisGamers.Modulos
     public class util
     {
 
+        public enum ModoTela
+        {
+            CONSULTA = 1,
+            ALTERACAO = 2,
+            NOVO = 3 
+            
+
+        }
+
         public static void CentralizaGrupo(System.Windows.Forms.GroupBox group)
         {
 

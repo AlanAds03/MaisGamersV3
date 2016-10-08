@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaisGamers.Model;
 using MaisGamers.Formularios.Cadastro;
+using MaisGamers.Formularios.LocacaoHora;
 
 namespace MaisGamers
 {
@@ -28,10 +29,7 @@ namespace MaisGamers
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = false;
-            //pnlMenuCadastro.BackColor = Color.Fuchsia;
-            //pnlContent.Width = Screen.PrimaryScreen.Bounds.Width;
-            //pnlContent.Height = Screen.PrimaryScreen.Bounds.Height;
+
             CentralizaMenus();
 
 
@@ -45,25 +43,23 @@ namespace MaisGamers
 
         private void posicionarBotoesFechar()
         {
-            iconeFecharMenuCadastro.Left = 200;
+            
         }
 
         private void CentralizaMenus()
         {
-            pnlMenuCadastro.Top = 24;
-            pnlMenuCadastro.Width = menuStrip1.Width;
-
+            
 
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = true;
+            
         }
 
         private void locacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = false;
+            
         }
 
         private void pnlMenuCadastro_Paint(object sender, PaintEventArgs e)
@@ -111,7 +107,6 @@ namespace MaisGamers
             _nameFormulario.Width = Screen.PrimaryScreen.Bounds.Width;
             _nameFormulario.Height = Screen.PrimaryScreen.Bounds.Height - 24;
             _nameFormulario.Show();
-            pnlMenuCadastro.Visible = false;
 
         }
 
@@ -122,12 +117,32 @@ namespace MaisGamers
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = false;
+            
         }
 
         private void pictureBox1_Click_2(object sender, EventArgs e)
         {
-            pnlMenuCadastro.Visible = false;
+
+        }
+
+        private void rbCliente_Click(object sender, EventArgs e)
+        {
+
+            frmClienteLocacao frmCliente = new frmClienteLocacao();
+            MostraFormulario(frmCliente);
+
+        }
+
+        private void ribbon1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Rblancahora_Click(object sender, EventArgs e)
+        {
+            frmlocacaohora frmhora = new frmlocacaohora();
+            MostraFormulario(frmhora);
+      
         }
     }
 }

@@ -65,17 +65,23 @@
     <Compile Include="Formularios\Cadastro\frmClienteLocacao.Designer.cs">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\LocacaoHora\frmlocacaohora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LocacaoHora\frmlocacaohora.Designer.cs">
+      <DependentUpon>frmlocacaohora.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Locacao\frmClienteLocacao.cs">
+    <Compile Include="Formularios\Locacao\frmLocacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Locacao\frmClienteLocacao.Designer.cs">
-      <DependentUpon>frmClienteLocacao.cs</DependentUpon>
+    <Compile Include="Formularios\Locacao\frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201609141637397_InitialCreate.cs" />
     <Compile Include="Migrations\201609141637397_InitialCreate.Designer.cs">
@@ -90,6 +96,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Cadastro\frmClienteLocacao.resx">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
+      <DependentUpon>frmlocacaohora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -139,8 +151,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Imagens\iconex360.fw.png" />
+    <None Include="Imagens\Xbox_one_icon.fw.png" />
+    <None Include="Imagens\relogio.fw.png" />
+    <None Include="Imagens\games-icon.png" />
+    <None Include="Imagens\ICONECD.fw.png" />
+    <None Include="Imagens\console.png" />
+    <None Include="Imagens\consoleteste.fw.png" />
+    <None Include="Imagens\celular&amp;tablet.fw.png" />
     <Content Include="Imagens\iconeFechar16.png" />
     <None Include="Imagens\iconeLimpar.png" />
+    <None Include="Imagens\iconenovo.png" />
+    <None Include="Imagens\iconeFechar32.png" />
+    <None Include="Imagens\ICONEPCNOTE.fw.png" />
+    <None Include="Imagens\ICONEPCNOT.fw.png" />
+    <None Include="Imagens\iconeps4.fw.png" />
+    <None Include="Imagens\iconeps3.fw.png" />
     <Content Include="Imagens\iconesCliente.png" />
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
