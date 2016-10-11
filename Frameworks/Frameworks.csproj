@@ -62,6 +62,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Componentes\SuperComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Componentes\SuperTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

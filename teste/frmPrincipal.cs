@@ -128,8 +128,7 @@ namespace MaisGamers
         private void rbCliente_Click(object sender, EventArgs e)
         {
 
-            frmClienteLocacao frmCliente = new frmClienteLocacao();
-            MostraFormulario(frmCliente);
+            
 
         }
 
@@ -143,6 +142,13 @@ namespace MaisGamers
             frmlocacaohora frmhora = new frmlocacaohora();
             MostraFormulario(frmhora);
       
+        }
+
+        private void Rblocacaocliente_Click(object sender, EventArgs e)
+        {
+            frmClienteLocacao frmCliente = new frmClienteLocacao();
+            MostraFormulario(frmCliente);
+
         }
     }
 }

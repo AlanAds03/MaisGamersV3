@@ -19,6 +19,30 @@ namespace MaisGamers.Modulos
 
         }
 
+        public static void CentralizaTab(System.Windows.Forms.TabControl tab)
+        {
+
+            int width = 0;
+            int height = 0;
+            try
+            {
+
+                width = Screen.PrimaryScreen.Bounds.Width;
+                height = Screen.PrimaryScreen.Bounds.Height;
+
+                tab.Left = width / 2 - tab.Width / 2;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+
         public static void CentralizaGrupo(System.Windows.Forms.GroupBox group)
         {
 

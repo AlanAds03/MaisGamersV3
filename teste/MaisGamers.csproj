@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Imagens\Sem título-1.fw.png" />
     <None Include="Imagens\iconex360.fw.png" />
     <None Include="Imagens\Xbox_one_icon.fw.png" />
     <None Include="Imagens\relogio.fw.png" />
@@ -159,6 +160,8 @@
     <None Include="Imagens\console.png" />
     <None Include="Imagens\consoleteste.fw.png" />
     <None Include="Imagens\celular&amp;tablet.fw.png" />
+    <None Include="Imagens\ConsolePs4.fw.png" />
+    <None Include="Imagens\cliente.fw.png" />
     <Content Include="Imagens\iconeFechar16.png" />
     <None Include="Imagens\iconeLimpar.png" />
     <None Include="Imagens\iconenovo.png" />
@@ -167,6 +170,7 @@
     <None Include="Imagens\ICONEPCNOT.fw.png" />
     <None Include="Imagens\iconeps4.fw.png" />
     <None Include="Imagens\iconeps3.fw.png" />
+    <None Include="Imagens\iconeSalvar.png" />
     <Content Include="Imagens\iconesCliente.png" />
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>

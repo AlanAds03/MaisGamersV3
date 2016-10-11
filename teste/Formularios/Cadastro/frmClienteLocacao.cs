@@ -31,10 +31,12 @@ namespace MaisGamers.Formularios.Cadastro
            util.CentralizaGrupo(grpPesquisa);
             util.CentralizaGrupo(grpBotoes);
             util.CentralizaGrupo(grpGrid);
+            util.CentralizaGrupo(grpCadastra);
+            util.CentralizaTab(tbControl);
 
             modo_tela = ModoTela.CONSULTA;
 
-            
+            atualizaTela();
 
         }
 
@@ -57,12 +59,16 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 tbControl.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
+                btnSalvar.Enabled = false;
+                btnNovo.Enabled = true;
 
             }
             else if (modo_tela == ModoTela.NOVO)
             {
                 tbControl.SelectTab("tpDetalhe");
                 btnFechar.Text = "Voltar";
+                btnSalvar.Enabled = true;
+                btnNovo.Enabled = false;
             }
         }
 

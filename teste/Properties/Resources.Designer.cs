@@ -103,9 +103,39 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cliente_fw {
+            get {
+                object obj = ResourceManager.GetObject("cliente.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cliente1 {
+            get {
+                object obj = ResourceManager.GetObject("cliente1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap console {
             get {
                 object obj = ResourceManager.GetObject("console", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConsolePs4_fw {
+            get {
+                object obj = ResourceManager.GetObject("ConsolePs4.fw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +293,16 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeSalvar {
+            get {
+                object obj = ResourceManager.GetObject("iconeSalvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconesCliente {
             get {
                 object obj = ResourceManager.GetObject("iconesCliente", resourceCulture);
@@ -296,6 +336,16 @@ namespace MaisGamers.Properties {
         internal static System.Drawing.Bitmap relogio_fw {
             get {
                 object obj = ResourceManager.GetObject("relogio.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sem_título_1_fw {
+            get {
+                object obj = ResourceManager.GetObject("Sem título-1.fw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

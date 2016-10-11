@@ -118,62 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="games-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\games-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeSearch32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeSearch32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cliente1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\cliente.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconeLimpar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconeLimpar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="console" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\console.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="11292_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11292_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICONECD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\ICONECD.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconesCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconesCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="celular&amp;tablet.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\celular&amp;tablet.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="relogio.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\relogio.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeps3.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeps3.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICONEPCNOT.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconeFechar16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeFechar16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICONEPCNOTE.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\ICONEPCNOTE.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sem título-1.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Sem título-1.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICONEPCNOT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\ICONEPCNOT.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8394_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8394_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconesCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconesCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="consoleteste.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\consoleteste.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeSearch32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeSearch32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconeps3.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeps3.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICONECD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\ICONECD.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICONEPCNOT.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\ICONEPCNOT.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconeFechar161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconeFechar16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICONEPCNOT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\ICONEPCNOT.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Xbox_one_icon.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Xbox_one_icon.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconeps4.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconeps4.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconenovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconenovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Xbox_one_icon.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Xbox_one_icon.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="consoleteste.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\consoleteste.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="games-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\games-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICONEPCNOT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\ICONEPCNOT.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconex360.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconex360.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="console" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\console.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="relogio.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\relogio.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,16 +196,16 @@
   <data name="ICONECD.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\ICONECD.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICONEPCNOTE.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\ICONEPCNOTE.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconenovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconenovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="11292_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\11292_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cliente.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\cliente.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeFechar16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeFechar16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ConsolePs4.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\ConsolePs4.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconex360.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconex360.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeSalvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeSalvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
