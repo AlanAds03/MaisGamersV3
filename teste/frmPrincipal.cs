@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaisGamers.Model;
 using MaisGamers.Formularios.Cadastro;
 using MaisGamers.Formularios.LocacaoHora;
+using MaisGamers.Formularios.Orcamento;
 
 namespace MaisGamers
 {
@@ -132,10 +133,7 @@ namespace MaisGamers
 
         }
 
-        private void ribbon1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void Rblancahora_Click(object sender, EventArgs e)
         {
@@ -148,6 +146,27 @@ namespace MaisGamers
         {
             frmClienteLocacao frmCliente = new frmClienteLocacao();
             MostraFormulario(frmCliente);
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Rbmenuorcamento_ActiveChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void Rbmenuorcamento_TabBoundsChanged(object sender, EventArgs e)
+        {
+            frmClienteLocacao frmCliente = new frmClienteLocacao();
+            MostraFormulario(frmCliente);
+        }
+
+        private void Rbcontroles_Click(object sender, EventArgs e)
+        {
 
         }
     }

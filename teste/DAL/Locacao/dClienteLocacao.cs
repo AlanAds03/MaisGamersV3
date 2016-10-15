@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaisGamers.Model;
+using MaisGamers.Model.Locacao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +12,30 @@ namespace MaisGamersV2.DAL.Locacao
     public class dClienteLocacao
     {
 
-        //public void InserirCliente(mClienteLocacao _clienteLocacao)
-        //{
-        //    //var atri = typeof(mClienteLocacao).GetCustomAttributes()
+        public bool InserirCliente(mClienteLocacao _clienteLocacao)
+        {
+            var db = new Contexto();
 
+            try
+            {
+
+                _clienteLocacao.Estado = db.Estado.First(X => X.cEstado == _clienteLocacao.Estado.cEstado);
+                _clienteLocacao.Cidade = db.Cidade.First(X => X.cCidade == _clienteLocacao.Cidade.cCidade);
+
+                db.ClienteLocacao.Add(_clienteLocacao);
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
             
 
-        //}
+
+
+        }
     }
 }

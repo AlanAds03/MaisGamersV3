@@ -58,7 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\dCidade.cs" />
+    <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
+    <Compile Include="DLL\bCidade.cs" />
+    <Compile Include="DLL\bEstado.cs" />
+    <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmClienteLocacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +75,18 @@
     </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.Designer.cs">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Manutencao\frmManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Manutencao\frmManutencao.Designer.cs">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\frmOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\frmOrcamento.Designer.cs">
+      <DependentUpon>frmOrcamento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -83,14 +100,20 @@
     <Compile Include="Formularios\Locacao\frmLocacao.Designer.cs">
       <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609141637397_InitialCreate.cs" />
-    <Compile Include="Migrations\201609141637397_InitialCreate.Designer.cs">
-      <DependentUpon>201609141637397_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201610152059457_inicial.cs" />
+    <Compile Include="Migrations\201610152059457_inicial.Designer.cs">
+      <DependentUpon>201610152059457_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610152113192_B.cs" />
+    <Compile Include="Migrations\201610152113192_B.Designer.cs">
+      <DependentUpon>201610152113192_B.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contexto.cs" />
     <Compile Include="Model\DBConfiguracao.cs" />
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
+    <Compile Include="Model\mCidade.cs" />
+    <Compile Include="Model\mEstado.cs" />
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,11 +126,20 @@
     <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
       <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Manutencao\frmManutencao.resx">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\frmOrcamento.resx">
+      <DependentUpon>frmOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609141637397_InitialCreate.resx">
-      <DependentUpon>201609141637397_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610152059457_inicial.resx">
+      <DependentUpon>201610152059457_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610152113192_B.resx">
+      <DependentUpon>201610152113192_B.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,23 +183,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Imagens\laptop_png8917.png" />
     <None Include="Imagens\Sem título-1.fw.png" />
     <None Include="Imagens\iconex360.fw.png" />
     <None Include="Imagens\Xbox_one_icon.fw.png" />
     <None Include="Imagens\relogio.fw.png" />
     <None Include="Imagens\games-icon.png" />
     <None Include="Imagens\ICONECD.fw.png" />
-    <None Include="Imagens\console.png" />
-    <None Include="Imagens\consoleteste.fw.png" />
     <None Include="Imagens\celular&amp;tablet.fw.png" />
     <None Include="Imagens\ConsolePs4.fw.png" />
-    <None Include="Imagens\cliente.fw.png" />
+    <None Include="Imagens\48154.png" />
     <Content Include="Imagens\iconeFechar16.png" />
     <None Include="Imagens\iconeLimpar.png" />
     <None Include="Imagens\iconenovo.png" />
     <None Include="Imagens\iconeFechar32.png" />
-    <None Include="Imagens\ICONEPCNOTE.fw.png" />
-    <None Include="Imagens\ICONEPCNOT.fw.png" />
     <None Include="Imagens\iconeps4.fw.png" />
     <None Include="Imagens\iconeps3.fw.png" />
     <None Include="Imagens\iconeSalvar.png" />
