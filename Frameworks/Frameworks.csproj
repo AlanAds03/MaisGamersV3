@@ -65,6 +65,9 @@
     <Compile Include="Componentes\SuperComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Componentes\SuperDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Componentes\SuperTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

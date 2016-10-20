@@ -22,7 +22,7 @@ namespace Frameworks.Componentes
             Nenhum = 2
         }
 
-        public void CarregaCombo(List<object> objetos,string id, string value, PrimeiraLinha _primeira )
+        public void CarregaCombo<T>(List<T> objetos, string id, string value, PrimeiraLinha _primeira)
         {
 
 
@@ -33,8 +33,8 @@ namespace Frameworks.Componentes
 
                 DataTable table = new DataTable();
 
-                table.Columns.Add("cCidade");
-                table.Columns.Add("rCidade");
+                table.Columns.Add(id);
+                table.Columns.Add(value);
 
 
 
@@ -42,23 +42,37 @@ namespace Frameworks.Componentes
 
                 foreach (var item in objetos)
                 {
-                    if (_primeira != PrimeiraLinha.Nenhum)
+
+
+                    if (iContador == 0)
                     {
-                        if (iContador == 0)
+
+
+                        if (_primeira == PrimeiraLinha.Todos)
                         {
+                            table.Rows.Add("0", "Todos");
+
+                        }
+                        else if (_primeira == PrimeiraLinha.Selecione)
+                        {
+
                             table.Rows.Add("0", "Selecione");
                         }
                     }
 
-                    //table.Rows.Add(objetos.);
-
-
                     iContador += 1;
+
+                    if (iContador != 0)
+                    {
+                        table.Rows.Add(item.GetType().GetProperty(id).GetValue(item), item.GetType().GetProperty(value).GetValue(item));
+                    }
+
                 }
 
+
                 this.DataSource = table;
-                this.ValueMember = "cCidade";
-                this.DisplayMember = "rCidade";
+                this.ValueMember = id;
+                this.DisplayMember = value;
 
 
             }
@@ -67,8 +81,8 @@ namespace Frameworks.Componentes
 
                 throw;
             }
-        
 
+
+        }
     }
-}
 }

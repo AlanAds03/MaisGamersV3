@@ -27,9 +27,12 @@ namespace MaisGamers.Model.Locacao
         public string Rua { get; set; }
 
         public string Numero { get; set; }
-
+        [NotMapped]
+        public int cEstado { get; set; }
         public mEstado Estado { get; set; }
 
+        [NotMapped]
+        public int cCidade { get; set; }
         public mCidade Cidade { get; set; }
 
         public string Bairro { get; set; }

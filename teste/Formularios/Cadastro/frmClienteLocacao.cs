@@ -57,11 +57,8 @@ namespace MaisGamers.Formularios.Cadastro
 
                 list = _estado.CarregaEstado();
 
-                cmbEstado.DataSource = list;
-                cmbEstado.ValueMember = "cEstado";
-                cmbEstado.DisplayMember = "rEstado";
 
-
+                cmbEstado.CarregaCombo(list, "cEstado", "rEstado", SuperComboBox.PrimeiraLinha.Selecione);
 
             }
             catch (Exception)
@@ -71,47 +68,28 @@ namespace MaisGamers.Formularios.Cadastro
             }
         }
 
-        private void CarregaComboCidade(SuperComboBox cmbEstado, int cEstado)
+
+
+        private void CarregaComboCidade(SuperComboBox comboCidade, int cEstado)
         {
             List<mCidade> list = new List<mCidade>();
 
             try
             {
-                bCidade _estado = new bCidade();
+                bCidade _cidade = new bCidade();
                 DataTable table = new DataTable();
 
                 table.Columns.Add("cCidade");
                 table.Columns.Add("rCidade");
 
 
-                list = _estado.CarregaCidade(cEstado);
+                list = _cidade.CarregaCidade(cEstado);
 
-
-                cmbEstado.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
-
-
-                int iContador = 0;
-
-                foreach (var a in list)
-                {
-                    if (iContador == 0)
-                    {
-                        table.Rows.Add("0", "Selecione");
-                    }
-
-                    table.Rows.Add(a.cCidade, a.rCidade);
-
-
-                    iContador += 1;
-                }
-
-                cmbEstado.DataSource = table;
-                cmbEstado.ValueMember = "cCidade";
-                cmbEstado.DisplayMember = "rCidade";
+                comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -120,6 +98,21 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            PesquisaGrid(txtPesquisaNome.Text);
+        }
+
+        private void PesquisaGrid(string nome)
+        {
+            bClienteLocacao _bCli = new bClienteLocacao();
+            mClienteLocacao cli = new mClienteLocacao();
+            List<mClienteLocacao> locacao = new List<mClienteLocacao>();
+
+
+            cli.Nome = nome;
+            locacao = _bCli.PesquisarCliente(cli);
+
+
+
 
         }
 
@@ -180,8 +173,8 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Numero = txtNumero.Text;
             _mClilocacao.CEP = txtCEP.Text;
             _mClilocacao.Bairro = txtBairro.Text;
-            _mClilocacao.Estado.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
-            _mClilocacao.Cidade.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
+            _mClilocacao.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
+            _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
 
 
             _cliente.IncluirCliente(_mClilocacao);
@@ -196,6 +189,19 @@ namespace MaisGamers.Formularios.Cadastro
 
             return true;
 
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int codigo = 0;
+
+            Int32.TryParse(cmbEstado.SelectedValue.ToString(),out codigo);
+            if (codigo != 0)
+            {
+                CarregaComboCidade(cmbCidade, codigo);
+            }
+            
+            
         }
     }
 }

@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.grpGrid = new System.Windows.Forms.GroupBox();
@@ -68,11 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.superTextBox1 = new Frameworks.Componentes.SuperTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
@@ -91,12 +91,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // textBox1
+            // txtPesquisaNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPesquisaNome.Location = new System.Drawing.Point(74, 13);
+            this.txtPesquisaNome.Name = "txtPesquisaNome";
+            this.txtPesquisaNome.Size = new System.Drawing.Size(300, 20);
+            this.txtPesquisaNome.TabIndex = 1;
             // 
             // listView1
             // 
@@ -111,7 +111,7 @@
             this.grpPesquisa.Controls.Add(this.textBox2);
             this.grpPesquisa.Controls.Add(this.label2);
             this.grpPesquisa.Controls.Add(this.label1);
-            this.grpPesquisa.Controls.Add(this.textBox1);
+            this.grpPesquisa.Controls.Add(this.txtPesquisaNome);
             this.grpPesquisa.Location = new System.Drawing.Point(40, 31);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(947, 82);
@@ -147,6 +147,70 @@
             this.grpBotoes.Size = new System.Drawing.Size(531, 77);
             this.grpBotoes.TabIndex = 7;
             this.grpBotoes.TabStop = false;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(322, 19);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(225, 19);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(91, 50);
+            this.btnNovo.TabIndex = 6;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(126, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 50);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Limpar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(15, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 50);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Pesquisar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(422, 19);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(91, 50);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // tbControl
             // 
@@ -232,7 +296,7 @@
             this.txtRGFilho.Location = new System.Drawing.Point(527, 264);
             this.txtRGFilho.Name = "txtRGFilho";
             this.txtRGFilho.Size = new System.Drawing.Size(130, 20);
-            this.txtRGFilho.TabIndex = 28;
+            this.txtRGFilho.TabIndex = 14;
             // 
             // label15
             // 
@@ -249,7 +313,7 @@
             this.txtCpfFilho.Location = new System.Drawing.Point(390, 264);
             this.txtCpfFilho.Name = "txtCpfFilho";
             this.txtCpfFilho.Size = new System.Drawing.Size(130, 20);
-            this.txtCpfFilho.TabIndex = 26;
+            this.txtCpfFilho.TabIndex = 13;
             // 
             // label16
             // 
@@ -266,7 +330,7 @@
             this.txtAutoriza.Location = new System.Drawing.Point(23, 264);
             this.txtAutoriza.Name = "txtAutoriza";
             this.txtAutoriza.Size = new System.Drawing.Size(343, 20);
-            this.txtAutoriza.TabIndex = 24;
+            this.txtAutoriza.TabIndex = 12;
             // 
             // label14
             // 
@@ -283,7 +347,7 @@
             this.txtCEP.Location = new System.Drawing.Point(681, 220);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(128, 20);
-            this.txtCEP.TabIndex = 22;
+            this.txtCEP.TabIndex = 11;
             // 
             // label13
             // 
@@ -300,7 +364,7 @@
             this.txtBairro.Location = new System.Drawing.Point(375, 220);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(263, 20);
-            this.txtBairro.TabIndex = 20;
+            this.txtBairro.TabIndex = 10;
             // 
             // label12
             // 
@@ -317,7 +381,7 @@
             this.txtNumero.Location = new System.Drawing.Point(500, 177);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(84, 20);
-            this.txtNumero.TabIndex = 18;
+            this.txtNumero.TabIndex = 7;
             // 
             // label11
             // 
@@ -335,7 +399,7 @@
             this.cmbCidade.Location = new System.Drawing.Point(179, 220);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(147, 21);
-            this.cmbCidade.TabIndex = 16;
+            this.cmbCidade.TabIndex = 9;
             // 
             // label10
             // 
@@ -353,7 +417,8 @@
             this.cmbEstado.Location = new System.Drawing.Point(24, 220);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstado.TabIndex = 14;
+            this.cmbEstado.TabIndex = 8;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -370,7 +435,7 @@
             this.txtRua.Location = new System.Drawing.Point(26, 177);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(429, 20);
-            this.txtRua.TabIndex = 12;
+            this.txtRua.TabIndex = 6;
             // 
             // label6
             // 
@@ -397,7 +462,7 @@
             this.txtRG.Location = new System.Drawing.Point(26, 134);
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(130, 20);
-            this.txtRG.TabIndex = 9;
+            this.txtRG.TabIndex = 4;
             // 
             // label7
             // 
@@ -414,14 +479,14 @@
             this.txtDataNascimento.Location = new System.Drawing.Point(202, 134);
             this.txtDataNascimento.Name = "txtDataNascimento";
             this.txtDataNascimento.Size = new System.Drawing.Size(105, 20);
-            this.txtDataNascimento.TabIndex = 7;
+            this.txtDataNascimento.TabIndex = 5;
             // 
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(527, 91);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(130, 20);
-            this.txtCpf.TabIndex = 5;
+            this.txtCpf.TabIndex = 3;
             // 
             // label5
             // 
@@ -438,7 +503,7 @@
             this.txtNome.Location = new System.Drawing.Point(26, 91);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(447, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 2;
             // 
             // label4
             // 
@@ -466,70 +531,6 @@
             this.label3.Size = new System.Drawing.Size(118, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Código Cliente:";
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(322, 19);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
-            this.btnSalvar.TabIndex = 7;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(225, 19);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(91, 50);
-            this.btnNovo.TabIndex = 6;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(126, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(15, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Pesquisar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(422, 19);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(91, 50);
-            this.btnFechar.TabIndex = 5;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // frmClienteLocacao
             // 
@@ -562,7 +563,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button button2;
