@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Web.Script.Serialization;
 
 namespace MaisGamersV2.DAL.Locacao
 {
@@ -39,16 +39,30 @@ namespace MaisGamersV2.DAL.Locacao
 
         }
 
-        public List<mClienteLocacao> PesquisaCliente(mClienteLocacao _clienteLocacao)
+        public string PesquisaCliente(mClienteLocacao _clienteLocacao)
         {
             var db = new Contexto();
 
             try
             {
 
-                var cli = (from a in db.ClienteLocacao where a.Nome.Contains(_clienteLocacao.Nome) && (_clienteLocacao.RG ?? a.RG) ==  a.RG select a);
+                var cli = (from a in db.ClienteLocacao
+                           where
+                            a.Nome.Contains(_clienteLocacao.Nome) &&
+                            ((_clienteLocacao.RG ?? a.RG) == a.RG) select a);
 
-                return cli.ToList();
+                var columns = cli.Select(x => new { x.Nome, x.Numero}).ToList();
+
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+                var json = serializer.Serialize(columns);
+
+                //ar columns = thisProject.Select(x => new { x.ProjectContactFirstName, x.ProjectContactLastName }).ToList();
+                //r columns = thisProject.Select(x => new { x.ProjectContactFirstName, x.ProjectContactLastName }).ToList();
+
+
+
+                return json;
 
             }
             catch (Exception ex)

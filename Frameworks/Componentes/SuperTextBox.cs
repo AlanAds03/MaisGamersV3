@@ -9,6 +9,9 @@ namespace Frameworks.Componentes
 {
     public class SuperTextBox : System.Windows.Forms.TextBox 
     {
+        public void CarregarLV()
+        {
 
+        }
     }
 }

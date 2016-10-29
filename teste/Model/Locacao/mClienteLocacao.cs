@@ -45,6 +45,8 @@ namespace MaisGamers.Model.Locacao
 
         public string RGFilho { get; set; }
 
+        public string JsonGRID { get; set; }
+
 
 
 

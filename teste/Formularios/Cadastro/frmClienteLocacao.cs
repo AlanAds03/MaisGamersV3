@@ -15,6 +15,7 @@ using MaisGamers.Model;
 using Frameworks.Componentes;
 using MaisGamers.DLL;
 using MaisGamers.DLL.Locacao;
+using System.Web.Script.Serialization;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -106,12 +107,15 @@ namespace MaisGamers.Formularios.Cadastro
             bClienteLocacao _bCli = new bClienteLocacao();
             mClienteLocacao cli = new mClienteLocacao();
             List<mClienteLocacao> locacao = new List<mClienteLocacao>();
-
+            string json;
 
             cli.Nome = nome;
-            locacao = _bCli.PesquisarCliente(cli);
+            json = _bCli.PesquisaCliente(cli);
 
+           
 
+            //lvPesquisa.CarregaListaView(locacao);
+            lvPesquisa.CarregaListaView<mClienteLocacao>(json);
 
 
         }

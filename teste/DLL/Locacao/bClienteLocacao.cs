@@ -31,7 +31,7 @@ namespace MaisGamers.DLL.Locacao
 
         }
 
-        public  List<mClienteLocacao> PesquisarCliente(mClienteLocacao cliente)
+        public  string PesquisaCliente (mClienteLocacao cliente)
         {
             try
             {

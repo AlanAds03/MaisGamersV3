@@ -46,6 +46,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -108,6 +109,10 @@
     <Compile Include="Migrations\201610152113192_B.Designer.cs">
       <DependentUpon>201610152113192_B.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610292151175_json.cs" />
+    <Compile Include="Migrations\201610292151175_json.Designer.cs">
+      <DependentUpon>201610292151175_json.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contexto.cs" />
     <Compile Include="Model\DBConfiguracao.cs" />
@@ -140,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610152113192_B.resx">
       <DependentUpon>201610152113192_B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610292151175_json.resx">
+      <DependentUpon>201610292151175_json.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,7 +182,6 @@
   <ItemGroup>
     <None Include="Resources\11292_32x32.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Frameworks\Frameworks.csproj">
       <Project>{fb1ae4f9-abce-451d-9f0e-7cb005172f3f}</Project>
