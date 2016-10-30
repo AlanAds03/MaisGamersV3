@@ -42,6 +42,7 @@
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.grpGrid = new System.Windows.Forms.GroupBox();
+            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
             this.txtRGFilho = new Frameworks.Componentes.SuperTextBox();
@@ -72,7 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.superTextBox1 = new Frameworks.Componentes.SuperTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.grpPesquisa.SuspendLayout();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
@@ -134,7 +134,7 @@
             this.grpBotoes.Controls.Add(this.button2);
             this.grpBotoes.Controls.Add(this.button1);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Location = new System.Drawing.Point(106, 580);
+            this.grpBotoes.Location = new System.Drawing.Point(114, 493);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(531, 77);
             this.grpBotoes.TabIndex = 7;
@@ -208,10 +208,10 @@
             // 
             this.tbControl.Controls.Add(this.tpPesquisa);
             this.tbControl.Controls.Add(this.tpDetalhe);
-            this.tbControl.Location = new System.Drawing.Point(29, 31);
+            this.tbControl.Location = new System.Drawing.Point(12, 12);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(1017, 543);
+            this.tbControl.Size = new System.Drawing.Size(1017, 475);
             this.tbControl.TabIndex = 10;
             // 
             // tpPesquisa
@@ -221,7 +221,7 @@
             this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
             this.tpPesquisa.Name = "tpPesquisa";
             this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesquisa.Size = new System.Drawing.Size(1009, 517);
+            this.tpPesquisa.Size = new System.Drawing.Size(1009, 449);
             this.tpPesquisa.TabIndex = 0;
             this.tpPesquisa.Text = "Pesquisa";
             this.tpPesquisa.UseVisualStyleBackColor = true;
@@ -231,9 +231,17 @@
             this.grpGrid.Controls.Add(this.lvPesquisa);
             this.grpGrid.Location = new System.Drawing.Point(40, 132);
             this.grpGrid.Name = "grpGrid";
-            this.grpGrid.Size = new System.Drawing.Size(959, 344);
+            this.grpGrid.Size = new System.Drawing.Size(959, 299);
             this.grpGrid.TabIndex = 7;
             this.grpGrid.TabStop = false;
+            // 
+            // lvPesquisa
+            // 
+            this.lvPesquisa.Location = new System.Drawing.Point(6, 19);
+            this.lvPesquisa.Name = "lvPesquisa";
+            this.lvPesquisa.Size = new System.Drawing.Size(941, 269);
+            this.lvPesquisa.TabIndex = 0;
+            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
             // 
             // tpDetalhe
             // 
@@ -524,20 +532,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Código Cliente:";
             // 
-            // lvPesquisa
-            // 
-            this.lvPesquisa.Location = new System.Drawing.Point(6, 19);
-            this.lvPesquisa.Name = "lvPesquisa";
-            this.lvPesquisa.Size = new System.Drawing.Size(941, 319);
-            this.lvPesquisa.TabIndex = 0;
-            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
-            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1086, 696);
+            this.ClientSize = new System.Drawing.Size(1086, 577);
             this.ControlBox = false;
             this.Controls.Add(this.grpBotoes);
             this.Controls.Add(this.tbControl);

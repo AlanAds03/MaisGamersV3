@@ -7,6 +7,7 @@ using Frameworks;
 using System.Reflection;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using MaisGamers.Modulos;
 
 namespace MaisGamers.Model.Locacao
 {
@@ -22,6 +23,7 @@ namespace MaisGamers.Model.Locacao
 
         public string RG { get; set; }
 
+        [CustomAttibuteDate(ShortDate = true)]
         public DateTime DataNascimento{ get; set; }
 
         public string Rua { get; set; }

@@ -119,6 +119,7 @@
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Model\mCidade.cs" />
     <Compile Include="Model\mEstado.cs" />
+    <Compile Include="Modulos\CustomAttibuteDate.cs" />
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

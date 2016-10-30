@@ -112,10 +112,11 @@ namespace MaisGamers.Formularios.Cadastro
             cli.Nome = nome;
             json = _bCli.PesquisaCliente(cli);
 
-           
+
 
             //lvPesquisa.CarregaListaView(locacao);
-            lvPesquisa.CarregaListaView<mClienteLocacao>(json);
+            lvPesquisa.CarregaListaView< mClienteLocacao>(json);
+            
 
 
         }

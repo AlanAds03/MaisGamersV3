@@ -49,18 +49,16 @@ namespace MaisGamersV2.DAL.Locacao
                 var cli = (from a in db.ClienteLocacao
                            where
                             a.Nome.Contains(_clienteLocacao.Nome) &&
-                            ((_clienteLocacao.RG ?? a.RG) == a.RG) select a);
+                            ((_clienteLocacao.RG ?? a.RG) == a.RG)
+                           select new {a.Nome, a.DataNascimento});
 
-                var columns = cli.Select(x => new { x.Nome, x.Numero}).ToList();
+                //'var columns = cli.Select(x => new {x.idClienteLocacao, x.Nome, x.Numero,x.JsonGRID = "").ToList();
+                    var columns = cli.Select(x => new { x.Nome, x.DataNascimento }).ToList();
+
 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
 
                 var json = serializer.Serialize(columns);
-
-                //ar columns = thisProject.Select(x => new { x.ProjectContactFirstName, x.ProjectContactLastName }).ToList();
-                //r columns = thisProject.Select(x => new { x.ProjectContactFirstName, x.ProjectContactLastName }).ToList();
-
-
 
                 return json;
 
