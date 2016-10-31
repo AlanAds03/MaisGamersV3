@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Data.Entity;
 
 namespace MaisGamersV2.DAL.Locacao
 {
@@ -39,6 +40,26 @@ namespace MaisGamersV2.DAL.Locacao
 
         }
 
+        internal mClienteLocacao ObterCliente(int idCLienteLocacao)
+        {
+            var db = new Contexto();
+
+            try
+            {
+
+                return db.ClienteLocacao
+                    .Include(x => x.Estado)
+                    .Include(y => y.Cidade)
+                    .Where(x => x.idClienteLocacao == idCLienteLocacao).FirstOrDefault();
+                    
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
         public string PesquisaCliente(mClienteLocacao _clienteLocacao)
         {
             var db = new Contexto();
@@ -50,10 +71,10 @@ namespace MaisGamersV2.DAL.Locacao
                            where
                             a.Nome.Contains(_clienteLocacao.Nome) &&
                             ((_clienteLocacao.RG ?? a.RG) == a.RG)
-                           select new {a.Nome, a.DataNascimento});
+                           select new {a.idClienteLocacao, a.Nome, a.DataNascimento});
 
                 //'var columns = cli.Select(x => new {x.idClienteLocacao, x.Nome, x.Numero,x.JsonGRID = "").ToList();
-                    var columns = cli.Select(x => new { x.Nome, x.DataNascimento }).ToList();
+                    var columns = cli.Select(x => new {x.idClienteLocacao,  x.Nome, x.DataNascimento }).ToList();
 
 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();

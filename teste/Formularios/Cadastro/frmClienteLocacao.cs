@@ -26,7 +26,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         public ModoTela modo_tela;
 
-
+        public int idClienteLocacao;
 
         public frmClienteLocacao()
         {
@@ -146,6 +146,45 @@ namespace MaisGamers.Formularios.Cadastro
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
             }
+
+            else if (modo_tela == ModoTela.ALTERACAO)
+            {
+                tbControl.SelectTab("tpDetalhe");
+                btnFechar.Text = "Voltar";
+                btnSalvar.Enabled = true;
+                btnNovo.Enabled = false;
+
+                bClienteLocacao _bCli = new bClienteLocacao();
+                mClienteLocacao cliente = new mClienteLocacao();
+                cliente = _bCli.ObterCliente(idClienteLocacao);
+
+                txtCodigo.Text = idClienteLocacao.ToString();
+                txtNome.Text = cliente.Nome;
+                txtCpf.Text = cliente.CPF =
+                txtRG.Text; cliente.RG =
+                txtDataNascimento.Text = Convert.ToString(cliente.DataNascimento);
+                txtRua.Text = cliente.Rua;
+                txtNumero.Text = cliente.Numero;
+                txtCEP.Text = cliente.CEP;
+                txtBairro.Text = cliente.Bairro;
+
+                cmbEstado.SelectedValue = cliente.Estado.cEstado;
+
+                int codigo = 0;
+
+                Int32.TryParse(cmbEstado.SelectedValue.ToString(), out codigo);
+                if (codigo != 0)
+                {
+                    CarregaComboCidade(cmbCidade, codigo);
+                }
+
+                cmbCidade.SelectedValue = cliente.Cidade.cCidade;
+
+
+
+
+            }
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -207,6 +246,44 @@ namespace MaisGamers.Formularios.Cadastro
             }
             
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            modo_tela = ModoTela.ALTERACAO;
+            atualizaTela();
+        }
+
+        private void lvPesquisa_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+
+
+            if (e.Item.Checked == true)
+            {
+                idClienteLocacao = lvPesquisa.ObterChave();
+            }
+            
+        }
+
+
+        private void lvPesquisa_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (var i = 0; i <= lvPesquisa.Items.Count - 1; i++)
+            {
+                if (lvPesquisa.Items[i].Checked == true)
+                {
+                    if(i == e.Index)
+                    {
+                        continue;
+                    }
+                    lvPesquisa.Items[i].Checked = false;
+                }
+                
+            }
+            
+         
+            
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Frameworks.Componentes
 {
     public class SuperLV : ListView
     {
+        private int Chave { get; set; }
 
         public void CarregaListaView<T>(List<T> _list)
         {
@@ -40,6 +41,15 @@ namespace Frameworks.Componentes
                 foreach (var pro in props)
                 {
                     var valor = pro.GetValue(x, null);
+
+
+
+                    if (pro.Name.Contains("id"))
+                    {
+                        this.Chave = Convert.ToInt32(valor);
+                    }
+                    
+
 
                     if (iCont == 0)
                     {
@@ -113,22 +123,14 @@ namespace Frameworks.Componentes
 
                 foreach (var pro in props)
                 {
-                    //IList<CustomAttributeData> listData;
-
-
-                    if(pro.GetCustomAttributes(true).Count() > 0)
-                    {
-                        Type tipox = pro.GetCustomAttributes(true)[0].GetType();
-                        PropertyInfo[] propsx = tipox.GetProperties();
-                    }
-                    
-
-
-                    
-
-
+                    bool blnChave = false;
 
                     var valor = pro.GetValue(x, null);
+
+                    if (pro.Name.Substring(0,2)== "id")
+                    {
+                        this.Chave = Convert.ToInt32(valor);
+                    }
 
                     //var atri = pro.GetCustomAttribute(true);
 
@@ -165,10 +167,26 @@ namespace Frameworks.Componentes
             this.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             this.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
+            
 
 
 
+        }
 
+
+
+        public int ObterChave()
+        {
+            for(var i = 0; i<= this.Items.Count - 1; i++)
+            {
+                if(this.Items[i].Checked == true)
+                {
+                    return Convert.ToInt32(this.Items[i].Text);
+                }
+            }
+
+            return 0;
+            
         }
     }
 }
