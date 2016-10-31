@@ -115,8 +115,8 @@ namespace MaisGamers.Formularios.Cadastro
 
 
             //lvPesquisa.CarregaListaView(locacao);
-            lvPesquisa.CarregaListaView< mClienteLocacao>(json);
-            
+            lvPesquisa.CarregaListaView<mClienteLocacao>(json);
+
 
 
         }
@@ -145,6 +145,8 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
+
+                idClienteLocacao = 0;
             }
 
             else if (modo_tela == ModoTela.ALTERACAO)
@@ -160,8 +162,8 @@ namespace MaisGamers.Formularios.Cadastro
 
                 txtCodigo.Text = idClienteLocacao.ToString();
                 txtNome.Text = cliente.Nome;
-                txtCpf.Text = cliente.CPF =
-                txtRG.Text; cliente.RG =
+                txtCpf.Text = cliente.CPF;
+                txtRG.Text = cliente.RG;
                 txtDataNascimento.Text = Convert.ToString(cliente.DataNascimento);
                 txtRua.Text = cliente.Rua;
                 txtNumero.Text = cliente.Numero;
@@ -208,6 +210,10 @@ namespace MaisGamers.Formularios.Cadastro
             mClienteLocacao _mClilocacao = new mClienteLocacao();
             bClienteLocacao _cliente = new bClienteLocacao();
 
+            if (idClienteLocacao != 0)
+            {
+                _mClilocacao.idClienteLocacao = idClienteLocacao;
+            }
 
             _mClilocacao.Nome = txtNome.Text;
             _mClilocacao.CPF = txtCpf.Text;
@@ -221,12 +227,23 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
 
 
-            _cliente.IncluirCliente(_mClilocacao);
-
-
-
+            if (_cliente.IncluirCliente(_mClilocacao) == true)
+            {
+                if(_mClilocacao.idClienteLocacao != 0)
+                {
+                   MessageBox.Show("Registro alteraco com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Registro inclído com sucesso");
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Erro ao incluir o registro");
+            }
         }
-
         private Boolean ValidarCampos()
         {
 
@@ -239,13 +256,13 @@ namespace MaisGamers.Formularios.Cadastro
         {
             int codigo = 0;
 
-            Int32.TryParse(cmbEstado.SelectedValue.ToString(),out codigo);
+            Int32.TryParse(cmbEstado.SelectedValue.ToString(), out codigo);
             if (codigo != 0)
             {
                 CarregaComboCidade(cmbCidade, codigo);
             }
-            
-            
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -262,7 +279,7 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 idClienteLocacao = lvPesquisa.ObterChave();
             }
-            
+
         }
 
 
@@ -272,17 +289,17 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 if (lvPesquisa.Items[i].Checked == true)
                 {
-                    if(i == e.Index)
+                    if (i == e.Index)
                     {
                         continue;
                     }
                     lvPesquisa.Items[i].Checked = false;
                 }
-                
+
             }
-            
-         
-            
+
+
+
 
         }
     }

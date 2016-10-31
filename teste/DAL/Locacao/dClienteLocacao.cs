@@ -24,8 +24,20 @@ namespace MaisGamersV2.DAL.Locacao
                 _clienteLocacao.Estado = db.Estado.First(X => X.cEstado == _clienteLocacao.cEstado);
                 _clienteLocacao.Cidade = db.Cidade.First(X => X.cCidade == _clienteLocacao.cCidade);
 
-                db.ClienteLocacao.Add(_clienteLocacao);
-                db.SaveChanges();
+                if(_clienteLocacao.idClienteLocacao != 0)
+                {
+                    db.ClienteLocacao.Attach(_clienteLocacao);
+                    db.Entry(_clienteLocacao).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    db.ClienteLocacao.Add(_clienteLocacao);
+                    db.SaveChanges();
+                }
+                
+
+                
 
                 return true;
             }

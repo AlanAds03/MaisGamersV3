@@ -25,7 +25,16 @@ namespace Frameworks.Componentes
                 PropertyInfo[] props = tipo.GetProperties();
                 foreach (var pro in props)
                 {
-                    this.Columns.Add(pro.Name);
+                    if (pro.Name.Substring(0,2) == "id")
+                    {
+                        this.Columns.Add("");
+                    }
+                    else
+                    {
+                        this.Columns.Add(pro.Name);
+                    }
+
+                    
                 }
 
             }
@@ -106,7 +115,16 @@ namespace Frameworks.Componentes
                     var valor = pro.GetValue(_list[i], null);
                     if (valor != null)
                     {
-                        this.Columns.Add(pro.Name);
+                        if (pro.Name.Substring(0, 2) == "id")
+                        {
+                            this.Columns.Add("");
+                        }
+                        else
+                        {
+                            this.Columns.Add(pro.Name);
+                        }
+
+                        
                     }
 
                 }
@@ -130,6 +148,7 @@ namespace Frameworks.Componentes
                     if (pro.Name.Substring(0,2)== "id")
                     {
                         this.Chave = Convert.ToInt32(valor);
+                        this.Columns[0].Width = 10;
                     }
 
                     //var atri = pro.GetCustomAttribute(true);
