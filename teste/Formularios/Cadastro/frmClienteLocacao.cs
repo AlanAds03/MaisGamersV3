@@ -16,6 +16,8 @@ using Frameworks.Componentes;
 using MaisGamers.DLL;
 using MaisGamers.DLL.Locacao;
 using System.Web.Script.Serialization;
+using MaisGamers.Formularios;
+using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -300,6 +302,25 @@ namespace MaisGamers.Formularios.Cadastro
 
 
 
+
+        }
+
+        private void grpCadastra_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpBotoes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmLocacaoJogo _locacao = new frmLocacaoJogo();
+            _locacao.MdiParent = this.MdiParent;
+            _locacao.Show();
+            //MostraFormulario(frmCliente);
 
         }
     }

@@ -98,7 +98,7 @@ namespace Frameworks.Componentes
         {
 
             this.Items.Clear();
-
+            this.Columns.Clear();
             //List<Object> _list = new List<Object>();
             List<T> _list = new List<T>();
             var serializer = new JavaScriptSerializer();

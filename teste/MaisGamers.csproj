@@ -65,6 +65,12 @@
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bEstado.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
+    <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmCadJogo.Designer.cs">
+      <DependentUpon>frmCadJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastro\frmClienteLocacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +101,11 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Locacao\frmLocacao.cs">
+    <Compile Include="Formularios\Locacao\frmLocacaoJogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Locacao\frmLocacao.Designer.cs">
-      <DependentUpon>frmLocacao.cs</DependentUpon>
+    <Compile Include="Formularios\Locacao\frmLocacaoJogo.Designer.cs">
+      <DependentUpon>frmLocacaoJogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201610152059457_inicial.cs" />
     <Compile Include="Migrations\201610152059457_inicial.Designer.cs">
@@ -123,14 +129,17 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastro\frmCadJogo.resx">
+      <DependentUpon>frmCadJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastro\frmClienteLocacao.resx">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
-      <DependentUpon>frmLocacao.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Locacao\frmLocacaoJogo.resx">
+      <DependentUpon>frmLocacaoJogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Manutencao\frmManutencao.resx">
       <DependentUpon>frmManutencao.cs</DependentUpon>

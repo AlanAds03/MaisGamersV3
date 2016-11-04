@@ -169,5 +169,10 @@ namespace MaisGamers
         {
 
         }
+
+        private void ribbonButton6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

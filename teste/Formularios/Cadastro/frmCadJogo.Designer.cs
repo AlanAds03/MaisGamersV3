@@ -1,6 +1,6 @@
-﻿namespace MaisGamersV2.Formularios.Locacao
+﻿namespace MaisGamers.Formularios.Cadastro
 {
-    partial class frmClienteLocacao
+    partial class frmCadJogo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,18 @@
         {
             this.SuspendLayout();
             // 
-            // frmClienteLocacao
+            // frmCadJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 440);
-            this.Name = "frmClienteLocacao";
-            this.Text = "frmClienteLocacao";
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(820, 283);
+            this.Name = "frmCadJogo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmCadJogo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MaisGamersV2.Formularios.Locacao
+namespace MaisGamers.Formularios.Cadastro
 {
-    public partial class frmClienteLocacao : Form
+    public partial class frmCadJogo : Form
     {
-        public frmClienteLocacao()
+        public frmCadJogo()
         {
             InitializeComponent();
         }
