@@ -31,7 +31,7 @@ namespace MaisGamers.Modulos
                 height = Screen.PrimaryScreen.Bounds.Height;
 
                 tab.Left = width / 2 - tab.Width / 2;
-
+                tab.Height = height - 400;
 
             }
             catch (Exception ex)
@@ -55,8 +55,7 @@ namespace MaisGamers.Modulos
                 height = Screen.PrimaryScreen.Bounds.Height;
 
                 group.Left = width / 2 - group.Width / 2;
-
-
+                group.Top = height - 300;
             }
             catch (Exception ex)
             {

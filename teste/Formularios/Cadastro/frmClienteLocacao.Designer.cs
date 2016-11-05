@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -46,7 +48,6 @@
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.txtRGFilho = new Frameworks.Componentes.SuperTextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -76,7 +77,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new Frameworks.Componentes.SuperTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.grpPesquisa.SuspendLayout();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
@@ -84,7 +85,6 @@
             this.grpGrid.SuspendLayout();
             this.tpDetalhe.SuspendLayout();
             this.grpCadastra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +147,19 @@
             this.grpBotoes.TabIndex = 7;
             this.grpBotoes.TabStop = false;
             this.grpBotoes.Enter += new System.EventHandler(this.grpBotoes_Enter);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(516, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(93, 50);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Locação";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -249,6 +262,8 @@
             // 
             // grpGrid
             // 
+            this.grpGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.grpGrid.Controls.Add(this.lvPesquisa);
             this.grpGrid.Location = new System.Drawing.Point(40, 132);
             this.grpGrid.Name = "grpGrid";
@@ -258,6 +273,8 @@
             // 
             // lvPesquisa
             // 
+            this.lvPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lvPesquisa.Location = new System.Drawing.Point(6, 19);
             this.lvPesquisa.MultiSelect = false;
             this.lvPesquisa.Name = "lvPesquisa";
@@ -280,7 +297,6 @@
             // 
             // grpCadastra
             // 
-            this.grpCadastra.Controls.Add(this.pictureBox1);
             this.grpCadastra.Controls.Add(this.button4);
             this.grpCadastra.Controls.Add(this.txtRGFilho);
             this.grpCadastra.Controls.Add(this.label15);
@@ -318,25 +334,18 @@
             this.grpCadastra.Text = "Cadastro";
             this.grpCadastra.Enter += new System.EventHandler(this.grpCadastra_Enter);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(644, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 110);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
             // button4
             // 
             this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(699, 135);
+            this.button4.Location = new System.Drawing.Point(692, 157);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 40);
             this.button4.TabIndex = 9;
             this.button4.Text = "Tirar Foto";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // txtRGFilho
             // 
@@ -579,19 +588,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Código Cliente:";
             // 
-            // button5
-            // 
-            this.button5.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(516, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 50);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Locação";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,7 +615,6 @@
             this.tpDetalhe.ResumeLayout(false);
             this.grpCadastra.ResumeLayout(false);
             this.grpCadastra.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -672,7 +667,7 @@
         private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Timer timer1;
     }
 }
