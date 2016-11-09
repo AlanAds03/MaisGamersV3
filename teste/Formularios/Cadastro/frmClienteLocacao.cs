@@ -102,23 +102,61 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PesquisaGrid(txtPesquisaNome.Text);
+            int codigo = 0;
+
+            if (!string.IsNullOrEmpty(txtPesquisaCodigo.Text))
+            {
+                codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
+            }
+
+            PesquisaGrid(codigo,
+                         txtPesquisaNome.Text,
+                         txtPesquisaCPF.Text,
+                         txtPesquisarg.Text);
+
         }
 
-        private void PesquisaGrid(string nome)
+        private void PesquisaGrid(int codigo,
+                                  string nome,
+                                  string cpf,
+                                  string rg)
         {
+
+
             bClienteLocacao _bCli = new bClienteLocacao();
             mClienteLocacao cli = new mClienteLocacao();
             List<mClienteLocacao> locacao = new List<mClienteLocacao>();
             string json;
 
-            cli.Nome = nome;
-            json = _bCli.PesquisaCliente(cli);
+            try
+            {
+                cli.idClienteLocacao = codigo;
+
+                if (!string.IsNullOrEmpty(rg))
+                {
+                    cli.RG = rg;
+                }
+
+                if (!string.IsNullOrEmpty(cpf))
+                {
+                    cli.CPF = cpf;
+                }
 
 
+                cli.Nome = nome;
+                json = _bCli.PesquisaCliente(cli);
 
-            //lvPesquisa.CarregaListaView(locacao);
-            lvPesquisa.CarregaListaView<mClienteLocacao>(json);
+                if (!string.IsNullOrEmpty(json))
+                {
+                    lvPesquisa.CarregaListaView<mClienteLocacao>(json);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
 
 
 
@@ -148,8 +186,9 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
-
+                pnlCodigo.Visible = false;
                 idClienteLocacao = 0;
+                LimpaCampos();
             }
 
             else if (modo_tela == ModoTela.ALTERACAO)
@@ -158,7 +197,7 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
-
+                pnlCodigo.Visible = true;
                 bClienteLocacao _bCli = new bClienteLocacao();
                 mClienteLocacao cliente = new mClienteLocacao();
                 cliente = _bCli.ObterCliente(idClienteLocacao);
@@ -192,6 +231,22 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
+        private void LimpaCampos()
+        {
+            idClienteLocacao = 0;
+            txtCodigo.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtCpf.Text = string.Empty;
+            txtRG.Text = string.Empty;
+            txtDataNascimento.Text = string.Empty;
+            txtRua.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            txtCEP.Text = string.Empty;
+            txtBairro.Text = string.Empty;
+            cmbEstado.SelectedValue = string.Empty;
+            cmbCidade.SelectedValue = string.Empty;
+        }
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
 
@@ -221,7 +276,20 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Nome = txtNome.Text;
             _mClilocacao.CPF = txtCpf.Text;
             _mClilocacao.RG = txtRG.Text;
-            _mClilocacao.DataNascimento = Convert.ToDateTime(txtDataNascimento.Text);
+            if( util.isDate(txtDataNascimento.Text))
+            {
+                _mClilocacao.DataNascimento = Convert.ToDateTime(txtDataNascimento.Text);
+            
+            }
+            else
+            {
+                MessageBox.Show("Informar a data de nascimento");
+                txtDataNascimento.Text = string.Empty;
+                return;
+            }
+
+
+            
             _mClilocacao.Rua = txtRua.Text;
             _mClilocacao.Numero = txtNumero.Text;
             _mClilocacao.CEP = txtCEP.Text;
@@ -232,13 +300,14 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
             {
-                if(_mClilocacao.idClienteLocacao != 0)
+                if (idClienteLocacao ==0)
                 {
-                   MessageBox.Show("Registro alteraco com sucesso");
+                    MessageBox.Show("Registro incluído com sucesso");
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Registro inclído com sucesso");
+                    MessageBox.Show("Registro alteraco com sucesso");
                 }
                
             }
@@ -259,7 +328,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
             int codigo = 0;
 
-            Int32.TryParse(cmbEstado.SelectedValue.ToString(), out codigo);
+            Int32.TryParse(Convert.ToString(cmbEstado.SelectedValue), out codigo);
             if (codigo != 0)
             {
                 CarregaComboCidade(cmbCidade, codigo);

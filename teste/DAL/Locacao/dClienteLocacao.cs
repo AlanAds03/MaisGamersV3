@@ -82,7 +82,12 @@ namespace MaisGamersV2.DAL.Locacao
                 var cli = (from a in db.ClienteLocacao
                            where
                             a.Nome.Contains(_clienteLocacao.Nome) &&
-                            ((_clienteLocacao.RG ?? a.RG) == a.RG)
+                            ((_clienteLocacao.RG ?? a.RG) == a.RG) &&
+                            //((_clienteLocacao.CPF ?? a.CPF) == a.CPF) &&
+                            (_clienteLocacao.idClienteLocacao == 0 ? a.idClienteLocacao == a.idClienteLocacao : a.idClienteLocacao == _clienteLocacao.idClienteLocacao)
+                    
+                    
+
                            select new {a.idClienteLocacao, a.Nome, a.DataNascimento});
 
                 //'var columns = cli.Select(x => new {x.idClienteLocacao, x.Nome, x.Numero,x.JsonGRID = "").ToList();

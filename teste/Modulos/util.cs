@@ -67,6 +67,12 @@ namespace MaisGamers.Modulos
 
         }
 
+        public static bool isDate(string valor)
+        {
+            DateTime data = new DateTime();
+            return DateTime.TryParse(valor,out data);
+        }
+
        
 
     }

@@ -25,7 +25,7 @@ namespace Frameworks.Componentes
                 PropertyInfo[] props = tipo.GetProperties();
                 foreach (var pro in props)
                 {
-                    if (pro.Name.Substring(0,2) == "id")
+                    if (pro.Name.Substring(0, 2) == "id")
                     {
                         this.Columns.Add("");
                     }
@@ -34,7 +34,7 @@ namespace Frameworks.Componentes
                         this.Columns.Add(pro.Name);
                     }
 
-                    
+
                 }
 
             }
@@ -57,7 +57,7 @@ namespace Frameworks.Componentes
                     {
                         this.Chave = Convert.ToInt32(valor);
                     }
-                    
+
 
 
                     if (iCont == 0)
@@ -106,9 +106,14 @@ namespace Frameworks.Componentes
 
             Int32 iCont = 0;
 
+            if (_list.Count == 0)
+            {
+                return;
+            }
+
             for (int i = 0; i < 1; i++)
             {
-                Type tipo =  _list[i].GetType();
+                Type tipo = _list[i].GetType();
                 PropertyInfo[] props = tipo.GetProperties();
                 foreach (var pro in props)
                 {
@@ -124,7 +129,7 @@ namespace Frameworks.Componentes
                             this.Columns.Add(pro.Name);
                         }
 
-                        
+
                     }
 
                 }
@@ -145,7 +150,7 @@ namespace Frameworks.Componentes
 
                     var valor = pro.GetValue(x, null);
 
-                    if (pro.Name.Substring(0,2)== "id")
+                    if (pro.Name.Substring(0, 2) == "id")
                     {
                         this.Chave = Convert.ToInt32(valor);
                         this.Columns[0].Width = 10;
@@ -153,6 +158,10 @@ namespace Frameworks.Componentes
 
                     //var atri = pro.GetCustomAttribute(true);
 
+                    if (pro.PropertyType.FullName == "System.DataTime")
+                    {
+                        valor = Convert.ToDateTime(valor).ToShortDateString();
+                    }
 
                     if (iCont == 0)
                     {
@@ -178,7 +187,7 @@ namespace Frameworks.Componentes
             }
 
 
-            
+
 
             this.CheckBoxes = true;
             this.View = View.Details;
@@ -186,7 +195,7 @@ namespace Frameworks.Componentes
             this.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             this.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
-            
+
 
 
 
@@ -196,16 +205,16 @@ namespace Frameworks.Componentes
 
         public int ObterChave()
         {
-            for(var i = 0; i<= this.Items.Count - 1; i++)
+            for (var i = 0; i <= this.Items.Count - 1; i++)
             {
-                if(this.Items[i].Checked == true)
+                if (this.Items[i].Checked == true)
                 {
                     return Convert.ToInt32(this.Items[i].Text);
                 }
             }
 
             return 0;
-            
+
         }
     }
 }
