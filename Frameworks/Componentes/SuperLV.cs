@@ -120,15 +120,17 @@ namespace Frameworks.Componentes
                     var valor = pro.GetValue(_list[i], null);
                     if (valor != null)
                     {
-                        if (pro.Name.Substring(0, 2) == "id")
+                        if (valor.ToString() != "0")
                         {
-                            this.Columns.Add("");
+                            if (pro.Name.Substring(0, 2) == "id")
+                            {
+                                this.Columns.Add("");
+                            }
+                            else
+                            {
+                                this.Columns.Add(pro.Name);
+                            }
                         }
-                        else
-                        {
-                            this.Columns.Add(pro.Name);
-                        }
-
 
                     }
 

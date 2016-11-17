@@ -28,8 +28,9 @@ namespace MaisGamers.Formularios.Cadastro
     {
 
         public ModoTela modo_tela;
-
+        public bool habilitaTabPage = false;
         public int idClienteLocacao;
+        
 
         public frmClienteLocacao()
         {
@@ -48,6 +49,9 @@ namespace MaisGamers.Formularios.Cadastro
             modo_tela = ModoTela.CONSULTA;
             atualizaTela();
 
+            //tbControl.TabPages[1].
+
+            //tbControl.ac
         }
 
         private void CarregaComboEstado(SuperComboBox cmbEstado)
@@ -112,14 +116,16 @@ namespace MaisGamers.Formularios.Cadastro
             PesquisaGrid(codigo,
                          txtPesquisaNome.Text,
                          txtPesquisaCPF.Text,
-                         txtPesquisarg.Text);
+                         txtPesquisarg.Text,
+                         1);
 
         }
 
         private void PesquisaGrid(int codigo,
                                   string nome,
                                   string cpf,
-                                  string rg)
+                                  string rg,
+                                  int coluna)
         {
 
 
@@ -144,7 +150,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
                 cli.Nome = nome;
-                json = _bCli.PesquisaCliente(cli);
+                json = _bCli.PesquisaCliente(cli,"Nome");
 
                 if (!string.IsNullOrEmpty(json))
                 {
@@ -178,10 +184,12 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Fechar";
                 btnSalvar.Enabled = false;
                 btnNovo.Enabled = true;
+                habilitaTabPage = false;
 
             }
             else if (modo_tela == ModoTela.NOVO)
             {
+                habilitaTabPage = true;
                 tbControl.SelectTab("tpDetalhe");
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
@@ -189,11 +197,16 @@ namespace MaisGamers.Formularios.Cadastro
                 pnlCodigo.Visible = false;
                 idClienteLocacao = 0;
                 LimpaCampos();
+
+                
             }
 
             else if (modo_tela == ModoTela.ALTERACAO)
             {
+                habilitaTabPage = true;
+                tbControl.Enabled = true;
                 tbControl.SelectTab("tpDetalhe");
+
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
@@ -245,6 +258,10 @@ namespace MaisGamers.Formularios.Cadastro
             txtBairro.Text = string.Empty;
             cmbEstado.SelectedValue = string.Empty;
             cmbCidade.SelectedValue = string.Empty;
+            txtAutoriza.Text = string.Empty;
+            txtCpfFilho.Text = string.Empty;
+            txtRGFilho.Text = string.Empty;
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -276,10 +293,10 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Nome = txtNome.Text;
             _mClilocacao.CPF = txtCpf.Text;
             _mClilocacao.RG = txtRG.Text;
-            if( util.isDate(txtDataNascimento.Text))
+            if (util.isDate(txtDataNascimento.Text))
             {
                 _mClilocacao.DataNascimento = Convert.ToDateTime(txtDataNascimento.Text);
-            
+
             }
             else
             {
@@ -289,7 +306,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
 
-            
+
             _mClilocacao.Rua = txtRua.Text;
             _mClilocacao.Numero = txtNumero.Text;
             _mClilocacao.CEP = txtCEP.Text;
@@ -300,21 +317,24 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
             {
-                if (idClienteLocacao ==0)
+                if (idClienteLocacao == 0)
                 {
                     MessageBox.Show("Registro incluído com sucesso");
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Registro alteraco com sucesso");
                 }
-               
+
             }
             else
             {
                 MessageBox.Show("Erro ao incluir o registro");
             }
+
+            modo_tela = ModoTela.CONSULTA;
+            atualizaTela();
         }
         private Boolean ValidarCampos()
         {
@@ -402,7 +422,25 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-      
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+        }
 
+
+        private void tbControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (habilitaTabPage == false)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        
     }
 }

@@ -72,7 +72,7 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
-        public string PesquisaCliente(mClienteLocacao _clienteLocacao)
+        public string PesquisaCliente(mClienteLocacao _clienteLocacao, string order)
         {
             var db = new Contexto();
 
