@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace MaisGamersV2.DAL.Locacao
 {
-    public class dClienteLocacao
+    public class dClienteLocacao : IDisposable
     {
 
         public bool InserirCliente(mClienteLocacao _clienteLocacao)
@@ -72,6 +72,25 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
+        public bool ExcluirCliente(int idClienteLocacao)
+        {
+            try
+            {
+                using(var db = new Contexto())
+                {
+                    var cli = db.ClienteLocacao.Where(x => x.idClienteLocacao == idClienteLocacao).FirstOrDefault();
+                    db.Entry(cli).State = EntityState.Deleted;
+                    db.SaveChanges();
+                    return true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
         public string PesquisaCliente(mClienteLocacao _clienteLocacao, string order)
         {
             var db = new Contexto();
@@ -111,5 +130,9 @@ namespace MaisGamersV2.DAL.Locacao
 
         }
 
+        public void Dispose()
+        {
+            
+        }
     }
 }

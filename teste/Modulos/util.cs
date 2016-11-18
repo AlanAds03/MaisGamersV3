@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frameworks.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,6 +74,13 @@ namespace MaisGamers.Modulos
             return DateTime.TryParse(valor,out data);
         }
 
+        public static DialogResult Mensagem(string mensagem)
+        {
+            CMsgBox cmsg = new CMsgBox(mensagem);
+            cmsg.ShowDialog();
+
+            return cmsg.result;
+        }
        
 
     }

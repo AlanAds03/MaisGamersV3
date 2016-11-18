@@ -18,6 +18,7 @@ using MaisGamers.DLL.Locacao;
 using System.Web.Script.Serialization;
 using MaisGamers.Formularios;
 using System.Runtime.InteropServices;
+using Frameworks.Classes;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -106,26 +107,14 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int codigo = 0;
-
-            if (!string.IsNullOrEmpty(txtPesquisaCodigo.Text))
-            {
-                codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
-            }
-
-            PesquisaGrid(codigo,
-                         txtPesquisaNome.Text,
-                         txtPesquisaCPF.Text,
-                         txtPesquisarg.Text,
-                         1);
+            
 
         }
 
         private void PesquisaGrid(int codigo,
                                   string nome,
                                   string cpf,
-                                  string rg,
-                                  int coluna)
+                                  string rg)
         {
 
 
@@ -370,7 +359,11 @@ namespace MaisGamers.Formularios.Cadastro
             if (e.Item.Checked == true)
             {
                 idClienteLocacao = lvPesquisa.ObterChave();
+                
             }
+
+            btnExcluir.Enabled = e.Item.Checked;
+
 
         }
 
@@ -441,6 +434,41 @@ namespace MaisGamers.Formularios.Cadastro
             }
         }
 
-        
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            
+
+            if (Mensagem("Deseja realmente excluir este registro?") == DialogResult.Yes)
+            {
+                bClienteLocacao _cli = new bClienteLocacao();
+                _cli.ExcluirCliente(idClienteLocacao);
+
+            }
+            int codigo = 0;
+
+            if (!string.IsNullOrEmpty(txtPesquisaCodigo.Text))
+            {
+                codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
+            }
+
+            PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            int codigo = 0;
+
+            if (!string.IsNullOrEmpty(txtPesquisaCodigo.Text))
+            {
+                codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
+            }
+
+            PesquisaGrid(codigo,
+                         txtPesquisaNome.Text,
+                         txtPesquisaCPF.Text,
+                         txtPesquisarg.Text);
+
+        }
     }
 }

@@ -53,5 +53,21 @@ namespace MaisGamers.DLL.Locacao
 
 
         }
+
+        public bool ExcluirCliente(int idClienteLocacao)
+        {
+            try
+            {
+                using (var d = new dClienteLocacao())
+                {
+                    return d.ExcluirCliente(idClienteLocacao);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
     }
 }
