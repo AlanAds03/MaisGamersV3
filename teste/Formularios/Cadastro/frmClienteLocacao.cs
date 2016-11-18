@@ -274,6 +274,10 @@ namespace MaisGamers.Formularios.Cadastro
             mClienteLocacao _mClilocacao = new mClienteLocacao();
             bClienteLocacao _cliente = new bClienteLocacao();
 
+            if (ValidarCampos() == false)
+            {
+                return;
+            }
             if (idClienteLocacao != 0)
             {
                 _mClilocacao.idClienteLocacao = idClienteLocacao;
@@ -327,9 +331,43 @@ namespace MaisGamers.Formularios.Cadastro
         }
         private Boolean ValidarCampos()
         {
+            bool retorno = true;
+
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                errorProvider1.SetError(txtNome, "Informar o nome do cliente");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtNome, "");
+            }
+            
+
+            if (string.IsNullOrEmpty(txtRG.Text))
+            {
+                errorProvider1.SetError(txtRG, "Informar o rg do cliente");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtRG, "");
+            }
 
 
-            return true;
+            if (string.IsNullOrEmpty(txtCpf.Text.Replace(".","").Replace("-","").Replace(",","").Trim()))
+            {
+                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtCpf, "");
+            }
+
+
+
+            return retorno;
 
         }
 

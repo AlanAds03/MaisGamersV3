@@ -33,10 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisarg = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPesquisaCodigo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtPesquisaCPF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
@@ -45,7 +47,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
@@ -84,8 +85,9 @@
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
@@ -93,7 +95,7 @@
             this.tpDetalhe.SuspendLayout();
             this.grpCadastra.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +134,17 @@
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.pictureBox1.Location = new System.Drawing.Point(473, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // txtPesquisarg
             // 
             this.txtPesquisarg.Location = new System.Drawing.Point(101, 88);
@@ -165,6 +178,18 @@
             this.label17.Size = new System.Drawing.Size(57, 18);
             this.label17.TabIndex = 4;
             this.label17.Text = "Código:";
+            // 
+            // button2
+            // 
+            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(606, 38);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 50);
+            this.button2.TabIndex = 4;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtPesquisaCPF
             // 
@@ -263,18 +288,6 @@
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(606, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnFechar
             // 
@@ -654,16 +667,9 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Nome Cliente:";
             // 
-            // pictureBox1
+            // errorProvider1
             // 
-            this.pictureBox1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.pictureBox1.Location = new System.Drawing.Point(473, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmClienteLocacao
             // 
@@ -685,6 +691,7 @@
             this.Load += new System.EventHandler(this.frmClienteLocacao_Load);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpBotoes.ResumeLayout(false);
             this.tbControl.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
@@ -694,7 +701,7 @@
             this.grpCadastra.PerformLayout();
             this.pnlCodigo.ResumeLayout(false);
             this.pnlCodigo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,5 +762,6 @@
         private System.Windows.Forms.MaskedTextBox txtCpfFilho;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
