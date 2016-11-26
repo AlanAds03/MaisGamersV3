@@ -358,6 +358,9 @@ namespace MaisGamers.Formularios.Cadastro
             if (string.IsNullOrEmpty(txtCpf.Text.Replace(".","").Replace("-","").Replace(",","").Trim()))
             {
                 errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
+                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
+                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
+                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
                 retorno = false;
             }
             else
@@ -507,6 +510,30 @@ namespace MaisGamers.Formularios.Cadastro
                          txtPesquisaCPF.Text,
                          txtPesquisarg.Text);
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LimpaCamposFiltro();
+        }
+
+        private void LimpaCamposFiltro()
+        {
+            txtPesquisaCodigo.Text = "";
+            txtPesquisaNome.Text = "";
+            txtPesquisaCPF.Text = "";
+            txtPesquisarg.Text = "";
+            lvPesquisa.Clear();
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

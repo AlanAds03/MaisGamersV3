@@ -86,6 +86,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpBotoes.SuspendLayout();
@@ -96,6 +97,7 @@
             this.grpCadastra.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,12 +119,12 @@
             // 
             // grpPesquisa
             // 
+            this.grpPesquisa.Controls.Add(this.pictureBox2);
             this.grpPesquisa.Controls.Add(this.pictureBox1);
             this.grpPesquisa.Controls.Add(this.txtPesquisarg);
             this.grpPesquisa.Controls.Add(this.label18);
             this.grpPesquisa.Controls.Add(this.txtPesquisaCodigo);
             this.grpPesquisa.Controls.Add(this.label17);
-            this.grpPesquisa.Controls.Add(this.button2);
             this.grpPesquisa.Controls.Add(this.txtPesquisaCPF);
             this.grpPesquisa.Controls.Add(this.label2);
             this.grpPesquisa.Controls.Add(this.label1);
@@ -183,7 +185,7 @@
             // 
             this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(606, 38);
+            this.button2.Location = new System.Drawing.Point(387, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 50);
             this.button2.TabIndex = 4;
@@ -217,6 +219,7 @@
             this.grpBotoes.Controls.Add(this.btnSalvar);
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.btnFechar);
+            this.grpBotoes.Controls.Add(this.button2);
             this.grpBotoes.Location = new System.Drawing.Point(119, 524);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(695, 77);
@@ -671,6 +674,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.pictureBox2.Location = new System.Drawing.Point(511, 87);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +718,7 @@
             this.pnlCodigo.ResumeLayout(false);
             this.pnlCodigo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -763,5 +780,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
