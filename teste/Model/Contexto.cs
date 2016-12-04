@@ -1,4 +1,5 @@
-﻿using MaisGamers.Model.Locacao;
+﻿using MaisGamers.Model.Cadastro;
+using MaisGamers.Model.Locacao;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,6 +17,11 @@ namespace MaisGamers.Model
         public DbSet<mEstado> Estado { get; set; }
 
         public DbSet<mCidade> Cidade { get; set; }
+
+        public DbSet<mConsole> Console { get; set; }
+
+        public DbSet<mJogo> Jogo { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
