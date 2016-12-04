@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace MaisGamersV2.DAL.Locacao
 {
-    public class dClienteLocacao
+    public class dClienteLocacao : IDisposable
     {
 
         public bool InserirCliente(mClienteLocacao _clienteLocacao)
@@ -72,7 +72,26 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
-        public string PesquisaCliente(mClienteLocacao _clienteLocacao)
+        public bool ExcluirCliente(int idClienteLocacao)
+        {
+            try
+            {
+                using(var db = new Contexto())
+                {
+                    var cli = db.ClienteLocacao.Where(x => x.idClienteLocacao == idClienteLocacao).FirstOrDefault();
+                    db.Entry(cli).State = EntityState.Deleted;
+                    db.SaveChanges();
+                    return true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+        public string PesquisaCliente(mClienteLocacao _clienteLocacao, string order)
         {
             var db = new Contexto();
 
@@ -82,7 +101,12 @@ namespace MaisGamersV2.DAL.Locacao
                 var cli = (from a in db.ClienteLocacao
                            where
                             a.Nome.Contains(_clienteLocacao.Nome) &&
-                            ((_clienteLocacao.RG ?? a.RG) == a.RG)
+                            ((_clienteLocacao.RG ?? a.RG) == a.RG) &&
+                            //((_clienteLocacao.CPF ?? a.CPF) == a.CPF) &&
+                            (_clienteLocacao.idClienteLocacao == 0 ? a.idClienteLocacao == a.idClienteLocacao : a.idClienteLocacao == _clienteLocacao.idClienteLocacao)
+                    
+                    
+
                            select new {a.idClienteLocacao, a.Nome, a.DataNascimento});
 
                 //'var columns = cli.Select(x => new {x.idClienteLocacao, x.Nome, x.Numero,x.JsonGRID = "").ToList();
@@ -106,5 +130,9 @@ namespace MaisGamersV2.DAL.Locacao
 
         }
 
+        public void Dispose()
+        {
+            
+        }
     }
 }

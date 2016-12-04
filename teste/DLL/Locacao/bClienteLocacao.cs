@@ -37,12 +37,12 @@ namespace MaisGamers.DLL.Locacao
             return _dCliente.ObterCliente(idCLienteLocacao);
 
         }
-        public  string PesquisaCliente (mClienteLocacao cliente)
+        public  string PesquisaCliente (mClienteLocacao cliente, string order)
         {
             try
             {
                 dClienteLocacao _dCliente = new dClienteLocacao();
-                return _dCliente.PesquisaCliente(cliente);
+                return _dCliente.PesquisaCliente(cliente,order);
 
             }
             catch (Exception)
@@ -52,6 +52,22 @@ namespace MaisGamers.DLL.Locacao
             }
 
 
+        }
+
+        public bool ExcluirCliente(int idClienteLocacao)
+        {
+            try
+            {
+                using (var d = new dClienteLocacao())
+                {
+                    return d.ExcluirCliente(idClienteLocacao);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
         }
     }
 }

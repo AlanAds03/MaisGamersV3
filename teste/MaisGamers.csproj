@@ -77,6 +77,12 @@
     <Compile Include="Formularios\Cadastro\frmClienteLocacao.Designer.cs">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Cadastro\frmFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmFoto.Designer.cs">
+      <DependentUpon>frmFoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +107,6 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Locacao\frmLocacaoJogo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Locacao\frmLocacaoJogo.Designer.cs">
-      <DependentUpon>frmLocacaoJogo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201610152059457_inicial.cs" />
     <Compile Include="Migrations\201610152059457_inicial.Designer.cs">
       <DependentUpon>201610152059457_inicial.cs</DependentUpon>
@@ -125,6 +125,9 @@
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Model\mCidade.cs" />
     <Compile Include="Model\mEstado.cs" />
+    <Compile Include="Modulos\CMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\CustomAttibuteDate.cs" />
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
@@ -135,11 +138,11 @@
     <EmbeddedResource Include="Formularios\Cadastro\frmClienteLocacao.resx">
       <DependentUpon>frmClienteLocacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cadastro\frmFoto.resx">
+      <DependentUpon>frmFoto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Locacao\frmLocacaoJogo.resx">
-      <DependentUpon>frmLocacaoJogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Manutencao\frmManutencao.resx">
       <DependentUpon>frmManutencao.cs</DependentUpon>
@@ -158,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610292151175_json.resx">
       <DependentUpon>201610292151175_json.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CMsgBox.resx">
+      <DependentUpon>CMsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,6 +225,9 @@
     <None Include="Imagens\iconeSalvar.png" />
     <Content Include="Imagens\iconesCliente.png" />
     <Content Include="Imagens\iconeSearch32X32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\Locacao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
