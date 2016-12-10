@@ -87,7 +87,7 @@
             // 
             this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton1);
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1580, 122);
+            this.ribbon1.Size = new System.Drawing.Size(1580, 100);
             this.ribbon1.TabIndex = 4;
             this.ribbon1.Tabs.Add(this.Rbmenumanutencao);
             this.ribbon1.Tabs.Add(this.Rblocacaodejogos);
