@@ -19,6 +19,7 @@ using System.Web.Script.Serialization;
 using MaisGamers.Formularios;
 using System.Runtime.InteropServices;
 using Frameworks.Classes;
+using System.Net;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -535,5 +536,42 @@ namespace MaisGamers.Formularios.Cadastro
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void txtCEP_Leave(object sender, EventArgs e)
+        {
+            if (chkBusca.Checked)
+            {
+                EnderecoCEP _endereco = new EnderecoCEP();
+                _endereco =  util.RetornoCEP(txtCEP.Text);
+
+                if (_endereco != null)
+                {
+                    txtRua.Text = _endereco.logradouro;
+                    txtBairro.Text = _endereco.bairro;
+
+                    bEstado _estado = new bEstado();
+
+                    _estado.ConsultaUF(_endereco.uf);
+                    cmbEstado.SelectedValue = _estado.ConsultaUF(_endereco.uf);
+
+                    CarregaComboCidade(cmbCidade,Convert.ToInt32(cmbEstado.SelectedValue));
+
+                }
+            }
+            
+        }
+
+        
+        
     }
 }

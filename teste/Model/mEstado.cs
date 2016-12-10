@@ -17,5 +17,7 @@ namespace MaisGamers.Model
 
         public string rEstado { get; set; }
 
+        public string UF { get; set; }
+
     }
 }

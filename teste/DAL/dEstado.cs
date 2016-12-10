@@ -26,5 +26,24 @@ namespace MaisGamers.DAL
             }
 
         }
+
+        public decimal ConsultaUF(string _uf)
+        {
+            try
+            {
+                var db = new Contexto();
+
+                int cEstado = db.Estado.Where(x => x.UF == _uf).Select(x => x.cEstado).FirstOrDefault();
+
+
+                return cEstado;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
