@@ -71,10 +71,10 @@ namespace MaisGamers.Formularios.Cadastro
                 cmbEstado.CarregaCombo(list, "cEstado", "rEstado", SuperComboBox.PrimeiraLinha.Selecione);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -95,7 +95,10 @@ namespace MaisGamers.Formularios.Cadastro
 
                 list = _cidade.CarregaCidade(cEstado);
 
-                comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                if (list != null) {
+                    comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                }
+
 
 
             }

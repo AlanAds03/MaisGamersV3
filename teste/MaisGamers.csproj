@@ -63,11 +63,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Cadastro\dConsole.cs" />
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bEstado.cs" />
+    <Compile Include="DLL\Cadastro\bConsole.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
       <SubType>Form</SubType>
@@ -242,8 +244,6 @@
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\Cadastro\" />
-    <Folder Include="DLL\Cadastro\" />
     <Folder Include="Formularios\Locacao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

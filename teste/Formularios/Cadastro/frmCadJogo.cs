@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MaisGamers.DLL;
 using MaisGamers.Model.Cadastro;
 using Frameworks.Componentes;
+using MaisGamers.DLL.Cadastro;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -36,18 +37,18 @@ namespace MaisGamers.Formularios.Cadastro
         {
             try
             {
-                using (var bConsole = new bConsole())
-                {
+                bConsole _bConsole = new bConsole();
+
                     List<mConsole> console = new List<mConsole>();
 
-                    console = bConsole.CarregaConsole();
+                    console = _bConsole.CarregaConsole();
                     combo.CarregaCombo(console, "idConsole", "NomeConsole", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
-                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
