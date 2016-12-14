@@ -15,5 +15,21 @@ namespace MaisGamers.DLL
             dEstado _dEstado = new dEstado();
             return _dEstado.CarregaEstado();
         }
+
+        public decimal ConsultaUF(string uf)
+        {
+
+            dEstado _dEstado = new dEstado();
+            try
+            {
+
+                return _dEstado.ConsultaUF(uf);
+            }
+            catch (Exception ex)
+            {
+
+                return -1;
+            }
+        }
     }
 }

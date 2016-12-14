@@ -33,14 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisarg = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPesquisaCodigo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtPesquisaCPF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -86,8 +87,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.chkBusca = new System.Windows.Forms.CheckBox();
             this.grpPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
@@ -97,7 +99,6 @@
             this.grpCadastra.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -136,6 +137,19 @@
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.pictureBox2.Location = new System.Drawing.Point(511, 87);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
@@ -146,6 +160,8 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // txtPesquisarg
             // 
@@ -181,18 +197,6 @@
             this.label17.TabIndex = 4;
             this.label17.Text = "Código:";
             // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(387, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txtPesquisaCPF
             // 
             this.txtPesquisaCPF.Location = new System.Drawing.Point(341, 87);
@@ -210,6 +214,18 @@
             this.label2.Size = new System.Drawing.Size(40, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "CPF:";
+            // 
+            // button2
+            // 
+            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(387, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 50);
+            this.button2.TabIndex = 4;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // grpBotoes
             // 
@@ -366,6 +382,7 @@
             // 
             // grpCadastra
             // 
+            this.grpCadastra.Controls.Add(this.chkBusca);
             this.grpCadastra.Controls.Add(this.txtCpfFilho);
             this.grpCadastra.Controls.Add(this.pnlCodigo);
             this.grpCadastra.Controls.Add(this.txtCEP);
@@ -396,7 +413,7 @@
             this.grpCadastra.Controls.Add(this.label4);
             this.grpCadastra.Location = new System.Drawing.Point(20, 20);
             this.grpCadastra.Name = "grpCadastra";
-            this.grpCadastra.Size = new System.Drawing.Size(984, 367);
+            this.grpCadastra.Size = new System.Drawing.Size(984, 423);
             this.grpCadastra.TabIndex = 0;
             this.grpCadastra.TabStop = false;
             this.grpCadastra.Text = "Cadastro";
@@ -404,7 +421,7 @@
             // 
             // txtCpfFilho
             // 
-            this.txtCpfFilho.Location = new System.Drawing.Point(388, 264);
+            this.txtCpfFilho.Location = new System.Drawing.Point(22, 377);
             this.txtCpfFilho.Mask = "000.000.000-00";
             this.txtCpfFilho.Name = "txtCpfFilho";
             this.txtCpfFilho.Size = new System.Drawing.Size(100, 20);
@@ -438,11 +455,12 @@
             // 
             // txtCEP
             // 
-            this.txtCEP.Location = new System.Drawing.Point(681, 220);
+            this.txtCEP.Location = new System.Drawing.Point(24, 177);
             this.txtCEP.Mask = "00000-000";
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(100, 20);
             this.txtCEP.TabIndex = 11;
+            this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // txtCpf
             // 
@@ -465,7 +483,7 @@
             // 
             this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(855, 201);
+            this.button4.Location = new System.Drawing.Point(737, 233);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 40);
             this.button4.TabIndex = 9;
@@ -476,7 +494,7 @@
             // 
             // txtRGFilho
             // 
-            this.txtRGFilho.Location = new System.Drawing.Point(527, 264);
+            this.txtRGFilho.Location = new System.Drawing.Point(161, 377);
             this.txtRGFilho.Name = "txtRGFilho";
             this.txtRGFilho.Size = new System.Drawing.Size(130, 20);
             this.txtRGFilho.TabIndex = 14;
@@ -485,7 +503,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(530, 244);
+            this.label15.Location = new System.Drawing.Point(164, 357);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(36, 17);
             this.label15.TabIndex = 27;
@@ -495,7 +513,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(387, 244);
+            this.label16.Location = new System.Drawing.Point(21, 357);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 17);
             this.label16.TabIndex = 25;
@@ -503,7 +521,7 @@
             // 
             // txtAutoriza
             // 
-            this.txtAutoriza.Location = new System.Drawing.Point(23, 264);
+            this.txtAutoriza.Location = new System.Drawing.Point(21, 322);
             this.txtAutoriza.Name = "txtAutoriza";
             this.txtAutoriza.Size = new System.Drawing.Size(343, 20);
             this.txtAutoriza.TabIndex = 12;
@@ -512,7 +530,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(21, 244);
+            this.label14.Location = new System.Drawing.Point(19, 302);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(91, 17);
             this.label14.TabIndex = 23;
@@ -522,7 +540,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(678, 200);
+            this.label13.Location = new System.Drawing.Point(21, 157);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 17);
             this.label13.TabIndex = 21;
@@ -530,7 +548,7 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(375, 220);
+            this.txtBairro.Location = new System.Drawing.Point(373, 278);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(263, 20);
             this.txtBairro.TabIndex = 10;
@@ -539,7 +557,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(372, 200);
+            this.label12.Location = new System.Drawing.Point(370, 258);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 17);
             this.label12.TabIndex = 19;
@@ -547,7 +565,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(500, 177);
+            this.txtNumero.Location = new System.Drawing.Point(498, 230);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(84, 20);
             this.txtNumero.TabIndex = 7;
@@ -556,7 +574,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(497, 157);
+            this.label11.Location = new System.Drawing.Point(495, 210);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 17;
@@ -565,7 +583,7 @@
             // cmbCidade
             // 
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Location = new System.Drawing.Point(179, 220);
+            this.cmbCidade.Location = new System.Drawing.Point(177, 278);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(147, 21);
             this.cmbCidade.TabIndex = 9;
@@ -574,7 +592,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(176, 200);
+            this.label10.Location = new System.Drawing.Point(174, 258);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 17);
             this.label10.TabIndex = 15;
@@ -583,7 +601,7 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(24, 220);
+            this.cmbEstado.Location = new System.Drawing.Point(22, 278);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 21);
             this.cmbEstado.TabIndex = 8;
@@ -593,7 +611,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(23, 200);
+            this.label9.Location = new System.Drawing.Point(21, 258);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 17);
             this.label9.TabIndex = 13;
@@ -601,7 +619,7 @@
             // 
             // txtRua
             // 
-            this.txtRua.Location = new System.Drawing.Point(26, 177);
+            this.txtRua.Location = new System.Drawing.Point(24, 230);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(429, 20);
             this.txtRua.TabIndex = 6;
@@ -610,7 +628,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 157);
+            this.label6.Location = new System.Drawing.Point(21, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 11;
@@ -674,18 +692,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pictureBox2
+            // chkBusca
             // 
-            this.pictureBox2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 87);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.chkBusca.AutoSize = true;
+            this.chkBusca.Checked = true;
+            this.chkBusca.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBusca.Location = new System.Drawing.Point(147, 180);
+            this.chkBusca.Name = "chkBusca";
+            this.chkBusca.Size = new System.Drawing.Size(144, 17);
+            this.chkBusca.TabIndex = 32;
+            this.chkBusca.Text = "Busca endereço correios";
+            this.chkBusca.UseVisualStyleBackColor = true;
             // 
             // frmClienteLocacao
             // 
@@ -707,6 +724,7 @@
             this.Load += new System.EventHandler(this.frmClienteLocacao_Load);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpBotoes.ResumeLayout(false);
             this.tbControl.ResumeLayout(false);
@@ -718,7 +736,6 @@
             this.pnlCodigo.ResumeLayout(false);
             this.pnlCodigo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -781,5 +798,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox chkBusca;
     }
 }
