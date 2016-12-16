@@ -1,4 +1,5 @@
-﻿using MaisGamers.Model.Cadastro;
+﻿using MaisGamers.DAL.Cadastro;
+using MaisGamers.Model.Cadastro;
 using MaisGamers.Model.Locacao;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace MaisGamers.Model
         public DbSet<mConsole> Console { get; set; }
 
         public DbSet<mJogo> Jogo { get; set; }
+
+        public DbSet<mTipoCliente> TipoCliente{ get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -64,12 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Cadastro\dConsole.cs" />
+    <Compile Include="DAL\Cadastro\dTipoCliente.cs" />
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bEstado.cs" />
     <Compile Include="DLL\Cadastro\bConsole.cs" />
+    <Compile Include="DLL\Cadastro\bTipoCliente.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
       <SubType>Form</SubType>
@@ -129,7 +131,16 @@
     <Compile Include="Migrations\201612101553280_addUfEstado.Designer.cs">
       <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612152100215_JOgoeConsole.cs" />
+    <Compile Include="Migrations\201612152100215_JOgoeConsole.Designer.cs">
+      <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612162216274_TipoCliente.cs" />
+    <Compile Include="Migrations\201612162216274_TipoCliente.Designer.cs">
+      <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cadastro\mTipoCliente.cs" />
     <Compile Include="Model\Cadastro\mConsole.cs" />
     <Compile Include="Model\Cadastro\mHistoricoEmailJogo.cs" />
     <Compile Include="Model\Cadastro\mJogo.cs" />
@@ -178,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612101553280_addUfEstado.resx">
       <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612152100215_JOgoeConsole.resx">
+      <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612162216274_TipoCliente.resx">
+      <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

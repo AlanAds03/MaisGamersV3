@@ -55,6 +55,7 @@
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
+            this.chkBusca = new System.Windows.Forms.CheckBox();
             this.txtCpfFilho = new System.Windows.Forms.MaskedTextBox();
             this.pnlCodigo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,7 +88,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkBusca = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtTelefone = new Frameworks.Componentes.SuperTextBox();
+            this.cmbTipoCliente = new Frameworks.Componentes.SuperComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -382,6 +386,10 @@
             // 
             // grpCadastra
             // 
+            this.grpCadastra.Controls.Add(this.cmbTipoCliente);
+            this.grpCadastra.Controls.Add(this.label20);
+            this.grpCadastra.Controls.Add(this.txtTelefone);
+            this.grpCadastra.Controls.Add(this.label19);
             this.grpCadastra.Controls.Add(this.chkBusca);
             this.grpCadastra.Controls.Add(this.txtCpfFilho);
             this.grpCadastra.Controls.Add(this.pnlCodigo);
@@ -418,6 +426,18 @@
             this.grpCadastra.TabStop = false;
             this.grpCadastra.Text = "Cadastro";
             this.grpCadastra.Enter += new System.EventHandler(this.grpCadastra_Enter);
+            // 
+            // chkBusca
+            // 
+            this.chkBusca.AutoSize = true;
+            this.chkBusca.Checked = true;
+            this.chkBusca.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBusca.Location = new System.Drawing.Point(147, 180);
+            this.chkBusca.Name = "chkBusca";
+            this.chkBusca.Size = new System.Drawing.Size(144, 17);
+            this.chkBusca.TabIndex = 32;
+            this.chkBusca.Text = "Busca endereço correios";
+            this.chkBusca.UseVisualStyleBackColor = true;
             // 
             // txtCpfFilho
             // 
@@ -692,17 +712,40 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // chkBusca
+            // label19
             // 
-            this.chkBusca.AutoSize = true;
-            this.chkBusca.Checked = true;
-            this.chkBusca.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBusca.Location = new System.Drawing.Point(147, 180);
-            this.chkBusca.Name = "chkBusca";
-            this.chkBusca.Size = new System.Drawing.Size(144, 17);
-            this.chkBusca.TabIndex = 32;
-            this.chkBusca.Text = "Busca endereço correios";
-            this.chkBusca.UseVisualStyleBackColor = true;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(446, 114);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 17);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Telefone:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(449, 134);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(114, 20);
+            this.txtTelefone.TabIndex = 34;
+            // 
+            // cmbTipoCliente
+            // 
+            this.cmbTipoCliente.FormattingEnabled = true;
+            this.cmbTipoCliente.Location = new System.Drawing.Point(409, 322);
+            this.cmbTipoCliente.Name = "cmbTipoCliente";
+            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 21);
+            this.cmbTipoCliente.TabIndex = 35;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(406, 302);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 17);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Tipo Cliente:";
             // 
             // frmClienteLocacao
             // 
@@ -799,5 +842,9 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox chkBusca;
+        private Frameworks.Componentes.SuperTextBox txtTelefone;
+        private System.Windows.Forms.Label label19;
+        private Frameworks.Componentes.SuperComboBox cmbTipoCliente;
+        private System.Windows.Forms.Label label20;
     }
 }

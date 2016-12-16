@@ -49,8 +49,17 @@ namespace MaisGamers
 
         private void CentralizaMenus()
         {
-            
 
+            if (Screen.PrimaryScreen.Bounds.Height < 800)
+            {
+                ribbon1.Height = 100;
+            }
+            else
+            {
+                ribbon1.Height = 150;
+            }
+
+            
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
