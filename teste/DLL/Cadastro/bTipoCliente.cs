@@ -1,4 +1,5 @@
 ﻿using MaisGamers.DAL;
+using MaisGamers.DAL.Cadastro;
 using MaisGamers.Model.Cadastro;
 using System;
 using System.Collections.Generic;
@@ -8,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace MaisGamers.DLL.Cadastro
 {
-    public class bConsole
+    public class bTipoCLiente
     {
-        public List<mConsole> CarregaConsole()
+        public List<mTipoCliente> CarregaTipoCliente()
         {
 
             try
             {
-                dConsole _dConsole = new dConsole();
+                dTipoCliente _dTipoCliente = new dTipoCliente();
 
-                return _dConsole.CarregaConsole();
+                return _dTipoCliente.CarregaTipoCliente();
 
             }
             catch (Exception ex)

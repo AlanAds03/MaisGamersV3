@@ -8,6 +8,7 @@ using System.Reflection;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using MaisGamers.Modulos;
+using MaisGamers.DAL.Cadastro;
 
 namespace MaisGamers.Model.Locacao
 {
@@ -49,6 +50,10 @@ namespace MaisGamers.Model.Locacao
 
         public string JsonGRID { get; set; }
 
+
+        public string Telefone { get; set; }
+
+        public mTipoCliente TipoCliente { get; set; }
 
 
 

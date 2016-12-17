@@ -48,6 +48,9 @@ namespace MaisGamers.Formularios.Cadastro
             CarregaComboEstado(cmbEstado);
             CarregaComboCidade(cmbCidade, Convert.ToInt16(cmbEstado.SelectedValue));
 
+            CarregaComboCidade(cmbCidade, Convert.ToInt16(cmbEstado.SelectedValue));
+
+
             modo_tela = ModoTela.CONSULTA;
             atualizaTela();
 
@@ -71,10 +74,10 @@ namespace MaisGamers.Formularios.Cadastro
                 cmbEstado.CarregaCombo(list, "cEstado", "rEstado", SuperComboBox.PrimeiraLinha.Selecione);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -95,7 +98,10 @@ namespace MaisGamers.Formularios.Cadastro
 
                 list = _cidade.CarregaCidade(cEstado);
 
-                comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                if (list != null) {
+                    comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                }
+
 
 
             }
@@ -105,6 +111,38 @@ namespace MaisGamers.Formularios.Cadastro
                 throw;
             }
         }
+
+
+        private void CarregaComboTipoCliente(SuperComboBox comboCidade)
+        {
+            List<mCidade> list = new List<mCidade>();
+
+            try
+            {
+                bCidade _cidade = new bCidade();
+                DataTable table = new DataTable();
+
+                table.Columns.Add("cCidade");
+                table.Columns.Add("rCidade");
+
+
+                list = _cidade.CarregaCidade(cEstado);
+
+                if (list != null)
+                {
+                    comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -307,6 +345,7 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Bairro = txtBairro.Text;
             _mClilocacao.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
+            _mClilocacao.Telefone = txtTelefone.Text;
 
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
