@@ -11,15 +11,15 @@ namespace MaisGamers.DAL
     public class dJogo : IDisposable
     {
 
-        public List<mJogo> ConsultaJogos(mJogo Jogo)
+        public List<mJogo> ConsultaJogos(mJogo _jogo)
         {
 
-            mJogo _jogo = new mJogo();
+            
             try
             {
                 using (var db = new Contexto())
                 {
-                    var a = (from p in db.Jogo where p.Jogo == Jogo.Jogo && p.Console == Jogo.Console select p).ToList();
+                    var a = (from p in db.Jogo where p.NomeJogo == _jogo.NomeJogo && p.IDConsole == _jogo.IDConsole select p).ToList();
                     return a;
                 }
             }
@@ -60,7 +60,7 @@ namespace MaisGamers.DAL
             {
                 using (var db = new Contexto())
                 {
-                    if (jogo.idJogo != 0)
+                    if (jogo.IDJogo != 0)
                     {
                         db.Jogo.Attach(jogo);
                         db.Entry(jogo).State = System.Data.Entity.EntityState.Modified;

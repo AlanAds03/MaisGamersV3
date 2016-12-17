@@ -63,11 +63,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Cadastro\dConsole.cs" />
+    <Compile Include="DAL\Cadastro\dJogo.cs" />
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bEstado.cs" />
+    <Compile Include="DLL\Cadastro\bConsole.cs" />
+    <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
       <SubType>Form</SubType>
@@ -127,6 +131,10 @@
     <Compile Include="Migrations\201612101553280_addUfEstado.Designer.cs">
       <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612141613513_tabela Jogo.cs" />
+    <Compile Include="Migrations\201612141613513_tabela Jogo.Designer.cs">
+      <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mConsole.cs" />
     <Compile Include="Model\Cadastro\mHistoricoEmailJogo.cs" />
@@ -176,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612101553280_addUfEstado.resx">
       <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141613513_tabela Jogo.resx">
+      <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -242,8 +253,6 @@
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\Cadastro\" />
-    <Folder Include="DLL\Cadastro\" />
     <Folder Include="Formularios\Locacao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
