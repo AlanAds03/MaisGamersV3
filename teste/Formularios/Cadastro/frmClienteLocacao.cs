@@ -20,6 +20,7 @@ using MaisGamers.Formularios;
 using System.Runtime.InteropServices;
 using Frameworks.Classes;
 using System.Net;
+using MaisGamers.DAL.Cadastro;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -48,7 +49,7 @@ namespace MaisGamers.Formularios.Cadastro
             CarregaComboEstado(cmbEstado);
             CarregaComboCidade(cmbCidade, Convert.ToInt16(cmbEstado.SelectedValue));
 
-            CarregaComboCidade(cmbCidade, Convert.ToInt16(cmbEstado.SelectedValue));
+            CarregaComboTipoCliente(cmbTipoCliente);
 
 
             modo_tela = ModoTela.CONSULTA;
@@ -115,22 +116,19 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void CarregaComboTipoCliente(SuperComboBox comboCidade)
         {
-            List<mCidade> list = new List<mCidade>();
+            List<mTipoCliente> list = new List<mTipoCliente>();
 
             try
             {
-                bCidade _cidade = new bCidade();
-                DataTable table = new DataTable();
-
-                table.Columns.Add("cCidade");
-                table.Columns.Add("rCidade");
+                bTipoCliente _tipo = new bTipoCliente();
 
 
-                list = _cidade.CarregaCidade(cEstado);
+
+                list = _tipo.CarregaTipoCliente();
 
                 if (list != null)
                 {
-                    comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                    comboCidade.CarregaCombo(list, "IDTipoCliente", "TipoCliente", SuperComboBox.PrimeiraLinha.Selecione);
                 }
 
 
@@ -346,6 +344,7 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
             _mClilocacao.Telefone = txtTelefone.Text;
+            _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue); 
 
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)

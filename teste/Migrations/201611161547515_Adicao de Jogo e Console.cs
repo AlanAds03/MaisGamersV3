@@ -7,6 +7,7 @@ namespace teste.Migrations
     {
         public override void Up()
         {
+            
             CreateTable(
                 "dbo.Console",
                 c => new

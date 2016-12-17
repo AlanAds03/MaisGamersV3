@@ -8,26 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Data.Entity;
+using MaisGamers.DAL;
 
 namespace MaisGamersV2.DAL.Locacao
 {
-    public class dClienteLocacao : IDisposable
+    public class dClienteLocacao :  IDisposable
     {
+     
 
         public bool InserirCliente(mClienteLocacao _clienteLocacao)
         {
             var db = new Contexto();
-
+            
             try
             {
 
                 _clienteLocacao.Estado = db.Estado.First(X => X.cEstado == _clienteLocacao.cEstado);
                 _clienteLocacao.Cidade = db.Cidade.First(X => X.cCidade == _clienteLocacao.cCidade);
-
+                _clienteLocacao.TipoCliente = db.TipoCliente.First(x => x.IDTipoCliente == _clienteLocacao.IDTipoCliente);
                 if(_clienteLocacao.idClienteLocacao != 0)
                 {
-                    db.ClienteLocacao.Attach(_clienteLocacao);
-                    db.Entry(_clienteLocacao).State = EntityState.Modified;
+                    mClienteLocacao cliente = db.ClienteLocacao.Find(_clienteLocacao.idClienteLocacao);
+                    MapObject(ref _clienteLocacao, ref cliente);
+                    db.Entry(cliente).State = EntityState.Modified;
                     db.SaveChanges();
                 }
                 else
@@ -133,6 +136,34 @@ namespace MaisGamersV2.DAL.Locacao
         public void Dispose()
         {
             
+        }
+
+        public void MapObject(ref mClienteLocacao source, ref mClienteLocacao destination)
+        {
+
+            try
+            {
+                Type sourceType = source.GetType();
+                Type destinationTipe = destination.GetType();
+
+                var sourceProperties = sourceType.GetProperties();
+                var destinationProperties = destinationTipe.GetProperties();
+
+                var commonProperties = from sp in sourceProperties
+                                       join dp in destinationProperties on new { sp.Name, sp.PropertyType } equals
+                                                                           new { dp.Name, dp.PropertyType }
+                                       select new { sp, dp };
+                foreach (var match in commonProperties)
+                {
+                    match.dp.SetValue(destination, match.sp.GetValue(source, null), null);
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+
+            }
+
         }
     }
 }

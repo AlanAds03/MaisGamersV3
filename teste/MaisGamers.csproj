@@ -65,15 +65,17 @@
   <ItemGroup>
     <Compile Include="DAL\Cadastro\dConsole.cs" />
     <Compile Include="DAL\Cadastro\dTipoCliente.cs" />
-	<Compile Include="DAL\Cadastro\dJogo.cs" />
+    <Compile Include="DAL\Cadastro\dJogo.cs" />
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
+    <Compile Include="DAL\Mapper.cs" />
     <Compile Include="DLL\bCidade.cs" />
+    <Compile Include="DLL\bTipoCliente.cs" />
     <Compile Include="DLL\bEstado.cs" />
     <Compile Include="DLL\Cadastro\bConsole.cs" />
     <Compile Include="DLL\Cadastro\bTipoCliente.cs" />
-	 <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
+    <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
       <SubType>Form</SubType>
@@ -137,13 +139,17 @@
     <Compile Include="Migrations\201612152100215_JOgoeConsole.Designer.cs">
       <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
     </Compile>
-	 <Compile Include="Migrations\201612141613513_tabela Jogo.cs" />
+    <Compile Include="Migrations\201612141613513_tabela Jogo.cs" />
     <Compile Include="Migrations\201612141613513_tabela Jogo.Designer.cs">
       <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201612162216274_TipoCliente.cs" />
     <Compile Include="Migrations\201612162216274_TipoCliente.Designer.cs">
       <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612171637050_aaaa.cs" />
+    <Compile Include="Migrations\201612171637050_aaaa.Designer.cs">
+      <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mTipoCliente.cs" />
@@ -199,11 +205,14 @@
     <EmbeddedResource Include="Migrations\201612152100215_JOgoeConsole.resx">
       <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
     </EmbeddedResource>
-	 <EmbeddedResource Include="Migrations\201612141613513_tabela Jogo.resx">
+    <EmbeddedResource Include="Migrations\201612141613513_tabela Jogo.resx">
       <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612162216274_TipoCliente.resx">
       <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612171637050_aaaa.resx">
+      <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

@@ -23,7 +23,7 @@ namespace MaisGamers.DLL.Locacao
                 return _dCliente.InserirCliente(cliente);
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;

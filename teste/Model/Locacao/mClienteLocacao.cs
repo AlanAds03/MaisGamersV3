@@ -38,6 +38,9 @@ namespace MaisGamers.Model.Locacao
         public int cCidade { get; set; }
         public mCidade Cidade { get; set; }
 
+        [NotMapped]
+        public int IDTipoCliente { get; set; }
+
         public string Bairro { get; set; }
 
         public string CEP { get; set; }
