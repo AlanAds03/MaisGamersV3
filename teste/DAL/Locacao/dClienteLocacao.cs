@@ -65,6 +65,7 @@ namespace MaisGamersV2.DAL.Locacao
                 return db.ClienteLocacao
                     .Include(x => x.Estado)
                     .Include(y => y.Cidade)
+                    .Include(z => z.TipoCliente)
                     .Where(x => x.idClienteLocacao == idCLienteLocacao).FirstOrDefault();
                     
             }

@@ -252,6 +252,16 @@ namespace MaisGamers.Formularios.Cadastro
                 txtBairro.Text = cliente.Bairro;
 
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
+                txtTelefone.Text = cliente.Telefone;
+                if(cliente.TipoCliente != null)
+                {
+                    cmbTipoCliente.SelectedValue = cliente.TipoCliente.IDTipoCliente;
+                }
+                else
+                {
+                    cmbTipoCliente.SelectedValue = "";
+                }
+                
 
                 int codigo = 0;
 
@@ -287,6 +297,8 @@ namespace MaisGamers.Formularios.Cadastro
             txtAutoriza.Text = string.Empty;
             txtCpfFilho.Text = string.Empty;
             txtRGFilho.Text = string.Empty;
+            cmbTipoCliente.SelectedValue = string.Empty;
+            txtTelefone.Text = string.Empty;
 
         }
 
