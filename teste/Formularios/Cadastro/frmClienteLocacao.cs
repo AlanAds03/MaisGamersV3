@@ -250,7 +250,8 @@ namespace MaisGamers.Formularios.Cadastro
                 txtNumero.Text = cliente.Numero;
                 txtCEP.Text = cliente.CEP;
                 txtBairro.Text = cliente.Bairro;
-
+                txtTelefone.Text = cliente.Telefone;
+                cmbTipoCliente.SelectedValue = cliente.TipoCliente.IDTipoCliente;
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
                 txtTelefone.Text = cliente.Telefone;
                 if(cliente.TipoCliente != null)
@@ -368,7 +369,10 @@ namespace MaisGamers.Formularios.Cadastro
                 }
                 else
                 {
-                    MessageBox.Show("Registro alteraco com sucesso");
+                    if (Mensagem("Registro alterado com sucesso", CMsgBox.TipoBotoes.OK) == DialogResult.Yes)
+                    {
+
+                    }
                 }
 
             }
@@ -530,7 +534,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
             
 
-            if (Mensagem("Deseja realmente excluir este registro?") == DialogResult.Yes)
+            if (Mensagem("Deseja realmente excluir este registro?",CMsgBox.TipoBotoes.SimNao) == DialogResult.Yes)
             {
                 bClienteLocacao _cli = new bClienteLocacao();
                 _cli.ExcluirCliente(idClienteLocacao);

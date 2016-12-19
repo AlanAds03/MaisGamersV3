@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Frameworks.Classes.CMsgBox;
 
 namespace MaisGamers.Modulos
 {
@@ -30,8 +31,8 @@ namespace MaisGamers.Modulos
         {
             CONSULTA = 1,
             ALTERACAO = 2,
-            NOVO = 3 
-            
+            NOVO = 3
+
 
         }
 
@@ -47,7 +48,16 @@ namespace MaisGamers.Modulos
                 height = Screen.PrimaryScreen.Bounds.Height;
 
                 tab.Left = width / 2 - tab.Width / 2;
-                tab.Height = height - 400;
+
+
+                if (height < 800)
+                {
+                    tab.Height = height - 280;
+                }
+                else
+                {
+                    tab.Height = height - 400;
+                }
 
             }
             catch (Exception ex)
@@ -59,7 +69,7 @@ namespace MaisGamers.Modulos
 
         }
 
-        public static void CentralizaGrupo(System.Windows.Forms.GroupBox group)
+        public static void CentralizaGrupo(System.Windows.Forms.GroupBox group, bool mudarPeloTamnho = true)
         {
 
             int width = 0;
@@ -71,7 +81,20 @@ namespace MaisGamers.Modulos
                 height = Screen.PrimaryScreen.Bounds.Height;
 
                 group.Left = width / 2 - group.Width / 2;
-                group.Top = height - 300;
+
+                if (mudarPeloTamnho == true)
+                {
+
+
+                    if (height < 800)
+                    {
+                        group.Top = height - 220;
+                    }
+                    else
+                    {
+                        group.Top = height - 300;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -86,19 +109,19 @@ namespace MaisGamers.Modulos
         public static bool isDate(string valor)
         {
             DateTime data = new DateTime();
-            return DateTime.TryParse(valor,out data);
+            return DateTime.TryParse(valor, out data);
         }
 
-        public static DialogResult Mensagem(string mensagem)
+        public static DialogResult Mensagem(string mensagem, TipoBotoes botoes)
         {
-            CMsgBox cmsg = new CMsgBox(mensagem);
+            CMsgBox cmsg = new CMsgBox(mensagem, botoes);
             cmsg.ShowDialog();
 
             return cmsg.result;
         }
 
 
-        public static  EnderecoCEP RetornoCEP(string cep)
+        public static EnderecoCEP RetornoCEP(string cep)
         {
             WebClient web = new WebClient();
 
