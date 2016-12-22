@@ -25,6 +25,10 @@ namespace MaisGamers.Model
 
         public DbSet<mTipoCliente> TipoCliente{ get; set; }
 
+        public DbSet<mTipoJogo> TipoJogo { get; set; }
+
+        public DbSet<mCaixa> Caixa { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

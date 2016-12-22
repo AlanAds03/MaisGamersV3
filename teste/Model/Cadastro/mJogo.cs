@@ -12,10 +12,19 @@ namespace MaisGamers.Model.Cadastro
     public class mJogo
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDJogo { get; set; }
-        public int NomeJogo { get; set; }
+        public string NomeJogo { get; set; }
         public mConsole IDConsole { get; set; }
+        [NotMapped]
+        public int cIdConsole { get; set; }
+
+        [NotMapped]
+        public string NomeConsolexx { get; set; }
+
         public mTipoJogo IDTipoJogo { get; set; }
+        [NotMapped]
+        public int cIDTipoJogo { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public int Quantidade { get; set; }

@@ -15,15 +15,36 @@ namespace MaisGamers.DLL.Cadastro.Cadastro
 
             try
             {
-                using (var d = new dJogo())
-                {
-                    return d.IncluirJogo(jogo);
-                }
+                dJogo d = new dJogo();
+
+                return d.IncluirJogo(jogo);
+
             }
             catch (Exception ex)
             {
                 return false;
             }
         }
+
+        public List<mJogo> PesquisaJogo(mJogo jogo, string order)
+        {
+            try
+            {
+                dJogo d = new dJogo();
+               
+
+                return d.PesquisaJogo(jogo, order);
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-
+using System.Xml.Linq;
 
 namespace Frameworks.Componentes
 {
@@ -18,6 +18,9 @@ namespace Frameworks.Componentes
         {
 
             Int32 iCont = 0;
+            this.Items.Clear();
+            this.Columns.Clear();
+
 
             foreach (var x in _list)
             {
@@ -25,7 +28,7 @@ namespace Frameworks.Componentes
                 PropertyInfo[] props = tipo.GetProperties();
                 foreach (var pro in props)
                 {
-                    if (pro.Name.Substring(0, 2) == "id")
+                    if (pro.Name.Substring(0, 2).ToUpper().Contains("ID"))
                     {
                         this.Columns.Add("");
                     }
@@ -37,23 +40,26 @@ namespace Frameworks.Componentes
 
                 }
 
+                break;
+
             }
 
-            ListViewItem item = new ListViewItem();
+           
 
 
             foreach (var x in _list)
             {
                 Type tipo = x.GetType();
                 PropertyInfo[] props = tipo.GetProperties();
-
+                ListViewItem item = new ListViewItem();
+                iCont = 0;
                 foreach (var pro in props)
                 {
                     var valor = pro.GetValue(x, null);
 
 
 
-                    if (pro.Name.Contains("id"))
+                    if (pro.Name.ToUpper().Contains("ID"))
                     {
                         this.Chave = Convert.ToInt32(valor);
                     }
@@ -79,11 +85,11 @@ namespace Frameworks.Componentes
                     iCont += 1;
 
                 }
-
+                this.Items.Add(item);
             }
 
 
-            this.Items.Add(item);
+           
 
             this.CheckBoxes = true;
             this.View = View.Details;
@@ -103,6 +109,18 @@ namespace Frameworks.Componentes
             List<T> _list = new List<T>();
             var serializer = new JavaScriptSerializer();
             _list = serializer.Deserialize<List<T>>(json);
+
+
+           // dynamic data = serializer.Deserialize(json, typeof(object));
+            
+            //Dictionary<string,string> data = serializer.Deserialize<Dictionary<string,string>> (json);
+
+            //foreach (var i in data)
+            //{
+            //    //string column = i["NomeJogo"].to;
+            //    //string value = i[]
+            //}
+
 
             Int32 iCont = 0;
 

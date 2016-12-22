@@ -43,9 +43,6 @@ namespace Frameworks.Classes
             }
 
             util.CentralizaGrupo(grpBotoes,false);
-            
-            
-            
 
             lblMensagem.Text = mensagem;
             int width;

@@ -24,6 +24,23 @@ namespace teste.Migrations
                 new MaisGamers.DAL.Cadastro.mTipoCliente { IDTipoCliente = 4, TipoCliente = "Comprador" }
 
                 );
+
+            context.Console.AddOrUpdate(
+                p=> p.idConsole, 
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 1 , NomeConsole = "PS4"},
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 4, NomeConsole = "PS3" },
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3, NomeConsole = "PS2" },
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 2 , NomeConsole = "Xone"},
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3 , NomeConsole  = "Xbox 360"}
+                
+
+                );
+
+            context.TipoJogo.AddOrUpdate(
+                p => p.IDTipoJogo , 
+                new MaisGamers.Model.Cadastro.mTipoJogo { IDTipoJogo = 1 ,NomeTipoJogo= "Física"},
+                new MaisGamers.Model.Cadastro.mTipoJogo { IDTipoJogo = 2 , NomeTipoJogo = "Digital" }
+                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

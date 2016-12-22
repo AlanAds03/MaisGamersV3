@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MaisGamers.Model.Cadastro
 {
+    [Table("TipoJogo")]
     public class mTipoJogo
     {
+        [Key]
         public int IDTipoJogo { get; set; }
-        public int NomeTipoJogo { get; set; }
+        public string NomeTipoJogo { get; set; }
     }
 }

@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbConsolePesquisa = new Frameworks.Componentes.SuperComboBox();
-            this.superTextBox1 = new Frameworks.Componentes.SuperTextBox();
-            this.superLV1 = new Frameworks.Componentes.SuperLV();
+            this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
+            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
@@ -46,6 +46,16 @@
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrecoVenda = new Frameworks.Componentes.SuperTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPrecoPago = new Frameworks.Componentes.SuperTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSenha = new Frameworks.Componentes.SuperTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmail = new Frameworks.Componentes.SuperTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbTipoJogo = new Frameworks.Componentes.SuperComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtQuantidade = new Frameworks.Componentes.SuperTextBox();
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
@@ -87,24 +97,24 @@
             this.cmbConsolePesquisa.Size = new System.Drawing.Size(121, 21);
             this.cmbConsolePesquisa.TabIndex = 2;
             // 
-            // superTextBox1
+            // txtPesqNome
             // 
-            this.superTextBox1.Location = new System.Drawing.Point(70, 19);
-            this.superTextBox1.Name = "superTextBox1";
-            this.superTextBox1.Size = new System.Drawing.Size(277, 20);
-            this.superTextBox1.TabIndex = 3;
+            this.txtPesqNome.Location = new System.Drawing.Point(70, 19);
+            this.txtPesqNome.Name = "txtPesqNome";
+            this.txtPesqNome.Size = new System.Drawing.Size(277, 20);
+            this.txtPesqNome.TabIndex = 3;
             // 
-            // superLV1
+            // lvPesquisa
             // 
-            this.superLV1.Location = new System.Drawing.Point(19, 19);
-            this.superLV1.Name = "superLV1";
-            this.superLV1.Size = new System.Drawing.Size(727, 297);
-            this.superLV1.TabIndex = 5;
-            this.superLV1.UseCompatibleStateImageBehavior = false;
+            this.lvPesquisa.Location = new System.Drawing.Point(19, 19);
+            this.lvPesquisa.Name = "lvPesquisa";
+            this.lvPesquisa.Size = new System.Drawing.Size(727, 297);
+            this.lvPesquisa.TabIndex = 5;
+            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
             // 
             // grpFiltro
             // 
-            this.grpFiltro.Controls.Add(this.superTextBox1);
+            this.grpFiltro.Controls.Add(this.txtPesqNome);
             this.grpFiltro.Controls.Add(this.label1);
             this.grpFiltro.Controls.Add(this.label2);
             this.grpFiltro.Controls.Add(this.cmbConsolePesquisa);
@@ -127,10 +137,11 @@
             this.button4.Text = "Pesquisar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // grpGrid
             // 
-            this.grpGrid.Controls.Add(this.superLV1);
+            this.grpGrid.Controls.Add(this.lvPesquisa);
             this.grpGrid.Location = new System.Drawing.Point(18, 99);
             this.grpGrid.Name = "grpGrid";
             this.grpGrid.Size = new System.Drawing.Size(762, 322);
@@ -144,7 +155,7 @@
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.button2);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Location = new System.Drawing.Point(34, 462);
+            this.grpBotoes.Location = new System.Drawing.Point(136, 493);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(490, 77);
             this.grpBotoes.TabIndex = 8;
@@ -173,6 +184,7 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -216,7 +228,7 @@
             // 
             this.tabControl1.Controls.Add(this.tpPesquisa);
             this.tabControl1.Controls.Add(this.tpCadastro);
-            this.tabControl1.Location = new System.Drawing.Point(34, 3);
+            this.tabControl1.Location = new System.Drawing.Point(40, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(806, 453);
@@ -247,6 +259,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPrecoVenda);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtPrecoPago);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmbTipoJogo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -255,10 +277,91 @@
             this.groupBox1.Controls.Add(this.cmbConsole);
             this.groupBox1.Location = new System.Drawing.Point(34, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(682, 147);
+            this.groupBox1.Size = new System.Drawing.Size(682, 371);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
+            // 
+            // txtPrecoVenda
+            // 
+            this.txtPrecoVenda.Location = new System.Drawing.Point(86, 235);
+            this.txtPrecoVenda.Name = "txtPrecoVenda";
+            this.txtPrecoVenda.Size = new System.Drawing.Size(123, 20);
+            this.txtPrecoVenda.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Preço Venda:";
+            // 
+            // txtPrecoPago
+            // 
+            this.txtPrecoPago.Location = new System.Drawing.Point(86, 204);
+            this.txtPrecoPago.Name = "txtPrecoPago";
+            this.txtPrecoPago.Size = new System.Drawing.Size(123, 20);
+            this.txtPrecoPago.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 204);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Preço Pago:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(86, 143);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(212, 20);
+            this.txtSenha.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(39, 146);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Senha:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(86, 117);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(295, 20);
+            this.txtEmail.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Email:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tipo Jogo:";
+            // 
+            // cmbTipoJogo
+            // 
+            this.cmbTipoJogo.FormattingEnabled = true;
+            this.cmbTipoJogo.Location = new System.Drawing.Point(86, 87);
+            this.cmbTipoJogo.Name = "cmbTipoJogo";
+            this.cmbTipoJogo.Size = new System.Drawing.Size(156, 21);
+            this.cmbTipoJogo.TabIndex = 7;
             // 
             // label3
             // 
@@ -271,7 +374,7 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(86, 91);
+            this.txtQuantidade.Location = new System.Drawing.Point(86, 174);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(68, 20);
             this.txtQuantidade.TabIndex = 5;
@@ -286,7 +389,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 94);
+            this.label5.Location = new System.Drawing.Point(15, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 4;
@@ -295,7 +398,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 62);
+            this.label4.Location = new System.Drawing.Point(32, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 2;
@@ -304,7 +407,7 @@
             // cmbConsole
             // 
             this.cmbConsole.FormattingEnabled = true;
-            this.cmbConsole.Location = new System.Drawing.Point(86, 59);
+            this.cmbConsole.Location = new System.Drawing.Point(86, 57);
             this.cmbConsole.Name = "cmbConsole";
             this.cmbConsole.Size = new System.Drawing.Size(156, 21);
             this.cmbConsole.TabIndex = 3;
@@ -314,9 +417,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1057, 560);
+            this.ClientSize = new System.Drawing.Size(1057, 585);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.grpBotoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadJogo";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -342,8 +447,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Frameworks.Componentes.SuperComboBox cmbConsolePesquisa;
-        private Frameworks.Componentes.SuperTextBox superTextBox1;
-        private Frameworks.Componentes.SuperLV superLV1;
+        private Frameworks.Componentes.SuperTextBox txtPesqNome;
+        private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.GroupBox grpFiltro;
         private System.Windows.Forms.GroupBox grpGrid;
         private System.Windows.Forms.Button button4;
@@ -363,5 +468,15 @@
         private Frameworks.Componentes.SuperTextBox txtQuantidade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private Frameworks.Componentes.SuperComboBox cmbTipoJogo;
+        private Frameworks.Componentes.SuperTextBox txtEmail;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private Frameworks.Componentes.SuperTextBox txtSenha;
+        private Frameworks.Componentes.SuperTextBox txtPrecoPago;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private Frameworks.Componentes.SuperTextBox txtPrecoVenda;
     }
 }

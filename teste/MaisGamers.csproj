@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Cadastro\dTipoJogo.cs" />
     <Compile Include="DAL\Cadastro\dConsole.cs" />
     <Compile Include="DAL\Cadastro\dTipoCliente.cs" />
     <Compile Include="DAL\Cadastro\dJogo.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="DLL\bEstado.cs" />
     <Compile Include="DLL\Cadastro\bConsole.cs" />
     <Compile Include="DLL\Cadastro\bTipoCliente.cs" />
+    <Compile Include="DLL\Cadastro\Cadastro\bTipoJogo.cs" />
     <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
@@ -151,7 +153,36 @@
     <Compile Include="Migrations\201612171637050_aaaa.Designer.cs">
       <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612201514395_adicionaidentityJogo.cs" />
+    <Compile Include="Migrations\201612201514395_adicionaidentityJogo.Designer.cs">
+      <DependentUpon>201612201514395_adicionaidentityJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201520152_adicionaTipoJogo.cs" />
+    <Compile Include="Migrations\201612201520152_adicionaTipoJogo.Designer.cs">
+      <DependentUpon>201612201520152_adicionaTipoJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201522194_alteraTipoJogo.cs" />
+    <Compile Include="Migrations\201612201522194_alteraTipoJogo.Designer.cs">
+      <DependentUpon>201612201522194_alteraTipoJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612211243581_alterarTipoNomeJogo.cs" />
+    <Compile Include="Migrations\201612211243581_alterarTipoNomeJogo.Designer.cs">
+      <DependentUpon>201612211243581_alterarTipoNomeJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612211705597_tabelaCaixa.cs" />
+    <Compile Include="Migrations\201612211705597_tabelaCaixa.Designer.cs">
+      <DependentUpon>201612211705597_tabelaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612211706372_tabelaCaixa2.cs" />
+    <Compile Include="Migrations\201612211706372_tabelaCaixa2.Designer.cs">
+      <DependentUpon>201612211706372_tabelaCaixa2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612211707475_tabelaCaixa21.cs" />
+    <Compile Include="Migrations\201612211707475_tabelaCaixa21.Designer.cs">
+      <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cadastro\mCaixa.cs" />
     <Compile Include="Model\Cadastro\mTipoCliente.cs" />
     <Compile Include="Model\Cadastro\mConsole.cs" />
     <Compile Include="Model\Cadastro\mHistoricoEmailJogo.cs" />
@@ -213,6 +244,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612171637050_aaaa.resx">
       <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201514395_adicionaidentityJogo.resx">
+      <DependentUpon>201612201514395_adicionaidentityJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201520152_adicionaTipoJogo.resx">
+      <DependentUpon>201612201520152_adicionaTipoJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201522194_alteraTipoJogo.resx">
+      <DependentUpon>201612201522194_alteraTipoJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612211243581_alterarTipoNomeJogo.resx">
+      <DependentUpon>201612211243581_alterarTipoNomeJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612211705597_tabelaCaixa.resx">
+      <DependentUpon>201612211705597_tabelaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612211706372_tabelaCaixa2.resx">
+      <DependentUpon>201612211706372_tabelaCaixa2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612211707475_tabelaCaixa21.resx">
+      <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

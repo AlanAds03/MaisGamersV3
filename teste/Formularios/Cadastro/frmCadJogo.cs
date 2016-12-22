@@ -12,6 +12,7 @@ using MaisGamers.DLL;
 using MaisGamers.Model.Cadastro;
 using Frameworks.Componentes;
 using MaisGamers.DLL.Cadastro;
+using MaisGamers.DLL.Cadastro.Cadastro;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -31,6 +32,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             CarregaComboConsole(cmbConsolePesquisa);
             CarregaComboConsole(cmbConsole);
+            CarregaComboTipoJogo(cmbTipoJogo);
         }
 
         private void CarregaComboConsole(SuperComboBox combo)
@@ -51,6 +53,26 @@ namespace MaisGamers.Formularios.Cadastro
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void CarregaComboTipoJogo(SuperComboBox combo)
+        {
+            try
+            {
+                bTipoJogo _bTipo = new bTipoJogo();
+
+                List<mTipoJogo> Tipo = new List<mTipoJogo>();
+
+                Tipo = _bTipo.CarregaTipoJogo();
+                combo.CarregaCombo(Tipo, "IDTipoJogo", "NomeTipoJogo", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -95,5 +117,91 @@ namespace MaisGamers.Formularios.Cadastro
                 atualizaTela();
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                bJogo _bJogo = new bJogo();
+                mJogo jogo = new mJogo();
+
+                jogo.NomeJogo = txtNome.Text;
+                jogo.cIdConsole = Convert.ToInt32(cmbConsole.SelectedValue);
+                jogo.cIDTipoJogo = Convert.ToInt32(cmbTipoJogo.SelectedValue);
+                jogo.Email = txtEmail.Text;
+                jogo.Senha = txtSenha.Text;
+                if (!string.IsNullOrEmpty(txtQuantidade.Text))
+                {
+                    jogo.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                }
+                
+                jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
+                jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
+                if (_bJogo.InserirJogo(jogo))
+                {
+                    MessageBox.Show("Jogo inserido com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Jogo inserido com erro");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            
+
+            PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+        }
+
+
+        private void PesquisaGrid(string NomeJogo, string Console)
+        {
+
+
+            bJogo _bJogo = new bJogo();
+            mJogo jogo = new mJogo();
+            List<mJogo> Jogos = new List<mJogo>();
+            string json;
+
+            try
+            {
+                
+
+                if (!string.IsNullOrEmpty(NomeJogo))
+                {
+                    jogo.NomeJogo = NomeJogo;
+                }
+
+                if (!string.IsNullOrEmpty(Console))
+                {
+                    jogo.cIdConsole = Convert.ToInt32(Console);
+                }
+
+
+        
+                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
+                
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+
+
+
+        }
+
     }
 }
