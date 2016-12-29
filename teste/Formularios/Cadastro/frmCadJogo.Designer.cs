@@ -96,6 +96,7 @@
             this.cmbConsolePesquisa.Name = "cmbConsolePesquisa";
             this.cmbConsolePesquisa.Size = new System.Drawing.Size(121, 21);
             this.cmbConsolePesquisa.TabIndex = 2;
+            this.cmbConsolePesquisa.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
             // 
             // txtPesqNome
             // 

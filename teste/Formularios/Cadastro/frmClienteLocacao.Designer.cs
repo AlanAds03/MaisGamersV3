@@ -55,6 +55,10 @@
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
+            this.cmbTipoCliente = new Frameworks.Componentes.SuperComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtTelefone = new Frameworks.Componentes.SuperTextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.chkBusca = new System.Windows.Forms.CheckBox();
             this.txtCpfFilho = new System.Windows.Forms.MaskedTextBox();
             this.pnlCodigo = new System.Windows.Forms.Panel();
@@ -88,10 +92,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtTelefone = new Frameworks.Componentes.SuperTextBox();
-            this.cmbTipoCliente = new Frameworks.Componentes.SuperComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.superTextBox1 = new Frameworks.Componentes.SuperTextBox();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -386,6 +387,7 @@
             // 
             // grpCadastra
             // 
+            this.grpCadastra.Controls.Add(this.superTextBox1);
             this.grpCadastra.Controls.Add(this.cmbTipoCliente);
             this.grpCadastra.Controls.Add(this.label20);
             this.grpCadastra.Controls.Add(this.txtTelefone);
@@ -426,6 +428,42 @@
             this.grpCadastra.TabStop = false;
             this.grpCadastra.Text = "Cadastro";
             this.grpCadastra.Enter += new System.EventHandler(this.grpCadastra_Enter);
+            // 
+            // cmbTipoCliente
+            // 
+            this.cmbTipoCliente.Carregado = false;
+            this.cmbTipoCliente.FormattingEnabled = true;
+            this.cmbTipoCliente.Location = new System.Drawing.Point(409, 322);
+            this.cmbTipoCliente.Name = "cmbTipoCliente";
+            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 21);
+            this.cmbTipoCliente.TabIndex = 35;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(406, 302);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 17);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Tipo Cliente:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(449, 134);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(114, 20);
+            this.txtTelefone.TabIndex = 34;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(446, 114);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 17);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Telefone:";
             // 
             // chkBusca
             // 
@@ -602,6 +640,7 @@
             // 
             // cmbCidade
             // 
+            this.cmbCidade.Carregado = false;
             this.cmbCidade.FormattingEnabled = true;
             this.cmbCidade.Location = new System.Drawing.Point(177, 278);
             this.cmbCidade.Name = "cmbCidade";
@@ -620,6 +659,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.Carregado = false;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(22, 278);
             this.cmbEstado.Name = "cmbEstado";
@@ -712,40 +752,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label19
+            // superTextBox1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(446, 114);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 17);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Telefone:";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(449, 134);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(114, 20);
-            this.txtTelefone.TabIndex = 34;
-            // 
-            // cmbTipoCliente
-            // 
-            this.cmbTipoCliente.FormattingEnabled = true;
-            this.cmbTipoCliente.Location = new System.Drawing.Point(409, 322);
-            this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 21);
-            this.cmbTipoCliente.TabIndex = 35;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(406, 302);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(100, 17);
-            this.label20.TabIndex = 36;
-            this.label20.Text = "Tipo Cliente:";
+            this.superTextBox1.Location = new System.Drawing.Point(664, 91);
+            this.superTextBox1.Name = "superTextBox1";
+            this.superTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.superTextBox1.TabIndex = 37;
             // 
             // frmClienteLocacao
             // 
@@ -846,5 +858,6 @@
         private System.Windows.Forms.Label label19;
         private Frameworks.Componentes.SuperComboBox cmbTipoCliente;
         private System.Windows.Forms.Label label20;
+        private Frameworks.Componentes.SuperTextBox superTextBox1;
     }
 }

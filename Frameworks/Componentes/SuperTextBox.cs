@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace Frameworks.Componentes
 {
-    public class SuperTextBox : System.Windows.Forms.TextBox 
+    public class SuperTextBox : System.Windows.Forms.TextBox
     {
-        public void CarregarLV()
+        private void InitializeComponent()
         {
+            this.SuspendLayout();
+            // 
+            // SuperTextBox
+            // 
+            this.FontHeight = 30;
+            this.ResumeLayout(false);
 
         }
     }

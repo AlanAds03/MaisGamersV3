@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -20,51 +21,106 @@ namespace Frameworks.Componentes
             Int32 iCont = 0;
             this.Items.Clear();
             this.Columns.Clear();
-
+            string colunasArray = "";
+            Char delimit = ';';
+            string colunaRenomeada = "";
+            int tamanhoColuna = 0;
 
             foreach (var x in _list)
             {
                 Type tipo = x.GetType();
                 PropertyInfo[] props = tipo.GetProperties();
+
                 foreach (var pro in props)
                 {
-                    if (pro.Name.Substring(0, 2).ToUpper().Contains("ID"))
+                    if (pro.Name == "ColunasGrid")
                     {
-                        this.Columns.Add("");
-                    }
-                    else
-                    {
-                        this.Columns.Add(pro.Name);
-                    }
+                        colunasArray = pro.GetValue(x, null).ToString();
 
+                        string[] colunas = pro.GetValue(x, null).ToString().Split(delimit);
 
+                        foreach (string colu in colunas)
+                        {
+
+                            Type tipoaa = x.GetType();
+                            PropertyInfo[] propsaa = tipo.GetProperties();
+
+                            foreach (PropertyInfo info in propsaa.Where(u => u.Name == colu))
+                            {
+                                if (info.Name == colu)
+                                {
+                                    foreach (CustomAttributeData data in info.CustomAttributes)
+                                    {
+                                        if (data.AttributeType.Name == "DisplayAttribute")
+                                        {
+                                            foreach (CustomAttributeNamedArgument argumentos in data.NamedArguments)
+                                            {
+                                                if (argumentos.MemberName == "ShortName")
+                                                {
+                                                    tamanhoColuna = Convert.ToInt32(argumentos.TypedValue.Value.ToString());
+                                                }
+                                                if (argumentos.MemberName == "Description")
+                                                {
+                                                    colunaRenomeada = argumentos.TypedValue.Value.ToString();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (colu.ToUpper().Contains("ID"))
+                            {
+                                this.Columns.Add("").Width = 22;
+                            }
+                            else
+                            {
+                                if (string.IsNullOrEmpty(colunaRenomeada))
+                                {
+                                    this.Columns.Add(colu);
+                                }
+                                else
+                                {
+                                    if (tamanhoColuna != 0)
+                                    {
+                                        this.Columns.Add(colunaRenomeada).Width = tamanhoColuna;
+                                    }
+                                    else
+                                    {
+                                        this.Columns.Add(colunaRenomeada);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-
                 break;
-
             }
 
-           
-
-
             foreach (var x in _list)
             {
                 Type tipo = x.GetType();
+                string[] colunasx = colunasArray.Split(delimit);
                 PropertyInfo[] props = tipo.GetProperties();
-                ListViewItem item = new ListViewItem();
+
                 iCont = 0;
-                foreach (var pro in props)
+
+                ListViewItem item = new ListViewItem();
+
+                foreach (string col in colunasx)
                 {
-                    var valor = pro.GetValue(x, null);
+                    if (string.IsNullOrEmpty(col))
+                    {
+                        continue;
+                    }
+                    PropertyInfo a = props.Where(y => y.Name == col).First();
 
+                    var valor = a.GetValue(x, null);
 
-
-                    if (pro.Name.ToUpper().Contains("ID"))
+                    if (a.Name.ToUpper().Contains("ID"))
                     {
                         this.Chave = Convert.ToInt32(valor);
                     }
-
-
 
                     if (iCont == 0)
                     {
@@ -72,7 +128,6 @@ namespace Frameworks.Componentes
                         {
                             item.Text = valor.ToString();
                         }
-
                     }
                     else
                     {
@@ -83,19 +138,12 @@ namespace Frameworks.Componentes
                     }
 
                     iCont += 1;
-
                 }
                 this.Items.Add(item);
             }
 
-
-           
-
             this.CheckBoxes = true;
             this.View = View.Details;
-
-
-
 
         }
 
@@ -111,8 +159,8 @@ namespace Frameworks.Componentes
             _list = serializer.Deserialize<List<T>>(json);
 
 
-           // dynamic data = serializer.Deserialize(json, typeof(object));
-            
+            // dynamic data = serializer.Deserialize(json, typeof(object));
+
             //Dictionary<string,string> data = serializer.Deserialize<Dictionary<string,string>> (json);
 
             //foreach (var i in data)

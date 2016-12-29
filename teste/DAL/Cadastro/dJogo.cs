@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Data.Entity;
 
 namespace MaisGamers.DAL
 {
@@ -21,7 +22,11 @@ namespace MaisGamers.DAL
             {
                 using (var db = new Contexto())
                 {
-                    var a = (from p in db.Jogo where p.NomeJogo == _jogo.NomeJogo && p.IDConsole == _jogo.IDConsole select p).ToList();
+                    var a = (from p in db.Jogo
+                             where p.NomeJogo == _jogo.NomeJogo && p.IDConsole == _jogo.IDConsole select p ).ToList();
+
+                    a.Select(x => x.ColunasGrid = "NomeConsole;IDJogo");
+
                     return a;
                 }
             }
@@ -102,10 +107,34 @@ namespace MaisGamers.DAL
                     _Console = db.Console.Find(jogo.cIdConsole);
                 }
 
-                var listJogo = db.Jogo.Where(x => x.NomeJogo.Contains(jogo.NomeJogo));
- 
+                //List<mJogo> listJogo = (from a in db.Jogo.Include("IDConsole").Include("IDTipoJogo")
+                //                        //join b in db.Console on a.IDConsole.idConsole equals b.idConsole
+                //                        //where (a.NomeJogo.Contains((string.IsNullOrEmpty(jogo.NomeJogo) ? a.NomeJogo : jogo.NomeJogo))) //&& 
+                //                               //b.idConsole == 1)
 
-                return listJogo.ToList();
+                //                        select a).ToList();
+
+
+
+                //List<mJogo> listJogo = (from a in db.Jogo
+                //                       join b in db.TipoJogo on a.IDTipoJogo equals b
+                //                       join c in db.Console on a.IDConsole equals c
+                //                       select a).ToList();
+
+                List<mJogo> listJogo = db.Jogo
+                          .Include(x => x.IDTipoJogo)
+                          .Include(y => y.IDConsole)
+                          .Where(z=> z.NomeJogo.Contains((string.IsNullOrEmpty(jogo.NomeJogo) ? z.NomeJogo : jogo.NomeJogo)))
+                          .Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
+                          .ToList();
+
+
+                List<mJogo> nova = new List<mJogo>();
+
+                 nova = listJogo.Select(x => { x.ColunasGrid = "IDJogo;NomeJogo;NomeConsolexx;PrecoVenda;rTipoJogo;"; x.NomeConsolexx = x.IDConsole.NomeConsole;x.rTipoJogo = x.IDTipoJogo.NomeTipoJogo; return x; }).ToList();
+
+
+                return nova.ToList();
 
 
             }

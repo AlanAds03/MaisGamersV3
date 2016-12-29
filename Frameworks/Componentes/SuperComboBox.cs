@@ -15,6 +15,8 @@ namespace Frameworks.Componentes
             public string rTexto { get; set; }
         }
 
+        public bool Carregado { get; set; }
+
         public enum PrimeiraLinha
         {
             Todos = 0,
@@ -25,6 +27,7 @@ namespace Frameworks.Componentes
         public void CarregaCombo<T>(List<T> objetos, string id, string value, PrimeiraLinha _primeira)
         {
 
+            Carregado = false; 
 
             int iContador = 0;
 
@@ -75,6 +78,8 @@ namespace Frameworks.Componentes
                 this.DisplayMember = value;
 
 
+
+                Carregado = true;
             }
             catch (Exception)
             {

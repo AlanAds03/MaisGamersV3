@@ -148,10 +148,10 @@ namespace MaisGamers.Formularios.Cadastro
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -187,8 +187,6 @@ namespace MaisGamers.Formularios.Cadastro
                     jogo.cIdConsole = Convert.ToInt32(Console);
                 }
 
-
-        
                     lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
                 
             }
@@ -203,5 +201,13 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
+        private void cmbConsolePesquisa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbConsolePesquisa.Carregado == true)
+            {
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+            }
+
+        }
     }
 }
