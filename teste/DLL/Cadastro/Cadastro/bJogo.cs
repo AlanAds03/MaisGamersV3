@@ -12,7 +12,6 @@ namespace MaisGamers.DLL.Cadastro.Cadastro
     {
         public bool InserirJogo(mJogo jogo)
         {
-
             try
             {
                 dJogo d = new dJogo();

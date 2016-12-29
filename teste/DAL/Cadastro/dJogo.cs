@@ -25,7 +25,7 @@ namespace MaisGamers.DAL
                     var a = (from p in db.Jogo
                              where p.NomeJogo == _jogo.NomeJogo && p.IDConsole == _jogo.IDConsole select p ).ToList();
 
-                    a.Select(x => x.ColunasGrid = "NomeConsole;IDJogo");
+                    a.Select(x => x.ColunasGrid = "NomeConsole;IDJogo ");
 
                     return a;
                 }

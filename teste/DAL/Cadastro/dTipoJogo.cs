@@ -19,7 +19,6 @@ namespace MaisGamers.DAL
             {
                 using (var db = new Contexto())
                 {
-
                     var a =  (from p in db.TipoJogo select p).ToList();
                     return a;
                 }

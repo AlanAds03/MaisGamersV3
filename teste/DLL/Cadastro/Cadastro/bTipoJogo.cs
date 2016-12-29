@@ -12,7 +12,6 @@ namespace MaisGamers.DLL.Cadastro
     {
         public List<mTipoJogo> CarregaTipoJogo()
         {
-
             try
             {
                 dTipoJogo _dTipoJogo = new dTipoJogo();
