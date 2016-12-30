@@ -37,7 +37,7 @@ namespace MaisGamers.DLL.Locacao
             return _dCliente.ObterCliente(idCLienteLocacao);
 
         }
-        public  string PesquisaCliente (mClienteLocacao cliente, string order)
+        public  List<mClienteLocacao> PesquisaCliente (mClienteLocacao cliente, string order)
         {
             try
             {

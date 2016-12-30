@@ -50,8 +50,28 @@ namespace MaisGamers.DAL
 
                     Jogo.IDTipoJogo = TipoJogo;
                     Jogo.IDConsole = Console;
-                    db.Jogo.Add(Jogo);
-                    db.SaveChanges();
+
+
+
+                    
+                    if (Jogo.IDJogo != 0)
+                    {
+                        mJogo JogoDB = db.Jogo.Find(Jogo.IDJogo);
+                        MapObject(ref Jogo, ref JogoDB);
+                        db.Entry(JogoDB).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        db.Jogo.Add(Jogo);
+                        db.SaveChanges();
+                    }
+
+
+
+
+
+
 
                     return true;
                 }
@@ -61,6 +81,19 @@ namespace MaisGamers.DAL
                 return false;
             }
 
+        }
+
+        internal mJogo PesquisaJogoID(int iDJogo)
+        {
+
+            using (var db = new Contexto())
+            {
+                return db.Jogo
+                    .Include(x => x.IDConsole)
+                    .Include(z=> z.IDTipoJogo)
+                    .Where(y=> y.IDJogo == iDJogo).FirstOrDefault();
+
+            }
         }
 
         public bool InserirJogo(mJogo jogo)
@@ -102,11 +135,7 @@ namespace MaisGamers.DAL
             try
             {
 
-                if (jogo.cIdConsole != 0)
-                {
-                    _Console = db.Console.Find(jogo.cIdConsole);
-                }
-
+             
                 //List<mJogo> listJogo = (from a in db.Jogo.Include("IDConsole").Include("IDTipoJogo")
                 //                        //join b in db.Console on a.IDConsole.idConsole equals b.idConsole
                 //                        //where (a.NomeJogo.Contains((string.IsNullOrEmpty(jogo.NomeJogo) ? a.NomeJogo : jogo.NomeJogo))) //&& 
@@ -141,6 +170,35 @@ namespace MaisGamers.DAL
             catch (Exception ex)
             {
                 return null;
+            }
+
+        }
+
+
+        public void MapObject(ref mJogo source, ref mJogo destination)
+        {
+
+            try
+            {
+                Type sourceType = source.GetType();
+                Type destinationTipe = destination.GetType();
+
+                var sourceProperties = sourceType.GetProperties();
+                var destinationProperties = destinationTipe.GetProperties();
+
+                var commonProperties = from sp in sourceProperties
+                                       join dp in destinationProperties on new { sp.Name, sp.PropertyType } equals
+                                                                           new { dp.Name, dp.PropertyType }
+                                       select new { sp, dp };
+                foreach (var match in commonProperties)
+                {
+                    match.dp.SetValue(destination, match.sp.GetValue(source, null), null);
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+
             }
 
         }

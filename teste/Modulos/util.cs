@@ -112,9 +112,9 @@ namespace MaisGamers.Modulos
             return DateTime.TryParse(valor, out data);
         }
 
-        public static DialogResult Mensagem(string mensagem, TipoBotoes botoes)
+        public static DialogResult Mensagem(string mensagem, TipoBotoes botoes, TipoErro tipoErro)
         {
-            CMsgBox cmsg = new CMsgBox(mensagem, botoes);
+            CMsgBox cmsg = new CMsgBox(mensagem, botoes, tipoErro);
             cmsg.ShowDialog();
 
             return cmsg.result;
@@ -125,20 +125,33 @@ namespace MaisGamers.Modulos
         {
             WebClient web = new WebClient();
 
-            web.Encoding = Encoding.UTF8;
-            string retorno;
-            List<string> listretorno = new List<string>();
-            EnderecoCEP _endereco = new EnderecoCEP();
-
-            web.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-
-            retorno = web.DownloadString("https://viacep.com.br/ws/" + cep + "/json/");
-
-            _endereco = Newtonsoft.Json.JsonConvert.DeserializeObject<EnderecoCEP>(retorno);
+            try
+            {
 
 
 
-            return _endereco;
+                web.Encoding = Encoding.UTF8;
+                string retorno;
+                List<string> listretorno = new List<string>();
+                EnderecoCEP _endereco = new EnderecoCEP();
+
+                web.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+
+                retorno = web.DownloadString("https://viacep.com.br/ws/" + cep + "/json/");
+
+                _endereco = Newtonsoft.Json.JsonConvert.DeserializeObject<EnderecoCEP>(retorno);
+
+
+                return _endereco;
+            }
+
+            catch (Exception ex)
+            {
+                Mensagem("CEP inválido ou não encontrado", TipoBotoes.OK,TipoErro.Erro);
+                return null;
+
+
+            }
         }
 
 

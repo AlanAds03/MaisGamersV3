@@ -13,13 +13,14 @@ using MaisGamers.Model.Cadastro;
 using Frameworks.Componentes;
 using MaisGamers.DLL.Cadastro;
 using MaisGamers.DLL.Cadastro.Cadastro;
+using static MaisGamers.Modulos.util;
 
 namespace MaisGamers.Formularios.Cadastro
 {
     public partial class frmCadJogo : Form
     {
         public util.ModoTela modo_tela;
-
+        public int idJogo;
         public frmCadJogo()
         {
             InitializeComponent();
@@ -87,7 +88,33 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
+
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+
+
             }
+            else if (modo_tela == util.ModoTela.ALTERACAO)
+            {
+                tabControl1.SelectTab("tpCadastro");
+                btnFechar.Text = "Voltar";
+
+                bJogo _bJogo = new bJogo();
+                mJogo _mJogo = new mJogo();
+
+                _mJogo = _bJogo.PesquisaJogoID(idJogo);
+
+                txtNome.Text = _mJogo.NomeJogo;
+                cmbConsole.SelectedValue = _mJogo.IDConsole.idConsole;
+                cmbTipoJogo.SelectedValue = _mJogo.IDTipoJogo.IDTipoJogo;
+                txtEmail.Text = _mJogo.Email;
+                txtSenha.Text = _mJogo.Senha;
+                txtQuantidade.Text = Convert.ToString(_mJogo.Quantidade);
+                txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
+                txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
+
+
+            }
+
             else if (modo_tela == util.ModoTela.NOVO)
             {
                 LimpaCampos();
@@ -99,9 +126,15 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void LimpaCampos()
         {
+            idJogo = 0;
             txtNome.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtSenha.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
             cmbConsole.SelectedValue = "";
+            cmbTipoJogo.SelectedValue = "";
+            txtPrecoPago.Text = string.Empty;
+            txtPrecoVenda.Text = string.Empty;
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -131,6 +164,11 @@ namespace MaisGamers.Formularios.Cadastro
                 jogo.cIDTipoJogo = Convert.ToInt32(cmbTipoJogo.SelectedValue);
                 jogo.Email = txtEmail.Text;
                 jogo.Senha = txtSenha.Text;
+
+                if(idJogo != 0)
+                {
+                    jogo.IDJogo = idJogo;
+                }
                 if (!string.IsNullOrEmpty(txtQuantidade.Text))
                 {
                     jogo.Quantidade = Convert.ToInt32(txtQuantidade.Text);
@@ -140,11 +178,21 @@ namespace MaisGamers.Formularios.Cadastro
                 jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
                 if (_bJogo.InserirJogo(jogo))
                 {
-                    MessageBox.Show("Jogo inserido com sucesso");
+                    if(idJogo != 0)
+                    {
+                        Mensagem("Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                    }
+                    else
+                    {
+                        Mensagem("Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                    }
+                    
+                    modo_tela = ModoTela.CONSULTA;
+                    atualizaTela();
                 }
                 else
                 {
-                    MessageBox.Show("Jogo inserido com erro");
+                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
                 }
 
             }
@@ -209,5 +257,26 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
         }
+
+        private void lvPesquisa_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+
+            if (e.Item.Checked == true)
+            {
+                idJogo = lvPesquisa.ObterChave();
+
+            }
+
+            btnExcluir.Enabled = e.Item.Checked;
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            modo_tela = util.ModoTela.ALTERACAO;
+            atualizaTela();
+        }
+    
     }
 }

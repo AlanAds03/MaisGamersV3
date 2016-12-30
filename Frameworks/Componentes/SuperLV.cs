@@ -26,6 +26,8 @@ namespace Frameworks.Componentes
             string colunaRenomeada = "";
             int tamanhoColuna = 0;
 
+            this.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             foreach (var x in _list)
             {
                 Type tipo = x.GetType();
@@ -42,6 +44,10 @@ namespace Frameworks.Componentes
                         foreach (string colu in colunas)
                         {
 
+                            if (string.IsNullOrEmpty(colu))
+                            {
+                                continue;
+                            }
                             Type tipoaa = x.GetType();
                             PropertyInfo[] propsaa = tipo.GetProperties();
 

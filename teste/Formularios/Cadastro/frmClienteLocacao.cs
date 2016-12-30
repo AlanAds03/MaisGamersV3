@@ -33,7 +33,7 @@ namespace MaisGamers.Formularios.Cadastro
         public ModoTela modo_tela;
         public bool habilitaTabPage = false;
         public int idClienteLocacao;
-        
+
 
         public frmClienteLocacao()
         {
@@ -99,7 +99,8 @@ namespace MaisGamers.Formularios.Cadastro
 
                 list = _cidade.CarregaCidade(cEstado);
 
-                if (list != null) {
+                if (list != null)
+                {
                     comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
                 }
 
@@ -144,7 +145,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -176,12 +177,20 @@ namespace MaisGamers.Formularios.Cadastro
 
 
                 cli.Nome = nome;
-                json = _bCli.PesquisaCliente(cli,"Nome");
+                locacao = _bCli.PesquisaCliente(cli, "Nome");
 
-                if (!string.IsNullOrEmpty(json))
-                {
-                    lvPesquisa.CarregaListaView<mClienteLocacao>(json);
-                }
+                lvPesquisa.CarregaListaView<mClienteLocacao>(locacao);
+
+
+
+                //json = _bCli.PesquisaCliente(cli, "Nome");
+
+                //if (!string.IsNullOrEmpty(json))
+                //{
+                //    lvPesquisa.CarregaListaView<mClienteLocacao>(json);
+                //}
+
+
             }
 
             catch (Exception ex)
@@ -212,6 +221,18 @@ namespace MaisGamers.Formularios.Cadastro
                 btnNovo.Enabled = true;
                 habilitaTabPage = false;
 
+
+                int codigo = 0;
+
+                if (!string.IsNullOrEmpty(txtPesquisaCodigo.Text))
+                {
+                    codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
+                }
+
+                PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text);
+
+                
+
             }
             else if (modo_tela == ModoTela.NOVO)
             {
@@ -224,7 +245,7 @@ namespace MaisGamers.Formularios.Cadastro
                 idClienteLocacao = 0;
                 LimpaCampos();
 
-                
+
             }
 
             else if (modo_tela == ModoTela.ALTERACAO)
@@ -251,10 +272,12 @@ namespace MaisGamers.Formularios.Cadastro
                 txtCEP.Text = cliente.CEP;
                 txtBairro.Text = cliente.Bairro;
                 txtTelefone.Text = cliente.Telefone;
-                cmbTipoCliente.SelectedValue = cliente.TipoCliente.IDTipoCliente;
+
+             
+                
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
                 txtTelefone.Text = cliente.Telefone;
-                if(cliente.TipoCliente != null)
+                if (cliente.TipoCliente != null)
                 {
                     cmbTipoCliente.SelectedValue = cliente.TipoCliente.IDTipoCliente;
                 }
@@ -262,7 +285,7 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     cmbTipoCliente.SelectedValue = "";
                 }
-                
+
 
                 int codigo = 0;
 
@@ -357,32 +380,33 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
             _mClilocacao.Telefone = txtTelefone.Text;
-            _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue); 
+            _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
 
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
             {
                 if (idClienteLocacao == 0)
                 {
-                    MessageBox.Show("Registro incluído com sucesso");
+                    Mensagem("Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
 
                 }
                 else
                 {
-                    if (Mensagem("Registro alterado com sucesso", CMsgBox.TipoBotoes.OK) == DialogResult.Yes)
-                    {
-
-                    }
+                    Mensagem("Registro alterado com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
                 }
+
+                modo_tela = ModoTela.CONSULTA;
+                atualizaTela();
+
 
             }
             else
             {
-                MessageBox.Show("Erro ao incluir o registro");
+                Mensagem("Erro ao incluir o registro", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
+                
             }
 
-            modo_tela = ModoTela.CONSULTA;
-            atualizaTela();
+            
         }
         private Boolean ValidarCampos()
         {
@@ -397,7 +421,7 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 errorProvider1.SetError(txtNome, "");
             }
-            
+
 
             if (string.IsNullOrEmpty(txtRG.Text))
             {
@@ -410,7 +434,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
 
-            if (string.IsNullOrEmpty(txtCpf.Text.Replace(".","").Replace("-","").Replace(",","").Trim()))
+            if (string.IsNullOrEmpty(txtCpf.Text.Replace(".", "").Replace("-", "").Replace(",", "").Trim()))
             {
                 errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
                 errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
@@ -455,7 +479,7 @@ namespace MaisGamers.Formularios.Cadastro
             if (e.Item.Checked == true)
             {
                 idClienteLocacao = lvPesquisa.ObterChave();
-                
+
             }
 
             btnExcluir.Enabled = e.Item.Checked;
@@ -466,18 +490,18 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void lvPesquisa_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            for (var i = 0; i <= lvPesquisa.Items.Count - 1; i++)
-            {
-                if (lvPesquisa.Items[i].Checked == true)
-                {
-                    if (i == e.Index)
-                    {
-                        continue;
-                    }
-                    lvPesquisa.Items[i].Checked = false;
-                }
+            //for (var i = 0; i <= lvPesquisa.Items.Count - 1; i++)
+            //{
+            //    if (lvPesquisa.Items[i].Checked == true)
+            //    {
+            //        if (i == e.Index)
+            //        {
+            //            continue;
+            //        }
+            //        lvPesquisa.Items[i].Checked = false;
+            //    }
 
-            }
+            //}
 
 
 
@@ -532,9 +556,9 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
 
-            if (Mensagem("Deseja realmente excluir este registro?",CMsgBox.TipoBotoes.SimNao) == DialogResult.Yes)
+
+            if (Mensagem("Deseja realmente excluir este registro?", CMsgBox.TipoBotoes.SimNao,CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
                 bClienteLocacao _cli = new bClienteLocacao();
                 _cli.ExcluirCliente(idClienteLocacao);
@@ -606,7 +630,7 @@ namespace MaisGamers.Formularios.Cadastro
             if (chkBusca.Checked)
             {
                 EnderecoCEP _endereco = new EnderecoCEP();
-                _endereco =  util.RetornoCEP(txtCEP.Text);
+                _endereco = util.RetornoCEP(txtCEP.Text);
 
                 if (_endereco != null)
                 {
@@ -618,14 +642,14 @@ namespace MaisGamers.Formularios.Cadastro
                     _estado.ConsultaUF(_endereco.uf);
                     cmbEstado.SelectedValue = _estado.ConsultaUF(_endereco.uf);
 
-                    CarregaComboCidade(cmbCidade,Convert.ToInt32(cmbEstado.SelectedValue));
+                    CarregaComboCidade(cmbCidade, Convert.ToInt32(cmbEstado.SelectedValue));
 
                 }
             }
-            
+
         }
 
-        
-        
+
+
     }
 }

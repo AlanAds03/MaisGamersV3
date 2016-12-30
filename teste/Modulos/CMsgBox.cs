@@ -15,9 +15,9 @@ namespace Frameworks.Classes
         private System.Windows.Forms.PictureBox btnNo;
         private Label lblMensagem;
         private Panel panel1;
-        private GroupBox grpBotoes;
         private Panel panel2;
-        private Label label1;
+        private Label labelTitulo;
+        private Panel panel3;
         public DialogResult result;
 
 
@@ -26,7 +26,14 @@ namespace Frameworks.Classes
             OK
             
         }
-        public CMsgBox(string mensagem, TipoBotoes tipoBotoes)
+
+        public enum TipoErro
+        {
+            Ok,
+            Erro,
+            Informacao
+        }
+        public CMsgBox(string mensagem, TipoBotoes tipoBotoes, TipoErro tipoErro)
         {
             
             InitializeComponent();
@@ -35,14 +42,17 @@ namespace Frameworks.Classes
             {
                 btnYes.Visible = true;
                 btnNo.Visible = true;
+                btnYes.Left = this.Bounds.Width / 2 - 80;
+                btnNo.Left = this.Bounds.Width / 2;
             }
             else
             {
                 btnYes.Visible = true;
                 btnNo.Visible = false;
+                btnYes.Left = this.Bounds.Width / 2 - 40;
             }
 
-            util.CentralizaGrupo(grpBotoes,false);
+            //util.CentralizaGrupo(grpBotoes,false);
 
             lblMensagem.Text = mensagem;
             int width;
@@ -59,7 +69,24 @@ namespace Frameworks.Classes
             //this.Width = 350;
             //this.Height = 350;
 
-
+            if(tipoErro == TipoErro.Ok)
+            {
+                panel2.BackColor = Color.LightGreen;
+                panel3.BackColor = Color.LightGreen;
+                labelTitulo.Text = "Confirmação";
+            }
+            else if (tipoErro == TipoErro.Informacao)
+            {
+                panel2.BackColor = Color.CadetBlue;
+                panel3.BackColor = Color.CadetBlue;
+                labelTitulo.Text = "Informação";
+            }
+            else if (tipoErro == TipoErro.Erro)
+            {
+                panel2.BackColor = Color.Brown;
+                panel3.BackColor = Color.Brown;
+                labelTitulo.Text = "Erro";
+            }
 
         }
 
@@ -70,20 +97,19 @@ namespace Frameworks.Classes
             this.btnNo = new System.Windows.Forms.PictureBox();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.grpBotoes = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitulo = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnYes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).BeginInit();
             this.panel1.SuspendLayout();
-            this.grpBotoes.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnYes
             // 
             this.btnYes.Image = ((System.Drawing.Image)(resources.GetObject("btnYes.Image")));
-            this.btnYes.Location = new System.Drawing.Point(15, 9);
+            this.btnYes.Location = new System.Drawing.Point(163, 88);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(64, 64);
             this.btnYes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -96,7 +122,7 @@ namespace Frameworks.Classes
             // btnNo
             // 
             this.btnNo.Image = ((System.Drawing.Image)(resources.GetObject("btnNo.Image")));
-            this.btnNo.Location = new System.Drawing.Point(85, 9);
+            this.btnNo.Location = new System.Drawing.Point(256, 88);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(64, 64);
             this.btnNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -120,48 +146,51 @@ namespace Frameworks.Classes
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.grpBotoes);
+            this.panel1.Controls.Add(this.btnNo);
+            this.panel1.Controls.Add(this.btnYes);
             this.panel1.Controls.Add(this.lblMensagem);
             this.panel1.Location = new System.Drawing.Point(12, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 204);
+            this.panel1.Size = new System.Drawing.Size(483, 218);
             this.panel1.TabIndex = 5;
-            // 
-            // grpBotoes
-            // 
-            this.grpBotoes.Controls.Add(this.btnYes);
-            this.grpBotoes.Controls.Add(this.btnNo);
-            this.grpBotoes.Location = new System.Drawing.Point(146, 100);
-            this.grpBotoes.Name = "grpBotoes";
-            this.grpBotoes.Size = new System.Drawing.Size(167, 80);
-            this.grpBotoes.TabIndex = 5;
-            this.grpBotoes.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Green;
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Brown;
+            this.panel2.Controls.Add(this.labelTitulo);
             this.panel2.Location = new System.Drawing.Point(-5, -4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(515, 33);
             this.panel2.TabIndex = 6;
             // 
-            // label1
+            // labelTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(205, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Confirmação";
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelTitulo.Location = new System.Drawing.Point(205, 9);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(116, 24);
+            this.labelTitulo.TabIndex = 0;
+            this.labelTitulo.Text = "Confirmação";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 256);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(507, 33);
+            this.panel3.TabIndex = 7;
             // 
             // CMsgBox
             // 
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(507, 252);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(507, 289);
             this.ControlBox = false;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -171,8 +200,6 @@ namespace Frameworks.Classes
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grpBotoes.ResumeLayout(false);
-            this.grpBotoes.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

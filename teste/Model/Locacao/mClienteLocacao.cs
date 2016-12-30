@@ -18,10 +18,14 @@ namespace MaisGamers.Model.Locacao
         //[Atributos("rNome",200)]
         [Key]
         public int idClienteLocacao { get; set; }
+
+        [Display(Description = "Nome", ShortName = "350")]
         public string  Nome { get; set; }
 
+        [Display(Description = "CPF", ShortName = "150")]
         public string CPF { get; set; }
 
+        [Display(Description = "RG", ShortName = "150")]
         public string RG { get; set; }
 
         [CustomAttibuteDate(ShortDate = true)]
@@ -41,6 +45,10 @@ namespace MaisGamers.Model.Locacao
         [NotMapped]
         public int IDTipoCliente { get; set; }
 
+        [NotMapped]
+        [Display(Description = "Tipo de Cliente", ShortName = "150")]
+        public string strTipoCliente { get; set; }
+
         public string Bairro { get; set; }
 
         public string CEP { get; set; }
@@ -55,6 +63,9 @@ namespace MaisGamers.Model.Locacao
 
 
         public string Telefone { get; set; }
+
+        [NotMapped]
+        public string ColunasGrid { get; set; }
 
         public mTipoCliente TipoCliente { get; set; }
 
