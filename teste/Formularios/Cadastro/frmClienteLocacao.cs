@@ -520,6 +520,11 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button5_Click(object sender, EventArgs e)
         {
+            frmLocacao _locacao = new frmLocacao();
+            _locacao.MdiParent = this.MdiParent;
+            _locacao.modo_tela = ModoTela.ALTERACAO;
+            _locacao.idClienteLocacao = idClienteLocacao;
+            _locacao.Show();
             //frmLocacaoJogo _locacao = new frmLocacaoJogo();
             //_locacao.MdiParent = this.MdiParent;
             //_locacao.Show();

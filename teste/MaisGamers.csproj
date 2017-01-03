@@ -79,6 +79,12 @@
     <Compile Include="DLL\Cadastro\Cadastro\bTipoJogo.cs" />
     <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
+    <Compile Include="Formularios\Cadastro\frmPesquisaJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmPesquisaJogo.Designer.cs">
+      <DependentUpon>frmPesquisaJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastro\frmCadJogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.Designer.cs">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Locacao\frmLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Locacao\frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Manutencao\frmManutencao.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,10 @@
     <Compile Include="Migrations\201612211707475_tabelaCaixa21.Designer.cs">
       <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.cs" />
+    <Compile Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.Designer.cs">
+      <DependentUpon>201612311811221_TabelasLocacao LocacaoJogo Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
     <Compile Include="Model\Cadastro\mTipoCliente.cs" />
@@ -191,6 +207,9 @@
     <Compile Include="Model\Contexto.cs" />
     <Compile Include="Model\DBConfiguracao.cs" />
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
+    <Compile Include="Model\Locacao\mLocacao.cs" />
+    <Compile Include="Model\Locacao\mLocacaoJogos.cs" />
+    <Compile Include="Model\Locacao\mStatusLocacao.cs" />
     <Compile Include="Model\mCidade.cs" />
     <Compile Include="Model\mEstado.cs" />
     <Compile Include="Modulos\CMsgBox.cs">
@@ -200,6 +219,9 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastro\frmPesquisaJogo.resx">
+      <DependentUpon>frmPesquisaJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastro\frmCadJogo.resx">
       <DependentUpon>frmCadJogo.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Manutencao\frmManutencao.resx">
       <DependentUpon>frmManutencao.cs</DependentUpon>
@@ -265,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612211707475_tabelaCaixa21.resx">
       <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.resx">
+      <DependentUpon>201612311811221_TabelasLocacao LocacaoJogo Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -330,9 +358,7 @@
     <Content Include="Imagens\iconesCliente.png" />
     <Content Include="Imagens\iconeSearch32X32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios\Locacao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

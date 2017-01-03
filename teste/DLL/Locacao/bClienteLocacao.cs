@@ -69,5 +69,21 @@ namespace MaisGamers.DLL.Locacao
                 return false;
             }
         }
+
+        internal mClienteLocacao PesquisaClienteID(int idClienteLocacao)
+        {
+            try
+            {
+                using( var d = new dClienteLocacao())
+                {
+                    return d.PesquisaClienteID(idClienteLocacao);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

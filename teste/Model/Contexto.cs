@@ -29,6 +29,14 @@ namespace MaisGamers.Model
 
         public DbSet<mCaixa> Caixa { get; set; }
 
+        public DbSet<mLocacao> Locacao { get; set; }
+
+        public DbSet<mLocacaoJogos> LocacaoJogos { get; set; }
+
+        public DbSet<mStatusLocacao> StatusLocacao { get; set; }
+
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

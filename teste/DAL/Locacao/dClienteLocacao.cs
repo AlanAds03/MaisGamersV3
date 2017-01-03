@@ -76,6 +76,23 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
+        internal mClienteLocacao PesquisaClienteID(int idClienteLocacao)
+        {
+            var db = new Contexto();
+
+            try
+            {
+
+                return db.ClienteLocacao.Find(idClienteLocacao);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
+
         public bool ExcluirCliente(int idClienteLocacao)
         {
             try
