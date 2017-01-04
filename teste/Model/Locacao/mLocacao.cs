@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaisGamers.Model.Cadastro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,6 +18,9 @@ namespace MaisGamers.Model.Locacao
 
         public mClienteLocacao IDClienteLocacao { get; set; }
 
+        [NotMapped]
+        public int idClienteLocacao { get; set; }
+
         public DateTime DataLocacao { get; set; }
 
         public DateTime DataLocacaoEntrega { get; set; }
@@ -26,5 +30,19 @@ namespace MaisGamers.Model.Locacao
         public double ValorPagoFinal { get; set; }
 
         public mStatusLocacao StatusLocacao { get; set; }
+
+        [NotMapped]
+        public int idStatusLocacao { get; set; }
+    }
+
+
+    public class LocacaoJogosNotMapped
+    {
+        public mLocacao IDLocacao { get; set; }
+
+        public mLocacaoJogos IDLocacaoJogos { get; set; }
+
+        public mJogo IDjogos { get; set; }
+
     }
 }

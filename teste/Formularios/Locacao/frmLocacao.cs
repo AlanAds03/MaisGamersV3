@@ -23,6 +23,8 @@ namespace MaisGamers.Formularios.Cadastro
     {
         public util.ModoTela modo_tela = ModoTela.CONSULTA;
         public int idClienteLocacao;
+        public int idLocacao;
+
         public frmLocacao()
         {
             InitializeComponent();
@@ -114,6 +116,8 @@ namespace MaisGamers.Formularios.Cadastro
                 lblCliente.Text = _mClienteLocacao.Nome;
                 lblRG.Text = _mClienteLocacao.RG;
                 lblCPF.Text = _mClienteLocacao.CPF;
+
+                PesquisaGrid(4);
 
             }
 
@@ -248,6 +252,30 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
+
+        private void PesquisaGrid(int idLocacao)
+        {
+            bLocacao _bLocacao = new bLocacao();
+            
+            List<bLocacao> Jogos = new List<bLocacao>();
+            string json;
+
+            try
+            {
+
+
+
+                lvLocacao.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(idLocacao));
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             modo_tela = util.ModoTela.ALTERACAO;
@@ -260,6 +288,28 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 frmPesquisaJogo _pesquisJOgo = new frmPesquisaJogo();
                 _pesquisJOgo.ShowDialog();
+                
+                bLocacao _bLocacao = new bLocacao();
+                mLocacao _mLocacao = new mLocacao();
+
+                if (idLocacao == 0)
+                {
+                    _mLocacao.idClienteLocacao = idClienteLocacao;
+                    _mLocacao.idStatusLocacao = 1;
+                    idLocacao = _bLocacao.InserirLocacao(_mLocacao);
+                }
+
+                bLocacaoJogo _bLocacaoJogo = new bLocacaoJogo();
+                mLocacaoJogos _mLocacaoJogo = new mLocacaoJogos();
+
+                _mLocacaoJogo.idJogo = _pesquisJOgo.idJogo;
+                _mLocacaoJogo.idLocacao = idLocacao;
+
+                _bLocacaoJogo.InserirLocacaoJogo(_mLocacaoJogo);
+
+
+
+                 //_pesquisJOgo.idJogo
 
             }
             catch (Exception)

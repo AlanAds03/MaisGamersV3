@@ -51,23 +51,41 @@ namespace Frameworks.Componentes
                             Type tipoaa = x.GetType();
                             PropertyInfo[] propsaa = tipo.GetProperties();
 
-                            foreach (PropertyInfo info in propsaa.Where(u => u.Name == colu))
+
+
+                            if (colu.Contains("|"))
                             {
-                                if (info.Name == colu)
+                                string novaPro = colu.Substring(colu.IndexOf("[") + 1, colu.IndexOf("]") - colu.IndexOf("[") - 1);
+
+                                string[] nw = novaPro.Split('|');
+
+                                tamanhoColuna = Convert.ToInt32(nw[0]);
+                                colunaRenomeada = Convert.ToString(nw[1]);
+
+
+                            }
+
+                            else
+                            {
+                                foreach (PropertyInfo info in propsaa.Where(u => u.Name == colu))
                                 {
-                                    foreach (CustomAttributeData data in info.CustomAttributes)
+
+                                    if (info.Name == colu)
                                     {
-                                        if (data.AttributeType.Name == "DisplayAttribute")
+                                        foreach (CustomAttributeData data in info.CustomAttributes)
                                         {
-                                            foreach (CustomAttributeNamedArgument argumentos in data.NamedArguments)
+                                            if (data.AttributeType.Name == "DisplayAttribute")
                                             {
-                                                if (argumentos.MemberName == "ShortName")
+                                                foreach (CustomAttributeNamedArgument argumentos in data.NamedArguments)
                                                 {
-                                                    tamanhoColuna = Convert.ToInt32(argumentos.TypedValue.Value.ToString());
-                                                }
-                                                if (argumentos.MemberName == "Description")
-                                                {
-                                                    colunaRenomeada = argumentos.TypedValue.Value.ToString();
+                                                    if (argumentos.MemberName == "ShortName")
+                                                    {
+                                                        tamanhoColuna = Convert.ToInt32(argumentos.TypedValue.Value.ToString());
+                                                    }
+                                                    if (argumentos.MemberName == "Description")
+                                                    {
+                                                        colunaRenomeada = argumentos.TypedValue.Value.ToString();
+                                                    }
                                                 }
                                             }
                                         }
@@ -97,6 +115,12 @@ namespace Frameworks.Componentes
                                     }
                                 }
                             }
+
+                            tamanhoColuna = 0;
+                            colunaRenomeada = string.Empty;
+
+
+
                         }
                     }
                 }
@@ -119,7 +143,20 @@ namespace Frameworks.Componentes
                     {
                         continue;
                     }
-                    PropertyInfo a = props.Where(y => y.Name == col).First();
+
+
+                    string nova = "";
+
+
+                    if (col.Contains("["))
+                    {
+                        nova = col.Substring(0, col.IndexOf("["));
+                    }
+                    else
+                    {
+                        nova = col;
+                    }
+                    PropertyInfo a = props.Where(y => y.Name == nova).First();
 
                     var valor = a.GetValue(x, null);
 
@@ -127,6 +164,8 @@ namespace Frameworks.Componentes
                     {
                         this.Chave = Convert.ToInt32(valor);
                     }
+
+
 
                     if (iCont == 0)
                     {

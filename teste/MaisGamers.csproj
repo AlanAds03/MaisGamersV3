@@ -70,6 +70,8 @@
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
+    <Compile Include="DAL\Locacao\dLocacaoJogo.cs" />
+    <Compile Include="DAL\Locacao\dLocacao.cs" />
     <Compile Include="DAL\Mapper.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bTipoCliente.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="DLL\Cadastro\Cadastro\bTipoJogo.cs" />
     <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
+    <Compile Include="DLL\Locacao\bLocacaoJogo.cs" />
+    <Compile Include="DLL\Locacao\bLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmPesquisaJogo.cs">
       <SubType>Form</SubType>
     </Compile>

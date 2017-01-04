@@ -62,7 +62,7 @@
             this.btnJogo = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.superLV1 = new Frameworks.Componentes.SuperLV();
+            this.lvLocacao = new Frameworks.Componentes.SuperLV();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -409,7 +409,7 @@
             this.grpGridLocacao.Controls.Add(this.btnJogo);
             this.grpGridLocacao.Controls.Add(this.lblTotal);
             this.grpGridLocacao.Controls.Add(this.label2);
-            this.grpGridLocacao.Controls.Add(this.superLV1);
+            this.grpGridLocacao.Controls.Add(this.lvLocacao);
             this.grpGridLocacao.Location = new System.Drawing.Point(18, 105);
             this.grpGridLocacao.Name = "grpGridLocacao";
             this.grpGridLocacao.Size = new System.Drawing.Size(833, 338);
@@ -447,13 +447,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Total : ";
             // 
-            // superLV1
+            // lvLocacao
             // 
-            this.superLV1.Location = new System.Drawing.Point(6, 19);
-            this.superLV1.Name = "superLV1";
-            this.superLV1.Size = new System.Drawing.Size(822, 252);
-            this.superLV1.TabIndex = 0;
-            this.superLV1.UseCompatibleStateImageBehavior = false;
+            this.lvLocacao.Location = new System.Drawing.Point(6, 19);
+            this.lvLocacao.Name = "lvLocacao";
+            this.lvLocacao.Size = new System.Drawing.Size(822, 252);
+            this.lvLocacao.TabIndex = 0;
+            this.lvLocacao.UseCompatibleStateImageBehavior = false;
             // 
             // frmLocacao
             // 
@@ -506,7 +506,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnExcluir;
-        private Frameworks.Componentes.SuperLV superLV1;
+        private Frameworks.Componentes.SuperLV lvLocacao;
         private System.Windows.Forms.GroupBox grpGridLocacao;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label2;

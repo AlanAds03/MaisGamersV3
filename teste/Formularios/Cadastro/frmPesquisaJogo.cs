@@ -142,28 +142,10 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     jogo.IDJogo = idJogo;
                 }
-                
-                
-                
-                if (_bJogo.InserirJogo(jogo))
-                {
-                    if(idJogo != 0)
-                    {
-                        Mensagem("Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
-                    else
-                    {
-                        Mensagem("Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
-                    
-                    modo_tela = ModoTela.CONSULTA;
-                    atualizaTela();
-                }
-                else
-                {
-                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
-                }
 
+                this.Close();
+                
+                
             }
             catch (Exception ex)
             {

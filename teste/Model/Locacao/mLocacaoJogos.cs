@@ -18,7 +18,14 @@ namespace MaisGamers.Model.Locacao
 
         public mLocacao IDLocacao { get; set; }
 
+        [NotMapped]
+        public int idLocacao { get; set; }
+
+
         public mJogo IDJogo { get; set; }
+
+        [NotMapped]
+        public int idJogo { get; set; }
 
     }
 }
