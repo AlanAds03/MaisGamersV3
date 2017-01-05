@@ -35,7 +35,7 @@ namespace MaisGamers.Formularios.Cadastro
             util.CentralizaGrupo(grpBotoes);
             util.CentralizaTab(tabControl1);
 
-            CarregaComboConsole(cmbConsolePesquisa);
+            CarregaComboStatus(cmbStatus);
 
             if (modo_tela != ModoTela.CONSULTA)
             {
@@ -45,16 +45,15 @@ namespace MaisGamers.Formularios.Cadastro
             
         }
 
-        private void CarregaComboConsole(SuperComboBox combo)
+        private void CarregaComboStatus(SuperComboBox combo)
         {
             try
             {
-                bConsole _bConsole = new bConsole();
+                bStatusLocacao _bStatus = new bStatusLocacao();
+                    List<mStatusLocacao> status = new List<mStatusLocacao>();
 
-                    List<mConsole> console = new List<mConsole>();
-
-                    console = _bConsole.CarregaConsole();
-                    combo.CarregaCombo(console, "idConsole", "NomeConsole", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+                status = _bStatus.CarregaStatusLocacao();
+                    combo.CarregaCombo(status, "IDStatus", "Status", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
                 
             }
             catch (Exception ex)
@@ -98,7 +97,7 @@ namespace MaisGamers.Formularios.Cadastro
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
 
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
 
 
             }
@@ -188,34 +187,21 @@ namespace MaisGamers.Formularios.Cadastro
 
             
 
-            PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+            PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
         }
 
 
-        private void PesquisaGrid(string NomeJogo, string Console)
+        private void PesquisaGrid(string NomeCliente, int Status)
         {
 
 
-            bJogo _bJogo = new bJogo();
-            mJogo jogo = new mJogo();
-            List<mJogo> Jogos = new List<mJogo>();
-            string json;
+            bLocacao _bLocacao = new bLocacao();
+            mLocacao _mLocacao = new mLocacao();
 
             try
             {
                 
-
-                if (!string.IsNullOrEmpty(NomeJogo))
-                {
-                    jogo.NomeJogo = NomeJogo;
-                }
-
-                if (!string.IsNullOrEmpty(Console))
-                {
-                    jogo.cIdConsole = Convert.ToInt32(Console);
-                }
-
-                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
+                    lvPesquisa.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(NomeCliente, Status));
                 
             }
 
@@ -231,9 +217,9 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void cmbConsolePesquisa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbConsolePesquisa.Carregado == true)
+            if (cmbStatus.Carregado == true)
             {
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
             }
 
         }
@@ -244,7 +230,7 @@ namespace MaisGamers.Formularios.Cadastro
             if (e.Item.Checked == true)
             {
 
-
+                idLocacao = lvPesquisa.ObterChave();
             }
 
             btnExcluir.Enabled = e.Item.Checked;
@@ -265,7 +251,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
 
-                lvLocacao.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(idLocacao));
+                lvLocacao.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacaoID(idLocacao));
 
             }
 
@@ -307,7 +293,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 _bLocacaoJogo.InserirLocacaoJogo(_mLocacaoJogo);
 
-
+                PesquisaGrid
 
                  //_pesquisJOgo.idJogo
 

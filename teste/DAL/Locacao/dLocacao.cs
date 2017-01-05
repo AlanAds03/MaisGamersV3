@@ -54,7 +54,37 @@ namespace MaisGamers.DAL.Locacao
         }
 
 
-        public List<dynamic> PesquisaLocacao(int idLocacao)
+        public List<dynamic> PesquisaLocacao(string NomeCliente , int Status)
+        {
+
+            var db = new Contexto();
+
+            try
+            {
+
+
+                var a = from   z in db.Locacao
+                        join w in db.ClienteLocacao on z.IDClienteLocacao.idClienteLocacao equals w.idClienteLocacao
+                        join y in db.StatusLocacao on z.StatusLocacao.IDStatus equals y.IDStatus
+                        where   w.Nome.Contains((string.IsNullOrEmpty(NomeCliente)? w.Nome : NomeCliente))
+                        where z.StatusLocacao.IDStatus == (Status != 0 ? Status : z.StatusLocacao.IDStatus)
+                        select new { ColunasGrid = "IDLocacao;Nome[300|Cliente];DataLocacao[150|Data Locação];Status[150|Status]", z.IDLocacao, w.Nome, z.DataLocacao,y.Status };
+
+
+
+                return a.ToList<dynamic>();
+
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+
+
+        }
+
+        public List<dynamic> PesquisaLocacaoID(int idLocacao)
         {
 
             var db = new Contexto();

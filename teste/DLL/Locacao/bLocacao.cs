@@ -19,13 +19,25 @@ namespace MaisGamers.DLL.Locacao
 
         }
 
-        public List<dynamic> PesquisaLocacao(int idLocacao)
+        public List<dynamic> PesquisaLocacaoID(int idLocacao)
         {
 
             dLocacao _dlocacao = new dLocacao();
 
-            return _dlocacao.PesquisaLocacao(idLocacao);
+            return _dlocacao.PesquisaLocacaoID(idLocacao);
 
         }
+
+
+        public List<dynamic> PesquisaLocacao(string NomeCliente, int Status)
+        {
+
+            dLocacao _dlocacao = new dLocacao();
+
+            return _dlocacao.PesquisaLocacao(NomeCliente, Status);
+
+        }
+
+
     }
 }

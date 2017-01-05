@@ -184,5 +184,11 @@ namespace MaisGamers
             frmCadJogo frmCadjogo = new frmCadJogo();
             MostraFormulario(frmCadjogo);
         }
+
+        private void ribbonButton2_Click(object sender, EventArgs e)
+        {
+            frmLocacao _frmLocacao = new frmLocacao();
+            MostraFormulario(_frmLocacao);
+        }
     }
 }

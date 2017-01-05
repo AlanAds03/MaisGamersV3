@@ -219,6 +219,7 @@
             // 
             this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
             this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
+            this.ribbonButton2.Click += new System.EventHandler(this.ribbonButton2_Click);
             // 
             // ribbonTab5
             // 

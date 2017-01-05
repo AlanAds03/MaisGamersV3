@@ -33,7 +33,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
-            this.cmbConsolePesquisa = new Frameworks.Componentes.SuperComboBox();
+            this.cmbStatus = new Frameworks.Componentes.SuperComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
@@ -78,7 +78,7 @@
             this.grpFiltro.Controls.Add(this.label11);
             this.grpFiltro.Controls.Add(this.label1);
             this.grpFiltro.Controls.Add(this.txtPesqNome);
-            this.grpFiltro.Controls.Add(this.cmbConsolePesquisa);
+            this.grpFiltro.Controls.Add(this.cmbStatus);
             this.grpFiltro.Controls.Add(this.button4);
             this.grpFiltro.Location = new System.Drawing.Point(18, 6);
             this.grpFiltro.Name = "grpFiltro";
@@ -115,16 +115,16 @@
             this.txtPesqNome.Size = new System.Drawing.Size(277, 26);
             this.txtPesqNome.TabIndex = 3;
             // 
-            // cmbConsolePesquisa
+            // cmbStatus
             // 
-            this.cmbConsolePesquisa.Carregado = false;
-            this.cmbConsolePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConsolePesquisa.FormattingEnabled = true;
-            this.cmbConsolePesquisa.Location = new System.Drawing.Point(330, 36);
-            this.cmbConsolePesquisa.Name = "cmbConsolePesquisa";
-            this.cmbConsolePesquisa.Size = new System.Drawing.Size(181, 28);
-            this.cmbConsolePesquisa.TabIndex = 2;
-            this.cmbConsolePesquisa.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
+            this.cmbStatus.Carregado = false;
+            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(330, 36);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(181, 28);
+            this.cmbStatus.TabIndex = 2;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -488,7 +488,7 @@
         }
 
         #endregion
-        private Frameworks.Componentes.SuperComboBox cmbConsolePesquisa;
+        private Frameworks.Componentes.SuperComboBox cmbStatus;
         private Frameworks.Componentes.SuperTextBox txtPesqNome;
         private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.GroupBox grpFiltro;
