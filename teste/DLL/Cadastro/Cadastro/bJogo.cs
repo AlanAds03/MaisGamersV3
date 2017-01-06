@@ -45,5 +45,22 @@ namespace MaisGamers.DLL.Cadastro.Cadastro
 
         }
 
+        internal mJogo PesquisaJogoID(int IDJogo)
+        {
+            try
+            {
+
+                dJogo _Jogo = new dJogo();
+
+                return _Jogo.PesquisaJogoID(IDJogo);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

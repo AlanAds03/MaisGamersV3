@@ -76,6 +76,23 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
+        internal mClienteLocacao PesquisaClienteID(int idClienteLocacao)
+        {
+            var db = new Contexto();
+
+            try
+            {
+
+                return db.ClienteLocacao.Find(idClienteLocacao);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
+
         public bool ExcluirCliente(int idClienteLocacao)
         {
             try
@@ -95,33 +112,51 @@ namespace MaisGamersV2.DAL.Locacao
                 return false;
             }
         }
-        public string PesquisaCliente(mClienteLocacao _clienteLocacao, string order)
+        public List<mClienteLocacao> PesquisaCliente(mClienteLocacao _clienteLocacao, string order)
         {
             var db = new Contexto();
 
             try
             {
 
-                var cli = (from a in db.ClienteLocacao
-                           where
-                            a.Nome.Contains(_clienteLocacao.Nome) &&
-                            ((_clienteLocacao.RG ?? a.RG) == a.RG) &&
-                            //((_clienteLocacao.CPF ?? a.CPF) == a.CPF) &&
-                            (_clienteLocacao.idClienteLocacao == 0 ? a.idClienteLocacao == a.idClienteLocacao : a.idClienteLocacao == _clienteLocacao.idClienteLocacao)
-                    
-                    
-
-                           select new {a.idClienteLocacao, a.Nome, a.DataNascimento});
-
-                //'var columns = cli.Select(x => new {x.idClienteLocacao, x.Nome, x.Numero,x.JsonGRID = "").ToList();
-                    var columns = cli.Select(x => new {x.idClienteLocacao,  x.Nome, x.DataNascimento }).ToList();
 
 
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                List<mClienteLocacao> listCliente = db.ClienteLocacao
+                     .Include(x => x.TipoCliente)
+                     .Where(z => z.Nome.Contains((string.IsNullOrEmpty(_clienteLocacao.Nome) ? z.Nome : _clienteLocacao.Nome)))
+                     //.Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
+                     .ToList();
 
-                var json = serializer.Serialize(columns);
 
-                return json;
+                List<mClienteLocacao> nova = new List<mClienteLocacao>();
+
+                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;"; x.strTipoCliente = ((x.TipoCliente ==null ? "" :  x.TipoCliente.TipoCliente)); return x; }).ToList();
+
+
+                return nova.ToList();
+
+
+
+                //var cli = (from a in db.ClienteLocacao
+                //           where
+                //            a.Nome.Contains(_clienteLocacao.Nome) &&
+                //            ((_clienteLocacao.RG ?? a.RG) == a.RG) &&
+                //            //((_clienteLocacao.CPF ?? a.CPF) == a.CPF) &&
+                //            (_clienteLocacao.idClienteLocacao == 0 ? a.idClienteLocacao == a.idClienteLocacao : a.idClienteLocacao == _clienteLocacao.idClienteLocacao)
+
+
+
+                //           select new {a.idClienteLocacao, a.Nome, a.DataNascimento});
+
+
+                //    var columns = cli.Select(x => new {x.idClienteLocacao,  x.Nome, x.DataNascimento }).ToList();
+
+
+                //JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+                //var json = serializer.Serialize(columns);
+
+                //return json;
 
             }
             catch (Exception ex)

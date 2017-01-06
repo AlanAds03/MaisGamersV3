@@ -30,6 +30,14 @@ namespace MaisGamers.Model
 
         public DbSet<mCaixa> Caixa { get; set; }
 
+        public DbSet<mLocacao> Locacao { get; set; }
+
+        public DbSet<mLocacaoJogos> LocacaoJogos { get; set; }
+
+        public DbSet<mStatusLocacao> StatusLocacao { get; set; }
+
+
+
         public DbSet<mTipoOrcamento> TipoOrcamento { get; set; }
 
         public DbSet<mTipoOrcamentoStatus> TipoOrcamentoStatus { get; set; }

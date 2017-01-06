@@ -14,14 +14,18 @@ using Frameworks.Componentes;
 using MaisGamers.DLL.Cadastro;
 using MaisGamers.DLL.Cadastro.Cadastro;
 using static MaisGamers.Modulos.util;
+using MaisGamers.DLL.Locacao;
+using MaisGamers.Model.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
 {
-    public partial class frmCadJogo : Form
+    public partial class frmLocacao : Form
     {
-        public util.ModoTela modo_tela;
-        public int idJogo;
-        public frmCadJogo()
+        public util.ModoTela modo_tela = ModoTela.CONSULTA;
+        public int idClienteLocacao;
+        public int idLocacao;
+
+        public frmLocacao()
         {
             InitializeComponent();
         }
@@ -31,21 +35,25 @@ namespace MaisGamers.Formularios.Cadastro
             util.CentralizaGrupo(grpBotoes);
             util.CentralizaTab(tabControl1);
 
-            CarregaComboConsole(cmbConsolePesquisa);
-            CarregaComboConsole(cmbConsole);
-            CarregaComboTipoJogo(cmbTipoJogo);
+            CarregaComboStatus(cmbStatus);
+
+            if (modo_tela != ModoTela.CONSULTA)
+            {
+                atualizaTela();
+            }
+            
+            
         }
 
-        private void CarregaComboConsole(SuperComboBox combo)
+        private void CarregaComboStatus(SuperComboBox combo)
         {
             try
             {
-                bConsole _bConsole = new bConsole();
+                bStatusLocacao _bStatus = new bStatusLocacao();
+                    List<mStatusLocacao> status = new List<mStatusLocacao>();
 
-                    List<mConsole> console = new List<mConsole>();
-
-                    console = _bConsole.CarregaConsole();
-                    combo.CarregaCombo(console, "idConsole", "NomeConsole", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+                status = _bStatus.CarregaStatusLocacao();
+                    combo.CarregaCombo(status, "IDStatus", "Status", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
                 
             }
             catch (Exception ex)
@@ -89,29 +97,26 @@ namespace MaisGamers.Formularios.Cadastro
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
 
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
 
 
             }
             else if (modo_tela == util.ModoTela.ALTERACAO)
             {
-                tabControl1.SelectTab("tpCadastro");
+                tabControl1.SelectTab("tpLocacao");
                 btnFechar.Text = "Voltar";
 
-                bJogo _bJogo = new bJogo();
-                mJogo _mJogo = new mJogo();
+                bClienteLocacao _bclienteLocacao = new bClienteLocacao();
+                mClienteLocacao _mClienteLocacao = new mClienteLocacao();
 
-                _mJogo = _bJogo.PesquisaJogoID(idJogo);
 
-                txtNome.Text = _mJogo.NomeJogo;
-                cmbConsole.SelectedValue = _mJogo.IDConsole.idConsole;
-                cmbTipoJogo.SelectedValue = _mJogo.IDTipoJogo.IDTipoJogo;
-                txtEmail.Text = _mJogo.Email;
-                txtSenha.Text = _mJogo.Senha;
-                txtQuantidade.Text = Convert.ToString(_mJogo.Quantidade);
-                txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
-                txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
+                _mClienteLocacao = _bclienteLocacao.PesquisaClienteID(idClienteLocacao);
 
+                lblCliente.Text = _mClienteLocacao.Nome;
+                lblRG.Text = _mClienteLocacao.RG;
+                lblCPF.Text = _mClienteLocacao.CPF;
+
+                PesquisaGrid(4);
 
             }
 
@@ -126,15 +131,8 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void LimpaCampos()
         {
-            idJogo = 0;
-            txtNome.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtSenha.Text = string.Empty;
-            txtQuantidade.Text = string.Empty;
-            cmbConsole.SelectedValue = "";
-            cmbTipoJogo.SelectedValue = "";
-            txtPrecoPago.Text = string.Empty;
-            txtPrecoVenda.Text = string.Empty;
+            
+            
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -159,33 +157,14 @@ namespace MaisGamers.Formularios.Cadastro
                 bJogo _bJogo = new bJogo();
                 mJogo jogo = new mJogo();
 
-                jogo.NomeJogo = txtNome.Text;
-                jogo.cIdConsole = Convert.ToInt32(cmbConsole.SelectedValue);
-                jogo.cIDTipoJogo = Convert.ToInt32(cmbTipoJogo.SelectedValue);
-                jogo.Email = txtEmail.Text;
-                jogo.Senha = txtSenha.Text;
-
-                if(idJogo != 0)
-                {
-                    jogo.IDJogo = idJogo;
-                }
-                if (!string.IsNullOrEmpty(txtQuantidade.Text))
-                {
-                    jogo.Quantidade = Convert.ToInt32(txtQuantidade.Text);
-                }
                 
-                jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
-                jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
+
+                
+                
+                
+                
                 if (_bJogo.InserirJogo(jogo))
                 {
-                    if(idJogo != 0)
-                    {
-                        Mensagem("Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
-                    else
-                    {
-                        Mensagem("Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
                     
                     modo_tela = ModoTela.CONSULTA;
                     atualizaTela();
@@ -208,34 +187,21 @@ namespace MaisGamers.Formularios.Cadastro
 
             
 
-            PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+            PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
         }
 
 
-        private void PesquisaGrid(string NomeJogo, string Console)
+        private void PesquisaGrid(string NomeCliente, int Status)
         {
 
 
-            bJogo _bJogo = new bJogo();
-            mJogo jogo = new mJogo();
-            List<mJogo> Jogos = new List<mJogo>();
-            string json;
+            bLocacao _bLocacao = new bLocacao();
+            mLocacao _mLocacao = new mLocacao();
 
             try
             {
                 
-
-                if (!string.IsNullOrEmpty(NomeJogo))
-                {
-                    jogo.NomeJogo = NomeJogo;
-                }
-
-                if (!string.IsNullOrEmpty(Console))
-                {
-                    jogo.cIdConsole = Convert.ToInt32(Console);
-                }
-
-                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
+                    lvPesquisa.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(NomeCliente, Status));
                 
             }
 
@@ -251,9 +217,9 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void cmbConsolePesquisa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbConsolePesquisa.Carregado == true)
+            if (cmbStatus.Carregado == true)
             {
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
             }
 
         }
@@ -263,12 +229,36 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (e.Item.Checked == true)
             {
-                idJogo = lvPesquisa.ObterChave();
 
+                idLocacao = lvPesquisa.ObterChave();
             }
 
             btnExcluir.Enabled = e.Item.Checked;
 
+
+        }
+
+
+        private void PesquisaGrid(int idLocacao)
+        {
+            bLocacao _bLocacao = new bLocacao();
+            
+            List<bLocacao> Jogos = new List<bLocacao>();
+            string json;
+
+            try
+            {
+
+
+
+                lvLocacao.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacaoID(idLocacao));
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
 
         }
 
@@ -277,6 +267,42 @@ namespace MaisGamers.Formularios.Cadastro
             modo_tela = util.ModoTela.ALTERACAO;
             atualizaTela();
         }
-    
+
+        private void btnJogo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmPesquisaJogo _pesquisJOgo = new frmPesquisaJogo();
+                _pesquisJOgo.ShowDialog();
+                
+                bLocacao _bLocacao = new bLocacao();
+                mLocacao _mLocacao = new mLocacao();
+
+                if (idLocacao == 0)
+                {
+                    _mLocacao.idClienteLocacao = idClienteLocacao;
+                    _mLocacao.idStatusLocacao = 1;
+                    idLocacao = _bLocacao.InserirLocacao(_mLocacao);
+                }
+
+                bLocacaoJogo _bLocacaoJogo = new bLocacaoJogo();
+                mLocacaoJogos _mLocacaoJogo = new mLocacaoJogos();
+
+                _mLocacaoJogo.idJogo = _pesquisJOgo.idJogo;
+                _mLocacaoJogo.idLocacao = idLocacao;
+
+                _bLocacaoJogo.InserirLocacaoJogo(_mLocacaoJogo);
+
+                PesquisaGrid
+
+                 //_pesquisJOgo.idJogo
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

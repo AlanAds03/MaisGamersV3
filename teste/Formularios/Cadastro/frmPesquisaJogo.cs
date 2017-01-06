@@ -17,23 +17,22 @@ using static MaisGamers.Modulos.util;
 
 namespace MaisGamers.Formularios.Cadastro
 {
-    public partial class frmCadJogo : Form
+    public partial class frmPesquisaJogo : Form
     {
         public util.ModoTela modo_tela;
         public int idJogo;
-        public frmCadJogo()
+        public frmPesquisaJogo()
         {
             InitializeComponent();
         }
 
         private void frmCadJogo_Load(object sender, EventArgs e)
         {
-            util.CentralizaGrupo(grpBotoes);
-            util.CentralizaTab(tabControl1);
+            //util.CentralizaGrupo(grpBotoes);
+            //util.CentralizaTab(tabControl1);
 
             CarregaComboConsole(cmbConsolePesquisa);
-            CarregaComboConsole(cmbConsole);
-            CarregaComboTipoJogo(cmbTipoJogo);
+            
         }
 
         private void CarregaComboConsole(SuperComboBox combo)
@@ -103,14 +102,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 _mJogo = _bJogo.PesquisaJogoID(idJogo);
 
-                txtNome.Text = _mJogo.NomeJogo;
-                cmbConsole.SelectedValue = _mJogo.IDConsole.idConsole;
-                cmbTipoJogo.SelectedValue = _mJogo.IDTipoJogo.IDTipoJogo;
-                txtEmail.Text = _mJogo.Email;
-                txtSenha.Text = _mJogo.Senha;
-                txtQuantidade.Text = Convert.ToString(_mJogo.Quantidade);
-                txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
-                txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
+                
 
 
             }
@@ -127,28 +119,13 @@ namespace MaisGamers.Formularios.Cadastro
         private void LimpaCampos()
         {
             idJogo = 0;
-            txtNome.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtSenha.Text = string.Empty;
-            txtQuantidade.Text = string.Empty;
-            cmbConsole.SelectedValue = "";
-            cmbTipoJogo.SelectedValue = "";
-            txtPrecoPago.Text = string.Empty;
-            txtPrecoVenda.Text = string.Empty;
+            
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            if (modo_tela == util.ModoTela.CONSULTA)
-            {
                 this.Close();
                 this.Dispose();
-            }
-            else
-            {
-                modo_tela = util.ModoTela.CONSULTA;
-                atualizaTela();
-            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -159,42 +136,16 @@ namespace MaisGamers.Formularios.Cadastro
                 bJogo _bJogo = new bJogo();
                 mJogo jogo = new mJogo();
 
-                jogo.NomeJogo = txtNome.Text;
-                jogo.cIdConsole = Convert.ToInt32(cmbConsole.SelectedValue);
-                jogo.cIDTipoJogo = Convert.ToInt32(cmbTipoJogo.SelectedValue);
-                jogo.Email = txtEmail.Text;
-                jogo.Senha = txtSenha.Text;
+                
 
                 if(idJogo != 0)
                 {
                     jogo.IDJogo = idJogo;
                 }
-                if (!string.IsNullOrEmpty(txtQuantidade.Text))
-                {
-                    jogo.Quantidade = Convert.ToInt32(txtQuantidade.Text);
-                }
-                
-                jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
-                jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
-                if (_bJogo.InserirJogo(jogo))
-                {
-                    if(idJogo != 0)
-                    {
-                        Mensagem("Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
-                    else
-                    {
-                        Mensagem("Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
-                    }
-                    
-                    modo_tela = ModoTela.CONSULTA;
-                    atualizaTela();
-                }
-                else
-                {
-                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
-                }
 
+                this.Close();
+                
+                
             }
             catch (Exception ex)
             {
@@ -267,7 +218,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             }
 
-            btnExcluir.Enabled = e.Item.Checked;
+            
 
 
         }
