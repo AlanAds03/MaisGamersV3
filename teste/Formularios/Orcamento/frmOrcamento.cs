@@ -16,5 +16,7 @@ namespace MaisGamers.Formularios.Orcamento
         {
             InitializeComponent();
         }
+
+     
     }
 }

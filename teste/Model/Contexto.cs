@@ -1,6 +1,7 @@
 ﻿using MaisGamers.DAL.Cadastro;
 using MaisGamers.Model.Cadastro;
 using MaisGamers.Model.Locacao;
+using MaisGamers.Model.Orcamento;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -28,6 +29,10 @@ namespace MaisGamers.Model
         public DbSet<mTipoJogo> TipoJogo { get; set; }
 
         public DbSet<mCaixa> Caixa { get; set; }
+
+        public DbSet<mTipoOrcamento> TipoOrcamento { get; set; }
+
+        public DbSet<mTipoOrcamentoStatus> TipoOrcamentoStatus { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
