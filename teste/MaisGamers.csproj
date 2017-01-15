@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Cadastro\dAnotacao.cs" />
     <Compile Include="DAL\Cadastro\dTipoJogo.cs" />
     <Compile Include="DAL\Cadastro\dConsole.cs" />
     <Compile Include="DAL\Cadastro\dTipoCliente.cs" />
@@ -204,6 +205,7 @@
       <DependentUpon>201612311811221_TabelasLocacao LocacaoJogo Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
     <Compile Include="Model\Cadastro\mTipoCliente.cs" />
     <Compile Include="Model\Cadastro\mConsole.cs" />

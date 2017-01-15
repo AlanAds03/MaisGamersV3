@@ -293,7 +293,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 _bLocacaoJogo.InserirLocacaoJogo(_mLocacaoJogo);
 
-                PesquisaGrid
+                //PesquisaGrid
 
                  //_pesquisJOgo.idJogo
 

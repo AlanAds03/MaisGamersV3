@@ -35,6 +35,9 @@ namespace MaisGamers.Model
 
         public DbSet<mStatusLocacao> StatusLocacao { get; set; }
 
+        public DbSet<mAnotacao> Anotacao { get; set; }
+
+
 
 
 
