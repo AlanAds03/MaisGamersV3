@@ -116,7 +116,7 @@ namespace MaisGamers.Formularios.Cadastro
                 lblRG.Text = _mClienteLocacao.RG;
                 lblCPF.Text = _mClienteLocacao.CPF;
 
-                PesquisaGrid(4);
+                PesquisaGrid(idLocacao);
 
             }
 

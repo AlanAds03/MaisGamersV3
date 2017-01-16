@@ -483,6 +483,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
             btnExcluir.Enabled = e.Item.Checked;
+            btnLocacao.Enabled = e.Item.Checked;
 
 
         }

@@ -44,7 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLocacao = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -229,7 +229,7 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(387, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
+            this.button2.Size = new System.Drawing.Size(44, 50);
             this.button2.TabIndex = 4;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // grpBotoes
             // 
             this.grpBotoes.Controls.Add(this.btnExcluir);
-            this.grpBotoes.Controls.Add(this.button5);
+            this.grpBotoes.Controls.Add(this.btnLocacao);
             this.grpBotoes.Controls.Add(this.button3);
             this.grpBotoes.Controls.Add(this.btnSalvar);
             this.grpBotoes.Controls.Add(this.btnNovo);
@@ -264,18 +264,18 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // button5
+            // btnLocacao
             // 
-            this.button5.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(491, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 50);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Locação";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnLocacao.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.btnLocacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocacao.Location = new System.Drawing.Point(437, 19);
+            this.btnLocacao.Name = "btnLocacao";
+            this.btnLocacao.Size = new System.Drawing.Size(93, 50);
+            this.btnLocacao.TabIndex = 9;
+            this.btnLocacao.Text = "Locação";
+            this.btnLocacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLocacao.UseVisualStyleBackColor = true;
+            this.btnLocacao.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -849,7 +849,7 @@
         private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLocacao;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtPesquisarg;
         private System.Windows.Forms.Label label18;

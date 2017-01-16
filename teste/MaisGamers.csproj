@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.Designer.cs">
       <DependentUpon>201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701152254140_anotacao.cs" />
+    <Compile Include="Migrations\201701152254140_anotacao.Designer.cs">
+      <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -313,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.resx">
       <DependentUpon>201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701152254140_anotacao.resx">
+      <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
