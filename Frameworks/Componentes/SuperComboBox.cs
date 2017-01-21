@@ -9,6 +9,7 @@ namespace Frameworks.Componentes
 {
     public class SuperComboBox : System.Windows.Forms.ComboBox
     {
+        public bool CampoObrigatorio { get; set; }
         public class rValor
         {
             public int cId { get; set; }

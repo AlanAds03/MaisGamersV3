@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201701152254140_anotacao.Designer.cs">
       <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701211956326_addprecoJogo.cs" />
+    <Compile Include="Migrations\201701211956326_addprecoJogo.Designer.cs">
+      <DependentUpon>201701211956326_addprecoJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701152254140_anotacao.resx">
       <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211956326_addprecoJogo.resx">
+      <DependentUpon>201701211956326_addprecoJogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

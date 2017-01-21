@@ -112,6 +112,9 @@ namespace MaisGamers.Formularios.Cadastro
                 txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
                 txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
 
+                txtPrecoPrimaria.Text = _mJogo.PrecoPrimaria.ToString("0.00");
+                txtPrecoSecundaria.Text = _mJogo.PrecoSecundaria.ToString("0.00");
+
 
             }
 
@@ -135,6 +138,9 @@ namespace MaisGamers.Formularios.Cadastro
             cmbTipoJogo.SelectedValue = "";
             txtPrecoPago.Text = string.Empty;
             txtPrecoVenda.Text = string.Empty;
+            txtPrecoPrimaria.Text = string.Empty;
+            txtPrecoSecundaria.Text = string.Empty;
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -156,6 +162,11 @@ namespace MaisGamers.Formularios.Cadastro
 
             try
             {
+
+                if (ValidarCampos() == false){
+                    return;
+                }
+
                 bJogo _bJogo = new bJogo();
                 mJogo jogo = new mJogo();
 
@@ -176,6 +187,11 @@ namespace MaisGamers.Formularios.Cadastro
                 
                 jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
                 jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
+
+
+                jogo.PrecoPrimaria = Convert.ToDouble(txtPrecoPrimaria.Text);
+                jogo.PrecoSecundaria = Convert.ToDouble(txtPrecoSecundaria.Text);
+
                 if (_bJogo.InserirJogo(jogo))
                 {
                     if(idJogo != 0)
@@ -203,11 +219,25 @@ namespace MaisGamers.Formularios.Cadastro
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private bool ValidarCampos()
         {
 
-            
+            bool retorno = true;
 
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                errorProvider1.SetError(txtNome, "Informar o nome");
+                retorno = false; 
+            }
+
+
+
+            return retorno;
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
         }
 
@@ -277,6 +307,46 @@ namespace MaisGamers.Formularios.Cadastro
             modo_tela = util.ModoTela.ALTERACAO;
             atualizaTela();
         }
-    
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+ 
+        private void txtPrecoPrimaria_Leave(object sender, EventArgs e)
+        {
+            double valor= 0;
+
+            if (!string.IsNullOrEmpty(txtPrecoPrimaria.Text) && double.TryParse(txtPrecoPrimaria.Text,out valor))
+            {
+                valor = Convert.ToDouble(txtPrecoPrimaria.Text);
+            }
+            
+
+            txtPrecoPrimaria.Text = valor.ToString("0.00"); 
+
+
+               
+        }
+
+        private void txtPrecoSecundaria_Leave(object sender, EventArgs e)
+        {
+            double valor = 0;
+
+            if (!string.IsNullOrEmpty(txtPrecoSecundaria.Text) && double.TryParse(txtPrecoSecundaria.Text, out valor))
+            {
+                valor = Convert.ToDouble(txtPrecoSecundaria.Text);
+            }
+
+
+            txtPrecoSecundaria.Text = valor.ToString("0.00");
+
+        }
     }
 }

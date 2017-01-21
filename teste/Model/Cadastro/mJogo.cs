@@ -43,5 +43,11 @@ namespace MaisGamers.Model.Cadastro
         public string ColunasGrid { get; set; }
 
 
+        public double PrecoPrimaria { get; set; }
+
+        public double PrecoSecundaria { get; set; }
+
+
+
     }
 }
