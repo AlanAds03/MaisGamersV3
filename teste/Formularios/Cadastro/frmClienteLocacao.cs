@@ -231,7 +231,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text);
 
-                
+
 
             }
             else if (modo_tela == ModoTela.NOVO)
@@ -262,6 +262,12 @@ namespace MaisGamers.Formularios.Cadastro
                 mClienteLocacao cliente = new mClienteLocacao();
                 cliente = _bCli.ObterCliente(idClienteLocacao);
 
+                if (cliente == null)
+                {
+                    return;
+                }
+
+
                 txtCodigo.Text = idClienteLocacao.ToString();
                 txtNome.Text = cliente.Nome;
                 txtCpf.Text = cliente.CPF;
@@ -273,8 +279,10 @@ namespace MaisGamers.Formularios.Cadastro
                 txtBairro.Text = cliente.Bairro;
                 txtTelefone.Text = cliente.Telefone;
 
-             
-                
+                txtAutoriza.Text = cliente.NomeFilho;
+                txtCpfFilho.Text = cliente.CPFFilho;
+                txtRGFilho.Text = cliente.RGFilho;
+
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
                 txtTelefone.Text = cliente.Telefone;
                 if (cliente.TipoCliente != null)
@@ -381,6 +389,9 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
             _mClilocacao.Telefone = txtTelefone.Text;
             _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
+            _mClilocacao.NomeFilho = txtAutoriza.Text;
+            _mClilocacao.RGFilho = txtRGFilho.Text.Replace(".","").Replace("-","").Replace(",","");
+            _mClilocacao.CPFFilho = txtCpfFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
 
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
@@ -403,10 +414,10 @@ namespace MaisGamers.Formularios.Cadastro
             else
             {
                 Mensagem("Erro ao incluir o registro", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
-                
+
             }
 
-            
+
         }
         private Boolean ValidarCampos()
         {
@@ -475,6 +486,7 @@ namespace MaisGamers.Formularios.Cadastro
         private void lvPesquisa_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
 
+            LimpaCampos();
 
             if (e.Item.Checked == true)
             {
@@ -564,7 +576,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
 
 
-            if (Mensagem("Deseja realmente excluir este registro?", CMsgBox.TipoBotoes.SimNao,CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+            if (Mensagem("Deseja realmente excluir este registro?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
                 bClienteLocacao _cli = new bClienteLocacao();
                 _cli.ExcluirCliente(idClienteLocacao);
