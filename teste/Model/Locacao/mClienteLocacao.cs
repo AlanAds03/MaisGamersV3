@@ -22,11 +22,17 @@ namespace MaisGamers.Model.Locacao
         [Display(Description = "Nome", ShortName = "350")]
         public string  Nome { get; set; }
 
+        public string NomeMae { get; set; }
+
+        public string NomePai { get; set; }
+
         [Display(Description = "CPF", ShortName = "150")]
         public string CPF { get; set; }
 
         [Display(Description = "RG", ShortName = "150")]
         public string RG { get; set; }
+
+        public DateTime DataExpedicao { get; set; }
 
         [CustomAttibuteDate(ShortDate = true)]
         public DateTime DataNascimento{ get; set; }
@@ -63,14 +69,25 @@ namespace MaisGamers.Model.Locacao
 
 
         public string Telefone { get; set; }
+        public string Telefone2 { get; set; }
+
+        public int cSexo { get; set; }
 
         [NotMapped]
         public string ColunasGrid { get; set; }
 
         public mTipoCliente TipoCliente { get; set; }
 
+        public byte[] FotoLocatario { get; set; }
+
+        public byte[] FotoAutorizado { get; set; }
 
 
+        public byte[] DocumentoAssinado { get; set; }
+    
+        public byte [] AnexoRG { get; set; }
+
+        public byte[] AnexoComprovanteEndereco { get; set; }
 
 
         //       @Nome VARCHAR(300) = NULL,

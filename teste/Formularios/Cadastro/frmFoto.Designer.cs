@@ -63,6 +63,7 @@
             this.Controls.Add(this.button1);
             this.Name = "frmFoto";
             this.Text = "frmFoto";
+            this.Load += new System.EventHandler(this.frmFoto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

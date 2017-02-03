@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -21,6 +22,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private int m_Width = 500;
         private int m_Height = 500;
+        public Byte[] foto;
 
 
         // Altura e largura da imagem gerada pela WebCam
@@ -231,9 +233,19 @@ namespace MaisGamers.Formularios.Cadastro
         {
             Image image = pictureBox1.Image;
 
-            image.Save(@"C:\Users\Supremo MaisGamers\Documents\Fax\aa.jpg");
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                foto = ms.ToArray();
+            }
+
             Stop();
             this.Close();
+        }
+
+        private void frmFoto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

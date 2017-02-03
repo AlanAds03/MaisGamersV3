@@ -12,23 +12,62 @@ using MaisGamers.DAL;
 
 namespace MaisGamersV2.DAL.Locacao
 {
-    public class dClienteLocacao :  IDisposable
+    public class dClienteLocacao : IDisposable
     {
-     
+
+        public bool InserirFoto(int idClienteLocacao, bool locatario ,byte[] fotoLocatario)
+        {
+
+            var db = new Contexto();
+
+            try
+            {
+
+
+                mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
+
+                if (locatario)
+                {
+                    cliente.FotoLocatario = fotoLocatario;
+                }
+                else
+                {
+                    cliente.FotoAutorizado = fotoLocatario;
+                }
+                
+                db.Entry(cliente).State = EntityState.Modified;
+                db.SaveChanges();
+
+
+
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+        }
 
         public bool InserirCliente(mClienteLocacao _clienteLocacao)
         {
             var db = new Contexto();
-            
+
             try
             {
 
                 _clienteLocacao.Estado = db.Estado.First(X => X.cEstado == _clienteLocacao.cEstado);
                 _clienteLocacao.Cidade = db.Cidade.First(X => X.cCidade == _clienteLocacao.cCidade);
                 _clienteLocacao.TipoCliente = db.TipoCliente.First(x => x.IDTipoCliente == _clienteLocacao.IDTipoCliente);
-                if(_clienteLocacao.idClienteLocacao != 0)
+                if (_clienteLocacao.idClienteLocacao != 0)
                 {
                     mClienteLocacao cliente = db.ClienteLocacao.Find(_clienteLocacao.idClienteLocacao);
+
+                    
+                    
                     MapObject(ref _clienteLocacao, ref cliente);
                     db.Entry(cliente).State = EntityState.Modified;
                     db.SaveChanges();
@@ -38,9 +77,9 @@ namespace MaisGamersV2.DAL.Locacao
                     db.ClienteLocacao.Add(_clienteLocacao);
                     db.SaveChanges();
                 }
-                
 
-                
+
+
 
                 return true;
             }
@@ -49,7 +88,7 @@ namespace MaisGamersV2.DAL.Locacao
 
                 return false;
             }
-            
+
 
 
 
@@ -67,7 +106,7 @@ namespace MaisGamersV2.DAL.Locacao
                     .Include(y => y.Cidade)
                     .Include(z => z.TipoCliente)
                     .Where(x => x.idClienteLocacao == idCLienteLocacao).FirstOrDefault();
-                    
+
             }
             catch (Exception ex)
             {
@@ -97,7 +136,7 @@ namespace MaisGamersV2.DAL.Locacao
         {
             try
             {
-                using(var db = new Contexto())
+                using (var db = new Contexto())
                 {
                     var cli = db.ClienteLocacao.Where(x => x.idClienteLocacao == idClienteLocacao).FirstOrDefault();
                     db.Entry(cli).State = EntityState.Deleted;
@@ -130,7 +169,7 @@ namespace MaisGamersV2.DAL.Locacao
 
                 List<mClienteLocacao> nova = new List<mClienteLocacao>();
 
-                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;"; x.strTipoCliente = ((x.TipoCliente ==null ? "" :  x.TipoCliente.TipoCliente)); return x; }).ToList();
+                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;"; x.strTipoCliente = ((x.TipoCliente == null ? "" : x.TipoCliente.TipoCliente)); return x; }).ToList();
 
 
                 return nova.ToList();
@@ -171,7 +210,7 @@ namespace MaisGamersV2.DAL.Locacao
 
         public void Dispose()
         {
-            
+
         }
 
         public void MapObject(ref mClienteLocacao source, ref mClienteLocacao destination)
@@ -191,7 +230,10 @@ namespace MaisGamersV2.DAL.Locacao
                                        select new { sp, dp };
                 foreach (var match in commonProperties)
                 {
-                    match.dp.SetValue(destination, match.sp.GetValue(source, null), null);
+                    if (match.sp.GetValue(source, null) != null){
+                        match.dp.SetValue(destination, match.sp.GetValue(source, null), null);
+                    }
+                    
                 }
             }
             catch (Exception ex)

@@ -21,11 +21,14 @@ using System.Runtime.InteropServices;
 using Frameworks.Classes;
 using System.Net;
 using MaisGamers.DAL.Cadastro;
+using System.IO;
+using System.Diagnostics;
+using mshtml;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
 {
-
+   
 
     public partial class frmClienteLocacao : Form
     {
@@ -50,7 +53,7 @@ namespace MaisGamers.Formularios.Cadastro
             CarregaComboCidade(cmbCidade, Convert.ToInt16(cmbEstado.SelectedValue));
 
             CarregaComboTipoCliente(cmbTipoCliente);
-
+            CarregaComboSexo(cmbSexo);
 
             modo_tela = ModoTela.CONSULTA;
             atualizaTela();
@@ -59,6 +62,30 @@ namespace MaisGamers.Formularios.Cadastro
 
             //tbControl.ac
         }
+
+
+        private void CarregaComboSexo(SuperComboBox cmbSexo)
+        {
+            
+
+            List<mSexo> listSexo = new List<mSexo>();
+            try
+            {
+
+                listSexo.Add(new mSexo() {cSexo = 1 , rSexo  = "Masculino" });
+                listSexo.Add(new mSexo() { cSexo = 2, rSexo = "Feminino" });
+
+
+                cmbSexo.CarregaCombo(listSexo, "cSexo", "rSexo", SuperComboBox.PrimeiraLinha.Selecione);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
 
         private void CarregaComboEstado(SuperComboBox cmbEstado)
         {
@@ -241,7 +268,6 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
-                pnlCodigo.Visible = false;
                 idClienteLocacao = 0;
                 LimpaCampos();
 
@@ -257,7 +283,6 @@ namespace MaisGamers.Formularios.Cadastro
                 btnFechar.Text = "Voltar";
                 btnSalvar.Enabled = true;
                 btnNovo.Enabled = false;
-                pnlCodigo.Visible = true;
                 bClienteLocacao _bCli = new bClienteLocacao();
                 mClienteLocacao cliente = new mClienteLocacao();
                 cliente = _bCli.ObterCliente(idClienteLocacao);
@@ -270,6 +295,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 txtCodigo.Text = idClienteLocacao.ToString();
                 txtNome.Text = cliente.Nome;
+                txtNomeMae.Text = cliente.NomeMae;
                 txtCpf.Text = cliente.CPF;
                 txtRG.Text = cliente.RG;
                 txtDataNascimento.Text = Convert.ToString(cliente.DataNascimento);
@@ -278,6 +304,8 @@ namespace MaisGamers.Formularios.Cadastro
                 txtCEP.Text = cliente.CEP;
                 txtBairro.Text = cliente.Bairro;
                 txtTelefone.Text = cliente.Telefone;
+                txtNomePai.Text = cliente.NomePai;
+                txtDataExpedicao.Text = Convert.ToString(cliente.DataExpedicao);
 
                 txtAutoriza.Text = cliente.NomeFilho;
                 txtCpfFilho.Text = cliente.CPFFilho;
@@ -285,6 +313,9 @@ namespace MaisGamers.Formularios.Cadastro
 
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
                 txtTelefone.Text = cliente.Telefone;
+                txtTelefone2.Text = cliente.Telefone2;
+
+                cmbSexo.SelectedValue = cliente.cSexo;
                 if (cliente.TipoCliente != null)
                 {
                     cmbTipoCliente.SelectedValue = cliente.TipoCliente.IDTipoCliente;
@@ -293,6 +324,21 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     cmbTipoCliente.SelectedValue = "";
                 }
+
+
+                if (cliente.FotoLocatario != null)
+                {
+                    pictureLocatario.Image = Image.FromStream(new MemoryStream(cliente.FotoLocatario));
+                    pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+
+
+                if (cliente.FotoAutorizado != null)
+                {
+                    pictureAutorizado.Image = Image.FromStream(new MemoryStream(cliente.FotoAutorizado));
+                    pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+
 
 
                 int codigo = 0;
@@ -317,6 +363,7 @@ namespace MaisGamers.Formularios.Cadastro
             idClienteLocacao = 0;
             txtCodigo.Text = string.Empty;
             txtNome.Text = string.Empty;
+            txtNomeMae.Text = string.Empty;
             txtCpf.Text = string.Empty;
             txtRG.Text = string.Empty;
             txtDataNascimento.Text = string.Empty;
@@ -331,6 +378,7 @@ namespace MaisGamers.Formularios.Cadastro
             txtRGFilho.Text = string.Empty;
             cmbTipoCliente.SelectedValue = string.Empty;
             txtTelefone.Text = string.Empty;
+            txtTelefone2.Text = string.Empty;
 
         }
 
@@ -365,6 +413,9 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
             _mClilocacao.Nome = txtNome.Text;
+            _mClilocacao.NomeMae = txtNomeMae.Text;
+            _mClilocacao.NomePai = txtNomePai.Text;
+            _mClilocacao.DataExpedicao = Convert.ToDateTime(txtDataExpedicao.Text);
             _mClilocacao.CPF = txtCpf.Text;
             _mClilocacao.RG = txtRG.Text;
             if (util.isDate(txtDataNascimento.Text))
@@ -388,10 +439,12 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.cEstado = Convert.ToInt16(cmbEstado.SelectedValue);
             _mClilocacao.cCidade = Convert.ToInt16(cmbCidade.SelectedValue);
             _mClilocacao.Telefone = txtTelefone.Text;
+            _mClilocacao.Telefone2 = txtTelefone2.Text;
             _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
             _mClilocacao.NomeFilho = txtAutoriza.Text;
-            _mClilocacao.RGFilho = txtRGFilho.Text.Replace(".","").Replace("-","").Replace(",","");
+            _mClilocacao.RGFilho = txtRGFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             _mClilocacao.CPFFilho = txtCpfFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
+            _mClilocacao.cSexo = Convert.ToInt32(cmbSexo.SelectedValue);
 
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
@@ -423,14 +476,14 @@ namespace MaisGamers.Formularios.Cadastro
         {
             bool retorno = true;
 
-            if (string.IsNullOrEmpty(txtNome.Text))
+            if (string.IsNullOrEmpty(txtNomeMae.Text))
             {
-                errorProvider1.SetError(txtNome, "Informar o nome do cliente");
+                errorProvider1.SetError(txtNomeMae, "Informar o nome do cliente");
                 retorno = false;
             }
             else
             {
-                errorProvider1.SetError(txtNome, "");
+                errorProvider1.SetError(txtNomeMae, "");
             }
 
 
@@ -548,8 +601,31 @@ namespace MaisGamers.Formularios.Cadastro
         private void button4_Click_1(object sender, EventArgs e)
         {
             frmFoto _foto = new frmFoto();
-
             _foto.ShowDialog();
+
+            if (rbLocatario.Checked)
+            {
+                pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                bClienteLocacao _bcliente = new bClienteLocacao();
+
+                _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+
+                pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                bClienteLocacao _bcliente = new bClienteLocacao();
+                _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+
+
+
+
+
+
 
         }
 
@@ -667,7 +743,138 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
+        private void pictureLocatario_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+
+            if (pictureLocatario.Image == null)
+            {
+                return;
+            }
+
+            if (me.Button == MouseButtons.Right)
+            {
+                SaveFileDialog _save = new SaveFileDialog();
+
+                _save.ShowDialog();
+
+                Image image = pictureLocatario.Image;
+
+                if (File.Exists(_save.FileName + ".png"))
+                {
+                    File.Delete(_save.FileName + ".png");
+                }
 
 
+                image.Save(_save.FileName + ".png");
+
+                if (Mensagem("Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                {
+                    Process.Start(_save.FileName + ".png");
+                }
+            }
+
+        }
+
+        private void pictureAutorizado_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+
+            if (pictureAutorizado.Image == null)
+            {
+                return;
+            }
+
+            if (me.Button == MouseButtons.Right)
+            {
+                SaveFileDialog _save = new SaveFileDialog();
+
+                _save.ShowDialog();
+
+                Image image = pictureAutorizado.Image;
+
+                if (File.Exists(_save.FileName + ".png"))
+                {
+                    File.Delete(_save.FileName + ".png");
+                }
+
+                image.Save(_save.FileName + ".png");
+
+                if (Mensagem("Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                {
+                    Process.Start(_save.FileName + ".png");
+                }
+
+
+            }
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Stopwatch relogio = new Stopwatch();
+
+            SHDocVw.InternetExplorer IE = new SHDocVw.InternetExplorer();
+
+            IE.Visible = true;
+            IE.Navigate2("http://www2.ssp.sp.gov.br/atestado/novo/Atestado02.cfm");
+
+            while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
+            {
+                Application.DoEvents();
+            }
+
+            var documento = IE.Document;
+
+            var aa = ((IHTMLDocument3)documento);
+
+            aa.getElementsByName("Nome").item(0).setAttribute("value", txtNome.Text);
+            if(cmbSexo.SelectedValue.ToString() == "1")
+            {
+                aa.getElementsByName("Sexo").item(0).setAttribute("value", "M");
+            }
+            else
+            {
+                aa.getElementsByName("Sexo").item(0).setAttribute("value", "F");
+            }
+
+            aa.getElementsByName("Numero").item(0).setAttribute("value", txtRG.Text.Substring(0,txtRG.Text.Length - 1));
+            aa.getElementsByName("digito").item(0).setAttribute("value", txtRG.Text.Substring(txtRG.Text.Length - 1, 1));
+
+
+            aa.getElementsByName("txtDIAE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("dd"));
+            aa.getElementsByName("txtMESE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("MM"));
+            aa.getElementsByName("txtANOE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("yyyy"));
+
+
+            aa.getElementsByName("txtDIA").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("dd"));
+            aa.getElementsByName("txtMES").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("MM"));
+            aa.getElementsByName("txtANO").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("yyyy"));
+            aa.getElementsByName("NomeMae").item(0).setAttribute("value", txtNomeMae.Text);
+            aa.getElementsByName("NomePai").item(0).setAttribute("value", txtNomePai.Text);
+            aa.getElementById("pesquisa").click();
+
+
+            //while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
+            //{
+            //    Application.DoEvents();
+            //}
+
+            relogio.Start();
+            while (relogio.ElapsedMilliseconds < 5000)
+            {
+                Application.DoEvents();
+            }
+
+            relogio.Stop();
+
+            IE.ExecWB(SHDocVw.OLECMDID.OLECMDID_PRINT, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER, 2);
+
+
+
+
+
+        }
     }
 }
+

@@ -53,7 +53,8 @@ namespace Frameworks.Classes
             }
 
             //util.CentralizaGrupo(grpBotoes,false);
-
+            lblMensagem.MaximumSize = new Size(450, 0);
+            lblMensagem.AutoSize = true;
             lblMensagem.Text = mensagem;
             int width;
             int height;
