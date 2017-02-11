@@ -45,6 +45,9 @@ namespace MaisGamers.Model
 
         public DbSet<mTipoOrcamentoStatus> TipoOrcamentoStatus { get; set; }
 
+        public DbSet<mPrecoLocacao> PrecoLocacao { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

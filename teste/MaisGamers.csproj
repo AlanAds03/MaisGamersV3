@@ -248,6 +248,14 @@
     <Compile Include="Migrations\201701312327595_adddataexpedicao.Designer.cs">
       <DependentUpon>201701312327595_adddataexpedicao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702111858264_PrecoLocacao.cs" />
+    <Compile Include="Migrations\201702111858264_PrecoLocacao.Designer.cs">
+      <DependentUpon>201702111858264_PrecoLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702111900145_PrecoLocacaoIdentity.cs" />
+    <Compile Include="Migrations\201702111900145_PrecoLocacaoIdentity.Designer.cs">
+      <DependentUpon>201702111900145_PrecoLocacaoIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -261,6 +269,7 @@
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacaoJogos.cs" />
+    <Compile Include="Model\Locacao\mPrecoLocacao.cs" />
     <Compile Include="Model\Locacao\mStatusLocacao.cs" />
     <Compile Include="Model\mCidade.cs" />
     <Compile Include="Model\mEstado.cs" />
@@ -379,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701312327595_adddataexpedicao.resx">
       <DependentUpon>201701312327595_adddataexpedicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702111858264_PrecoLocacao.resx">
+      <DependentUpon>201702111858264_PrecoLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702111900145_PrecoLocacaoIdentity.resx">
+      <DependentUpon>201702111900145_PrecoLocacaoIdentity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

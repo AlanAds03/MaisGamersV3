@@ -39,5 +39,46 @@ namespace MaisGamers.DLL.Locacao
         }
 
 
+
+        public decimal PrevisaoPreco(int idLocacao, DateTime dataEntrega, bool utilizaPromocao)
+        {
+
+
+            //Data Atual 11/02/2017 
+            //entregar dia 13/02/2017 
+
+            //Pegar quantos dias irá alugar .
+
+            DateTime dataPrevista = System.DateTime.Now;
+            int dia = 0;
+            decimal total;
+
+            //Desconsiderar Domingo
+            while (dataPrevista < dataEntrega)
+            {
+                dataPrevista = dataPrevista.AddDays(1);
+
+                if (dataPrevista.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    dia += 1;
+                }
+
+
+            }
+
+
+
+
+            dLocacao _dlocacao = new dLocacao();
+
+
+            return _dlocacao.PesquisaLocacaoID(idLocacao);
+
+        }
+
+
+
+
+
     }
 }

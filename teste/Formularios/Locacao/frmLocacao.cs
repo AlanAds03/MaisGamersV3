@@ -41,8 +41,8 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 atualizaTela();
             }
-            
-            
+
+
         }
 
         private void CarregaComboStatus(SuperComboBox combo)
@@ -50,11 +50,11 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
                 bStatusLocacao _bStatus = new bStatusLocacao();
-                    List<mStatusLocacao> status = new List<mStatusLocacao>();
+                List<mStatusLocacao> status = new List<mStatusLocacao>();
 
                 status = _bStatus.CarregaStatusLocacao();
-                    combo.CarregaCombo(status, "IDStatus", "Status", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
-                
+                combo.CarregaCombo(status, "IDStatus", "Status", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+
             }
             catch (Exception ex)
             {
@@ -110,11 +110,11 @@ namespace MaisGamers.Formularios.Cadastro
                 mClienteLocacao _mClienteLocacao = new mClienteLocacao();
 
 
-                _mClienteLocacao = _bclienteLocacao.PesquisaClienteID(idClienteLocacao);
+                //_mClienteLocacao = _bclienteLocacao.PesquisaClienteID(idClienteLocacao);
 
-                lblCliente.Text = _mClienteLocacao.Nome;
-                lblRG.Text = _mClienteLocacao.RG;
-                lblCPF.Text = _mClienteLocacao.CPF;
+                //lblCliente.Text = _mClienteLocacao.Nome;
+                //lblRG.Text = _mClienteLocacao.RG;
+                //lblCPF.Text = _mClienteLocacao.CPF;
 
                 PesquisaGrid(idLocacao);
 
@@ -131,8 +131,8 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void LimpaCampos()
         {
-            
-            
+
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -157,15 +157,15 @@ namespace MaisGamers.Formularios.Cadastro
                 bJogo _bJogo = new bJogo();
                 mJogo jogo = new mJogo();
 
-                
 
-                
-                
-                
-                
+
+
+
+
+
                 if (_bJogo.InserirJogo(jogo))
                 {
-                    
+
                     modo_tela = ModoTela.CONSULTA;
                     atualizaTela();
                 }
@@ -185,7 +185,7 @@ namespace MaisGamers.Formularios.Cadastro
         private void button4_Click(object sender, EventArgs e)
         {
 
-            
+
 
             PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
         }
@@ -200,9 +200,9 @@ namespace MaisGamers.Formularios.Cadastro
 
             try
             {
-                
-                    lvPesquisa.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(NomeCliente, Status));
-                
+
+                lvPesquisa.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacao(NomeCliente, Status));
+
             }
 
             catch (Exception ex)
@@ -242,7 +242,7 @@ namespace MaisGamers.Formularios.Cadastro
         private void PesquisaGrid(int idLocacao)
         {
             bLocacao _bLocacao = new bLocacao();
-            
+
             List<bLocacao> Jogos = new List<bLocacao>();
             string json;
 
@@ -274,7 +274,7 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 frmPesquisaJogo _pesquisJOgo = new frmPesquisaJogo();
                 _pesquisJOgo.ShowDialog();
-                
+
                 bLocacao _bLocacao = new bLocacao();
                 mLocacao _mLocacao = new mLocacao();
 
@@ -293,9 +293,31 @@ namespace MaisGamers.Formularios.Cadastro
 
                 _bLocacaoJogo.InserirLocacaoJogo(_mLocacaoJogo);
 
-                //PesquisaGrid
+                PesquisaGrid(idLocacao);
 
-                 //_pesquisJOgo.idJogo
+                //_pesquisJOgo.idJogo
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                DateTime dataEntrega = new DateTime(txtDataEntrega.Value.Year, txtDataEntrega.Value.Month, txtDataEntrega.Value.Day);
+
+
+                bLocacao _bLocacao = new bLocacao();
+
+                _bLocacao.PrevisaoPreco(idLocacao, dataEntrega);
+
 
             }
             catch (Exception)

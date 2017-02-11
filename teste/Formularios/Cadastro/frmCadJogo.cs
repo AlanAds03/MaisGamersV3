@@ -33,7 +33,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             CarregaComboConsole(cmbConsolePesquisa);
             CarregaComboConsole(cmbConsole);
-            CarregaComboTipoJogo(cmbTipoJogo);
+            CarregaComboTipoJogo(cmbTipoJogo,1);
         }
 
         private void CarregaComboConsole(SuperComboBox combo)
@@ -55,7 +55,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
         }
 
-        private void CarregaComboTipoJogo(SuperComboBox combo)
+        private void CarregaComboTipoJogo(SuperComboBox combo , int value)
         {
             try
             {
@@ -64,7 +64,8 @@ namespace MaisGamers.Formularios.Cadastro
                 List<mTipoJogo> Tipo = new List<mTipoJogo>();
 
                 Tipo = _bTipo.CarregaTipoJogo();
-                combo.CarregaCombo(Tipo, "IDTipoJogo", "NomeTipoJogo", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+                combo.CarregaCombo(Tipo, "IDTipoJogo", "NomeTipoJogo", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Nenhum);
+                combo.SelectedValue = value;
 
             }
             catch (Exception ex)
@@ -135,7 +136,7 @@ namespace MaisGamers.Formularios.Cadastro
             txtSenha.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
             cmbConsole.SelectedValue = "";
-            cmbTipoJogo.SelectedValue = "";
+            cmbTipoJogo.SelectedValue = "1";
             txtPrecoPago.Text = string.Empty;
             txtPrecoVenda.Text = string.Empty;
             txtPrecoPrimaria.Text = string.Empty;
@@ -184,13 +185,28 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     jogo.Quantidade = Convert.ToInt32(txtQuantidade.Text);
                 }
-                
-                jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
-                jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
+
+                if (!string.IsNullOrEmpty(txtPrecoPago.Text))
+                {
+                    jogo.PrecoPago = Convert.ToDouble(txtPrecoPago.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtPrecoVenda.Text))
+                {
+                    jogo.PrecoVenda = Convert.ToDouble(txtPrecoVenda.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtPrecoPrimaria.Text))
+                {
+                    jogo.PrecoPrimaria = Convert.ToDouble(txtPrecoPrimaria.Text);
+                }
 
 
-                jogo.PrecoPrimaria = Convert.ToDouble(txtPrecoPrimaria.Text);
-                jogo.PrecoSecundaria = Convert.ToDouble(txtPrecoSecundaria.Text);
+                if (!string.IsNullOrEmpty(txtPrecoSecundaria.Text))
+                {
+                    jogo.PrecoSecundaria = Convert.ToDouble(txtPrecoSecundaria.Text);
+                }
+
 
                 if (_bJogo.InserirJogo(jogo))
                 {
@@ -347,6 +363,44 @@ namespace MaisGamers.Formularios.Cadastro
 
             txtPrecoSecundaria.Text = valor.ToString("0.00");
 
+        }
+
+        public void ControleCamposTipojogo()
+        {
+
+            if (cmbTipoJogo.SelectedValue == null)
+            {
+                return;
+            }
+
+
+            if (cmbTipoJogo.SelectedValue.ToString() != "1")
+            {
+                pnlEmail.Visible = true;
+                lblPago.Visible = false;
+                lblVenda.Visible = false;
+                txtPrecoPago.Visible = false;
+                txtPrecoVenda.Visible = false;
+            }
+            else
+            {
+                pnlEmail.Visible = false;
+                lblPago.Visible = true;
+                lblVenda.Visible = true;
+                txtPrecoPago.Visible = true;
+                txtPrecoVenda.Visible = true;
+            }
+
+        }
+        private void cmbTipoJogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            ControleCamposTipojogo();
+        }
+
+        private void cmbTipoJogo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ControleCamposTipojogo();
         }
     }
 }

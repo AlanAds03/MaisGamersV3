@@ -84,6 +84,8 @@ namespace MaisGamers.DAL.Locacao
 
         }
 
+        
+
         public List<dynamic> PesquisaLocacaoID(int idLocacao)
         {
 
@@ -96,8 +98,9 @@ namespace MaisGamers.DAL.Locacao
                 var a = from x in db.LocacaoJogos
                         join z in db.Locacao on x.IDLocacao.IDLocacao equals z.IDLocacao
                         join y in db.Jogo on x.IDJogo.IDJogo equals y.IDJogo
+                        join w in db.PrecoLocacao on y.IDConsole equals w.IDConsole
                         where z.IDLocacao == idLocacao
-                        select new  { ColunasGrid = "NomeJogo[200|Jogo];NomeConsole[150|Console];DataLocacao[150|Data Locação]", y.NomeJogo , y.IDConsole.NomeConsole, z.DataLocacao};
+                        select new  { ColunasGrid = "NomeJogo[200|Jogo];NomeConsole[150|Console];DataLocacao[150|Data Locação];PrecoDia1[100|1 Dia];;PrecoDia2[100|2 Dia];;PrecoDia3[100|3 Dia];", y.NomeJogo , y.IDConsole.NomeConsole, z.DataLocacao, w.PrecoDia1, w.PrecoDia2 , w.PrecoDia3 };
 
 
 
