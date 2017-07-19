@@ -54,6 +54,10 @@
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
+            this.txtDataExpedicao = new System.Windows.Forms.MaskedTextBox();
+            this.lala = new System.Windows.Forms.Label();
+            this.txtNomePai = new Frameworks.Componentes.SuperTextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.cmbSexo = new Frameworks.Componentes.SuperComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -109,10 +113,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtNomePai = new Frameworks.Componentes.SuperTextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lala = new System.Windows.Forms.Label();
-            this.txtDataExpedicao = new System.Windows.Forms.MaskedTextBox();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -475,6 +475,45 @@
             this.grpCadastra.Text = "Cadastro";
             this.grpCadastra.Enter += new System.EventHandler(this.grpCadastra_Enter);
             // 
+            // txtDataExpedicao
+            // 
+            this.txtDataExpedicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataExpedicao.Location = new System.Drawing.Point(6, 82);
+            this.txtDataExpedicao.Mask = "00/00/0000";
+            this.txtDataExpedicao.Name = "txtDataExpedicao";
+            this.txtDataExpedicao.Size = new System.Drawing.Size(100, 23);
+            this.txtDataExpedicao.TabIndex = 58;
+            this.txtDataExpedicao.ValidatingType = typeof(System.DateTime);
+            // 
+            // lala
+            // 
+            this.lala.AutoSize = true;
+            this.lala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lala.Location = new System.Drawing.Point(9, 62);
+            this.lala.Name = "lala";
+            this.lala.Size = new System.Drawing.Size(126, 17);
+            this.lala.TabIndex = 57;
+            this.lala.Text = "Data Expedição:";
+            // 
+            // txtNomePai
+            // 
+            this.txtNomePai.CampoObrigatorio = false;
+            this.txtNomePai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomePai.Location = new System.Drawing.Point(6, 174);
+            this.txtNomePai.Name = "txtNomePai";
+            this.txtNomePai.Size = new System.Drawing.Size(368, 23);
+            this.txtNomePai.TabIndex = 54;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(9, 154);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(105, 17);
+            this.label26.TabIndex = 55;
+            this.label26.Text = "Nome do Pai:";
+            // 
             // cmbSexo
             // 
             this.cmbSexo.CampoObrigatorio = false;
@@ -659,6 +698,7 @@
             this.button1.Text = "Imprimir Contrato";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtNome
             // 
@@ -1021,45 +1061,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtNomePai
-            // 
-            this.txtNomePai.CampoObrigatorio = false;
-            this.txtNomePai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomePai.Location = new System.Drawing.Point(6, 174);
-            this.txtNomePai.Name = "txtNomePai";
-            this.txtNomePai.Size = new System.Drawing.Size(368, 23);
-            this.txtNomePai.TabIndex = 54;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(9, 154);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(105, 17);
-            this.label26.TabIndex = 55;
-            this.label26.Text = "Nome do Pai:";
-            // 
-            // lala
-            // 
-            this.lala.AutoSize = true;
-            this.lala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lala.Location = new System.Drawing.Point(9, 62);
-            this.lala.Name = "lala";
-            this.lala.Size = new System.Drawing.Size(126, 17);
-            this.lala.TabIndex = 57;
-            this.lala.Text = "Data Expedição:";
-            // 
-            // txtDataExpedicao
-            // 
-            this.txtDataExpedicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataExpedicao.Location = new System.Drawing.Point(6, 82);
-            this.txtDataExpedicao.Mask = "00/00/0000";
-            this.txtDataExpedicao.Name = "txtDataExpedicao";
-            this.txtDataExpedicao.Size = new System.Drawing.Size(100, 23);
-            this.txtDataExpedicao.TabIndex = 58;
-            this.txtDataExpedicao.ValidatingType = typeof(System.DateTime);
             // 
             // frmClienteLocacao
             // 

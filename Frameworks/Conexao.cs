@@ -19,7 +19,7 @@ namespace Frameworks
 
         public Conexao()
         {
-            connection = new OdbcConnection("Data Source=.; DataBase=maisGamers;user=sa;pwd=qweasd");
+            connection = new OdbcConnection(@"Data Source=MAISGAMERS\SQLEXPRESS; DataBase=maisGamers;user=sa;pwd=qweasd");
         }
 
         public bool Conectar()

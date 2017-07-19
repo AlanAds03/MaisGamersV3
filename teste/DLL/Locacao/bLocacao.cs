@@ -72,7 +72,7 @@ namespace MaisGamers.DLL.Locacao
             dLocacao _dlocacao = new dLocacao();
 
 
-            return _dlocacao.PesquisaLocacaoID(idLocacao);
+            return 0; //_dlocacao.PesquisaLocacaoID(idLocacao);
 
         }
 
