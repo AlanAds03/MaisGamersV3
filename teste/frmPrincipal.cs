@@ -52,7 +52,7 @@ namespace MaisGamers
 
             if (Screen.PrimaryScreen.Bounds.Height < 800)
             {
-                ribbon1.Height = 120;
+                ribbon1.Height = 100;
             }
             else
             {

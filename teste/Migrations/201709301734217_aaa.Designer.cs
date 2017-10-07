@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class json : IMigrationMetadata
+    public sealed partial class aaa : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(json));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(aaa));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610292151175_json"; }
+            get { return "201709301734217_aaa"; }
         }
         
         string IMigrationMetadata.Source

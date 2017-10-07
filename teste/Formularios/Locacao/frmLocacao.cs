@@ -316,7 +316,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 bLocacao _bLocacao = new bLocacao();
 
-                _bLocacao.PrevisaoPreco(idLocacao, dataEntrega);
+                _bLocacao.PrevisaoPreco(idLocacao, dataEntrega,true);
 
 
             }

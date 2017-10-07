@@ -34,6 +34,8 @@ namespace MaisGamers.Model.Cadastro
         public int cIDTipoJogo { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+
+        public string SenhaPSN { get; set; }
         public int Quantidade { get; set; }
         public double PrecoPago { get; set; }
         [Display(Description = "Preço", ShortName = "80",Prompt = "decimal")]

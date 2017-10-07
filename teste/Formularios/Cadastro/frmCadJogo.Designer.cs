@@ -71,6 +71,8 @@
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.cmbConsole = new Frameworks.Componentes.SuperComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSenhaPSN = new Frameworks.Componentes.SuperTextBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -319,6 +321,8 @@
             // 
             // pnlEmail
             // 
+            this.pnlEmail.Controls.Add(this.label5);
+            this.pnlEmail.Controls.Add(this.txtSenhaPSN);
             this.pnlEmail.Controls.Add(this.label6);
             this.pnlEmail.Controls.Add(this.label12);
             this.pnlEmail.Controls.Add(this.txtEmail);
@@ -329,7 +333,7 @@
             this.pnlEmail.Controls.Add(this.txtSenha);
             this.pnlEmail.Location = new System.Drawing.Point(6, 117);
             this.pnlEmail.Name = "pnlEmail";
-            this.pnlEmail.Size = new System.Drawing.Size(695, 136);
+            this.pnlEmail.Size = new System.Drawing.Size(849, 136);
             this.pnlEmail.TabIndex = 28;
             // 
             // label6
@@ -536,6 +540,25 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(578, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 17);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Senha PSN/XONE:";
+            // 
+            // txtSenhaPSN
+            // 
+            this.txtSenhaPSN.CampoObrigatorio = false;
+            this.txtSenhaPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaPSN.Location = new System.Drawing.Point(581, 31);
+            this.txtSenhaPSN.Name = "txtSenhaPSN";
+            this.txtSenhaPSN.Size = new System.Drawing.Size(213, 26);
+            this.txtSenhaPSN.TabIndex = 28;
+            // 
             // frmCadJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,5 +634,7 @@
         private Frameworks.Componentes.SuperTextBox txtPrecoPrimaria;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel pnlEmail;
+        private System.Windows.Forms.Label label5;
+        private Frameworks.Componentes.SuperTextBox txtSenhaPSN;
     }
 }

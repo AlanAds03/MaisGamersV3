@@ -68,11 +68,6 @@ namespace MaisGamers.DAL
                     }
 
 
-
-
-
-
-
                     return true;
                 }
             }

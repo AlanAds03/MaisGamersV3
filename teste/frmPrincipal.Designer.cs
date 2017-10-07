@@ -34,6 +34,8 @@
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
             this.Rbmenumanutencao = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.Rbcontroles = new System.Windows.Forms.RibbonButton();
@@ -64,9 +66,7 @@
             this.Rblancahora = new System.Windows.Forms.RibbonButton();
             this.Rbfluxo = new System.Windows.Forms.RibbonPanel();
             this.Rbcaixa = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -124,6 +124,17 @@
             this.ribbonButton6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.Image")));
             this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
             this.ribbonButton6.Click += new System.EventHandler(this.ribbonButton6_Click);
+            // 
+            // ribbonPanel10
+            // 
+            this.ribbonPanel10.Items.Add(this.ribbonButton8);
+            this.ribbonPanel10.Text = "Anotações";
+            // 
+            // ribbonButton8
+            // 
+            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
+            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
+            this.ribbonButton8.Text = "";
             // 
             // Rbmenumanutencao
             // 
@@ -312,21 +323,10 @@
             this.Rbcaixa.Image = ((System.Drawing.Image)(resources.GetObject("Rbcaixa.Image")));
             this.Rbcaixa.SmallImage = ((System.Drawing.Image)(resources.GetObject("Rbcaixa.SmallImage")));
             // 
-            // ribbonPanel10
-            // 
-            this.ribbonPanel10.Items.Add(this.ribbonButton8);
-            this.ribbonPanel10.Text = "Anotações";
-            // 
             // ribbonButton7
             // 
             this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            // 
-            // ribbonButton8
-            // 
-            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
-            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
-            this.ribbonButton8.Text = "";
             // 
             // frmPrincipal
             // 

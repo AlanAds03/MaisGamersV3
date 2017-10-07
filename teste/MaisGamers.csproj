@@ -112,6 +112,12 @@
     <Compile Include="Formularios\Cadastro\frmFoto.Designer.cs">
       <DependentUpon>frmFoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmNewPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmNewPrincipal.Designer.cs">
+      <DependentUpon>frmNewPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,113 +154,13 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610152059457_inicial.cs" />
-    <Compile Include="Migrations\201610152059457_inicial.Designer.cs">
-      <DependentUpon>201610152059457_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201709301734217_aaa.cs" />
+    <Compile Include="Migrations\201709301734217_aaa.Designer.cs">
+      <DependentUpon>201709301734217_aaa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610152113192_B.cs" />
-    <Compile Include="Migrations\201610152113192_B.Designer.cs">
-      <DependentUpon>201610152113192_B.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610292151175_json.cs" />
-    <Compile Include="Migrations\201610292151175_json.Designer.cs">
-      <DependentUpon>201610292151175_json.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612101553280_addUfEstado.cs" />
-    <Compile Include="Migrations\201612101553280_addUfEstado.Designer.cs">
-      <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612152100215_JOgoeConsole.cs" />
-    <Compile Include="Migrations\201612152100215_JOgoeConsole.Designer.cs">
-      <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612141613513_tabela Jogo.cs" />
-    <Compile Include="Migrations\201612141613513_tabela Jogo.Designer.cs">
-      <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612162216274_TipoCliente.cs" />
-    <Compile Include="Migrations\201612162216274_TipoCliente.Designer.cs">
-      <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612171637050_aaaa.cs" />
-    <Compile Include="Migrations\201612171637050_aaaa.Designer.cs">
-      <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612201514395_adicionaidentityJogo.cs" />
-    <Compile Include="Migrations\201612201514395_adicionaidentityJogo.Designer.cs">
-      <DependentUpon>201612201514395_adicionaidentityJogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612201520152_adicionaTipoJogo.cs" />
-    <Compile Include="Migrations\201612201520152_adicionaTipoJogo.Designer.cs">
-      <DependentUpon>201612201520152_adicionaTipoJogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612201522194_alteraTipoJogo.cs" />
-    <Compile Include="Migrations\201612201522194_alteraTipoJogo.Designer.cs">
-      <DependentUpon>201612201522194_alteraTipoJogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612211243581_alterarTipoNomeJogo.cs" />
-    <Compile Include="Migrations\201612211243581_alterarTipoNomeJogo.Designer.cs">
-      <DependentUpon>201612211243581_alterarTipoNomeJogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612211705597_tabelaCaixa.cs" />
-    <Compile Include="Migrations\201612211705597_tabelaCaixa.Designer.cs">
-      <DependentUpon>201612211705597_tabelaCaixa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612211706372_tabelaCaixa2.cs" />
-    <Compile Include="Migrations\201612211706372_tabelaCaixa2.Designer.cs">
-      <DependentUpon>201612211706372_tabelaCaixa2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612211707475_tabelaCaixa21.cs" />
-    <Compile Include="Migrations\201612211707475_tabelaCaixa21.Designer.cs">
-      <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.cs" />
-    <Compile Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.Designer.cs">
-      <DependentUpon>201612311811221_TabelasLocacao LocacaoJogo Status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.cs" />
-    <Compile Include="Migrations\201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.Designer.cs">
-      <DependentUpon>201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701152254140_anotacao.cs" />
-    <Compile Include="Migrations\201701152254140_anotacao.Designer.cs">
-      <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701211956326_addprecoJogo.cs" />
-    <Compile Include="Migrations\201701211956326_addprecoJogo.Designer.cs">
-      <DependentUpon>201701211956326_addprecoJogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311629537_AdicaoFotoCLiente.cs" />
-    <Compile Include="Migrations\201701311629537_AdicaoFotoCLiente.Designer.cs">
-      <DependentUpon>201701311629537_AdicaoFotoCLiente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311729432_nomeMaeCliente.cs" />
-    <Compile Include="Migrations\201701311729432_nomeMaeCliente.Designer.cs">
-      <DependentUpon>201701311729432_nomeMaeCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311732400_telefone2.cs" />
-    <Compile Include="Migrations\201701311732400_telefone2.Designer.cs">
-      <DependentUpon>201701311732400_telefone2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311745354_documentosAnexados.cs" />
-    <Compile Include="Migrations\201701311745354_documentosAnexados.Designer.cs">
-      <DependentUpon>201701311745354_documentosAnexados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701312256522_addSexo.cs" />
-    <Compile Include="Migrations\201701312256522_addSexo.Designer.cs">
-      <DependentUpon>201701312256522_addSexo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701312327595_adddataexpedicao.cs" />
-    <Compile Include="Migrations\201701312327595_adddataexpedicao.Designer.cs">
-      <DependentUpon>201701312327595_adddataexpedicao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702111858264_PrecoLocacao.cs" />
-    <Compile Include="Migrations\201702111858264_PrecoLocacao.Designer.cs">
-      <DependentUpon>201702111858264_PrecoLocacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702111900145_PrecoLocacaoIdentity.cs" />
-    <Compile Include="Migrations\201702111900145_PrecoLocacaoIdentity.Designer.cs">
-      <DependentUpon>201702111900145_PrecoLocacaoIdentity.cs</DependentUpon>
+    <Compile Include="Migrations\201710071924258_adicaoSenhaPSN.cs" />
+    <Compile Include="Migrations\201710071924258_adicaoSenhaPSN.Designer.cs">
+      <DependentUpon>201710071924258_adicaoSenhaPSN.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
@@ -296,6 +202,9 @@
     <EmbeddedResource Include="Formularios\Cadastro\frmFoto.resx">
       <DependentUpon>frmFoto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmNewPrincipal.resx">
+      <DependentUpon>frmNewPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,86 +223,11 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610152059457_inicial.resx">
-      <DependentUpon>201610152059457_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709301734217_aaa.resx">
+      <DependentUpon>201709301734217_aaa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610152113192_B.resx">
-      <DependentUpon>201610152113192_B.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610292151175_json.resx">
-      <DependentUpon>201610292151175_json.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612101553280_addUfEstado.resx">
-      <DependentUpon>201612101553280_addUfEstado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612152100215_JOgoeConsole.resx">
-      <DependentUpon>201612152100215_JOgoeConsole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612141613513_tabela Jogo.resx">
-      <DependentUpon>201612141613513_tabela Jogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612162216274_TipoCliente.resx">
-      <DependentUpon>201612162216274_TipoCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612171637050_aaaa.resx">
-      <DependentUpon>201612171637050_aaaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612201514395_adicionaidentityJogo.resx">
-      <DependentUpon>201612201514395_adicionaidentityJogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612201520152_adicionaTipoJogo.resx">
-      <DependentUpon>201612201520152_adicionaTipoJogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612201522194_alteraTipoJogo.resx">
-      <DependentUpon>201612201522194_alteraTipoJogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612211243581_alterarTipoNomeJogo.resx">
-      <DependentUpon>201612211243581_alterarTipoNomeJogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612211705597_tabelaCaixa.resx">
-      <DependentUpon>201612211705597_tabelaCaixa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612211706372_tabelaCaixa2.resx">
-      <DependentUpon>201612211706372_tabelaCaixa2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612211707475_tabelaCaixa21.resx">
-      <DependentUpon>201612211707475_tabelaCaixa21.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612311811221_TabelasLocacao LocacaoJogo Status.resx">
-      <DependentUpon>201612311811221_TabelasLocacao LocacaoJogo Status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.resx">
-      <DependentUpon>201701031837303_Add Tabela Orcamento,TipoOrcamento,TipoOrcamentoStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701152254140_anotacao.resx">
-      <DependentUpon>201701152254140_anotacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701211956326_addprecoJogo.resx">
-      <DependentUpon>201701211956326_addprecoJogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311629537_AdicaoFotoCLiente.resx">
-      <DependentUpon>201701311629537_AdicaoFotoCLiente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311729432_nomeMaeCliente.resx">
-      <DependentUpon>201701311729432_nomeMaeCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311732400_telefone2.resx">
-      <DependentUpon>201701311732400_telefone2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311745354_documentosAnexados.resx">
-      <DependentUpon>201701311745354_documentosAnexados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701312256522_addSexo.resx">
-      <DependentUpon>201701312256522_addSexo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701312327595_adddataexpedicao.resx">
-      <DependentUpon>201701312327595_adddataexpedicao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111858264_PrecoLocacao.resx">
-      <DependentUpon>201702111858264_PrecoLocacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111900145_PrecoLocacaoIdentity.resx">
-      <DependentUpon>201702111900145_PrecoLocacaoIdentity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710071924258_adicaoSenhaPSN.resx">
+      <DependentUpon>201710071924258_adicaoSenhaPSN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -439,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\menu-alt-512.png" />
     <None Include="Imagens\laptop_png8917.png" />
     <None Include="Imagens\Sem título-1.fw.png" />
     <None Include="Imagens\iconex360.fw.png" />

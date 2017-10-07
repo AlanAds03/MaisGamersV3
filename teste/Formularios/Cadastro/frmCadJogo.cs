@@ -109,6 +109,7 @@ namespace MaisGamers.Formularios.Cadastro
                 cmbTipoJogo.SelectedValue = _mJogo.IDTipoJogo.IDTipoJogo;
                 txtEmail.Text = _mJogo.Email;
                 txtSenha.Text = _mJogo.Senha;
+                txtSenhaPSN.Text = _mJogo.SenhaPSN;
                 txtQuantidade.Text = Convert.ToString(_mJogo.Quantidade);
                 txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
                 txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
@@ -141,6 +142,7 @@ namespace MaisGamers.Formularios.Cadastro
             txtPrecoVenda.Text = string.Empty;
             txtPrecoPrimaria.Text = string.Empty;
             txtPrecoSecundaria.Text = string.Empty;
+            txtSenhaPSN.Text = string.Empty;
 
         }
 
@@ -176,6 +178,7 @@ namespace MaisGamers.Formularios.Cadastro
                 jogo.cIDTipoJogo = Convert.ToInt32(cmbTipoJogo.SelectedValue);
                 jogo.Email = txtEmail.Text;
                 jogo.Senha = txtSenha.Text;
+                jogo.SenhaPSN = txtSenhaPSN.Text;
 
                 if(idJogo != 0)
                 {
