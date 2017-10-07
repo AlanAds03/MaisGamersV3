@@ -24,6 +24,7 @@ using MaisGamers.DAL.Cadastro;
 using System.IO;
 using System.Diagnostics;
 using mshtml;
+using MaisGamers.Formularios.Impressao;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -873,6 +874,14 @@ namespace MaisGamers.Formularios.Cadastro
 
 
 
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmImpressao frm = new frmImpressao();
+
+            frm.ShowDialog();
 
         }
     }

@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class adicaoSenhaPSN : IMigrationMetadata
+    public sealed partial class TodasTabelas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adicaoSenhaPSN));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TodasTabelas));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710071924258_adicaoSenhaPSN"; }
+            get { return "201707191749102_TodasTabelas"; }
         }
         
         string IMigrationMetadata.Source
