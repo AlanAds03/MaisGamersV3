@@ -24,7 +24,8 @@ using MaisGamers.DAL.Cadastro;
 using System.IO;
 using System.Diagnostics;
 using mshtml;
-using MaisGamers.Formularios.Impressao;
+using MaisGamers.Formularios.Cadastro.Popup;
+//using MaisGamers.Formularios.Impressao;
 //using MaisGamers.Formularios.Locacao;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -599,7 +600,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void btnTirarFoto_click(object sender, EventArgs e)
         {
             frmFoto _foto = new frmFoto();
             _foto.ShowDialog();
@@ -614,6 +615,10 @@ namespace MaisGamers.Formularios.Cadastro
             }
             else
             {
+                if (_foto.foto == null)
+                {
+                    return;
+                }
 
                 pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.foto));
                 bClienteLocacao _bcliente = new bClienteLocacao();
@@ -686,10 +691,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            LimpaCamposFiltro();
-        }
+       
 
         private void LimpaCamposFiltro()
         {
@@ -877,13 +879,42 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e)
         {
-            frmImpressao frm = new frmImpressao();
-
-            frm.ShowDialog();
 
         }
+
+        private void imgLimpar_Click(object sender, EventArgs e)
+        {
+            LimpaCamposFiltro();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmDocumentos documentos = new frmDocumentos();
+
+            documentos.idCLienteLocacao = idClienteLocacao;
+
+            documentos.ShowDialog();
+        }
+
+        //private void button1_Click_1(object sender, EventArgs e)
+        //{
+        //    frmImpressao frm = new frmImpressao();
+
+        //    frm.ShowDialog();
+
+        //}
     }
 }
 

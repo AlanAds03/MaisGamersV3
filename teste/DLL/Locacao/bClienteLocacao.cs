@@ -106,5 +106,42 @@ namespace MaisGamers.DLL.Locacao
                 throw;
             }
         }
+
+        public void SalvarDocumento(int idClienteLocacao, byte[] byte_documento,String documento)
+        {
+
+            try
+            {
+                using(var d = new dClienteLocacao())
+                {
+                    d.SalvarDocumento(idClienteLocacao, byte_documento, documento);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public byte[] BuscarDocumento(int idClienteLocacao, String documento)
+        {
+
+            try
+            {
+                using (var d = new dClienteLocacao())
+                {
+                    return d.BuscarDocumento(idClienteLocacao, documento);
+                }
+
+
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
     }
 }
