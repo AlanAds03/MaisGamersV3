@@ -15,14 +15,14 @@ namespace MaisGamers.Model.Cadastro
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDJogo { get; set; }
 
-        [Display(Description = "Jogo", ShortName ="200")]
+        [Display(Description = "Jogo", ShortName = "200")]
         public string NomeJogo { get; set; }
         public mConsole IDConsole { get; set; }
         [NotMapped]
         public int cIdConsole { get; set; }
 
         [NotMapped]
-        [Display(Description ="Console",ShortName = "100")]
+        [Display(Description = "Console", ShortName = "100")]
         public string NomeConsolexx { get; set; }
 
         [NotMapped]
@@ -38,8 +38,25 @@ namespace MaisGamers.Model.Cadastro
         public string SenhaPSN { get; set; }
         public int Quantidade { get; set; }
         public double PrecoPago { get; set; }
-        [Display(Description = "Preço", ShortName = "80",Prompt = "decimal")]
+        [Display(Description = "Preço", ShortName = "80", Prompt = "decimal")]
         public double PrecoVenda { get; set; }
+
+
+        [Display(Description = "Data Nascimento Conta", ShortName = "80", Prompt = "Nome")]
+        public DateTime? DataNascimentoConta { get; set; }
+        public string ContaPai { get; set; }
+        public string PrimariaVendidoPara { get; set; }
+        public string SecundariaVendidoPara { get; set; }
+        public DateTime? DataVendaPrimaria { get; set; }
+
+        public DateTime? DataVendaSecundaria { get; set; }
+
+        public double? ValorVendaPrimaria { get; set; }
+
+        public double? ValorVendaSecundaria { get; set; }
+
+
+
 
         [NotMapped]
         public string ColunasGrid { get; set; }

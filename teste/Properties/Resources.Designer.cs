@@ -63,6 +63,16 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arma32 {
+            get {
+                object obj = ResourceManager.GetObject("arma32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap burn_cd_32 {
             get {
                 object obj = ResourceManager.GetObject("burn-cd-32", resourceCulture);

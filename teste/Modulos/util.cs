@@ -24,7 +24,7 @@ namespace MaisGamers.Modulos
         public string gia { get; set; }
 
     }
-    public class util
+    public static class Util
     {
 
         public enum ModoTela
@@ -119,6 +119,15 @@ namespace MaisGamers.Modulos
 
             return cmsg.result;
         }
+
+        
+
+            public static bool IsNumeric(this string s)
+            {
+                float output;
+                return float.TryParse(s, out output);
+            }
+        
 
 
         public static EnderecoCEP RetornoCEP(string cep)

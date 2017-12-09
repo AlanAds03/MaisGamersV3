@@ -158,6 +158,10 @@
     <Compile Include="Migrations\201711050246369_inicial.Designer.cs">
       <DependentUpon>201711050246369_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712092115449_campos5509122017.cs" />
+    <Compile Include="Migrations\201712092115449_campos5509122017.Designer.cs">
+      <DependentUpon>201712092115449_campos5509122017.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -222,6 +226,9 @@
     <EmbeddedResource Include="Migrations\201711050246369_inicial.resx">
       <DependentUpon>201711050246369_inicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712092115449_campos5509122017.resx">
+      <DependentUpon>201712092115449_campos5509122017.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +237,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Documentos\CONTRATO.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -266,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\arma32.png" />
     <None Include="Resources\contrato32.png" />
     <None Include="Resources\camera32.png" />
     <None Include="Resources\iconeNintendo.fw.png" />
@@ -317,6 +328,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

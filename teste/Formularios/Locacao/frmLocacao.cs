@@ -13,7 +13,7 @@ using MaisGamers.Model.Cadastro;
 using Frameworks.Componentes;
 using MaisGamers.DLL.Cadastro;
 using MaisGamers.DLL.Cadastro.Cadastro;
-using static MaisGamers.Modulos.util;
+using static MaisGamers.Modulos.Util;
 using MaisGamers.DLL.Locacao;
 using MaisGamers.Model.Locacao;
 
@@ -21,7 +21,7 @@ namespace MaisGamers.Formularios.Cadastro
 {
     public partial class frmLocacao : Form
     {
-        public util.ModoTela modo_tela = ModoTela.CONSULTA;
+        public Util.ModoTela modo_tela = ModoTela.CONSULTA;
         public int idClienteLocacao;
         public int idLocacao;
 
@@ -32,8 +32,8 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void frmCadJogo_Load(object sender, EventArgs e)
         {
-            util.CentralizaGrupo(grpBotoes);
-            util.CentralizaTab(tabControl1);
+            Util.CentralizaGrupo(grpBotoes);
+            Util.CentralizaTab(tabControl1);
 
             CarregaComboStatus(cmbStatus);
 
@@ -85,14 +85,14 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            modo_tela = util.ModoTela.NOVO;
+            modo_tela = Util.ModoTela.NOVO;
             atualizaTela();
         }
 
 
         private void atualizaTela()
         {
-            if (modo_tela == util.ModoTela.CONSULTA)
+            if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
@@ -101,7 +101,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
             }
-            else if (modo_tela == util.ModoTela.ALTERACAO)
+            else if (modo_tela == Util.ModoTela.ALTERACAO)
             {
                 tabControl1.SelectTab("tpLocacao");
                 btnFechar.Text = "Voltar";
@@ -120,7 +120,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             }
 
-            else if (modo_tela == util.ModoTela.NOVO)
+            else if (modo_tela == Util.ModoTela.NOVO)
             {
                 LimpaCampos();
                 tabControl1.SelectTab("tpCadastro");
@@ -137,14 +137,14 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            if (modo_tela == util.ModoTela.CONSULTA)
+            if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 this.Close();
                 this.Dispose();
             }
             else
             {
-                modo_tela = util.ModoTela.CONSULTA;
+                modo_tela = Util.ModoTela.CONSULTA;
                 atualizaTela();
             }
         }
@@ -264,7 +264,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button3_Click(object sender, EventArgs e)
         {
-            modo_tela = util.ModoTela.ALTERACAO;
+            modo_tela = Util.ModoTela.ALTERACAO;
             atualizaTela();
         }
 
