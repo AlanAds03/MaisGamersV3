@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace MaisGamers.DLL.Cadastro.Cadastro
 {
-    public class bJogo
+    public class bJogo : IDisposable
     {
+        public void Dispose()
+        {
+            
+        }
+
         public bool InserirJogo(mJogo jogo)
         {
             try
@@ -17,6 +22,21 @@ namespace MaisGamers.DLL.Cadastro.Cadastro
                 dJogo d = new dJogo();
 
                 return d.IncluirJogo(jogo);
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool ExcluirJogo(int idJogo)
+        {
+            try
+            {
+                dJogo d = new dJogo();
+
+                return d.ExcluirJogo(idJogo);
 
             }
             catch (Exception ex)

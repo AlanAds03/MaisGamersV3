@@ -49,7 +49,26 @@
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlEmail = new System.Windows.Forms.Panel();
+            this.txtDataVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtDataVEndaPrimaria = new Frameworks.Componentes.SuperTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtContaPai = new Frameworks.Componentes.SuperTextBox();
+            this.txtDataNascimentoConta = new Frameworks.Componentes.SuperTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtValorVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtSecundariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtValorVendaPrimaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtPrimariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSenhaPSN = new Frameworks.Componentes.SuperTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtEmail = new Frameworks.Componentes.SuperTextBox();
@@ -71,8 +90,6 @@
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.cmbConsole = new Frameworks.Componentes.SuperComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtSenhaPSN = new Frameworks.Componentes.SuperTextBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -126,6 +143,7 @@
             this.txtPesqNome.Name = "txtPesqNome";
             this.txtPesqNome.Size = new System.Drawing.Size(277, 26);
             this.txtPesqNome.TabIndex = 3;
+            this.txtPesqNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesqNome_KeyPress);
             // 
             // cmbConsolePesquisa
             // 
@@ -199,6 +217,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // button3
             // 
@@ -299,6 +318,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pnlEmail);
             this.groupBox1.Controls.Add(this.lblVenda);
             this.groupBox1.Controls.Add(this.lblPago);
@@ -314,13 +334,38 @@
             this.groupBox1.Controls.Add(this.cmbConsole);
             this.groupBox1.Location = new System.Drawing.Point(34, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(861, 371);
+            this.groupBox1.Size = new System.Drawing.Size(861, 418);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(720, 389);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Historico Senhas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // pnlEmail
             // 
+            this.pnlEmail.Controls.Add(this.txtDataVendaSecundaria);
+            this.pnlEmail.Controls.Add(this.txtDataVEndaPrimaria);
+            this.pnlEmail.Controls.Add(this.label19);
+            this.pnlEmail.Controls.Add(this.txtContaPai);
+            this.pnlEmail.Controls.Add(this.txtDataNascimentoConta);
+            this.pnlEmail.Controls.Add(this.label18);
+            this.pnlEmail.Controls.Add(this.label17);
+            this.pnlEmail.Controls.Add(this.label16);
+            this.pnlEmail.Controls.Add(this.label15);
+            this.pnlEmail.Controls.Add(this.txtValorVendaSecundaria);
+            this.pnlEmail.Controls.Add(this.txtSecundariaVendidoPara);
+            this.pnlEmail.Controls.Add(this.label14);
+            this.pnlEmail.Controls.Add(this.label13);
+            this.pnlEmail.Controls.Add(this.txtValorVendaPrimaria);
+            this.pnlEmail.Controls.Add(this.txtPrimariaVendidoPara);
+            this.pnlEmail.Controls.Add(this.label9);
             this.pnlEmail.Controls.Add(this.label5);
             this.pnlEmail.Controls.Add(this.txtSenhaPSN);
             this.pnlEmail.Controls.Add(this.label6);
@@ -331,10 +376,181 @@
             this.pnlEmail.Controls.Add(this.label7);
             this.pnlEmail.Controls.Add(this.txtPrecoPrimaria);
             this.pnlEmail.Controls.Add(this.txtSenha);
-            this.pnlEmail.Location = new System.Drawing.Point(6, 117);
+            this.pnlEmail.Location = new System.Drawing.Point(6, 131);
             this.pnlEmail.Name = "pnlEmail";
-            this.pnlEmail.Size = new System.Drawing.Size(849, 136);
+            this.pnlEmail.Size = new System.Drawing.Size(804, 221);
             this.pnlEmail.TabIndex = 28;
+            // 
+            // txtDataVendaSecundaria
+            // 
+            this.txtDataVendaSecundaria.CampoObrigatorio = false;
+            this.txtDataVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataVendaSecundaria.Location = new System.Drawing.Point(506, 178);
+            this.txtDataVendaSecundaria.Name = "txtDataVendaSecundaria";
+            this.txtDataVendaSecundaria.Size = new System.Drawing.Size(140, 26);
+            this.txtDataVendaSecundaria.TabIndex = 45;
+            // 
+            // txtDataVEndaPrimaria
+            // 
+            this.txtDataVEndaPrimaria.CampoObrigatorio = false;
+            this.txtDataVEndaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataVEndaPrimaria.Location = new System.Drawing.Point(506, 129);
+            this.txtDataVEndaPrimaria.Name = "txtDataVEndaPrimaria";
+            this.txtDataVEndaPrimaria.Size = new System.Drawing.Size(140, 26);
+            this.txtDataVEndaPrimaria.TabIndex = 44;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(578, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 17);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "Conta Pai:";
+            // 
+            // txtContaPai
+            // 
+            this.txtContaPai.CampoObrigatorio = false;
+            this.txtContaPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContaPai.Location = new System.Drawing.Point(581, 80);
+            this.txtContaPai.Name = "txtContaPai";
+            this.txtContaPai.Size = new System.Drawing.Size(152, 26);
+            this.txtContaPai.TabIndex = 42;
+            // 
+            // txtDataNascimentoConta
+            // 
+            this.txtDataNascimentoConta.CampoObrigatorio = false;
+            this.txtDataNascimentoConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNascimentoConta.Location = new System.Drawing.Point(359, 80);
+            this.txtDataNascimentoConta.Name = "txtDataNascimentoConta";
+            this.txtDataNascimentoConta.Size = new System.Drawing.Size(123, 26);
+            this.txtDataNascimentoConta.TabIndex = 41;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(356, 60);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(183, 17);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "Data Nascimento Conta:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(503, 158);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 17);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Data Venda:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(503, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 17);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Data Venda:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(356, 158);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 17);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Valor:";
+            // 
+            // txtValorVendaSecundaria
+            // 
+            this.txtValorVendaSecundaria.CampoObrigatorio = false;
+            this.txtValorVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorVendaSecundaria.Location = new System.Drawing.Point(359, 178);
+            this.txtValorVendaSecundaria.Name = "txtValorVendaSecundaria";
+            this.txtValorVendaSecundaria.Size = new System.Drawing.Size(85, 26);
+            this.txtValorVendaSecundaria.TabIndex = 36;
+            // 
+            // txtSecundariaVendidoPara
+            // 
+            this.txtSecundariaVendidoPara.CampoObrigatorio = false;
+            this.txtSecundariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecundariaVendidoPara.Location = new System.Drawing.Point(29, 178);
+            this.txtSecundariaVendidoPara.Name = "txtSecundariaVendidoPara";
+            this.txtSecundariaVendidoPara.Size = new System.Drawing.Size(313, 26);
+            this.txtSecundariaVendidoPara.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(26, 158);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(198, 17);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Vendido Secundaria Para:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(356, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 17);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Valor:";
+            // 
+            // txtValorVendaPrimaria
+            // 
+            this.txtValorVendaPrimaria.CampoObrigatorio = false;
+            this.txtValorVendaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorVendaPrimaria.Location = new System.Drawing.Point(359, 129);
+            this.txtValorVendaPrimaria.Name = "txtValorVendaPrimaria";
+            this.txtValorVendaPrimaria.Size = new System.Drawing.Size(85, 26);
+            this.txtValorVendaPrimaria.TabIndex = 32;
+            // 
+            // txtPrimariaVendidoPara
+            // 
+            this.txtPrimariaVendidoPara.CampoObrigatorio = false;
+            this.txtPrimariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimariaVendidoPara.Location = new System.Drawing.Point(29, 129);
+            this.txtPrimariaVendidoPara.Name = "txtPrimariaVendidoPara";
+            this.txtPrimariaVendidoPara.Size = new System.Drawing.Size(313, 26);
+            this.txtPrimariaVendidoPara.TabIndex = 31;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(26, 109);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 17);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Vendido Primaria Para:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(578, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 17);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Senha PSN/XONE:";
+            // 
+            // txtSenhaPSN
+            // 
+            this.txtSenhaPSN.CampoObrigatorio = false;
+            this.txtSenhaPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaPSN.Location = new System.Drawing.Point(581, 31);
+            this.txtSenhaPSN.Name = "txtSenhaPSN";
+            this.txtSenhaPSN.Size = new System.Drawing.Size(213, 26);
+            this.txtSenhaPSN.TabIndex = 28;
             // 
             // label6
             // 
@@ -350,7 +566,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(216, 60);
+            this.label12.Location = new System.Drawing.Point(196, 60);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(146, 17);
             this.label12.TabIndex = 27;
@@ -381,7 +597,7 @@
             // 
             this.txtPrecoSecundaria.CampoObrigatorio = false;
             this.txtPrecoSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoSecundaria.Location = new System.Drawing.Point(219, 80);
+            this.txtPrecoSecundaria.Location = new System.Drawing.Point(201, 80);
             this.txtPrecoSecundaria.Name = "txtPrecoSecundaria";
             this.txtPrecoSecundaria.Size = new System.Drawing.Size(123, 26);
             this.txtPrecoSecundaria.TabIndex = 25;
@@ -393,9 +609,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(356, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.Size = new System.Drawing.Size(102, 17);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Senha:";
+            this.label7.Text = "Senha email:";
             // 
             // txtPrecoPrimaria
             // 
@@ -540,25 +756,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(578, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 17);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Senha PSN/XONE:";
-            // 
-            // txtSenhaPSN
-            // 
-            this.txtSenhaPSN.CampoObrigatorio = false;
-            this.txtSenhaPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaPSN.Location = new System.Drawing.Point(581, 31);
-            this.txtSenhaPSN.Name = "txtSenhaPSN";
-            this.txtSenhaPSN.Size = new System.Drawing.Size(213, 26);
-            this.txtSenhaPSN.TabIndex = 28;
-            // 
             // frmCadJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,5 +833,22 @@
         private System.Windows.Forms.Panel pnlEmail;
         private System.Windows.Forms.Label label5;
         private Frameworks.Componentes.SuperTextBox txtSenhaPSN;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
+        private Frameworks.Componentes.SuperTextBox txtValorVendaPrimaria;
+        private Frameworks.Componentes.SuperTextBox txtPrimariaVendidoPara;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label15;
+        private Frameworks.Componentes.SuperTextBox txtValorVendaSecundaria;
+        private Frameworks.Componentes.SuperTextBox txtSecundariaVendidoPara;
+        private System.Windows.Forms.Label label14;
+        private Frameworks.Componentes.SuperTextBox txtDataNascimentoConta;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private Frameworks.Componentes.SuperTextBox txtContaPai;
+        private Frameworks.Componentes.SuperTextBox txtDataVendaSecundaria;
+        private Frameworks.Componentes.SuperTextBox txtDataVEndaPrimaria;
     }
 }

@@ -190,5 +190,12 @@ namespace MaisGamers
             frmLocacao _frmLocacao = new frmLocacao();
             MostraFormulario(_frmLocacao);
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            frmClienteLocacao frmCliente = new frmClienteLocacao();
+            MostraFormulario(frmCliente);
+
+        }
     }
 }

@@ -13,13 +13,13 @@ using MaisGamers.Model.Cadastro;
 using Frameworks.Componentes;
 using MaisGamers.DLL.Cadastro;
 using MaisGamers.DLL.Cadastro.Cadastro;
-using static MaisGamers.Modulos.util;
+using static MaisGamers.Modulos.Util;
 
 namespace MaisGamers.Formularios.Cadastro
 {
     public partial class frmCadJogo : Form
     {
-        public util.ModoTela modo_tela;
+        public Util.ModoTela modo_tela;
         public int idJogo;
         public frmCadJogo()
         {
@@ -28,8 +28,8 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void frmCadJogo_Load(object sender, EventArgs e)
         {
-            util.CentralizaGrupo(grpBotoes);
-            util.CentralizaTab(tabControl1);
+            Util.CentralizaGrupo(grpBotoes);
+            Util.CentralizaTab(tabControl1);
 
             CarregaComboConsole(cmbConsolePesquisa);
             CarregaComboConsole(cmbConsole);
@@ -78,14 +78,14 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            modo_tela = util.ModoTela.NOVO;
+            modo_tela = Util.ModoTela.NOVO;
             atualizaTela();
         }
 
 
         private void atualizaTela()
         {
-            if (modo_tela == util.ModoTela.CONSULTA)
+            if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
@@ -94,7 +94,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
             }
-            else if (modo_tela == util.ModoTela.ALTERACAO)
+            else if (modo_tela == Util.ModoTela.ALTERACAO)
             {
                 tabControl1.SelectTab("tpCadastro");
                 btnFechar.Text = "Voltar";
@@ -114,13 +114,20 @@ namespace MaisGamers.Formularios.Cadastro
                 txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
                 txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
 
+                txtDataNascimentoConta.Text = _mJogo.DataNascimentoConta.ToString();
+                txtDataVEndaPrimaria.Text = _mJogo.DataVendaPrimaria.ToString();
+                txtDataVendaSecundaria.Text = _mJogo.DataVendaSecundaria.ToString();
+                txtContaPai.Text = (string.IsNullOrEmpty(_mJogo.ContaPai) ? "" : _mJogo.ContaPai.ToString());
+                txtPrimariaVendidoPara.Text = (string.IsNullOrEmpty(_mJogo.PrimariaVendidoPara) ? "" : _mJogo.PrimariaVendidoPara.ToString());
+                txtSecundariaVendidoPara.Text = (string.IsNullOrEmpty(_mJogo.SecundariaVendidoPara) ? "" : _mJogo.SecundariaVendidoPara.ToString());
+
                 txtPrecoPrimaria.Text = _mJogo.PrecoPrimaria.ToString("0.00");
                 txtPrecoSecundaria.Text = _mJogo.PrecoSecundaria.ToString("0.00");
 
 
             }
 
-            else if (modo_tela == util.ModoTela.NOVO)
+            else if (modo_tela == Util.ModoTela.NOVO)
             {
                 LimpaCampos();
                 tabControl1.SelectTab("tpCadastro");
@@ -143,19 +150,28 @@ namespace MaisGamers.Formularios.Cadastro
             txtPrecoPrimaria.Text = string.Empty;
             txtPrecoSecundaria.Text = string.Empty;
             txtSenhaPSN.Text = string.Empty;
+            txtDataNascimentoConta.Text = string.Empty;
+            txtDataVEndaPrimaria.Text = string.Empty;
+            txtDataVendaSecundaria.Text = string.Empty;
+            txtContaPai.Text = string.Empty;
+            txtPrimariaVendidoPara.Text = string.Empty;
+            txtSecundariaVendidoPara.Text = string.Empty;
+
+            txtPrecoPrimaria.Text = string.Empty;
+            txtPrecoSecundaria.Text = string.Empty;
 
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            if (modo_tela == util.ModoTela.CONSULTA)
+            if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 this.Close();
                 this.Dispose();
             }
             else
             {
-                modo_tela = util.ModoTela.CONSULTA;
+                modo_tela = Util.ModoTela.CONSULTA;
                 atualizaTela();
             }
         }
@@ -180,7 +196,19 @@ namespace MaisGamers.Formularios.Cadastro
                 jogo.Senha = txtSenha.Text;
                 jogo.SenhaPSN = txtSenhaPSN.Text;
 
-                if(idJogo != 0)
+                jogo.DataNascimentoConta = (isDate(txtDataNascimentoConta.Text) ? Convert.ToDateTime(txtDataNascimentoConta.Text) : (DateTime?)null);
+                jogo.ContaPai = txtContaPai.Text;
+                jogo.PrimariaVendidoPara = txtPrimariaVendidoPara.Text;
+                jogo.SecundariaVendidoPara = txtSecundariaVendidoPara.Text;
+                jogo.DataVendaPrimaria = (isDate(txtDataVEndaPrimaria.Text) ?  Convert.ToDateTime(txtDataVEndaPrimaria.Text) : (DateTime?)null);
+                jogo.DataVendaSecundaria = (isDate(txtDataVendaSecundaria.Text) ? Convert.ToDateTime(txtDataVendaSecundaria.Text) : (DateTime?)null);
+
+                jogo.ValorVendaPrimaria = (Util.IsNumeric(txtValorVendaPrimaria.Text) ? Convert.ToDouble(txtValorVendaPrimaria.Text) : 0);
+                jogo.ValorVendaSecundaria = (Util.IsNumeric(txtValorVendaSecundaria.Text) ? Convert.ToDouble(txtValorVendaSecundaria.Text) : 0);
+
+            
+
+                if (idJogo != 0)
                 {
                     jogo.IDJogo = idJogo;
                 }
@@ -323,7 +351,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button3_Click(object sender, EventArgs e)
         {
-            modo_tela = util.ModoTela.ALTERACAO;
+            modo_tela = Util.ModoTela.ALTERACAO;
             atualizaTela();
         }
 
@@ -404,6 +432,26 @@ namespace MaisGamers.Formularios.Cadastro
         private void cmbTipoJogo_SelectedValueChanged(object sender, EventArgs e)
         {
             ControleCamposTipojogo();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (Mensagem("Deseja excluir este jogo ?",Frameworks.Classes.CMsgBox.TipoBotoes.SimNao,Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+            {
+                using (var bJogo = new bJogo())
+                {
+                    bJogo.ExcluirJogo(idJogo);
+                }
+            }
+
+        }
+
+        private void txtPesqNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ( (Keys)e.KeyChar == Keys.Enter)
+            {
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+            }
         }
     }
 }

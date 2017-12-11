@@ -40,10 +40,6 @@ namespace Frameworks.Componentes
                 table.Columns.Add(id);
                 table.Columns.Add(value);
 
-
-
-
-
                 foreach (var item in objetos)
                 {
 
@@ -82,7 +78,7 @@ namespace Frameworks.Componentes
 
                 Carregado = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -90,5 +86,68 @@ namespace Frameworks.Componentes
 
 
         }
+
+        public void CarregaCombo(Dictionary<String,String> objetos, string id, string value, PrimeiraLinha _primeira)
+        {
+
+            Carregado = false;
+
+            int iContador = 0;
+
+            try
+            {
+
+                DataTable table = new DataTable();
+
+                table.Columns.Add(id);
+                table.Columns.Add(value);
+
+                foreach (var item in objetos)
+                {
+
+
+                    if (iContador == 0)
+                    {
+
+
+                        if (_primeira == PrimeiraLinha.Todos)
+                        {
+                            table.Rows.Add("0", "Todos");
+
+                        }
+                        else if (_primeira == PrimeiraLinha.Selecione)
+                        {
+
+                            table.Rows.Add("0", "Selecione");
+                        }
+                    }
+
+                    iContador += 1;
+
+                    if (iContador != 0)
+                    {
+                        table.Rows.Add(item.Key, item.Value);
+                    }
+
+                }
+
+
+                this.DataSource = table;
+                this.ValueMember = id;
+                this.DisplayMember = value;
+
+
+
+                Carregado = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+
     }
 }

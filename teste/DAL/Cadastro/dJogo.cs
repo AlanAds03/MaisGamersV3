@@ -44,16 +44,12 @@ namespace MaisGamers.DAL
             {
                 using (var db = new Contexto())
                 {
-
                     var TipoJogo = db.TipoJogo.Find(Jogo.cIDTipoJogo);
                     var Console = db.Console.Find(Jogo.cIdConsole);
 
                     Jogo.IDTipoJogo = TipoJogo;
                     Jogo.IDConsole = Console;
 
-
-
-                    
                     if (Jogo.IDJogo != 0)
                     {
                         mJogo JogoDB = db.Jogo.Find(Jogo.IDJogo);
@@ -66,7 +62,28 @@ namespace MaisGamers.DAL
                         db.Jogo.Add(Jogo);
                         db.SaveChanges();
                     }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
+        public bool ExcluirJogo(int idJogo)
+        {
+            try
+            {
+                using (var db = new Contexto())
+                {
+                    var jogo = db.Jogo.Find(idJogo);
+
+                    if (jogo.IDJogo != 0)
+                    {
+                        db.Entry(jogo).State = EntityState.Deleted;
+                        db.SaveChanges();
+                    }
 
                     return true;
                 }
@@ -78,6 +95,7 @@ namespace MaisGamers.DAL
 
         }
 
+
         internal mJogo PesquisaJogoID(int iDJogo)
         {
 
@@ -87,7 +105,6 @@ namespace MaisGamers.DAL
                     .Include(x => x.IDConsole)
                     .Include(z=> z.IDTipoJogo)
                     .Where(y=> y.IDJogo == iDJogo).FirstOrDefault();
-
             }
         }
 

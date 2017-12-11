@@ -32,8 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisarg = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPesquisaCodigo = new System.Windows.Forms.TextBox();
@@ -41,13 +39,6 @@
             this.txtPesquisaCPF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnLocacao = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.grpGrid = new System.Windows.Forms.GroupBox();
@@ -63,18 +54,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbAutorizado = new System.Windows.Forms.RadioButton();
             this.rbLocatario = new System.Windows.Forms.RadioButton();
-            this.button9 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.pictureAutorizado = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.pictureLocatario = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.txtTelefone2 = new Frameworks.Componentes.SuperTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,7 +71,6 @@
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtRGFilho = new Frameworks.Componentes.SuperTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -113,9 +95,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnLocacao = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.imgLimpar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureAutorizado = new System.Windows.Forms.PictureBox();
+            this.pictureLocatario = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnConsultaAntecedentes = new System.Windows.Forms.Button();
+            this.btnImprimirContrato = new System.Windows.Forms.Button();
+            this.btnTirarFoto = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpBotoes.SuspendLayout();
             this.tbControl.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
@@ -123,18 +117,20 @@
             this.tpDetalhe.SuspendLayout();
             this.grpCadastra.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLimpar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label1.Location = new System.Drawing.Point(41, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
@@ -148,7 +144,7 @@
             // 
             // grpPesquisa
             // 
-            this.grpPesquisa.Controls.Add(this.pictureBox2);
+            this.grpPesquisa.Controls.Add(this.imgLimpar);
             this.grpPesquisa.Controls.Add(this.pictureBox1);
             this.grpPesquisa.Controls.Add(this.txtPesquisarg);
             this.grpPesquisa.Controls.Add(this.label18);
@@ -165,32 +161,6 @@
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 77);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.pictureBox1.Location = new System.Drawing.Point(473, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            // 
             // txtPesquisarg
             // 
             this.txtPesquisarg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,10 +172,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label18.Location = new System.Drawing.Point(60, 87);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(33, 18);
+            this.label18.Size = new System.Drawing.Size(36, 19);
             this.label18.TabIndex = 6;
             this.label18.Text = "RG:";
             // 
@@ -220,10 +190,10 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(38, 22);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 18);
+            this.label17.Size = new System.Drawing.Size(65, 19);
             this.label17.TabIndex = 4;
             this.label17.Text = "Código:";
             // 
@@ -239,10 +209,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label2.Location = new System.Drawing.Point(286, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 18);
+            this.label2.Size = new System.Drawing.Size(42, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "CPF:";
             // 
@@ -254,102 +224,12 @@
             this.grpBotoes.Controls.Add(this.btnSalvar);
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Controls.Add(this.button2);
-            this.grpBotoes.Location = new System.Drawing.Point(119, 524);
+            this.grpBotoes.Location = new System.Drawing.Point(157, 524);
             this.grpBotoes.Name = "grpBotoes";
-            this.grpBotoes.Size = new System.Drawing.Size(695, 77);
+            this.grpBotoes.Size = new System.Drawing.Size(607, 77);
             this.grpBotoes.TabIndex = 7;
             this.grpBotoes.TabStop = false;
             this.grpBotoes.Enter += new System.EventHandler(this.grpBotoes_Enter);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(295, 19);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(91, 50);
-            this.btnExcluir.TabIndex = 16;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnLocacao
-            // 
-            this.btnLocacao.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.btnLocacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocacao.Location = new System.Drawing.Point(437, 19);
-            this.btnLocacao.Name = "btnLocacao";
-            this.btnLocacao.Size = new System.Drawing.Size(93, 50);
-            this.btnLocacao.TabIndex = 9;
-            this.btnLocacao.Text = "Locação";
-            this.btnLocacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLocacao.UseVisualStyleBackColor = true;
-            this.btnLocacao.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(103, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Editar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(200, 19);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
-            this.btnSalvar.TabIndex = 15;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(6, 19);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(91, 50);
-            this.btnNovo.TabIndex = 6;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(590, 19);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(91, 50);
-            this.btnFechar.TabIndex = 5;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(387, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 50);
-            this.button2.TabIndex = 4;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbControl
             // 
@@ -419,18 +299,15 @@
             this.grpCadastra.Controls.Add(this.cmbSexo);
             this.grpCadastra.Controls.Add(this.label25);
             this.grpCadastra.Controls.Add(this.groupBox1);
-            this.grpCadastra.Controls.Add(this.button9);
             this.grpCadastra.Controls.Add(this.label24);
             this.grpCadastra.Controls.Add(this.pictureAutorizado);
             this.grpCadastra.Controls.Add(this.label23);
             this.grpCadastra.Controls.Add(this.pictureLocatario);
-            this.grpCadastra.Controls.Add(this.button8);
             this.grpCadastra.Controls.Add(this.txtTelefone2);
             this.grpCadastra.Controls.Add(this.label22);
             this.grpCadastra.Controls.Add(this.button7);
-            this.grpCadastra.Controls.Add(this.button6);
-            this.grpCadastra.Controls.Add(this.button5);
-            this.grpCadastra.Controls.Add(this.button1);
+            this.grpCadastra.Controls.Add(this.btnConsultaAntecedentes);
+            this.grpCadastra.Controls.Add(this.btnImprimirContrato);
             this.grpCadastra.Controls.Add(this.txtNome);
             this.grpCadastra.Controls.Add(this.label21);
             this.grpCadastra.Controls.Add(this.label3);
@@ -444,7 +321,7 @@
             this.grpCadastra.Controls.Add(this.txtCEP);
             this.grpCadastra.Controls.Add(this.txtCpf);
             this.grpCadastra.Controls.Add(this.txtDataNascimento);
-            this.grpCadastra.Controls.Add(this.button4);
+            this.grpCadastra.Controls.Add(this.btnTirarFoto);
             this.grpCadastra.Controls.Add(this.txtRGFilho);
             this.grpCadastra.Controls.Add(this.label15);
             this.grpCadastra.Controls.Add(this.label16);
@@ -567,18 +444,6 @@
             this.rbLocatario.Text = "Locatario";
             this.rbLocatario.UseVisualStyleBackColor = true;
             // 
-            // button9
-            // 
-            this.button9.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(811, 391);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(167, 40);
-            this.button9.TabIndex = 50;
-            this.button9.Text = "Visualizar  Documentos";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -589,16 +454,6 @@
             this.label24.TabIndex = 49;
             this.label24.Text = "Autorizado:";
             // 
-            // pictureAutorizado
-            // 
-            this.pictureAutorizado.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
-            this.pictureAutorizado.Location = new System.Drawing.Point(711, 222);
-            this.pictureAutorizado.Name = "pictureAutorizado";
-            this.pictureAutorizado.Size = new System.Drawing.Size(258, 165);
-            this.pictureAutorizado.TabIndex = 48;
-            this.pictureAutorizado.TabStop = false;
-            this.pictureAutorizado.Click += new System.EventHandler(this.pictureAutorizado_Click);
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -608,28 +463,6 @@
             this.label23.Size = new System.Drawing.Size(81, 17);
             this.label23.TabIndex = 47;
             this.label23.Text = "Locatário:";
-            // 
-            // pictureLocatario
-            // 
-            this.pictureLocatario.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
-            this.pictureLocatario.Location = new System.Drawing.Point(711, 36);
-            this.pictureLocatario.Name = "pictureLocatario";
-            this.pictureLocatario.Size = new System.Drawing.Size(258, 165);
-            this.pictureLocatario.TabIndex = 46;
-            this.pictureLocatario.TabStop = false;
-            this.pictureLocatario.Click += new System.EventHandler(this.pictureLocatario_Click);
-            // 
-            // button8
-            // 
-            this.button8.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(546, 391);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(118, 40);
-            this.button8.TabIndex = 45;
-            this.button8.Text = "Confirma CPF";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // txtTelefone2
             // 
@@ -649,56 +482,6 @@
             this.label22.Size = new System.Drawing.Size(77, 17);
             this.label22.TabIndex = 44;
             this.label22.Text = "Telefone:";
-            // 
-            // button7
-            // 
-            this.button7.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(670, 391);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(135, 40);
-            this.button7.TabIndex = 42;
-            this.button7.Text = "Anexar Documentos";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(422, 391);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 40);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Consulta CPF";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(257, 391);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 40);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Consulta antecendetes";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(117, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Imprimir Contrato";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            
             // 
             // txtNome
             // 
@@ -828,19 +611,6 @@
             this.txtDataNascimento.Size = new System.Drawing.Size(100, 23);
             this.txtDataNascimento.TabIndex = 5;
             this.txtDataNascimento.ValidatingType = typeof(System.DateTime);
-            // 
-            // button4
-            // 
-            this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(12, 391);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 40);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Tirar Foto";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // txtRGFilho
             // 
@@ -1062,6 +832,188 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnExcluir.Image = global::MaisGamers.Properties.Resources.delete_32;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(295, 19);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(91, 50);
+            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnLocacao
+            // 
+            this.btnLocacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnLocacao.Image = global::MaisGamers.Properties.Resources.burn_cd_32;
+            this.btnLocacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocacao.Location = new System.Drawing.Point(392, 19);
+            this.btnLocacao.Name = "btnLocacao";
+            this.btnLocacao.Size = new System.Drawing.Size(112, 50);
+            this.btnLocacao.TabIndex = 9;
+            this.btnLocacao.Text = "Locação";
+            this.btnLocacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLocacao.UseVisualStyleBackColor = true;
+            this.btnLocacao.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button3.Image = global::MaisGamers.Properties.Resources.edit_2_32;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(103, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 50);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Editar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(200, 19);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
+            this.btnSalvar.TabIndex = 15;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(6, 19);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(91, 50);
+            this.btnNovo.TabIndex = 6;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(510, 19);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(91, 50);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // imgLimpar
+            // 
+            this.imgLimpar.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.imgLimpar.Location = new System.Drawing.Point(511, 77);
+            this.imgLimpar.Name = "imgLimpar";
+            this.imgLimpar.Size = new System.Drawing.Size(32, 32);
+            this.imgLimpar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgLimpar.TabIndex = 9;
+            this.imgLimpar.TabStop = false;
+            this.imgLimpar.Click += new System.EventHandler(this.imgLimpar_Click);
+            this.imgLimpar.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.imgLimpar.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.pictureBox1.Location = new System.Drawing.Point(473, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // pictureAutorizado
+            // 
+            this.pictureAutorizado.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
+            this.pictureAutorizado.Location = new System.Drawing.Point(711, 222);
+            this.pictureAutorizado.Name = "pictureAutorizado";
+            this.pictureAutorizado.Size = new System.Drawing.Size(258, 165);
+            this.pictureAutorizado.TabIndex = 48;
+            this.pictureAutorizado.TabStop = false;
+            this.pictureAutorizado.Click += new System.EventHandler(this.pictureAutorizado_Click);
+            // 
+            // pictureLocatario
+            // 
+            this.pictureLocatario.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
+            this.pictureLocatario.Location = new System.Drawing.Point(711, 36);
+            this.pictureLocatario.Name = "pictureLocatario";
+            this.pictureLocatario.Size = new System.Drawing.Size(258, 165);
+            this.pictureLocatario.TabIndex = 46;
+            this.pictureLocatario.TabStop = false;
+            this.pictureLocatario.Click += new System.EventHandler(this.pictureLocatario_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(424, 391);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(135, 40);
+            this.button7.TabIndex = 42;
+            this.button7.Text = "Anexar Documentos";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnConsultaAntecedentes
+            // 
+            this.btnConsultaAntecedentes.Image = global::MaisGamers.Properties.Resources.arma32;
+            this.btnConsultaAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaAntecedentes.Location = new System.Drawing.Point(257, 391);
+            this.btnConsultaAntecedentes.Name = "btnConsultaAntecedentes";
+            this.btnConsultaAntecedentes.Size = new System.Drawing.Size(159, 40);
+            this.btnConsultaAntecedentes.TabIndex = 40;
+            this.btnConsultaAntecedentes.Text = "Consultar antecendetes";
+            this.btnConsultaAntecedentes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsultaAntecedentes.UseVisualStyleBackColor = true;
+            this.btnConsultaAntecedentes.Click += new System.EventHandler(this.btnConsultaAntecedentes_Click);
+            // 
+            // btnImprimirContrato
+            // 
+            this.btnImprimirContrato.Image = global::MaisGamers.Properties.Resources.contrato32;
+            this.btnImprimirContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirContrato.Location = new System.Drawing.Point(117, 391);
+            this.btnImprimirContrato.Name = "btnImprimirContrato";
+            this.btnImprimirContrato.Size = new System.Drawing.Size(134, 40);
+            this.btnImprimirContrato.TabIndex = 39;
+            this.btnImprimirContrato.Text = "Imprimir Contrato";
+            this.btnImprimirContrato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirContrato.UseVisualStyleBackColor = true;
+            this.btnImprimirContrato.Click += new System.EventHandler(this.btnImprimirContrato_CLick);
+            // 
+            // btnTirarFoto
+            // 
+            this.btnTirarFoto.Image = global::MaisGamers.Properties.Resources.camera32;
+            this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTirarFoto.Location = new System.Drawing.Point(12, 391);
+            this.btnTirarFoto.Name = "btnTirarFoto";
+            this.btnTirarFoto.Size = new System.Drawing.Size(93, 40);
+            this.btnTirarFoto.TabIndex = 9;
+            this.btnTirarFoto.Text = "Tirar Foto";
+            this.btnTirarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTirarFoto.UseVisualStyleBackColor = true;
+            this.btnTirarFoto.Click += new System.EventHandler(this.btnTirarFoto_click);
+            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,8 +1034,6 @@
             this.Load += new System.EventHandler(this.frmClienteLocacao_Load);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpBotoes.ResumeLayout(false);
             this.tbControl.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
@@ -1093,9 +1043,11 @@
             this.grpCadastra.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLimpar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1104,7 +1056,6 @@
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPesquisaCPF;
@@ -1142,7 +1093,7 @@
         private System.Windows.Forms.Label label16;
         private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTirarFoto;
         private System.Windows.Forms.Button btnLocacao;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtPesquisarg;
@@ -1156,7 +1107,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox imgLimpar;
         private System.Windows.Forms.CheckBox chkBusca;
         private Frameworks.Componentes.SuperTextBox txtTelefone;
         private System.Windows.Forms.Label label19;
@@ -1164,18 +1115,15 @@
         private System.Windows.Forms.Label label20;
         private Frameworks.Componentes.SuperTextBox txtNome;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnImprimirContrato;
+        private System.Windows.Forms.Button btnConsultaAntecedentes;
         private System.Windows.Forms.Button button7;
         private Frameworks.Componentes.SuperTextBox txtTelefone2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureLocatario;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureAutorizado;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbAutorizado;
         private System.Windows.Forms.RadioButton rbLocatario;

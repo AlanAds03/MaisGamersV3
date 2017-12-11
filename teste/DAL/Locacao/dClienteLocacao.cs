@@ -115,6 +115,61 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
+        internal void SalvarDocumento(int idClienteLocacao, byte[] byte_documento, string documento)
+        {
+
+            var db = new Contexto();
+
+
+
+            mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
+
+            if (documento == "RG")
+            {
+                cliente.AnexoRG = byte_documento;
+            }
+            else if(documento == "CONTRATO")
+            {
+                cliente.DocumentoAssinado = byte_documento;
+            }
+            else
+            {
+                cliente.AnexoComprovanteEndereco = byte_documento;
+            }
+
+            
+            db.Entry(cliente).State = EntityState.Modified;
+            db.SaveChanges();
+
+
+        }
+
+        internal byte[] BuscarDocumento(int idClienteLocacao,  string documento)
+        {
+
+            var db = new Contexto();
+
+
+
+            mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
+
+            if (documento == "RG")
+            {
+                return cliente.AnexoRG;
+            }
+            else if (documento == "CONTRATO")
+            {
+                return cliente.DocumentoAssinado;
+            }
+            else
+            {
+                return cliente.AnexoComprovanteEndereco;
+            }
+
+
+
+        }
+
         internal mClienteLocacao PesquisaClienteID(int idClienteLocacao)
         {
             var db = new Contexto();

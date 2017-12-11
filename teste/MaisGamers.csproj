@@ -112,6 +112,12 @@
     <Compile Include="Formularios\Cadastro\frmFoto.Designer.cs">
       <DependentUpon>frmFoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Cadastro\Popup\frmDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\Popup\frmDocumentos.Designer.cs">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmNewPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +129,6 @@
     </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.Designer.cs">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Locacao\frmDocumentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Locacao\frmDocumentos.Designer.cs">
-      <DependentUpon>frmDocumentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Locacao\frmLocacao.cs">
       <SubType>Form</SubType>
@@ -153,6 +153,14 @@
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711050246369_inicial.cs" />
+    <Compile Include="Migrations\201711050246369_inicial.Designer.cs">
+      <DependentUpon>201711050246369_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712092115449_campos5509122017.cs" />
+    <Compile Include="Migrations\201712092115449_campos5509122017.Designer.cs">
+      <DependentUpon>201712092115449_campos5509122017.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
@@ -194,14 +202,14 @@
     <EmbeddedResource Include="Formularios\Cadastro\frmFoto.resx">
       <DependentUpon>frmFoto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cadastro\Popup\frmDocumentos.resx">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmNewPrincipal.resx">
       <DependentUpon>frmNewPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Locacao\frmDocumentos.resx">
-      <DependentUpon>frmDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
       <DependentUpon>frmLocacao.cs</DependentUpon>
@@ -215,6 +223,12 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711050246369_inicial.resx">
+      <DependentUpon>201711050246369_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712092115449_campos5509122017.resx">
+      <DependentUpon>201712092115449_campos5509122017.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +237,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Documentos\CONTRATO.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,6 +276,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\arma32.png" />
+    <None Include="Resources\contrato32.png" />
+    <None Include="Resources\camera32.png" />
+    <None Include="Resources\iconeNintendo.fw.png" />
+    <None Include="Resources\relatorio64.png" />
+    <None Include="Resources\objetos64.png" />
+    <None Include="Resources\nota64.png" />
+    <None Include="Resources\iconeCliente64.png" />
+    <None Include="Resources\burn-cd-32.ico" />
+    <None Include="Resources\delete-32.png" />
+    <None Include="Resources\edit-2-32.ico" />
+    <None Include="Resources\editorange.png" />
     <None Include="Resources\menu-alt-512.png" />
     <None Include="Imagens\laptop_png8917.png" />
     <None Include="Imagens\Sem título-1.fw.png" />
@@ -299,6 +328,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
