@@ -133,16 +133,20 @@ namespace MaisGamers.Modulos
         public static EnderecoCEP RetornoCEP(string cep)
         {
             WebClient web = new WebClient();
+            EnderecoCEP _endereco = new EnderecoCEP();
 
             try
             {
 
-
+                if (string.IsNullOrEmpty(cep))
+                {
+                    return null;
+                }
 
                 web.Encoding = Encoding.UTF8;
                 string retorno;
                 List<string> listretorno = new List<string>();
-                EnderecoCEP _endereco = new EnderecoCEP();
+                
 
                 web.Headers.Add(HttpRequestHeader.ContentType, "application/json");
 

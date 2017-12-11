@@ -24,6 +24,7 @@ namespace MaisGamers.Formularios.Cadastro
         public Util.ModoTela modo_tela = ModoTela.CONSULTA;
         public int idClienteLocacao;
         public int idLocacao;
+        public decimal idLocacaoJogo;
 
         public frmLocacao()
         {
@@ -96,6 +97,8 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
+
+
 
                 PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
 
@@ -249,8 +252,6 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
 
-
-
                 lvLocacao.CarregaListaView<dynamic>(_bLocacao.PesquisaLocacaoID(idLocacao));
 
             }
@@ -325,6 +326,44 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
+        }
+
+        private void btnExcluirJogo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                bLocacaoJogo _bJogo = new bLocacaoJogo();
+
+                if (idLocacaoJogo > 0)
+                {
+                    _bJogo.ExcluirJogo(idLocacaoJogo);
+                }
+
+                modo_tela = ModoTela.ALTERACAO;
+                atualizaTela();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void lvLocacao_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            try
+            {
+                idLocacaoJogo = lvLocacao.ObterChave();
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

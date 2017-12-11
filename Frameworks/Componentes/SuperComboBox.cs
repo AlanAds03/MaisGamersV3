@@ -40,25 +40,23 @@ namespace Frameworks.Componentes
                 table.Columns.Add(id);
                 table.Columns.Add(value);
 
+                if (iContador == 0)
+                {
+                    if (_primeira == PrimeiraLinha.Todos)
+                    {
+                        table.Rows.Add("0", "Todos");
+
+                    }
+                    else if (_primeira == PrimeiraLinha.Selecione)
+                    {
+
+                        table.Rows.Add("0", "Selecione");
+                    }
+                }
+
                 foreach (var item in objetos)
                 {
 
-
-                    if (iContador == 0)
-                    {
-
-
-                        if (_primeira == PrimeiraLinha.Todos)
-                        {
-                            table.Rows.Add("0", "Todos");
-
-                        }
-                        else if (_primeira == PrimeiraLinha.Selecione)
-                        {
-
-                            table.Rows.Add("0", "Selecione");
-                        }
-                    }
 
                     iContador += 1;
 
@@ -74,9 +72,12 @@ namespace Frameworks.Componentes
                 this.ValueMember = id;
                 this.DisplayMember = value;
 
-
-
                 Carregado = true;
+
+                if(Items.Count > 0)
+                {
+                    this.SelectedIndex = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -147,6 +148,34 @@ namespace Frameworks.Componentes
             }
 
 
+        }
+
+        public void ResetarValores()
+        {
+            if (this.Items.Count > 0)
+            {
+                this.SelectedIndex = 0;
+            }
+            
+        }
+        public string ObterValor()
+        {
+            string a = "";
+
+            try
+            {
+               
+                a = this.SelectedValue.ToString();
+
+                return a;
+
+            }
+            catch (Exception)
+            {
+
+                return "";
+            }
+           
         }
 
     }

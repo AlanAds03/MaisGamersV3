@@ -10,6 +10,24 @@ namespace MaisGamers.DAL.Locacao
 {
     public class dLocacaoJogo
     {
+        public bool ExcluirJogo(decimal idLocacaoJogo)
+        {
+            var db = new Contexto();
+            var locacao = db.LocacaoJogos.Find(idLocacaoJogo);
+
+            try
+            {
+                db.Entry(locacao).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
 
         public bool InserirLocacaoJogo(mLocacaoJogos _mLocacaoJogos)
         {

@@ -25,5 +25,7 @@ namespace MaisGamers.Model.Locacao
         public decimal PrecoDia2 { get; set; }
         public decimal PrecoDia3 { get; set; }
 
+        public mTipoJogo IDTipoJogo { get; set; }
+
     }
 }

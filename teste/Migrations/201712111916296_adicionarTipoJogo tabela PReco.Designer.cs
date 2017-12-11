@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class campos5509122017 : IMigrationMetadata
+    public sealed partial class adicionarTipoJogotabelaPReco : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(campos5509122017));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(adicionarTipoJogotabelaPReco));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712092115449_campos5509122017"; }
+            get { return "201712111916296_adicionarTipoJogo tabela PReco"; }
         }
         
         string IMigrationMetadata.Source

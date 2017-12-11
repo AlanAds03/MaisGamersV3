@@ -32,7 +32,7 @@ namespace MaisGamers.Model.Locacao
         [Display(Description = "RG", ShortName = "150")]
         public string RG { get; set; }
 
-        public DateTime DataExpedicao { get; set; }
+        public DateTime? DataExpedicao { get; set; }
 
         [CustomAttibuteDate(ShortDate = true)]
         public DateTime DataNascimento{ get; set; }

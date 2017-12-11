@@ -26,6 +26,7 @@ using System.Diagnostics;
 using mshtml;
 using MaisGamers.Formularios.Cadastro.Popup;
 using System.Reflection;
+using Microsoft.Office.Interop.Word;
 //using MaisGamers.Formularios.Impressao;
 //using MaisGamers.Formularios.Locacao;
 
@@ -121,7 +122,7 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
                 bCidade _cidade = new bCidade();
-                DataTable table = new DataTable();
+                System.Data.DataTable table = new System.Data.DataTable();
 
                 table.Columns.Add("cCidade");
                 table.Columns.Add("rCidade");
@@ -129,10 +130,10 @@ namespace MaisGamers.Formularios.Cadastro
 
                 list = _cidade.CarregaCidade(cEstado);
 
-                if (list != null)
-                {
+                //if (list != null)
+                //{
                     comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
-                }
+                //}
 
 
 
@@ -336,6 +337,7 @@ namespace MaisGamers.Formularios.Cadastro
                 }
 
 
+
                 if (cliente.FotoAutorizado != null)
                 {
                     pictureAutorizado.Image = Image.FromStream(new MemoryStream(cliente.FotoAutorizado));
@@ -374,16 +376,25 @@ namespace MaisGamers.Formularios.Cadastro
             txtNumero.Text = string.Empty;
             txtCEP.Text = string.Empty;
             txtBairro.Text = string.Empty;
-            cmbEstado.SelectedValue = string.Empty;
-            cmbCidade.SelectedValue = string.Empty;
+            cmbEstado.ResetarValores();
+            cmbCidade.ResetarValores();
             txtAutoriza.Text = string.Empty;
             txtCpfFilho.Text = string.Empty;
             txtRGFilho.Text = string.Empty;
-            cmbTipoCliente.SelectedValue = string.Empty;
+            cmbTipoCliente.ResetarValores();
             txtTelefone.Text = string.Empty;
             txtTelefone2.Text = string.Empty;
+            pictureLocatario.Image = null;
+            pictureAutorizado.Image = null;
+        
 
-        }
+
+
+              
+
+
+
+    }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -406,6 +417,8 @@ namespace MaisGamers.Formularios.Cadastro
             mClienteLocacao _mClilocacao = new mClienteLocacao();
             bClienteLocacao _cliente = new bClienteLocacao();
 
+            
+
             if (ValidarCampos() == false)
             {
                 return;
@@ -418,7 +431,15 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Nome = txtNome.Text;
             _mClilocacao.NomeMae = txtNomeMae.Text;
             _mClilocacao.NomePai = txtNomePai.Text;
-            _mClilocacao.DataExpedicao = Convert.ToDateTime(txtDataExpedicao.Text);
+            if (isDate(txtDataExpedicao.Text))
+            {
+                _mClilocacao.DataExpedicao = Convert.ToDateTime(txtDataExpedicao.Text);
+            }
+            else
+            {
+                _mClilocacao.DataExpedicao = null;
+            }
+            
             _mClilocacao.CPF = txtCpf.Text;
             _mClilocacao.RG = txtRG.Text;
             if (Util.isDate(txtDataNascimento.Text))
@@ -479,9 +500,20 @@ namespace MaisGamers.Formularios.Cadastro
         {
             bool retorno = true;
 
+
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                errorProvider1.SetError(txtNome, "Informar o nome do cliente");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtNome, "");
+            }
+
             if (string.IsNullOrEmpty(txtNomeMae.Text))
             {
-                errorProvider1.SetError(txtNomeMae, "Informar o nome do cliente");
+                errorProvider1.SetError(txtNomeMae, "Informar o nome da mãe");
                 retorno = false;
             }
             else
@@ -500,12 +532,60 @@ namespace MaisGamers.Formularios.Cadastro
                 errorProvider1.SetError(txtRG, "");
             }
 
+            if (cmbEstado.ObterValor() == "0")
+            {
+                errorProvider1.SetError(cmbEstado, "Selecionar o estado");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbEstado, "");
+            }
+
+            if (cmbCidade.ObterValor() == "0")
+            {
+                errorProvider1.SetError(cmbCidade, "Selecionar a cidade");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbCidade, "");
+            }
+
+
+            if(cmbTipoCliente.ObterValor() == "0")
+            {
+                errorProvider1.SetError(cmbTipoCliente, "Informar o tipo de cliente");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbTipoCliente, "");
+            }
+            if (string.IsNullOrEmpty(txtDataNascimento.Text) || (!isDate(txtDataNascimento.Text)))
+            {
+                errorProvider1.SetError(txtDataNascimento, "Data de Nascimento em branco ou inválida");
+                retorno = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtDataNascimento, "");
+
+                //validar já se é maior de idade
+
+                DateTime dataNasci = new DateTime();
+
+                dataNasci = Convert.ToDateTime(txtDataNascimento.Text);
+
+                if (dataNasci.AddYears(18) > DateTime.Now)
+                {
+                    MessageBox.Show("Cliente não é maior de idade");
+                    retorno = false;
+                }
+            }
 
             if (string.IsNullOrEmpty(txtCpf.Text.Replace(".", "").Replace("-", "").Replace(",", "").Trim()))
             {
-                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
-                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
-                errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
                 errorProvider1.SetError(txtCpf, "Informar o cpf do cliente");
                 retorno = false;
             }
@@ -513,7 +593,6 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 errorProvider1.SetError(txtCpf, "");
             }
-
 
 
             return retorno;
@@ -829,7 +908,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
                 {
-                    Application.DoEvents();
+                    System.Windows.Forms.Application.DoEvents();
                 }
 
                 var documento = IE.Document;
@@ -871,7 +950,7 @@ namespace MaisGamers.Formularios.Cadastro
                 relogio.Start();
                 while (relogio.ElapsedMilliseconds < 5000)
                 {
-                    Application.DoEvents();
+                    System.Windows.Forms.Application.DoEvents();
                 }
 
                 relogio.Stop();
@@ -924,8 +1003,40 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnImprimirContrato_CLick(object sender, EventArgs e)
         {
+            
+            try
+            {
+                Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
 
-            Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Documentos\\CONTRATO.docx");
+                if (File.Exists("C:\\temp\\contrato2.docx"))
+                {
+                    File.Delete("C:\\temp\\contrato2.docx");
+                }
+
+                if (File.Exists("C:\\temp\\contratofinal2.docx"))
+                {
+                    File.Delete("C:\\temp\\contratofinal2.docx");
+                }
+
+
+                File.Copy(AppDomain.CurrentDomain.BaseDirectory + "Documentos\\CONTRATO.docx", "C:\\temp\\contrato2.docx");
+
+                
+                Document doc = app.Documents.Open("C:\\temp\\contrato2.docx");
+
+                doc.Content.Find.Execute(FindText: "{NOME}", ReplaceWith: txtNome.Text);
+                doc.SaveAs2("C:\\temp\\contratofinal2.docx");
+
+                doc.Close();
+
+                Process.Start("C:\\temp\\contratofinal2.docx");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         //private void button1_Click_1(object sender, EventArgs e)
