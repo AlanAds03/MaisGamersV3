@@ -154,14 +154,6 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709301734217_aaa.cs" />
-    <Compile Include="Migrations\201709301734217_aaa.Designer.cs">
-      <DependentUpon>201709301734217_aaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710071924258_adicaoSenhaPSN.cs" />
-    <Compile Include="Migrations\201710071924258_adicaoSenhaPSN.Designer.cs">
-      <DependentUpon>201710071924258_adicaoSenhaPSN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -222,12 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709301734217_aaa.resx">
-      <DependentUpon>201709301734217_aaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710071924258_adicaoSenhaPSN.resx">
-      <DependentUpon>201710071924258_adicaoSenhaPSN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
