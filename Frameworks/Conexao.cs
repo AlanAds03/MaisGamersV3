@@ -20,8 +20,8 @@ namespace Frameworks
         public Conexao()
         {
             //connection = new OdbcConnection("Data Source=.; DataBase=maisGamers;user=sa;pwd=qweasd");
-            connection = new OdbcConnection(string.Format(@"Data Source={0}; DataBase=MaisGamers;user=sa;pwd=qweasd", "DESKTOP-L722VSE\\SQLEXPRESS"));
-            //connection = new OdbcConnection(string.Format(@"Data Source={0}; DataBase=maisGamers;user=sa;pwd=qweasd", "DESKTOP-4DJV1NG\\SQLEXPRESS"));
+            //connection = new OdbcConnection(string.Format(@"Data Source={0}; DataBase=MaisGamers;user=sa;pwd=qweasd", "DESKTOP-L722VSE\\SQLEXPRESS"));
+            connection = new OdbcConnection(string.Format(@"Data Source={0}; DataBase=maisGamers;user=sa;pwd=qweasd", "DESKTOP-4DJV1NG\\SQLEXPRESS"));
         }
 
         public bool Conectar()
