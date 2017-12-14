@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -171,17 +174,9 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712111704459_aaaa.cs" />
-    <Compile Include="Migrations\201712111704459_aaaa.Designer.cs">
-      <DependentUpon>201712111704459_aaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111759002_dataexpedicaoCliente 11122017 - Alan Note.cs" />
-    <Compile Include="Migrations\201712111759002_dataexpedicaoCliente 11122017 - Alan Note.Designer.cs">
-      <DependentUpon>201712111759002_dataexpedicaoCliente 11122017 - Alan Note.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.cs" />
-    <Compile Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.Designer.cs">
-      <DependentUpon>201712111916296_adicionarTipoJogo tabela PReco.cs</DependentUpon>
+    <Compile Include="Migrations\201712112132114_xxxxxlll.cs" />
+    <Compile Include="Migrations\201712112132114_xxxxxlll.Designer.cs">
+      <DependentUpon>201712112132114_xxxxxlll.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.cs" />
     <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.Designer.cs">
@@ -262,14 +257,8 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111704459_aaaa.resx">
-      <DependentUpon>201712111704459_aaaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111759002_dataexpedicaoCliente 11122017 - Alan Note.resx">
-      <DependentUpon>201712111759002_dataexpedicaoCliente 11122017 - Alan Note.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.resx">
-      <DependentUpon>201712111916296_adicionarTipoJogo tabela PReco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712112132114_xxxxxlll.resx">
+      <DependentUpon>201712112132114_xxxxxlll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.resx">
       <DependentUpon>201712131340558_dataCadastro clienteLocacao13122017.cs</DependentUpon>
@@ -357,6 +346,7 @@
     <None Include="Imagens\celular&amp;tablet.fw.png" />
     <None Include="Imagens\ConsolePs4.fw.png" />
     <None Include="Imagens\48154.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Imagens\iconeFechar16.png" />
     <None Include="Imagens\iconeLimpar.png" />
     <None Include="Imagens\iconenovo.png" />

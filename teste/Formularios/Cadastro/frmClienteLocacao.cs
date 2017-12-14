@@ -1052,7 +1052,7 @@ namespace MaisGamers.Formularios.Cadastro
                 
                 Document doc = app.Documents.Open("C:\\temp\\contrato2.docx");
 
-                doc.Content.Find.Execute(FindText: "{NOME}", ReplaceWith: txtNome.Text);
+                doc.Content.Find.Execute(FindText: "{NOMEDOCLIENTELOCACAO}", ReplaceWith: txtNome.Text);
                 doc.SaveAs2("C:\\temp\\contratofinal2.docx");
 
                 doc.Close();
