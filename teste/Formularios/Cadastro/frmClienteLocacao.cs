@@ -713,7 +713,13 @@ namespace MaisGamers.Formularios.Cadastro
             frmFoto _foto = new frmFoto();
             _foto.ShowDialog();
 
+            if(_foto.foto == null)
+            {
+                return;
+            }
             if (rbLocatario.Checked)
+
+                
             {
                 pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.foto));
                 bClienteLocacao _bcliente = new bClienteLocacao();

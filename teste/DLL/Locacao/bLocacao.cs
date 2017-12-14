@@ -116,11 +116,22 @@ namespace MaisGamers.DLL.Locacao
 
             return _dlocacao.PesquisaLocacao(NomeCliente, Status);
 
+
         }
 
+            public List<dynamic> BuscarPrecosLoacao(int idLocacao)
+            {
+
+                dLocacao _dlocacao = new dLocacao();
+
+                return _dlocacao.BuscarPrecosJogos(idLocacao);
+
+            }
 
 
-        public decimal PrevisaoPreco(int idLocacao,DateTime dataLocacao, DateTime dataEntrega, bool utilizaPromocao)
+
+
+            public decimal PrevisaoPreco(int idLocacao,DateTime dataLocacao, DateTime dataEntrega, bool utilizaPromocao)
         {
             //Data Atual 11/02/2017 
             //entregar dia 13/02/2017 
@@ -143,7 +154,7 @@ namespace MaisGamers.DLL.Locacao
             }
 
             dLocacao _dlocacao = new dLocacao();
-            foreach (var xxx in _dlocacao.PesquisaLocacaoID(idLocacao))
+            foreach (var xxx in _dlocacao.BuscarPrecosJogos(idLocacao))
             {
 
                 if (xxx.NomeTipoJogo == "Digital")
