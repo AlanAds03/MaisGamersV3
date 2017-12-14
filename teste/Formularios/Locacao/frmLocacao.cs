@@ -16,6 +16,9 @@ using MaisGamers.DLL.Cadastro.Cadastro;
 using static MaisGamers.Modulos.Util;
 using MaisGamers.DLL.Locacao;
 using MaisGamers.Model.Locacao;
+using MaisGamers.Formularios.Locacao;
+using System.IO;
+using System.Diagnostics;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -24,7 +27,9 @@ namespace MaisGamers.Formularios.Cadastro
         public Util.ModoTela modo_tela = ModoTela.CONSULTA;
         public int idClienteLocacao;
         public int idLocacao;
+        public int StatusLocação;
         public decimal idLocacaoJogo;
+        public double ValorDevido;
 
         public frmLocacao()
         {
@@ -93,43 +98,64 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void atualizaTela()
         {
+
+            bClienteLocacao _bclienteLocacao = new bClienteLocacao();
+            mClienteLocacao _mClienteLocacao = new mClienteLocacao();
+            bLocacao _blocacao = new bLocacao();
+            mLocacao _mlocacao = new mLocacao();
+
             if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
-
-
-
                 PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
-
-
             }
             else if (modo_tela == Util.ModoTela.ALTERACAO)
             {
                 tabControl1.SelectTab("tpLocacao");
                 btnFechar.Text = "Voltar";
 
-                bClienteLocacao _bclienteLocacao = new bClienteLocacao();
-                mClienteLocacao _mClienteLocacao = new mClienteLocacao();
+                _mClienteLocacao = _bclienteLocacao.BuscarClienteLocacao(idLocacao);
 
+                lblCliente.Text = _mClienteLocacao.Nome;
+                lblRG.Text = _mClienteLocacao.RG;
+                lblCPF.Text = _mClienteLocacao.CPF;
+                lblDataCadastro.Text = _mClienteLocacao.DataCadastrado.ToShortDateString().ToString();
 
-                //_mClienteLocacao = _bclienteLocacao.PesquisaClienteID(idClienteLocacao);
+                _mlocacao = _blocacao.Obter(idLocacao);
 
-                //lblCliente.Text = _mClienteLocacao.Nome;
-                //lblRG.Text = _mClienteLocacao.RG;
-                //lblCPF.Text = _mClienteLocacao.CPF;
+                if (_mlocacao != null)
+                {
+                    lblStatus.Text = _mlocacao.StatusLocacao.Status;
+                    StatusLocação = _mlocacao.StatusLocacao.IDStatus;
+                }
+
+                btnImprimir.Enabled = _mlocacao.StatusLocacao.IDStatus != 1;
+
+                if (_mlocacao.StatusLocacao.IDStatus != 1)
+                {
+
+                    if (_mlocacao.DataPrevisaoEntrega != null)
+                    {
+                        txtDataEntrega.Value = Convert.ToDateTime(_mlocacao.DataPrevisaoEntrega);
+                    }
+                    
+                    txtDataEntrega.Enabled = false;
+                    
+
+                }
 
                 PesquisaGrid(idLocacao);
 
             }
 
-            else if (modo_tela == Util.ModoTela.NOVO)
-            {
-                LimpaCampos();
-                tabControl1.SelectTab("tpCadastro");
-                btnFechar.Text = "Voltar";
+            //else if (modo_tela == Util.ModoTela.NOVO)
+            //{
+            //    LimpaCampos();
+            //    tabControl1.SelectTab("tpCadastro");
+            //    btnFechar.Text = "Voltar";
 
-            }
+            //}
         }
 
         private void LimpaCampos()
@@ -317,7 +343,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 bLocacao _bLocacao = new bLocacao();
 
-                _bLocacao.PrevisaoPreco(idLocacao, dataEntrega,true);
+                lblTotal.Text =  _bLocacao.PrevisaoPreco(idLocacao,MinHoraData(DateTime.Now), MinHoraData(dataEntrega),true).ToString();
 
 
             }
@@ -364,6 +390,211 @@ namespace MaisGamers.Formularios.Cadastro
                 throw;
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                
+                frmPopupFehamento fechamento = new frmPopupFehamento();
+
+                bLocacao _locacao = new bLocacao();
+                mLocacao _mloc = new mLocacao();
+                _mloc = _locacao.Obter(idLocacao);
+
+                fechamento.DataLocacao = _mloc.DataLocacao;
+                fechamento.DataPrevisao = _mloc.DataPrevisaoEntrega;
+                fechamento.DataEntrega = DateTime.Now;
+                fechamento.ValorDevido =Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, MinHoraData(fechamento.DataLocacao), MinHoraData(DateTime.Now), true).ToString());
+                fechamento.ValorPagoLocacao = _mloc.ValorPagoInicial;
+
+                fechamento.idLocacao = idLocacao;
+                fechamento.ShowDialog();
+
+
+                if (fechamento.acao == "Concluir")
+                {
+
+                    //Imprimir nota de impressao e concluir
+                    _locacao.FinalizarLocacao(idLocacao, fechamento.DataEntrega, fechamento.ValorDevido);
+                }
+
+                modo_tela = ModoTela.ALTERACAO;
+                atualizaTela();
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmEntrega _entrega = new frmEntrega();
+
+
+
+                DateTime dataEntrega = new DateTime(txtDataEntrega.Value.Year, txtDataEntrega.Value.Month, txtDataEntrega.Value.Day);
+
+                if (dataEntrega.ToShortDateString() == DateTime.Now.ToShortDateString())
+                {
+                    MessageBox.Show("Não pode alugar para o mesmo dia");
+                    return;
+                }
+
+
+                bLocacao _bLocacao = new bLocacao();
+
+              
+
+                _entrega.DataEntrega = txtDataEntrega.Value;
+                _entrega.ValorDevido = _bLocacao.PrevisaoPreco(idLocacao,MinHoraData( DateTime.Now),MinHoraData(dataEntrega), true).ToString();
+
+                _entrega.ShowDialog();
+
+                if(_entrega.acao == "Concluir")
+                {
+                    _bLocacao.AtualizarDataPrevistaLocacao(idLocacao, _entrega.DataEntrega, _entrega.ValorPago);
+                }
+
+                modo_tela = ModoTela.ALTERACAO;
+                atualizaTela();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void txtDataEntrega_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dataEntrega = new DateTime(txtDataEntrega.Value.Year, txtDataEntrega.Value.Month, txtDataEntrega.Value.Day);
+
+
+                bLocacao _bLocacao = new bLocacao();
+
+                lblTotal.Text = _bLocacao.PrevisaoPreco(idLocacao, MinHoraData(DateTime.Now), MinHoraData(dataEntrega), true).ToString();
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                bLocacao _locacao = new bLocacao();
+                mLocacao _mloc = new mLocacao();
+                _mloc = _locacao.Obter(idLocacao);
+
+                List<mLocacaoJogos> Jogos = new List<mLocacaoJogos>();
+
+                Jogos = _locacao.ObterJogos(idLocacao);
+
+                if (File.Exists(@"C:\Temp\1.txt")){
+                    File.Delete(@"C:\Temp\1.txt");
+                }
+
+                
+                StreamWriter texto = new StreamWriter(@"C:\Temp\1.txt");
+
+
+                texto.WriteLine("Locadora Mais Gamers");
+                texto.WriteLine("Telefone: 4382-9388");
+                texto.WriteLine("CNPJ: 004382/0001-01");
+                texto.WriteLine("Cliente : " + _mloc.IDClienteLocacao.Nome);
+                texto.WriteLine("Data Locação : " + _mloc.DataLocacao);
+
+                if (StatusLocação == 2)
+                {
+                    texto.WriteLine("Data Previsão : " + _mloc.DataPrevisaoEntrega);
+                }
+                else
+                {
+                    texto.WriteLine("Data de entrega : " + _mloc.DataLocacaoEntrega);
+                }
+                
+                foreach (mLocacaoJogos _jogo in Jogos)
+                {
+                    texto.WriteLine("Jogo : " + _jogo.IDJogo.NomeJogo);
+                }
+                
+                texto.WriteLine("Valor pago na locação : " + _mloc.ValorPagoInicial.ToString("0.00"));
+
+                if(StatusLocação == 2)
+                {
+                    texto.WriteLine("Valor à pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
+                }
+                else
+                {
+                    texto.WriteLine("Valor à pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
+
+                }
+                texto.WriteLine("");
+                texto.WriteLine("");
+                texto.WriteLine("");
+                if (StatusLocação == 2)
+                {
+                    texto.WriteLine("______________________________");
+                    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
+
+                }
+                else
+                {
+                    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
+                    texto.WriteLine("**********DEVOLUCAO**********");
+                }
+                
+                texto.Close();
+
+                Process.Start(@"C:\Temp\1.txt");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+
+        }
+
+        private void txtDataEntrega_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dataEntrega = new DateTime(txtDataEntrega.Value.Year, txtDataEntrega.Value.Month, txtDataEntrega.Value.Day);
+
+
+                bLocacao _bLocacao = new bLocacao();
+
+                lblTotal.Text = _bLocacao.PrevisaoPreco(idLocacao, MinHoraData(DateTime.Now), MinHoraData(dataEntrega), true).ToString();
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

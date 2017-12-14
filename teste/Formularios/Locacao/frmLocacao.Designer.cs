@@ -34,16 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
             this.cmbStatus = new Frameworks.Componentes.SuperComboBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpLocacao = new System.Windows.Forms.TabPage();
@@ -59,17 +52,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpGridLocacao = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnJogo = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lvLocacao = new Frameworks.Componentes.SuperLV();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnExcluirJogo = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnJogo = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -135,19 +134,6 @@
             this.cmbStatus.TabIndex = 2;
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
             // 
-            // button4
-            // 
-            this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(588, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 43);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Pesquisar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // grpGrid
             // 
             this.grpGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -183,82 +169,6 @@
             this.grpBotoes.Size = new System.Drawing.Size(691, 77);
             this.grpBotoes.TabIndex = 8;
             this.grpBotoes.TabStop = false;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(297, 19);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(91, 50);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(103, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Editar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(200, 19);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
-            this.btnSalvar.TabIndex = 7;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(493, 19);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(91, 50);
-            this.btnFechar.TabIndex = 5;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(6, 19);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(91, 50);
-            this.btnNovo.TabIndex = 6;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(394, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -308,10 +218,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(18, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(828, 83);
+            this.groupBox1.Size = new System.Drawing.Size(907, 83);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Dados Cliente";
             // 
             // lblDataCadastro
             // 
@@ -415,11 +325,10 @@
             // 
             // grpGridLocacao
             // 
+            this.grpGridLocacao.Controls.Add(this.btnImprimir);
             this.grpGridLocacao.Controls.Add(this.btnExcluirJogo);
-            this.grpGridLocacao.Controls.Add(this.checkBox1);
             this.grpGridLocacao.Controls.Add(this.txtDataEntrega);
             this.grpGridLocacao.Controls.Add(this.label8);
-            this.grpGridLocacao.Controls.Add(this.button6);
             this.grpGridLocacao.Controls.Add(this.button5);
             this.grpGridLocacao.Controls.Add(this.button1);
             this.grpGridLocacao.Controls.Add(this.btnJogo);
@@ -432,89 +341,29 @@
             this.grpGridLocacao.TabIndex = 1;
             this.grpGridLocacao.TabStop = false;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(806, 276);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 17);
-            this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "Promoção";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // txtDataEntrega
             // 
             this.txtDataEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDataEntrega.Location = new System.Drawing.Point(632, 298);
+            this.txtDataEntrega.Location = new System.Drawing.Point(794, 275);
             this.txtDataEntrega.Name = "txtDataEntrega";
             this.txtDataEntrega.Size = new System.Drawing.Size(107, 20);
             this.txtDataEntrega.TabIndex = 23;
+            this.txtDataEntrega.ValueChanged += new System.EventHandler(this.txtDataEntrega_ValueChanged);
+            this.txtDataEntrega.Leave += new System.EventHandler(this.txtDataEntrega_Leave);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(632, 282);
+            this.label8.Location = new System.Drawing.Point(715, 277);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 22;
-            this.label8.Text = "Data Entrega";
-            // 
-            // button6
-            // 
-            this.button6.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(485, 282);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 50);
-            this.button6.TabIndex = 21;
-            this.button6.Text = "Previsão";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(351, 282);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 50);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Entrega Locação";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(211, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 50);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Finalizar Locação";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnJogo
-            // 
-            this.btnJogo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnJogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJogo.Location = new System.Drawing.Point(6, 282);
-            this.btnJogo.Name = "btnJogo";
-            this.btnJogo.Size = new System.Drawing.Size(91, 50);
-            this.btnJogo.TabIndex = 18;
-            this.btnJogo.Text = " + Jogo";
-            this.btnJogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnJogo.UseVisualStyleBackColor = true;
-            this.btnJogo.Click += new System.EventHandler(this.btnJogo_Click);
+            this.label8.Text = "Data Previsão";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(783, 319);
+            this.lblTotal.Location = new System.Drawing.Point(861, 319);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(40, 13);
             this.lblTotal.TabIndex = 2;
@@ -523,7 +372,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(803, 319);
+            this.label2.Location = new System.Drawing.Point(815, 319);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 1;
@@ -538,18 +387,156 @@
             this.lvLocacao.UseCompatibleStateImageBehavior = false;
             this.lvLocacao.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvLocacao_ItemChecked);
             // 
+            // button4
+            // 
+            this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(588, 21);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 43);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Pesquisar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = global::MaisGamers.Properties.Resources.iconeimpressora;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(286, 277);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(87, 50);
+            this.btnImprimir.TabIndex = 26;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // btnExcluirJogo
             // 
-            this.btnExcluirJogo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnExcluirJogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluirJogo.Location = new System.Drawing.Point(103, 282);
+            this.btnExcluirJogo.Image = global::MaisGamers.Properties.Resources.iconemenos;
+            this.btnExcluirJogo.Location = new System.Drawing.Point(833, 75);
             this.btnExcluirJogo.Name = "btnExcluirJogo";
-            this.btnExcluirJogo.Size = new System.Drawing.Size(91, 50);
+            this.btnExcluirJogo.Size = new System.Drawing.Size(45, 50);
             this.btnExcluirJogo.TabIndex = 25;
-            this.btnExcluirJogo.Text = "- Jogo";
             this.btnExcluirJogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluirJogo.UseVisualStyleBackColor = true;
             this.btnExcluirJogo.Click += new System.EventHandler(this.btnExcluirJogo_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::MaisGamers.Properties.Resources.iconecd;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(6, 277);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(134, 50);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Entregar ao cliente";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::MaisGamers.Properties.Resources.iconePAgamento32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(146, 277);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 50);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Finalizar Locação";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnJogo
+            // 
+            this.btnJogo.Image = global::MaisGamers.Properties.Resources.iconemais;
+            this.btnJogo.Location = new System.Drawing.Point(833, 19);
+            this.btnJogo.Name = "btnJogo";
+            this.btnJogo.Size = new System.Drawing.Size(45, 50);
+            this.btnJogo.TabIndex = 18;
+            this.btnJogo.Text = " ";
+            this.btnJogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnJogo.UseVisualStyleBackColor = true;
+            this.btnJogo.Click += new System.EventHandler(this.btnJogo_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(297, 19);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(91, 50);
+            this.btnExcluir.TabIndex = 17;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(103, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 50);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Editar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(200, 19);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(493, 19);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(91, 50);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(6, 19);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(91, 50);
+            this.btnNovo.TabIndex = 6;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(394, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 50);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Limpar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmLocacao
             // 
@@ -620,10 +607,9 @@
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker txtDataEntrega;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnExcluirJogo;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

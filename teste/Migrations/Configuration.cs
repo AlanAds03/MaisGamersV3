@@ -67,8 +67,28 @@ namespace teste.Migrations
             context.StatusLocacao.AddOrUpdate(
                 p => p.IDStatus,
                 new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 1, Status = "Em Aberto" },
-                new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 2, Status = "Concluído" },
-                new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 3, Status = "Processo Judicial" }
+                new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 2, Status = "Alugado" },
+                new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 3, Status = "Concluído" },
+                new MaisGamers.Model.Locacao.mStatusLocacao { IDStatus = 4, Status = "Processo Judicial" }
+                );
+
+            //context.Database.Connection.Open();
+            //context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT PrecoLocacao ON");
+
+            context.PrecoLocacao.AddOrUpdate(
+                p => p.IDPrecoLocacao,
+                new MaisGamers.Model.Locacao.mPrecoLocacao {IDPrecoLocacao = 1,  PrecoDia1 =8,PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(1),IDTipoJogo= context.TipoJogo.Find(1)},
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 2, PrecoDia1 = 8, PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 3, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(3), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 4, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(4), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 5, PrecoDia1 = Convert.ToDecimal(2.5), PrecoDia2 = Convert.ToDecimal(2.5), PrecoDia3 = Convert.ToDecimal(2.5), IDConsole = context.Console.Find(1), IDTipoJogo = context.TipoJogo.Find(2) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 6, PrecoDia1 = Convert.ToDecimal(2.5), PrecoDia2 = Convert.ToDecimal(2.5), PrecoDia3 = Convert.ToDecimal(2.5), IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(2) }
+
+
+
+                //5.00    10.00   15.00   1   2
+                //5.00    10.00   15.00   2   2
+
                 );
             //  This method will be called after migrating to the latest version.
 

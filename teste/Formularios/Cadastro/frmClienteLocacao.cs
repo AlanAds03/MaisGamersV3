@@ -469,7 +469,7 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.RGFilho = txtRGFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             _mClilocacao.CPFFilho = txtCpfFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             _mClilocacao.cSexo = Convert.ToInt32(cmbSexo.SelectedValue);
-
+            _mClilocacao.DataCadastrado = DateTime.Now;
 
             if (_cliente.IncluirCliente(_mClilocacao) == true)
             {
@@ -668,11 +668,39 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmLocacao _locacao = new frmLocacao();
-            _locacao.MdiParent = this.MdiParent;
-            _locacao.modo_tela = ModoTela.ALTERACAO;
-            _locacao.idClienteLocacao = idClienteLocacao;
-            _locacao.Show();
+
+            int idLocacao = 0;
+            try
+            {
+                bLocacao _bLocacao = new bLocacao();
+                mLocacao _mLocacao = new mLocacao();
+
+
+                _mLocacao.idClienteLocacao = idClienteLocacao;
+                _mLocacao.idStatusLocacao = 1;
+                _mLocacao.DataLocacao = DateTime.Now;
+                idLocacao = _bLocacao.InserirLocacao(_mLocacao);
+
+                frmLocacao _locacao = new frmLocacao();
+                _locacao.MdiParent = this.MdiParent;
+                _locacao.modo_tela = ModoTela.ALTERACAO;
+                _locacao.idClienteLocacao = idClienteLocacao;
+                _locacao.idLocacao = idLocacao;
+                _locacao.Show();
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+
+            
+               
             //frmLocacaoJogo _locacao = new frmLocacaoJogo();
             //_locacao.MdiParent = this.MdiParent;
             //_locacao.Show();

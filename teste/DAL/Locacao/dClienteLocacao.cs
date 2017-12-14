@@ -115,6 +115,29 @@ namespace MaisGamersV2.DAL.Locacao
             }
         }
 
+        public mClienteLocacao BuscarClienteLocacao(int idLocacao)
+        {
+
+            var db = new Contexto();
+
+            mClienteLocacao cliente = new mClienteLocacao();
+            try
+            {
+                cliente = (from locacao in db.Locacao
+                           join _cli in db.ClienteLocacao on locacao.IDClienteLocacao.idClienteLocacao equals _cli.idClienteLocacao
+                           where (locacao.IDLocacao == idLocacao)
+                           select locacao.IDClienteLocacao).FirstOrDefault();
+
+                return cliente;
+
+
+            }
+            catch (Exception)
+            {
+                return cliente;
+                throw;
+            }
+        }
         internal void SalvarDocumento(int idClienteLocacao, byte[] byte_documento, string documento)
         {
 

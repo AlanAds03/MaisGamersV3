@@ -141,6 +141,18 @@
     <Compile Include="Formularios\Locacao\frmLocacao.Designer.cs">
       <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Locacao\frmEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Locacao\frmEntrega.Designer.cs">
+      <DependentUpon>frmEntrega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Locacao\frmPopupFehamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Locacao\frmPopupFehamento.Designer.cs">
+      <DependentUpon>frmPopupFehamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Manutencao\frmManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,18 @@
     <Compile Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.cs" />
     <Compile Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.Designer.cs">
       <DependentUpon>201712111916296_adicionarTipoJogo tabela PReco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.cs" />
+    <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.Designer.cs">
+      <DependentUpon>201712131340558_dataCadastro clienteLocacao13122017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712140154269_datafinal locacao.cs" />
+    <Compile Include="Migrations\201712140154269_datafinal locacao.Designer.cs">
+      <DependentUpon>201712140154269_datafinal locacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712140208400_novadataaaa.cs" />
+    <Compile Include="Migrations\201712140208400_novadataaaa.Designer.cs">
+      <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
@@ -223,6 +247,12 @@
     <EmbeddedResource Include="Formularios\Locacao\frmLocacao.resx">
       <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Locacao\frmEntrega.resx">
+      <DependentUpon>frmEntrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Locacao\frmPopupFehamento.resx">
+      <DependentUpon>frmPopupFehamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Manutencao\frmManutencao.resx">
       <DependentUpon>frmManutencao.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +270,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712111916296_adicionarTipoJogo tabela PReco.resx">
       <DependentUpon>201712111916296_adicionarTipoJogo tabela PReco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.resx">
+      <DependentUpon>201712131340558_dataCadastro clienteLocacao13122017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712140154269_datafinal locacao.resx">
+      <DependentUpon>201712140154269_datafinal locacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712140208400_novadataaaa.resx">
+      <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -288,6 +327,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\iconemenos.png" />
+    <None Include="Resources\iconemais.png" />
+    <None Include="Resources\iconeimpressora.png" />
+    <None Include="Resources\iconeprevisao.png" />
+    <None Include="Resources\iconecd.png" />
+    <None Include="Resources\iconePAgamento32.png" />
+    <None Include="Resources\iconePagamento.png" />
     <None Include="Resources\arma32.png" />
     <None Include="Resources\contrato32.png" />
     <None Include="Resources\camera32.png" />

@@ -89,6 +89,8 @@ namespace MaisGamers.Model.Locacao
 
         public byte[] AnexoComprovanteEndereco { get; set; }
 
+        public DateTime DataCadastrado { get; set; }
+
 
         //       @Nome VARCHAR(300) = NULL,
         //@DataNascimento DATETIME = NULL,

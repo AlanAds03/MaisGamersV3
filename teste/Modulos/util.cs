@@ -129,7 +129,19 @@ namespace MaisGamers.Modulos
             }
         
 
+        public static DateTime MinHoraData(DateTime dataAtual)
+        {
+            DateTime dataRetorno = new DateTime();
+            try
+            {
+                return dataRetorno = new DateTime(dataAtual.Year, dataAtual.Month, dataAtual.Day);
+            }
+            catch (Exception)
+            {
 
+                return dataRetorno;
+            }
+        }
         public static EnderecoCEP RetornoCEP(string cep)
         {
             WebClient web = new WebClient();

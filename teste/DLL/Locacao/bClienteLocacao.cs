@@ -31,7 +31,21 @@ namespace MaisGamers.DLL.Locacao
 
         }
 
+        public mClienteLocacao BuscarClienteLocacao(int idLocacao)
+        {
+            try
+            {
 
+                dClienteLocacao dLocacao = new dClienteLocacao();
+
+                return dLocacao.BuscarClienteLocacao(idLocacao);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public Boolean IncluirFoto(int idClienteLocacao , bool locatario, byte[] fotoLocatario)
         {
 

@@ -12,6 +12,21 @@ namespace MaisGamers.DAL.Locacao
     public class dLocacao
     {
 
+        public mLocacao Obter(int idLocacao)
+        {
+            var db = new Contexto();
+            try
+            {
+
+                return db.Locacao.Include(x=> x.StatusLocacao).Include(x=> x.IDClienteLocacao).Where(x=> x.IDLocacao == idLocacao).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
         public int InserirLocacao(mLocacao _mLocacao)
         {
 
@@ -25,8 +40,9 @@ namespace MaisGamers.DAL.Locacao
                 _mLocacao.IDClienteLocacao = db.ClienteLocacao.Find(_mLocacao.idClienteLocacao);
 
                 _mLocacao.DataLocacao = DateTime.Now;
-                _mLocacao.DataLocacaoEntrega = DateTime.Now;
-                
+                //_mLocacao.DataLocacaoEntrega = DateTime.Now;
+                _mLocacao.DataPrevisaoEntrega = DateTime.Now;
+
                 if (_mLocacao.IDLocacao != 0)
                 {
                     mLocacao locacaoBanco = db.Locacao.Find(_mLocacao.IDClienteLocacao.idClienteLocacao);
@@ -52,6 +68,80 @@ namespace MaisGamers.DAL.Locacao
             }
 
         }
+
+        internal bool AtualizarStatus(int idLocaaco, int Status)
+        {
+            var db = new Contexto();
+            mLocacao _locacao = new mLocacao();
+            try
+            {
+                _locacao = db.Locacao.Find(idLocaaco);
+                _locacao.StatusLocacao = db.StatusLocacao.Find(Status);
+
+                db.Entry(_locacao).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
+        internal bool AtualizarDataPrevistaLocacao(int idLocaaco, DateTime dataPrevisao, double valorPagoLocacao)
+        {
+            var db = new Contexto();
+            mLocacao _locacao = new mLocacao();
+            try
+            {
+                _locacao = db.Locacao.Find(idLocaaco);
+
+                _locacao.DataPrevisaoEntrega = dataPrevisao;
+                _locacao.ValorPagoInicial = valorPagoLocacao;
+                _locacao.StatusLocacao = db.StatusLocacao.Find(2);
+
+               
+                db.Entry(_locacao).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
+
+
+        internal bool FinalizarLocacao(int idLocaaco, DateTime dataEntrega, double valorPago)
+        {
+            var db = new Contexto();
+            mLocacao _locacao = new mLocacao();
+            try
+            {
+                _locacao = db.Locacao.Find(idLocaaco);
+
+                _locacao.DataLocacaoEntrega = dataEntrega;
+                _locacao.ValorPagoFinal = valorPago;
+                _locacao.StatusLocacao = db.StatusLocacao.Find(3);
+
+
+                db.Entry(_locacao).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
 
 
         public List<dynamic> PesquisaLocacao(string NomeCliente , int Status)
@@ -84,7 +174,22 @@ namespace MaisGamers.DAL.Locacao
 
         }
 
-        
+        public List<mLocacaoJogos> ObterJogos(int idLocacao)
+        {
+
+            List<mLocacaoJogos> lista = new List<mLocacaoJogos>();
+            var db = new Contexto();
+            try
+            {
+                lista = db.LocacaoJogos.Include(x => x.IDLocacao).Include(x=> x.IDJogo).Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                return lista;
+            }
+        }
 
         public List<dynamic> PesquisaLocacaoID(int idLocacao)
         {
@@ -147,3 +252,4 @@ namespace MaisGamers.DAL.Locacao
 
     }
 }
+

@@ -18,6 +18,7 @@ namespace MaisGamers.DLL.Locacao
             return _dlocacao.InserirLocacaoJogo(_mlocacao);
 
         }
+     
 
         public bool ExcluirJogo(decimal idLocacaojogo)
         {

@@ -23,7 +23,9 @@ namespace MaisGamers.Model.Locacao
 
         public DateTime DataLocacao { get; set; }
 
-        public DateTime DataLocacaoEntrega { get; set; }
+        public DateTime DataPrevisaoEntrega { get; set; }
+
+        public DateTime? DataLocacaoEntrega { get; set; }
 
         public double ValorPagoInicial { get; set; }
 
@@ -46,3 +48,4 @@ namespace MaisGamers.Model.Locacao
 
     }
 }
+
