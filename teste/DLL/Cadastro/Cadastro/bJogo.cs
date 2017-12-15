@@ -45,14 +45,14 @@ namespace MaisGamers.DLL.Cadastro.Cadastro
             }
         }
 
-        public List<mJogo> PesquisaJogo(mJogo jogo, string order)
+        public List<mJogo> PesquisaJogo(mJogo jogo, string order, bool Lacrado)
         {
             try
             {
                 dJogo d = new dJogo();
                
 
-                return d.PesquisaJogo(jogo, order);
+                return d.PesquisaJogo(jogo, order,Lacrado);
                 
 
             }

@@ -90,6 +90,8 @@
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.cmbConsole = new Frameworks.Componentes.SuperComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkLacrado = new System.Windows.Forms.CheckBox();
+            this.chkFiltroLacrado = new System.Windows.Forms.CheckBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -103,6 +105,7 @@
             // 
             // grpFiltro
             // 
+            this.grpFiltro.Controls.Add(this.chkFiltroLacrado);
             this.grpFiltro.Controls.Add(this.label11);
             this.grpFiltro.Controls.Add(this.label1);
             this.grpFiltro.Controls.Add(this.txtPesqNome);
@@ -110,7 +113,7 @@
             this.grpFiltro.Controls.Add(this.button4);
             this.grpFiltro.Location = new System.Drawing.Point(18, 6);
             this.grpFiltro.Name = "grpFiltro";
-            this.grpFiltro.Size = new System.Drawing.Size(762, 100);
+            this.grpFiltro.Size = new System.Drawing.Size(762, 110);
             this.grpFiltro.TabIndex = 6;
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtro";
@@ -161,7 +164,7 @@
             // 
             this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(588, 21);
+            this.button4.Location = new System.Drawing.Point(370, 67);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 43);
             this.button4.TabIndex = 3;
@@ -318,6 +321,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkLacrado);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pnlEmail);
             this.groupBox1.Controls.Add(this.lblVenda);
@@ -756,6 +760,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // chkLacrado
+            // 
+            this.chkLacrado.AutoSize = true;
+            this.chkLacrado.Location = new System.Drawing.Point(547, 87);
+            this.chkLacrado.Name = "chkLacrado";
+            this.chkLacrado.Size = new System.Drawing.Size(65, 17);
+            this.chkLacrado.TabIndex = 31;
+            this.chkLacrado.Text = "Lacrado";
+            this.chkLacrado.UseVisualStyleBackColor = true;
+            // 
+            // chkFiltroLacrado
+            // 
+            this.chkFiltroLacrado.AutoSize = true;
+            this.chkFiltroLacrado.Location = new System.Drawing.Point(552, 43);
+            this.chkFiltroLacrado.Name = "chkFiltroLacrado";
+            this.chkFiltroLacrado.Size = new System.Drawing.Size(65, 17);
+            this.chkFiltroLacrado.TabIndex = 7;
+            this.chkFiltroLacrado.Text = "Lacrado";
+            this.chkFiltroLacrado.UseVisualStyleBackColor = true;
+            // 
             // frmCadJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -850,5 +874,7 @@
         private Frameworks.Componentes.SuperTextBox txtContaPai;
         private Frameworks.Componentes.SuperTextBox txtDataVendaSecundaria;
         private Frameworks.Componentes.SuperTextBox txtDataVEndaPrimaria;
+        private System.Windows.Forms.CheckBox chkLacrado;
+        private System.Windows.Forms.CheckBox chkFiltroLacrado;
     }
 }

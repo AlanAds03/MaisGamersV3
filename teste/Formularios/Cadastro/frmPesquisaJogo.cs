@@ -186,7 +186,7 @@ namespace MaisGamers.Formularios.Cadastro
                     jogo.cIdConsole = Convert.ToInt32(Console);
                 }
 
-                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
+                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome",false));
                 
             }
 

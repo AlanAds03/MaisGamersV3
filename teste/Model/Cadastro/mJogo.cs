@@ -55,6 +55,8 @@ namespace MaisGamers.Model.Cadastro
 
         public double? ValorVendaSecundaria { get; set; }
 
+        public bool Lacrado { get; set; }
+
 
 
 

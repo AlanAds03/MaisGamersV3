@@ -19,6 +19,7 @@ using MaisGamers.Model.Locacao;
 using MaisGamers.Formularios.Locacao;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing.Printing;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -516,16 +517,19 @@ namespace MaisGamers.Formularios.Cadastro
                 
                 StreamWriter texto = new StreamWriter(@"C:\Temp\1.txt");
 
-
+                texto.WriteLine("                                    ");
                 texto.WriteLine("Locadora Mais Gamers");
-                texto.WriteLine("Telefone: 4382-9388");
-                texto.WriteLine("CNPJ: 004382/0001-01");
+                texto.WriteLine("CNPJ: 23.260.093/0001-87");
+                texto.WriteLine("                                  ");
+                texto.WriteLine("Telefone: 11 4382-9388");
+                texto.WriteLine("Whatsapp: 11 94124-7585");
+                texto.WriteLine("                                  ");
                 texto.WriteLine("Cliente : " + _mloc.IDClienteLocacao.Nome);
-                texto.WriteLine("Data Locação : " + _mloc.DataLocacao);
+                texto.WriteLine("Data Locacao : " + _mloc.DataLocacao);
 
                 if (StatusLocação == 2)
                 {
-                    texto.WriteLine("Data Previsão : " + _mloc.DataPrevisaoEntrega);
+                    texto.WriteLine("Data Previsao : " + _mloc.DataPrevisaoEntrega);
                 }
                 else
                 {
@@ -537,15 +541,15 @@ namespace MaisGamers.Formularios.Cadastro
                     texto.WriteLine("Jogo : " + _jogo.IDJogo.NomeJogo);
                 }
                 
-                texto.WriteLine("Valor pago na locação : " + _mloc.ValorPagoInicial.ToString("0.00"));
+                texto.WriteLine("Valor pago na locacao : " + _mloc.ValorPagoInicial.ToString("0.00"));
 
                 if(StatusLocação == 2)
                 {
-                    texto.WriteLine("Valor à pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
+                    texto.WriteLine("Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
                 }
                 else
                 {
-                    texto.WriteLine("Valor à pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
+                    texto.WriteLine("Valor a pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
 
                 }
                 texto.WriteLine("");
@@ -565,7 +569,39 @@ namespace MaisGamers.Formularios.Cadastro
                 
                 texto.Close();
 
-                Process.Start(@"C:\Temp\1.txt");
+                //PrintDialog printDialog = new PrintDialog();
+                //PrintDocument printDocument = new PrintDocument();
+                //printDialog.Document = printDocument;
+
+                //printDocument.PrintPage += new PrintPageEventHandler(PrintReceiptPage);
+
+                //DialogResult result = printDialog.ShowDialog();
+
+                //if (result == DialogResult.OK)
+                //{
+                //    printDocument.Print();
+                //}
+
+
+
+                ProcessStartInfo info = new ProcessStartInfo();
+                info.Verb = "print";
+                info.FileName = @"C:\Temp\1.txt";
+                info.Arguments = "\\Fiscal6666\\";
+
+                info.CreateNoWindow = true;
+                info.WindowStyle = ProcessWindowStyle.Hidden;
+
+                Process p = new Process();
+                p.StartInfo = info;
+                p.Start();
+
+                p.WaitForInputIdle();
+                System.Threading.Thread.Sleep(3000);
+              
+
+
+                //Process.Start(@"C:\Temp\1.txt");
 
             }
             catch (Exception)
@@ -576,6 +612,17 @@ namespace MaisGamers.Formularios.Cadastro
          
 
         }
+
+        private void PrintReceiptPage(object sender, PrintPageEventArgs e)
+        {
+            string message = "AAA";
+            int y;
+            // Print receipt
+            Font myFont = new Font("Times New Roman", 15, FontStyle.Bold);
+            y = e.MarginBounds.Y;
+            e.Graphics.DrawString(message, myFont, Brushes.Red, e.MarginBounds.X, y);
+        }
+
 
         private void txtDataEntrega_ValueChanged(object sender, EventArgs e)
         {
@@ -598,3 +645,4 @@ namespace MaisGamers.Formularios.Cadastro
         }
     }
 }
+

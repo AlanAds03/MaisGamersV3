@@ -90,7 +90,7 @@ namespace MaisGamers.Formularios.Cadastro
                 tabControl1.SelectTab("tpPesquisa");
                 btnFechar.Text = "Fechar";
 
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString(),chkFiltroLacrado.Checked);
 
 
             }
@@ -113,7 +113,7 @@ namespace MaisGamers.Formularios.Cadastro
                 txtQuantidade.Text = Convert.ToString(_mJogo.Quantidade);
                 txtPrecoPago.Text = _mJogo.PrecoPago.ToString("0.00");
                 txtPrecoVenda.Text = _mJogo.PrecoVenda.ToString("0.00");
-
+                chkLacrado.Checked = _mJogo.Lacrado;
                 txtDataNascimentoConta.Text = _mJogo.DataNascimentoConta.ToString();
                 txtDataVEndaPrimaria.Text = _mJogo.DataVendaPrimaria.ToString();
                 txtDataVendaSecundaria.Text = _mJogo.DataVendaSecundaria.ToString();
@@ -195,6 +195,7 @@ namespace MaisGamers.Formularios.Cadastro
                 jogo.Email = txtEmail.Text;
                 jogo.Senha = txtSenha.Text;
                 jogo.SenhaPSN = txtSenhaPSN.Text;
+                jogo.Lacrado = chkLacrado.Checked;
 
                 jogo.DataNascimentoConta = (isDate(txtDataNascimentoConta.Text) ? Convert.ToDateTime(txtDataNascimentoConta.Text) : (DateTime?)null);
                 jogo.ContaPai = txtContaPai.Text;
@@ -285,11 +286,11 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+            PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString(),chkFiltroLacrado.Checked);
         }
 
 
-        private void PesquisaGrid(string NomeJogo, string Console)
+        private void PesquisaGrid(string NomeJogo, string Console, bool Lacrado)
         {
 
 
@@ -312,7 +313,7 @@ namespace MaisGamers.Formularios.Cadastro
                     jogo.cIdConsole = Convert.ToInt32(Console);
                 }
 
-                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome"));
+                    lvPesquisa.CarregaListaView<mJogo>(_bJogo.PesquisaJogo(jogo, "Nome", Lacrado));
                 
             }
 
@@ -330,7 +331,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
             if (cmbConsolePesquisa.Carregado == true)
             {
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString(),chkFiltroLacrado.Checked);
             }
 
         }
@@ -450,8 +451,9 @@ namespace MaisGamers.Formularios.Cadastro
         {
             if ( (Keys)e.KeyChar == Keys.Enter)
             {
-                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString());
+                PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString(),chkFiltroLacrado.Checked);
             }
         }
     }
 }
+

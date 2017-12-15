@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201712140208400_novadataaaa.Designer.cs">
       <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712150040081_campo lacrado jogo.cs" />
+    <Compile Include="Migrations\201712150040081_campo lacrado jogo.Designer.cs">
+      <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -268,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712140208400_novadataaaa.resx">
       <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712150040081_campo lacrado jogo.resx">
+      <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

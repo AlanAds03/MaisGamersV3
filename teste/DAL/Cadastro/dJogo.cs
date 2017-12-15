@@ -139,7 +139,7 @@ namespace MaisGamers.DAL
         }
 
 
-        public List<mJogo> PesquisaJogo(mJogo jogo, string order)
+        public List<mJogo> PesquisaJogo(mJogo jogo, string order, bool Lacrado)
         {
             var db = new Contexto();
             mConsole _Console = new mConsole();
@@ -167,6 +167,7 @@ namespace MaisGamers.DAL
                           .Include(y => y.IDConsole)
                           .Where(z=> z.NomeJogo.Contains((string.IsNullOrEmpty(jogo.NomeJogo) ? z.NomeJogo : jogo.NomeJogo)))
                           .Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
+                          .Where(z=> z.Lacrado == Lacrado)
                           .ToList();
 
 
