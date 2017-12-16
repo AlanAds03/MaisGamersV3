@@ -1,5 +1,8 @@
-﻿using MaisGamers.DLL.Locacao;
+﻿using Frameworks.Classes;
+using MaisGamers.DLL.Locacao;
+using MaisGamers.Model.Documento;
 using MaisGamers.Model.Locacao;
+using MaisGamers.Modulos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,36 +26,16 @@ namespace MaisGamers.Formularios.Cadastro.Popup
         public frmDocumentos()
         {
             InitializeComponent();
-            CarregaComboDocumentos();
+
+            btnAbrir.Enabled = false;
+            btnSalvar.Enabled = false;
+
+            
         }
 
 
 
-        public void CarregaComboDocumentos()
-        {
 
-            Dictionary<String, String> list = new Dictionary<string, string>();
-
-
-
-
-            try
-            {
-
-                list.Add("1", "RG");
-                list.Add("2", "Contrato");
-                list.Add("3", "Endereço");
-
-
-
-                cmbDocumentos.CarregaCombo(list, "cid", "rTexto", PrimeiraLinha.Selecione);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -68,27 +51,45 @@ namespace MaisGamers.Formularios.Cadastro.Popup
 
             OpenFileDialog file = new OpenFileDialog();
             byte[] _byte;
-
+            string documento;
 
             try
             {
-                //RG
-
-
-
 
 
                 file.ShowDialog();
-
+                if (string.IsNullOrEmpty(file.FileName))
+                {
+                    return;
+                }
 
                 _byte = File.ReadAllBytes(file.FileName);
 
+                if (rbRG.Checked)
+                {
+                    documento = "RG";
+                }
+                else if (rbContrato.Checked)
+                {
+                    documento = "CONTRATO";
+                }
+                else
+                {
+                    documento = "COMPROVANTE";
+                }
 
-                _bcliente.SalvarDocumento(idCLienteLocacao, _byte, cmbDocumentos.Text.ToUpper());
+                if (_bcliente.SalvarDocumento(idCLienteLocacao, _byte, documento, Path.GetExtension(file.FileName)))
+                {
+
+                    Util.Mensagem("Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
+                }
+                else
+                {
+                    Util.Mensagem("Erro ao salvar o documento", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
+                }
 
 
-
-
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -101,22 +102,36 @@ namespace MaisGamers.Formularios.Cadastro.Popup
         {
             bClienteLocacao _cliente = new bClienteLocacao();
 
-            byte[] documento;
+            mDocumento documento = new mDocumento();
+            string strDoc = "";
             try
             {
 
 
-                documento = _cliente.BuscarDocumento(idCLienteLocacao, cmbDocumentos.Text.ToString().ToUpper());
-
-
-                if (File.Exists(@"c:\temp\aaa.docx"))
+                if (rbRG.Checked)
                 {
-                    File.Delete(@"c:\temp\aaa.docx");
+                    strDoc = "RG";
+                }
+                else if (rbContrato.Checked)
+                {
+                    strDoc = "CONTRATO";
+                }
+                else
+                {
+                    strDoc = "COMPROVANTE";
+                }
+                documento = _cliente.BuscarDocumento(idCLienteLocacao, strDoc);
+
+
+
+                if (File.Exists(@"c:\temp\aaa." + documento.extensaoArquivo))
+                {
+                    File.Delete(@"c:\temp\aaa." + documento.extensaoArquivo);
                 }
 
-                File.WriteAllBytes(@"c:\temp\aaa.docx", documento);
+                File.WriteAllBytes(@"c:\temp\aaa." + documento.extensaoArquivo, documento.documentos);
 
-                Process.Start(@"c:\temp\aaa.docx");
+                Process.Start(@"c:\temp\aaa." + documento.extensaoArquivo);
 
 
 
@@ -132,16 +147,16 @@ namespace MaisGamers.Formularios.Cadastro.Popup
         private void cmbDocumentos_SelectedIndexChanged(object sender, EventArgs e)
         {
             bClienteLocacao _cliente = new bClienteLocacao();
-            byte[] documento;
+            mDocumento documento = new mDocumento();
 
             btnAbrir.Enabled = false;
 
 
-            if (cmbDocumentos.SelectedValue.ToString() == "1")
+            if (rbRG.Checked)
             {
                 documento = _cliente.BuscarDocumento(idCLienteLocacao, "RG");
 
-                if (documento == null)
+                if (documento.documentos == null)
                 {
                     btnAbrir.Enabled = false;
                 }
@@ -152,11 +167,11 @@ namespace MaisGamers.Formularios.Cadastro.Popup
 
             }
 
-            else if (cmbDocumentos.SelectedValue.ToString() == "2")
+            else if (rbContrato.Checked)
             {
                 documento = _cliente.BuscarDocumento(idCLienteLocacao, "CONTRATO");
 
-                if (documento == null)
+                if (documento.documentos == null)
                 {
                     btnAbrir.Enabled = false;
                 }
@@ -166,11 +181,11 @@ namespace MaisGamers.Formularios.Cadastro.Popup
                 }
 
             }
-            else if (cmbDocumentos.SelectedValue.ToString() == "3")
+            else if (rbComprovante.Checked)
             {
                 documento = _cliente.BuscarDocumento(idCLienteLocacao, "ENDERECO");
 
-                if (documento == null)
+                if (documento.documentos == null)
                 {
                     btnAbrir.Enabled = false;
                 }
@@ -181,6 +196,62 @@ namespace MaisGamers.Formularios.Cadastro.Popup
 
             }
 
+        }
+
+        private void rbRG_CheckedChanged(object sender, EventArgs e)
+        {
+
+            BuscarContrato("RG");
+
+        }
+
+        private void BuscarContrato(string strDocumento)
+        {
+
+            bClienteLocacao _cliente = new bClienteLocacao();
+            mDocumento documento = new mDocumento();
+            try
+            {
+                if (idCLienteLocacao == 0)
+                {
+                    return;
+                }
+
+                btnSalvar.Enabled = true;
+
+
+
+                documento = _cliente.BuscarDocumento(idCLienteLocacao, strDocumento);
+
+                if (documento.documentos == null)
+                {
+                    btnAbrir.Enabled = false;
+                }
+                else
+                {
+                    btnAbrir.Enabled = true;
+                }
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        private void rbContrato_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarContrato("CONTRATO");
+
+
+        }
+
+        private void rbComprovante_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarContrato("COMPROVANTE");
         }
     }
 }

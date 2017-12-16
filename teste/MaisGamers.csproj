@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201712150040081_campo lacrado jogo.Designer.cs">
       <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712162105347_documentos 16122017.cs" />
+    <Compile Include="Migrations\201712162105347_documentos 16122017.Designer.cs">
+      <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -204,6 +208,7 @@
     <Compile Include="Model\Cadastro\mTipoJogo.cs" />
     <Compile Include="Model\Contexto.cs" />
     <Compile Include="Model\DBConfiguracao.cs" />
+    <Compile Include="Model\Documento\mDocumento.cs" />
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacaoJogos.cs" />
@@ -275,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712150040081_campo lacrado jogo.resx">
       <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712162105347_documentos 16122017.resx">
+      <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

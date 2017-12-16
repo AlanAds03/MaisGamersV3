@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Frameworks;
 using Frameworks.Componentes;
+using MaisGamers.Model.Documento;
 
 namespace MaisGamers.DLL.Locacao
 {
@@ -121,24 +122,24 @@ namespace MaisGamers.DLL.Locacao
             }
         }
 
-        public void SalvarDocumento(int idClienteLocacao, byte[] byte_documento,String documento)
+        public bool SalvarDocumento(int idClienteLocacao, byte[] byte_documento,String documento, string extensaoArquivo)
         {
 
             try
             {
                 using(var d = new dClienteLocacao())
                 {
-                    d.SalvarDocumento(idClienteLocacao, byte_documento, documento);
+                   return  d.SalvarDocumento(idClienteLocacao, byte_documento, documento, extensaoArquivo);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
             }
         }
 
-        public byte[] BuscarDocumento(int idClienteLocacao, String documento)
+        public mDocumento BuscarDocumento(int idClienteLocacao, String documento)
         {
 
             try

@@ -109,6 +109,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbManual = new System.Windows.Forms.RadioButton();
+            this.rbWebCAM = new System.Windows.Forms.RadioButton();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLimpar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -402,6 +406,7 @@
             // 
             // grpCadastra
             // 
+            this.grpCadastra.Controls.Add(this.groupBox2);
             this.grpCadastra.Controls.Add(this.txtDataExpedicao);
             this.grpCadastra.Controls.Add(this.lala);
             this.grpCadastra.Controls.Add(this.txtNomePai);
@@ -1014,6 +1019,38 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbManual);
+            this.groupBox2.Controls.Add(this.rbWebCAM);
+            this.groupBox2.Location = new System.Drawing.Point(173, 352);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(161, 33);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbManual
+            // 
+            this.rbManual.AutoSize = true;
+            this.rbManual.Location = new System.Drawing.Point(83, 10);
+            this.rbManual.Name = "rbManual";
+            this.rbManual.Size = new System.Drawing.Size(60, 17);
+            this.rbManual.TabIndex = 1;
+            this.rbManual.Text = "Manual";
+            this.rbManual.UseVisualStyleBackColor = true;
+            // 
+            // rbWebCAM
+            // 
+            this.rbWebCAM.AutoSize = true;
+            this.rbWebCAM.Checked = true;
+            this.rbWebCAM.Location = new System.Drawing.Point(7, 10);
+            this.rbWebCAM.Name = "rbWebCAM";
+            this.rbWebCAM.Size = new System.Drawing.Size(71, 17);
+            this.rbWebCAM.TabIndex = 0;
+            this.rbWebCAM.TabStop = true;
+            this.rbWebCAM.Text = "WebCAM";
+            this.rbWebCAM.UseVisualStyleBackColor = true;
+            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1048,6 +1085,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1133,5 +1172,8 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lala;
         private System.Windows.Forms.MaskedTextBox txtDataExpedicao;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbManual;
+        private System.Windows.Forms.RadioButton rbWebCAM;
     }
 }

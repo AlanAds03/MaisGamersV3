@@ -32,9 +32,12 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbDocumentos = new Frameworks.Componentes.SuperComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbRG = new System.Windows.Forms.RadioButton();
+            this.rbContrato = new System.Windows.Forms.RadioButton();
+            this.rbComprovante = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAbrir
@@ -57,7 +60,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(121, 52);
             this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Text = "Anexar Documento";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -75,8 +78,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbDocumentos);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnAbrir);
             this.groupBox1.Controls.Add(this.btnFechar);
             this.groupBox1.Controls.Add(this.btnSalvar);
@@ -86,25 +88,53 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // cmbDocumentos
+            // groupBox2
             // 
-            this.cmbDocumentos.CampoObrigatorio = false;
-            this.cmbDocumentos.Carregado = false;
-            this.cmbDocumentos.FormattingEnabled = true;
-            this.cmbDocumentos.Location = new System.Drawing.Point(9, 49);
-            this.cmbDocumentos.Name = "cmbDocumentos";
-            this.cmbDocumentos.Size = new System.Drawing.Size(243, 21);
-            this.cmbDocumentos.TabIndex = 4;
-            this.cmbDocumentos.SelectedIndexChanged += new System.EventHandler(this.cmbDocumentos_SelectedIndexChanged);
+            this.groupBox2.Controls.Add(this.rbComprovante);
+            this.groupBox2.Controls.Add(this.rbContrato);
+            this.groupBox2.Controls.Add(this.rbRG);
+            this.groupBox2.Location = new System.Drawing.Point(9, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(359, 61);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Documentos";
             // 
-            // label1
+            // rbRG
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Documento";
+            this.rbRG.AutoSize = true;
+            this.rbRG.Location = new System.Drawing.Point(16, 19);
+            this.rbRG.Name = "rbRG";
+            this.rbRG.Size = new System.Drawing.Size(41, 17);
+            this.rbRG.TabIndex = 0;
+            this.rbRG.TabStop = true;
+            this.rbRG.Text = "RG";
+            this.rbRG.UseVisualStyleBackColor = true;
+            this.rbRG.CheckedChanged += new System.EventHandler(this.rbRG_CheckedChanged);
+            // 
+            // rbContrato
+            // 
+            this.rbContrato.AutoSize = true;
+            this.rbContrato.Location = new System.Drawing.Point(63, 19);
+            this.rbContrato.Name = "rbContrato";
+            this.rbContrato.Size = new System.Drawing.Size(65, 17);
+            this.rbContrato.TabIndex = 1;
+            this.rbContrato.TabStop = true;
+            this.rbContrato.Text = "Contrato";
+            this.rbContrato.UseVisualStyleBackColor = true;
+            this.rbContrato.CheckedChanged += new System.EventHandler(this.rbContrato_CheckedChanged);
+            // 
+            // rbComprovante
+            // 
+            this.rbComprovante.AutoSize = true;
+            this.rbComprovante.Location = new System.Drawing.Point(134, 19);
+            this.rbComprovante.Name = "rbComprovante";
+            this.rbComprovante.Size = new System.Drawing.Size(137, 17);
+            this.rbComprovante.TabIndex = 2;
+            this.rbComprovante.TabStop = true;
+            this.rbComprovante.Text = "Comprovante Endereço";
+            this.rbComprovante.UseVisualStyleBackColor = true;
+            this.rbComprovante.CheckedChanged += new System.EventHandler(this.rbComprovante_CheckedChanged);
             // 
             // frmDocumentos
             // 
@@ -117,7 +147,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDocumentos";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -128,7 +159,9 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Frameworks.Componentes.SuperComboBox cmbDocumentos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbComprovante;
+        private System.Windows.Forms.RadioButton rbContrato;
+        private System.Windows.Forms.RadioButton rbRG;
     }
 }

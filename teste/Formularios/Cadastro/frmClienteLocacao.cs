@@ -32,7 +32,7 @@ using Microsoft.Office.Interop.Word;
 
 namespace MaisGamers.Formularios.Cadastro
 {
-   
+
 
     public partial class frmClienteLocacao : Form
     {
@@ -70,13 +70,13 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void CarregaComboSexo(SuperComboBox cmbSexo)
         {
-            
+
 
             List<mSexo> listSexo = new List<mSexo>();
             try
             {
 
-                listSexo.Add(new mSexo() {cSexo = 1 , rSexo  = "Masculino" });
+                listSexo.Add(new mSexo() { cSexo = 1, rSexo = "Masculino" });
                 listSexo.Add(new mSexo() { cSexo = 2, rSexo = "Feminino" });
 
 
@@ -132,7 +132,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 //if (list != null)
                 //{
-                    comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
+                comboCidade.CarregaCombo(list, "cCidade", "rCidade", SuperComboBox.PrimeiraLinha.Selecione);
                 //}
 
 
@@ -386,15 +386,15 @@ namespace MaisGamers.Formularios.Cadastro
             txtTelefone2.Text = string.Empty;
             pictureLocatario.Image = null;
             pictureAutorizado.Image = null;
-        
 
 
 
-              
 
 
 
-    }
+
+
+        }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -417,7 +417,7 @@ namespace MaisGamers.Formularios.Cadastro
             mClienteLocacao _mClilocacao = new mClienteLocacao();
             bClienteLocacao _cliente = new bClienteLocacao();
 
-            
+
 
             if (ValidarCampos() == false)
             {
@@ -439,7 +439,7 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 _mClilocacao.DataExpedicao = null;
             }
-            
+
             _mClilocacao.CPF = txtCpf.Text;
             _mClilocacao.RG = txtRG.Text;
             if (Util.isDate(txtDataNascimento.Text))
@@ -553,7 +553,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
 
 
-            if(cmbTipoCliente.ObterValor() == "0")
+            if (cmbTipoCliente.ObterValor() == "0")
             {
                 errorProvider1.SetError(cmbTipoCliente, "Informar o tipo de cliente");
                 retorno = false;
@@ -697,10 +697,10 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-           
 
-            
-               
+
+
+
             //frmLocacaoJogo _locacao = new frmLocacaoJogo();
             //_locacao.MdiParent = this.MdiParent;
             //_locacao.Show();
@@ -710,37 +710,103 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnTirarFoto_click(object sender, EventArgs e)
         {
-            frmFoto _foto = new frmFoto();
-            _foto.ShowDialog();
 
-            if(_foto.foto == null)
-            {
-                return;
-            }
-            if (rbLocatario.Checked)
+            bClienteLocacao _bcliente = new bClienteLocacao();
+            Byte[] foto;
 
-                
+            try
             {
-                pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.foto));
-                bClienteLocacao _bcliente = new bClienteLocacao();
 
-                _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
-                pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            else
-            {
-                if (_foto.foto == null)
+
+                if (rbWebCAM.Checked)
                 {
-                    return;
+                    frmFoto _foto = new frmFoto();
+                    _foto.ShowDialog();
+
+                    if (_foto.foto == null)
+                    {
+                        return;
+                    }
+                    if (rbLocatario.Checked)
+
+
+                    {
+                        pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                        pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                        
+                    }
+                    else
+                    {
+                        if (_foto.foto == null)
+                        {
+                            return;
+                        }
+
+                        pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                        pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                        
+
+                    }
+                }
+                else
+                {
+
+
+                    OpenFileDialog fileDialog = new OpenFileDialog();
+
+                    fileDialog.ShowDialog();
+
+                    if (!string.IsNullOrEmpty(fileDialog.FileName))
+                    {
+
+
+                        
+
+                        if (rbLocatario.Checked)
+                        {
+                            pictureLocatario.Image = Image.FromFile(fileDialog.FileName);
+                            pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                pictureLocatario.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                                foto = ms.ToArray();
+                            }
+
+
+                            _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, foto);
+
+                        }
+                        else
+                        {
+                            pictureAutorizado.Image = Image.FromFile(fileDialog.FileName);
+                            pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                pictureAutorizado.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                                foto = ms.ToArray();
+                            }
+
+
+                            _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, foto);
+
+                        }
+
+
+                    }
                 }
 
-                pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.foto));
-                bClienteLocacao _bcliente = new bClienteLocacao();
-                _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
-                pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
-
             }
+            catch (Exception)
+            {
 
+                throw;
+            }
 
 
 
@@ -805,7 +871,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-       
+
 
         private void LimpaCamposFiltro()
         {
@@ -999,7 +1065,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-           
+
 
 
 
@@ -1037,7 +1103,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnImprimirContrato_CLick(object sender, EventArgs e)
         {
-            
+
             try
             {
                 Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
@@ -1055,7 +1121,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 File.Copy(AppDomain.CurrentDomain.BaseDirectory + "Documentos\\CONTRATO.docx", "C:\\temp\\contrato2.docx");
 
-                
+
                 Document doc = app.Documents.Open("C:\\temp\\contrato2.docx");
 
                 doc.Content.Find.Execute(FindText: "{NOMEDOCLIENTELOCACAO}", ReplaceWith: txtNome.Text);
@@ -1070,7 +1136,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-            
+
         }
 
         //private void button1_Click_1(object sender, EventArgs e)

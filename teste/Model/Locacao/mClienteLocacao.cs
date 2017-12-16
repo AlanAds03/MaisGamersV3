@@ -84,10 +84,13 @@ namespace MaisGamers.Model.Locacao
 
 
         public byte[] DocumentoAssinado { get; set; }
-    
+        public string extensaoDocumentoAssinado { get; set; }
+
         public byte [] AnexoRG { get; set; }
+        public string extensaoAnexoRG { get; set; }
 
         public byte[] AnexoComprovanteEndereco { get; set; }
+        public string extensaoComprovanteEndereco { get; set; }
 
         public DateTime DataCadastrado { get; set; }
 

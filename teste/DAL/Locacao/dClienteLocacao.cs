@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Data.Entity;
 using MaisGamers.DAL;
+using MaisGamers.Model.Documento;
 
 namespace MaisGamersV2.DAL.Locacao
 {
     public class dClienteLocacao : IDisposable
     {
 
-        public bool InserirFoto(int idClienteLocacao, bool locatario ,byte[] fotoLocatario)
+        public bool InserirFoto(int idClienteLocacao, bool locatario, byte[] fotoLocatario)
         {
 
             var db = new Contexto();
@@ -34,7 +35,7 @@ namespace MaisGamersV2.DAL.Locacao
                 {
                     cliente.FotoAutorizado = fotoLocatario;
                 }
-                
+
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
 
@@ -66,8 +67,8 @@ namespace MaisGamersV2.DAL.Locacao
                 {
                     mClienteLocacao cliente = db.ClienteLocacao.Find(_clienteLocacao.idClienteLocacao);
 
-                    
-                    
+
+
                     MapObject(ref _clienteLocacao, ref cliente);
                     db.Entry(cliente).State = EntityState.Modified;
                     db.SaveChanges();
@@ -138,58 +139,76 @@ namespace MaisGamersV2.DAL.Locacao
                 throw;
             }
         }
-        internal void SalvarDocumento(int idClienteLocacao, byte[] byte_documento, string documento)
+        internal bool SalvarDocumento(int idClienteLocacao, byte[] byte_documento, string documento, string extensaoArquivo)
         {
 
             var db = new Contexto();
 
-
-
-            mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
-
-            if (documento == "RG")
+            try
             {
-                cliente.AnexoRG = byte_documento;
+
+
+
+                mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
+
+                if (documento == "RG")
+                {
+                    cliente.AnexoRG = byte_documento;
+                    cliente.extensaoAnexoRG = extensaoArquivo;
+                }
+                else if (documento == "CONTRATO")
+                {
+                    cliente.DocumentoAssinado = byte_documento;
+                    cliente.extensaoDocumentoAssinado = extensaoArquivo;
+                }
+                else
+                {
+                    cliente.AnexoComprovanteEndereco = byte_documento;
+                    cliente.extensaoComprovanteEndereco = extensaoArquivo;
+                }
+
+
+                db.Entry(cliente).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+
             }
-            else if(documento == "CONTRATO")
+            catch (Exception)
             {
-                cliente.DocumentoAssinado = byte_documento;
+                return true;
+                
             }
-            else
-            {
-                cliente.AnexoComprovanteEndereco = byte_documento;
-            }
-
-            
-            db.Entry(cliente).State = EntityState.Modified;
-            db.SaveChanges();
-
-
         }
 
-        internal byte[] BuscarDocumento(int idClienteLocacao,  string documento)
+        internal mDocumento BuscarDocumento(int idClienteLocacao, string documento)
         {
 
             var db = new Contexto();
 
-
+            mDocumento _documento = new mDocumento();
 
             mClienteLocacao cliente = db.ClienteLocacao.Find(idClienteLocacao);
 
             if (documento == "RG")
             {
-                return cliente.AnexoRG;
+                _documento.documentos = cliente.AnexoRG;
+                _documento.extensaoArquivo = cliente.extensaoAnexoRG;
             }
             else if (documento == "CONTRATO")
             {
-                return cliente.DocumentoAssinado;
+                _documento.documentos = cliente.DocumentoAssinado;
+                _documento.extensaoArquivo = cliente.extensaoDocumentoAssinado;
             }
             else
             {
-                return cliente.AnexoComprovanteEndereco;
+                _documento.documentos = cliente.AnexoComprovanteEndereco;
+                _documento.extensaoArquivo = cliente.extensaoComprovanteEndereco;
+
             }
 
 
+            return _documento;
 
         }
 
@@ -308,10 +327,11 @@ namespace MaisGamersV2.DAL.Locacao
                                        select new { sp, dp };
                 foreach (var match in commonProperties)
                 {
-                    if (match.sp.GetValue(source, null) != null){
+                    if (match.sp.GetValue(source, null) != null)
+                    {
                         match.dp.SetValue(destination, match.sp.GetValue(source, null), null);
                     }
-                    
+
                 }
             }
             catch (Exception ex)
