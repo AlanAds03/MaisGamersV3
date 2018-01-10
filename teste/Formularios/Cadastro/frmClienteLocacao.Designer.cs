@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.txtFIltroAutorizado = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.imgLimpar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisarg = new System.Windows.Forms.TextBox();
@@ -53,6 +55,13 @@
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.tpDetalhe = new System.Windows.Forms.TabPage();
             this.grpCadastra = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new Frameworks.Componentes.SuperComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtEmail = new Frameworks.Componentes.SuperTextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbManual = new System.Windows.Forms.RadioButton();
+            this.rbWebCAM = new System.Windows.Forms.RadioButton();
             this.txtDataExpedicao = new System.Windows.Forms.MaskedTextBox();
             this.lala = new System.Windows.Forms.Label();
             this.txtNomePai = new Frameworks.Componentes.SuperTextBox();
@@ -109,9 +118,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbManual = new System.Windows.Forms.RadioButton();
-            this.rbWebCAM = new System.Windows.Forms.RadioButton();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLimpar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,18 +127,18 @@
             this.grpGrid.SuspendLayout();
             this.tpDetalhe.SuspendLayout();
             this.grpCadastra.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(41, 50);
+            this.label1.Location = new System.Drawing.Point(38, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 0;
@@ -148,6 +154,8 @@
             // 
             // grpPesquisa
             // 
+            this.grpPesquisa.Controls.Add(this.txtFIltroAutorizado);
+            this.grpPesquisa.Controls.Add(this.label27);
             this.grpPesquisa.Controls.Add(this.imgLimpar);
             this.grpPesquisa.Controls.Add(this.pictureBox1);
             this.grpPesquisa.Controls.Add(this.txtPesquisarg);
@@ -164,6 +172,24 @@
             this.grpPesquisa.TabIndex = 6;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
+            // 
+            // txtFIltroAutorizado
+            // 
+            this.txtFIltroAutorizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFIltroAutorizado.Location = new System.Drawing.Point(101, 83);
+            this.txtFIltroAutorizado.Name = "txtFIltroAutorizado";
+            this.txtFIltroAutorizado.Size = new System.Drawing.Size(353, 26);
+            this.txtFIltroAutorizado.TabIndex = 11;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label27.Location = new System.Drawing.Point(11, 90);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(92, 19);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "Autorizado:";
             // 
             // imgLimpar
             // 
@@ -194,7 +220,7 @@
             // txtPesquisarg
             // 
             this.txtPesquisarg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisarg.Location = new System.Drawing.Point(101, 83);
+            this.txtPesquisarg.Location = new System.Drawing.Point(286, 19);
             this.txtPesquisarg.Name = "txtPesquisarg";
             this.txtPesquisarg.Size = new System.Drawing.Size(159, 26);
             this.txtPesquisarg.TabIndex = 3;
@@ -203,7 +229,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label18.Location = new System.Drawing.Point(60, 87);
+            this.label18.Location = new System.Drawing.Point(244, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(36, 19);
             this.label18.TabIndex = 6;
@@ -221,7 +247,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(38, 22);
+            this.label17.Location = new System.Drawing.Point(38, 18);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 19);
             this.label17.TabIndex = 4;
@@ -230,7 +256,7 @@
             // txtPesquisaCPF
             // 
             this.txtPesquisaCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaCPF.Location = new System.Drawing.Point(332, 83);
+            this.txtPesquisaCPF.Location = new System.Drawing.Point(499, 19);
             this.txtPesquisaCPF.Multiline = true;
             this.txtPesquisaCPF.Name = "txtPesquisaCPF";
             this.txtPesquisaCPF.Size = new System.Drawing.Size(113, 23);
@@ -240,7 +266,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(286, 87);
+            this.label2.Location = new System.Drawing.Point(451, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 19);
             this.label2.TabIndex = 2;
@@ -254,7 +280,7 @@
             this.grpBotoes.Controls.Add(this.btnSalvar);
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Location = new System.Drawing.Point(157, 524);
+            this.grpBotoes.Location = new System.Drawing.Point(153, 575);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(607, 77);
             this.grpBotoes.TabIndex = 7;
@@ -352,7 +378,7 @@
             this.tbControl.Location = new System.Drawing.Point(12, 47);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(1017, 475);
+            this.tbControl.Size = new System.Drawing.Size(1017, 522);
             this.tbControl.TabIndex = 10;
             this.tbControl.SelectedIndexChanged += new System.EventHandler(this.tbControl_SelectedIndexChanged);
             this.tbControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tbControl_Selecting);
@@ -364,7 +390,7 @@
             this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
             this.tpPesquisa.Name = "tpPesquisa";
             this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesquisa.Size = new System.Drawing.Size(1009, 449);
+            this.tpPesquisa.Size = new System.Drawing.Size(1009, 483);
             this.tpPesquisa.TabIndex = 0;
             this.tpPesquisa.Text = "Pesquisa";
             this.tpPesquisa.UseVisualStyleBackColor = true;
@@ -399,13 +425,17 @@
             this.tpDetalhe.Location = new System.Drawing.Point(4, 22);
             this.tpDetalhe.Name = "tpDetalhe";
             this.tpDetalhe.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDetalhe.Size = new System.Drawing.Size(1009, 449);
+            this.tpDetalhe.Size = new System.Drawing.Size(1009, 496);
             this.tpDetalhe.TabIndex = 1;
             this.tpDetalhe.Text = "Detalhe";
             this.tpDetalhe.UseVisualStyleBackColor = true;
             // 
             // grpCadastra
             // 
+            this.grpCadastra.Controls.Add(this.cmbStatus);
+            this.grpCadastra.Controls.Add(this.label29);
+            this.grpCadastra.Controls.Add(this.txtEmail);
+            this.grpCadastra.Controls.Add(this.label28);
             this.grpCadastra.Controls.Add(this.groupBox2);
             this.grpCadastra.Controls.Add(this.txtDataExpedicao);
             this.grpCadastra.Controls.Add(this.lala);
@@ -461,11 +491,84 @@
             this.grpCadastra.Controls.Add(this.label4);
             this.grpCadastra.Location = new System.Drawing.Point(20, 6);
             this.grpCadastra.Name = "grpCadastra";
-            this.grpCadastra.Size = new System.Drawing.Size(984, 437);
+            this.grpCadastra.Size = new System.Drawing.Size(984, 471);
             this.grpCadastra.TabIndex = 0;
             this.grpCadastra.TabStop = false;
             this.grpCadastra.Text = "Cadastro";
             this.grpCadastra.Enter += new System.EventHandler(this.grpCadastra_Enter);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.CampoObrigatorio = false;
+            this.cmbStatus.Carregado = false;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(712, 36);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(173, 24);
+            this.cmbStatus.TabIndex = 86;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(709, 16);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(59, 17);
+            this.label29.TabIndex = 85;
+            this.label29.Text = "Status:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CampoObrigatorio = false;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(6, 364);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(459, 23);
+            this.txtEmail.TabIndex = 84;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(10, 339);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(52, 17);
+            this.label28.TabIndex = 83;
+            this.label28.Text = "Email:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbManual);
+            this.groupBox2.Controls.Add(this.rbWebCAM);
+            this.groupBox2.Location = new System.Drawing.Point(173, 385);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(161, 33);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbManual
+            // 
+            this.rbManual.AutoSize = true;
+            this.rbManual.Location = new System.Drawing.Point(83, 10);
+            this.rbManual.Name = "rbManual";
+            this.rbManual.Size = new System.Drawing.Size(60, 17);
+            this.rbManual.TabIndex = 1;
+            this.rbManual.Text = "Manual";
+            this.rbManual.UseVisualStyleBackColor = true;
+            // 
+            // rbWebCAM
+            // 
+            this.rbWebCAM.AutoSize = true;
+            this.rbWebCAM.Checked = true;
+            this.rbWebCAM.Location = new System.Drawing.Point(7, 10);
+            this.rbWebCAM.Name = "rbWebCAM";
+            this.rbWebCAM.Size = new System.Drawing.Size(71, 17);
+            this.rbWebCAM.TabIndex = 0;
+            this.rbWebCAM.TabStop = true;
+            this.rbWebCAM.Text = "WebCAM";
+            this.rbWebCAM.UseVisualStyleBackColor = true;
             // 
             // txtDataExpedicao
             // 
@@ -510,6 +613,7 @@
             // 
             this.cmbSexo.CampoObrigatorio = false;
             this.cmbSexo.Carregado = false;
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Location = new System.Drawing.Point(427, 127);
@@ -531,7 +635,7 @@
             // 
             this.groupBox1.Controls.Add(this.rbAutorizado);
             this.groupBox1.Controls.Add(this.rbLocatario);
-            this.groupBox1.Location = new System.Drawing.Point(6, 352);
+            this.groupBox1.Location = new System.Drawing.Point(6, 385);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 33);
             this.groupBox1.TabIndex = 51;
@@ -563,7 +667,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(708, 204);
+            this.label24.Location = new System.Drawing.Point(709, 261);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(91, 17);
             this.label24.TabIndex = 49;
@@ -572,7 +676,7 @@
             // pictureAutorizado
             // 
             this.pictureAutorizado.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
-            this.pictureAutorizado.Location = new System.Drawing.Point(711, 222);
+            this.pictureAutorizado.Location = new System.Drawing.Point(712, 279);
             this.pictureAutorizado.Name = "pictureAutorizado";
             this.pictureAutorizado.Size = new System.Drawing.Size(258, 165);
             this.pictureAutorizado.TabIndex = 48;
@@ -583,7 +687,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(708, 16);
+            this.label23.Location = new System.Drawing.Point(709, 73);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 17);
             this.label23.TabIndex = 47;
@@ -592,7 +696,7 @@
             // pictureLocatario
             // 
             this.pictureLocatario.Image = global::MaisGamers.Properties.Resources.iconeps4_fw;
-            this.pictureLocatario.Location = new System.Drawing.Point(711, 36);
+            this.pictureLocatario.Location = new System.Drawing.Point(712, 93);
             this.pictureLocatario.Name = "pictureLocatario";
             this.pictureLocatario.Size = new System.Drawing.Size(258, 165);
             this.pictureLocatario.TabIndex = 46;
@@ -622,7 +726,7 @@
             // 
             this.button7.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(424, 391);
+            this.button7.Location = new System.Drawing.Point(424, 424);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(135, 40);
             this.button7.TabIndex = 73;
@@ -635,7 +739,7 @@
             // 
             this.btnConsultaAntecedentes.Image = global::MaisGamers.Properties.Resources.arma32;
             this.btnConsultaAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultaAntecedentes.Location = new System.Drawing.Point(257, 391);
+            this.btnConsultaAntecedentes.Location = new System.Drawing.Point(257, 424);
             this.btnConsultaAntecedentes.Name = "btnConsultaAntecedentes";
             this.btnConsultaAntecedentes.Size = new System.Drawing.Size(159, 40);
             this.btnConsultaAntecedentes.TabIndex = 82;
@@ -648,7 +752,7 @@
             // 
             this.btnImprimirContrato.Image = global::MaisGamers.Properties.Resources.contrato32;
             this.btnImprimirContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirContrato.Location = new System.Drawing.Point(117, 391);
+            this.btnImprimirContrato.Location = new System.Drawing.Point(117, 424);
             this.btnImprimirContrato.Name = "btnImprimirContrato";
             this.btnImprimirContrato.Size = new System.Drawing.Size(134, 40);
             this.btnImprimirContrato.TabIndex = 81;
@@ -700,6 +804,7 @@
             // 
             this.cmbTipoCliente.CampoObrigatorio = false;
             this.cmbTipoCliente.Carregado = false;
+            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCliente.FormattingEnabled = true;
             this.cmbTipoCliente.Location = new System.Drawing.Point(560, 128);
@@ -790,7 +895,7 @@
             // 
             this.btnTirarFoto.Image = global::MaisGamers.Properties.Resources.camera32;
             this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTirarFoto.Location = new System.Drawing.Point(12, 391);
+            this.btnTirarFoto.Location = new System.Drawing.Point(12, 424);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(93, 40);
             this.btnTirarFoto.TabIndex = 80;
@@ -899,6 +1004,7 @@
             // 
             this.cmbCidade.CampoObrigatorio = false;
             this.cmbCidade.Carregado = false;
+            this.cmbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCidade.FormattingEnabled = true;
             this.cmbCidade.Location = new System.Drawing.Point(175, 266);
@@ -920,6 +1026,7 @@
             // 
             this.cmbEstado.CampoObrigatorio = false;
             this.cmbEstado.Carregado = false;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(6, 266);
@@ -1019,44 +1126,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbManual);
-            this.groupBox2.Controls.Add(this.rbWebCAM);
-            this.groupBox2.Location = new System.Drawing.Point(173, 352);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(161, 33);
-            this.groupBox2.TabIndex = 52;
-            this.groupBox2.TabStop = false;
-            // 
-            // rbManual
-            // 
-            this.rbManual.AutoSize = true;
-            this.rbManual.Location = new System.Drawing.Point(83, 10);
-            this.rbManual.Name = "rbManual";
-            this.rbManual.Size = new System.Drawing.Size(60, 17);
-            this.rbManual.TabIndex = 1;
-            this.rbManual.Text = "Manual";
-            this.rbManual.UseVisualStyleBackColor = true;
-            // 
-            // rbWebCAM
-            // 
-            this.rbWebCAM.AutoSize = true;
-            this.rbWebCAM.Checked = true;
-            this.rbWebCAM.Location = new System.Drawing.Point(7, 10);
-            this.rbWebCAM.Name = "rbWebCAM";
-            this.rbWebCAM.Size = new System.Drawing.Size(71, 17);
-            this.rbWebCAM.TabIndex = 0;
-            this.rbWebCAM.TabStop = true;
-            this.rbWebCAM.Text = "WebCAM";
-            this.rbWebCAM.UseVisualStyleBackColor = true;
-            // 
             // frmClienteLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1086, 599);
+            this.ClientSize = new System.Drawing.Size(1086, 651);
             this.ControlBox = false;
             this.Controls.Add(this.grpBotoes);
             this.Controls.Add(this.tbControl);
@@ -1080,13 +1155,13 @@
             this.tpDetalhe.ResumeLayout(false);
             this.grpCadastra.ResumeLayout(false);
             this.grpCadastra.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutorizado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocatario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1175,5 +1250,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbManual;
         private System.Windows.Forms.RadioButton rbWebCAM;
+        private System.Windows.Forms.TextBox txtFIltroAutorizado;
+        private System.Windows.Forms.Label label27;
+        private Frameworks.Componentes.SuperTextBox txtEmail;
+        private System.Windows.Forms.Label label28;
+        private Frameworks.Componentes.SuperComboBox cmbStatus;
+        private System.Windows.Forms.Label label29;
     }
 }

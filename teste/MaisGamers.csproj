@@ -81,6 +81,7 @@
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
     <Compile Include="DAL\Locacao\dLocacaoJogo.cs" />
     <Compile Include="DAL\Locacao\dLocacao.cs" />
+    <Compile Include="DAL\Locacao\dStatusClienteLocacao.cs" />
     <Compile Include="DAL\Locacao\dStatusLocacao.cs" />
     <Compile Include="DAL\Mapper.cs" />
     <Compile Include="DAL\Orcamento\dTipoOrcamento.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="DLL\Locacao\bLocacaoJogo.cs" />
     <Compile Include="DLL\Locacao\bLocacao.cs" />
+    <Compile Include="DLL\Locacao\bStatusClienteLocacao.cs" />
     <Compile Include="DLL\Locacao\bStatusLocacao.cs" />
     <Compile Include="Formularios\Cadastro\frmPesquisaJogo.cs">
       <SubType>Form</SubType>
@@ -198,6 +200,14 @@
     <Compile Include="Migrations\201712162105347_documentos 16122017.Designer.cs">
       <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801102007445_Adicionar status cliente.cs" />
+    <Compile Include="Migrations\201801102007445_Adicionar status cliente.Designer.cs">
+      <DependentUpon>201801102007445_Adicionar status cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801102031310_adicionar email cliente.cs" />
+    <Compile Include="Migrations\201801102031310_adicionar email cliente.Designer.cs">
+      <DependentUpon>201801102031310_adicionar email cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -213,6 +223,7 @@
     <Compile Include="Model\Locacao\mLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacaoJogos.cs" />
     <Compile Include="Model\Locacao\mPrecoLocacao.cs" />
+    <Compile Include="Model\Locacao\mStatusCliente.cs" />
     <Compile Include="Model\Locacao\mStatusLocacao.cs" />
     <Compile Include="Model\mCidade.cs" />
     <Compile Include="Model\mEstado.cs" />
@@ -283,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712162105347_documentos 16122017.resx">
       <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801102007445_Adicionar status cliente.resx">
+      <DependentUpon>201801102007445_Adicionar status cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801102031310_adicionar email cliente.resx">
+      <DependentUpon>201801102031310_adicionar email cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

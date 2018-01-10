@@ -24,6 +24,8 @@ namespace MaisGamers.Model.Locacao
 
         public string NomeMae { get; set; }
 
+        public string Email { get; set; }
+
         public string NomePai { get; set; }
 
         [Display(Description = "CPF", ShortName = "150")]
@@ -94,6 +96,14 @@ namespace MaisGamers.Model.Locacao
 
         public DateTime DataCadastrado { get; set; }
 
+        public mStatusCliente StatusCliente { get; set; }
+
+        public string DescricaoInativo { get; set; }
+
+
+        [NotMapped]
+        [Display(Description = "Status", ShortName = "150")]
+        public string strStatusCliente { get; set; }
 
         //       @Nome VARCHAR(300) = NULL,
         //@DataNascimento DATETIME = NULL,

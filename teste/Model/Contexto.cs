@@ -38,6 +38,8 @@ namespace MaisGamers.Model
 
         public DbSet<mAnotacao> Anotacao { get; set; }
 
+        public DbSet<mStatusCliente> StatusCliente { get; set; }
+
 
 
 

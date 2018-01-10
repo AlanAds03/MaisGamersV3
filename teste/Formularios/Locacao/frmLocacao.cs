@@ -587,7 +587,7 @@ namespace MaisGamers.Formularios.Cadastro
                 ProcessStartInfo info = new ProcessStartInfo();
                 info.Verb = "print";
                 info.FileName = @"C:\Temp\1.txt";
-                info.Arguments = "\\Fiscal6666\\";
+                info.Arguments = "\\Fiscal4\\";
 
                 info.CreateNoWindow = true;
                 info.WindowStyle = ProcessWindowStyle.Hidden;

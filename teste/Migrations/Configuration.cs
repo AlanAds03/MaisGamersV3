@@ -90,6 +90,17 @@ namespace teste.Migrations
                 //5.00    10.00   15.00   2   2
 
                 );
+
+
+            context.StatusCliente.AddOrUpdate(
+               p => p.ID_StatusCliente,
+               new MaisGamers.Model.Locacao.mStatusCliente {  ID_StatusCliente = 1 , DescricaoStatusCliente = "Ativo"},
+               new MaisGamers.Model.Locacao.mStatusCliente { ID_StatusCliente = 2, DescricaoStatusCliente = "Inativo" }
+               
+
+
+               );
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

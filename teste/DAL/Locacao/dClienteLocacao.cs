@@ -63,6 +63,8 @@ namespace MaisGamersV2.DAL.Locacao
                 _clienteLocacao.Estado = db.Estado.First(X => X.cEstado == _clienteLocacao.cEstado);
                 _clienteLocacao.Cidade = db.Cidade.First(X => X.cCidade == _clienteLocacao.cCidade);
                 _clienteLocacao.TipoCliente = db.TipoCliente.First(x => x.IDTipoCliente == _clienteLocacao.IDTipoCliente);
+                _clienteLocacao.StatusCliente = db.StatusCliente.Find(_clienteLocacao.StatusCliente.ID_StatusCliente);
+
                 if (_clienteLocacao.idClienteLocacao != 0)
                 {
                     mClienteLocacao cliente = db.ClienteLocacao.Find(_clienteLocacao.idClienteLocacao);
@@ -106,6 +108,7 @@ namespace MaisGamersV2.DAL.Locacao
                     .Include(x => x.Estado)
                     .Include(y => y.Cidade)
                     .Include(z => z.TipoCliente)
+                    .Include(w => w.StatusCliente)
                     .Where(x => x.idClienteLocacao == idCLienteLocacao).FirstOrDefault();
 
             }
@@ -259,14 +262,16 @@ namespace MaisGamersV2.DAL.Locacao
 
                 List<mClienteLocacao> listCliente = db.ClienteLocacao
                      .Include(x => x.TipoCliente)
+                     .Include(y => y.StatusCliente)
                      .Where(z => z.Nome.Contains((string.IsNullOrEmpty(_clienteLocacao.Nome) ? z.Nome : _clienteLocacao.Nome)))
+                    // .Where(y => y.NomeFilho.Contains((string.IsNullOrEmpty(_clienteLocacao.NomeFilho) ? y.NomeFilho : _clienteLocacao.NomeFilho)))
                      //.Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
                      .ToList();
 
 
                 List<mClienteLocacao> nova = new List<mClienteLocacao>();
 
-                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;"; x.strTipoCliente = ((x.TipoCliente == null ? "" : x.TipoCliente.TipoCliente)); return x; }).ToList();
+                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;strStatusCliente"; x.strTipoCliente = ((x.TipoCliente == null ? "" : x.TipoCliente.TipoCliente)); x.strStatusCliente = (x.StatusCliente == null ? "" : x.StatusCliente.DescricaoStatusCliente);  return x;  }).ToList();
 
 
                 return nova.ToList();

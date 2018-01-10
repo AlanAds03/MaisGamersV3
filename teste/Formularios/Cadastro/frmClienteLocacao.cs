@@ -58,6 +58,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             CarregaComboTipoCliente(cmbTipoCliente);
             CarregaComboSexo(cmbSexo);
+            CarregaComboStatusCliente(cmbStatus);
 
             modo_tela = ModoTela.CONSULTA;
             atualizaTela();
@@ -112,6 +113,30 @@ namespace MaisGamers.Formularios.Cadastro
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+
+        private void CarregaComboStatusCliente(SuperComboBox combo)
+        {
+
+            List<mStatusCliente> list = new List<mStatusCliente>();
+
+            try
+            {
+                bStatusClienteLocacao statuscliente = new bStatusClienteLocacao();
+
+                list = statuscliente.CarregaStatusClienteLocacao();
+
+
+                combo.CarregaCombo(list, "ID_StatusCliente", "DescricaoStatusCliente", SuperComboBox.PrimeiraLinha.Nenhum);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
 
 
 
@@ -183,7 +208,8 @@ namespace MaisGamers.Formularios.Cadastro
         private void PesquisaGrid(int codigo,
                                   string nome,
                                   string cpf,
-                                  string rg)
+                                  string rg,
+                                  string autorizado)
         {
 
 
@@ -208,6 +234,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
                 cli.Nome = nome;
+                cli.NomeFilho = autorizado;
                 locacao = _bCli.PesquisaCliente(cli, "Nome");
 
                 lvPesquisa.CarregaListaView<mClienteLocacao>(locacao);
@@ -260,7 +287,7 @@ namespace MaisGamers.Formularios.Cadastro
                     codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
                 }
 
-                PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text);
+                PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text,txtFIltroAutorizado.Text);
 
 
 
@@ -309,6 +336,7 @@ namespace MaisGamers.Formularios.Cadastro
                 txtBairro.Text = cliente.Bairro;
                 txtTelefone.Text = cliente.Telefone;
                 txtNomePai.Text = cliente.NomePai;
+                txtEmail.Text = cliente.Email;
                 txtDataExpedicao.Text = Convert.ToString(cliente.DataExpedicao);
 
                 txtAutoriza.Text = cliente.NomeFilho;
@@ -316,6 +344,12 @@ namespace MaisGamers.Formularios.Cadastro
                 txtRGFilho.Text = cliente.RGFilho;
 
                 cmbEstado.SelectedValue = cliente.Estado.cEstado;
+
+                if (cliente.StatusCliente != null)
+                {
+                    cmbStatus.SelectedValue = cliente.StatusCliente.ID_StatusCliente;
+                }
+                
                 txtTelefone.Text = cliente.Telefone;
                 txtTelefone2.Text = cliente.Telefone2;
 
@@ -384,6 +418,11 @@ namespace MaisGamers.Formularios.Cadastro
             cmbTipoCliente.ResetarValores();
             txtTelefone.Text = string.Empty;
             txtTelefone2.Text = string.Empty;
+            txtDataExpedicao.Text = string.Empty;
+            txtNomePai.Text = string.Empty;
+            cmbSexo.ResetarValores();
+            txtEmail.Text = string.Empty;
+
             pictureLocatario.Image = null;
             pictureAutorizado.Image = null;
 
@@ -417,6 +456,7 @@ namespace MaisGamers.Formularios.Cadastro
             mClienteLocacao _mClilocacao = new mClienteLocacao();
             bClienteLocacao _cliente = new bClienteLocacao();
 
+            _mClilocacao.StatusCliente = new mStatusCliente();
 
 
             if (ValidarCampos() == false)
@@ -426,7 +466,11 @@ namespace MaisGamers.Formularios.Cadastro
             if (idClienteLocacao != 0)
             {
                 _mClilocacao.idClienteLocacao = idClienteLocacao;
+                
             }
+
+            _mClilocacao.StatusCliente.ID_StatusCliente = Convert.ToInt32(cmbStatus.ObterValor());
+
 
             _mClilocacao.Nome = txtNome.Text;
             _mClilocacao.NomeMae = txtNomeMae.Text;
@@ -466,6 +510,7 @@ namespace MaisGamers.Formularios.Cadastro
             _mClilocacao.Telefone2 = txtTelefone2.Text;
             _mClilocacao.IDTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
             _mClilocacao.NomeFilho = txtAutoriza.Text;
+            _mClilocacao.Email = txtEmail.Text;
             _mClilocacao.RGFilho = txtRGFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             _mClilocacao.CPFFilho = txtCpfFilho.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             _mClilocacao.cSexo = Convert.ToInt32(cmbSexo.SelectedValue);
@@ -851,7 +896,7 @@ namespace MaisGamers.Formularios.Cadastro
                 codigo = Convert.ToInt32(txtPesquisaCodigo.Text);
             }
 
-            PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text);
+            PesquisaGrid(codigo, txtPesquisaNome.Text, txtPesquisarg.Text, txtPesquisaCPF.Text,txtFIltroAutorizado.Text);
 
         }
 
@@ -867,7 +912,8 @@ namespace MaisGamers.Formularios.Cadastro
             PesquisaGrid(codigo,
                          txtPesquisaNome.Text,
                          txtPesquisaCPF.Text,
-                         txtPesquisarg.Text);
+                         txtPesquisarg.Text.Trim(),
+                         txtFIltroAutorizado.Text.Trim());
 
         }
 
