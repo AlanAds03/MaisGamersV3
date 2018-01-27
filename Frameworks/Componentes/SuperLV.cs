@@ -92,13 +92,19 @@ namespace Frameworks.Componentes
                                     }
                                 }
                             }
+                            if(colu.Length > 2)
+                            {
+                                if(colu.Substring(0,2).ToUpper().Contains("ID"))
+                                {
+                                    this.Columns.Add("").Width = 22;
 
-                            if (colu.ToUpper().Contains("ID"))
-                            {
-                                this.Columns.Add("").Width = 22;
+                                    tamanhoColuna = 0;
+                                    colunaRenomeada = string.Empty;
+                                    continue;
+                                }
                             }
-                            else
-                            {
+                            
+                           
                                 if (string.IsNullOrEmpty(colunaRenomeada))
                                 {
                                     this.Columns.Add(colu);
@@ -114,7 +120,7 @@ namespace Frameworks.Componentes
                                         this.Columns.Add(colunaRenomeada);
                                     }
                                 }
-                            }
+                            
 
                             tamanhoColuna = 0;
                             colunaRenomeada = string.Empty;

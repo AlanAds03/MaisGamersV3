@@ -22,7 +22,9 @@ namespace MaisGamers.Formularios.Locacao
 
         public double ValorDevido { get { return Convert.ToDouble(txtvalordevido.Text); } set { txtvalordevido.Text = value.ToString("0.00"); } }
         public double ValorPagoLocacao { get { return Convert.ToDouble(txtValorPagoLocacao.Text); } set { txtValorPagoLocacao.Text = value.ToString("0.00"); } }
-        public double ValorPagoEntrega { get { return Convert.ToDouble(txtValorPagoEntrega.Text); } set { txtValorPagoEntrega.Text = value.ToString("0.00"); } }
+
+        public double ValorRestante { get { return Convert.ToDouble(txtRestantePagar.Text); } set { txtRestantePagar.Text = value.ToString("0.00"); } }
+
         public double Troco { get { return Convert.ToDouble(txtValorTroco.Text); } set { txtValorTroco.Text = value.ToString("0.00"); } }
 
         public string acao = "";
@@ -49,7 +51,7 @@ namespace MaisGamers.Formularios.Locacao
             {
                 //Validar pagamento
 
-                if (Convert.ToDouble(txtvalordevido.Text) > (Convert.ToDouble(txtValorPagoLocacao.Text) + Convert.ToDouble(txtValorPagoEntrega.Text)))
+                if (Convert.ToDouble(txtvalordevido.Text) > (Convert.ToDouble(txtValorPagoLocacao.Text) + Convert.ToDouble(txtRestantePagar.Text)))
                 {
                     MessageBox.Show("Pagar valor referente a locação");
                     return;
@@ -80,14 +82,14 @@ namespace MaisGamers.Formularios.Locacao
 
             txtValorTroco.Text = string.Empty;
 
-            if (!Util.IsNumeric(txtValorPagoEntrega.Text))
+            if (!Util.IsNumeric(txtRestantePagar.Text))
             {
                 MessageBox.Show("Digitar valor numerico");
                 return;
             }
-            txtValorPagoEntrega.Text = Convert.ToDouble(txtValorPagoEntrega.Text).ToString("0.00");
+            txtRestantePagar.Text = Convert.ToDouble(txtRestantePagar.Text).ToString("0.00");
 
-            troco = (Convert.ToDouble(txtValorPagoEntrega.Text) + Convert.ToDouble(txtValorPagoLocacao.Text)) - Convert.ToDouble(txtvalordevido.Text);
+            troco = (Convert.ToDouble(txtRestantePagar.Text) + Convert.ToDouble(txtValorPagoLocacao.Text)) - Convert.ToDouble(txtvalordevido.Text);
             if (troco >= 0)
             {
                 btnConcluir.Enabled = true;
@@ -112,6 +114,60 @@ namespace MaisGamers.Formularios.Locacao
         {
             bLocacao _locacao = new bLocacao();
             ValorDevido = Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, Util.MinHoraData(txtDataLocacao.Value), Util.MinHoraData(txtDataEntrega.Value), true).ToString());
+
+            if (!String.IsNullOrEmpty(txtValorPago.Text) && !String.IsNullOrEmpty(txtRestantePagar.Text))
+            {
+                txtValorTroco.Text = Convert.ToDouble(Convert.ToDouble(txtValorPago.Text) - Convert.ToDouble(txtRestantePagar.Text)).ToString("0.00");
+            }
+
+        }
+
+        private void txtValorPagoEntrega_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorTroco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorPagoLocacao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPopupFehamento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorPago_TextChanged(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(txtValorPago.Text)  && !String.IsNullOrEmpty(txtRestantePagar.Text))
+            {
+                txtValorTroco.Text = Convert.ToDouble(Convert.ToDouble(txtValorPago.Text) - Convert.ToDouble(txtRestantePagar.Text)).ToString("0.00");
+            }
         }
     }
 }

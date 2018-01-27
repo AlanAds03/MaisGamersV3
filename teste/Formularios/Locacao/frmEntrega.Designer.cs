@@ -95,7 +95,7 @@
             // 
             // btnConcluir
             // 
-            this.btnConcluir.Location = new System.Drawing.Point(89, 150);
+            this.btnConcluir.Location = new System.Drawing.Point(76, 157);
             this.btnConcluir.Name = "btnConcluir";
             this.btnConcluir.Size = new System.Drawing.Size(102, 64);
             this.btnConcluir.TabIndex = 16;
@@ -105,7 +105,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(197, 150);
+            this.btnFechar.Location = new System.Drawing.Point(184, 157);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(102, 64);
             this.btnFechar.TabIndex = 17;
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 272);
+            this.ClientSize = new System.Drawing.Size(548, 354);
             this.ControlBox = false;
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnConcluir);

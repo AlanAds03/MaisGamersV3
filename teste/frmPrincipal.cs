@@ -33,7 +33,6 @@ namespace MaisGamers
 
             CentralizaMenus();
 
-
             var db = new Contexto();
 
             db.Database.CreateIfNotExists();
@@ -115,7 +114,7 @@ namespace MaisGamers
         {
             _nameFormulario.MdiParent = this;
             _nameFormulario.Width = Screen.PrimaryScreen.Bounds.Width;
-            _nameFormulario.Height = Screen.PrimaryScreen.Bounds.Height - 24;
+           // _nameFormulario.Height = Screen.PrimaryScreen.Bounds.Height - 144;
             _nameFormulario.Show();
 
         }
@@ -196,6 +195,12 @@ namespace MaisGamers
             frmClienteLocacao frmCliente = new frmClienteLocacao();
             MostraFormulario(frmCliente);
 
+        }
+
+        private void btnObjeto_Click(object sender, EventArgs e)
+        {
+            frmProdutos frmProdutos = new frmProdutos();
+            MostraFormulario(frmProdutos);
         }
     }
 }

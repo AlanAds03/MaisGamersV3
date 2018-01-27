@@ -271,7 +271,7 @@ namespace MaisGamersV2.DAL.Locacao
 
                 List<mClienteLocacao> nova = new List<mClienteLocacao>();
 
-                nova = listCliente.Select(x => { x.ColunasGrid = "idClienteLocacao;Nome;RG;CPF;strTipoCliente;strStatusCliente"; x.strTipoCliente = ((x.TipoCliente == null ? "" : x.TipoCliente.TipoCliente)); x.strStatusCliente = (x.StatusCliente == null ? "" : x.StatusCliente.DescricaoStatusCliente);  return x;  }).ToList();
+                nova = listCliente.Select(x => { x.ColunasGrid = "IDClienteLocacao;Nome;RG;CPF;strTipoCliente;strStatusCliente"; x.strTipoCliente = ((x.TipoCliente == null ? "" : x.TipoCliente.TipoCliente)); x.strStatusCliente = (x.StatusCliente == null ? "" : x.StatusCliente.DescricaoStatusCliente);  return x;  }).ToList();
 
 
                 return nova.ToList();

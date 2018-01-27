@@ -28,28 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.menuCadastro = new System.Windows.Forms.RibbonTab();
+            this.rbCliente = new System.Windows.Forms.RibbonPanel();
             this.rbJogos = new System.Windows.Forms.RibbonPanel();
             this.rbAnotacao = new System.Windows.Forms.RibbonPanel();
+            this.rbObjetos = new System.Windows.Forms.RibbonPanel();
+            this.rbConsole = new System.Windows.Forms.RibbonPanel();
             this.menuJogos = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
             this.menuVendas = new System.Windows.Forms.RibbonTab();
             this.Rbps4 = new System.Windows.Forms.RibbonPanel();
             this.Rbxboxone = new System.Windows.Forms.RibbonPanel();
             this.Rbps3 = new System.Windows.Forms.RibbonPanel();
             this.Rbxbox360 = new System.Windows.Forms.RibbonPanel();
-            this.rbCliente = new System.Windows.Forms.RibbonPanel();
-            this.rbObjetos = new System.Windows.Forms.RibbonPanel();
             this.menuLancamento = new System.Windows.Forms.RibbonTab();
             this.menuCaixa = new System.Windows.Forms.RibbonTab();
-            this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.btnCliente = new System.Windows.Forms.RibbonButton();
             this.btnJogo = new System.Windows.Forms.RibbonButton();
             this.btnAnotacao = new System.Windows.Forms.RibbonButton();
             this.btnObjeto = new System.Windows.Forms.RibbonButton();
+            this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.btnRelatorio = new System.Windows.Forms.RibbonButton();
             this.Rbiconeps4 = new System.Windows.Forms.RibbonButton();
@@ -57,8 +61,6 @@
             this.Rbiconeps3 = new System.Windows.Forms.RibbonButton();
             this.Rbx360 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.rbConsole = new System.Windows.Forms.RibbonPanel();
-            this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -102,6 +104,11 @@
             this.menuCadastro.Panels.Add(this.rbConsole);
             this.menuCadastro.Text = "Cadastro";
             // 
+            // rbCliente
+            // 
+            this.rbCliente.Items.Add(this.btnCliente);
+            this.rbCliente.Text = "Cliente";
+            // 
             // rbJogos
             // 
             this.rbJogos.Items.Add(this.btnJogo);
@@ -111,6 +118,16 @@
             // 
             this.rbAnotacao.Items.Add(this.btnAnotacao);
             this.rbAnotacao.Text = "Anotações";
+            // 
+            // rbObjetos
+            // 
+            this.rbObjetos.Items.Add(this.btnObjeto);
+            this.rbObjetos.Text = "Produtos";
+            // 
+            // rbConsole
+            // 
+            this.rbConsole.Items.Add(this.btnConsole);
+            this.rbConsole.Text = "Consoles";
             // 
             // menuJogos
             // 
@@ -124,6 +141,11 @@
             this.ribbonPanel5.ButtonMoreVisible = false;
             this.ribbonPanel5.Items.Add(this.ribbonButton2);
             this.ribbonPanel5.Text = "Locação de Jogo";
+            // 
+            // rbRelatorio
+            // 
+            this.rbRelatorio.Items.Add(this.btnRelatorio);
+            this.rbRelatorio.Text = "Relatórios";
             // 
             // menuVendas
             // 
@@ -161,16 +183,6 @@
             this.Rbxbox360.Items.Add(this.Rbx360);
             this.Rbxbox360.Text = "Xbox 360";
             // 
-            // rbCliente
-            // 
-            this.rbCliente.Items.Add(this.btnCliente);
-            this.rbCliente.Text = "Cliente";
-            // 
-            // rbObjetos
-            // 
-            this.rbObjetos.Items.Add(this.btnObjeto);
-            this.rbObjetos.Text = "Objetos";
-            // 
             // menuLancamento
             // 
             this.menuLancamento.Text = "Lançamento";
@@ -179,10 +191,10 @@
             // 
             this.menuCaixa.Text = "Caixa";
             // 
-            // rbRelatorio
+            // notifyIcon1
             // 
-            this.rbRelatorio.Items.Add(this.btnRelatorio);
-            this.rbRelatorio.Text = "Relatórios";
+            this.notifyIcon1.Text = "notifiacao";
+            this.notifyIcon1.Visible = true;
             // 
             // ribbonButton1
             // 
@@ -213,6 +225,12 @@
             // 
             this.btnObjeto.Image = global::MaisGamers.Properties.Resources.objetos64;
             this.btnObjeto.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnObjeto.SmallImage")));
+            this.btnObjeto.Click += new System.EventHandler(this.btnObjeto_Click);
+            // 
+            // btnConsole
+            // 
+            this.btnConsole.Image = global::MaisGamers.Properties.Resources.iconeNintendo_fw;
+            this.btnConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConsole.SmallImage")));
             // 
             // ribbonButton2
             // 
@@ -249,16 +267,6 @@
             // 
             this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            // 
-            // rbConsole
-            // 
-            this.rbConsole.Items.Add(this.btnConsole);
-            this.rbConsole.Text = "Consoles";
-            // 
-            // btnConsole
-            // 
-            this.btnConsole.Image = global::MaisGamers.Properties.Resources.iconeNintendo_fw;
-            this.btnConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConsole.SmallImage")));
             // 
             // frmPrincipal
             // 
@@ -312,6 +320,7 @@
         private System.Windows.Forms.RibbonTab menuCaixa;
         private System.Windows.Forms.RibbonPanel rbConsole;
         private System.Windows.Forms.RibbonButton btnConsole;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

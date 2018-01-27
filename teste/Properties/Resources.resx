@@ -130,11 +130,14 @@
   <data name="nota64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nota64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="celular&amp;tablet.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\celular&amp;tablet.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contrato32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contrato32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconemenos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconemenos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit-2-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-2-32.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,8 @@
   <data name="arma32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arma32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contrato32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrato32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconePagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconePagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +202,7 @@
   <data name="iconenovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconenovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconemenos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconemenos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="12733635_1050964424968000_1427591934875655062_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12733635_1050964424968000_1427591934875655062_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

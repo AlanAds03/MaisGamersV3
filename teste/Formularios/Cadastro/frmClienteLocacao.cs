@@ -23,7 +23,7 @@ using System.Net;
 using MaisGamers.DAL.Cadastro;
 using System.IO;
 using System.Diagnostics;
-using mshtml;
+//using mshtml;
 using MaisGamers.Formularios.Cadastro.Popup;
 using System.Reflection;
 using Microsoft.Office.Interop.Word;
@@ -1045,61 +1045,61 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
 
-                Stopwatch relogio = new Stopwatch();
+                //Stopwatch relogio = new Stopwatch();
 
-                SHDocVw.InternetExplorer IE = new SHDocVw.InternetExplorer();
+                //SHDocVw.InternetExplorer IE = new SHDocVw.InternetExplorer();
 
-                IE.Visible = true;
-                IE.Navigate2("http://www2.ssp.sp.gov.br/atestado/novo/Atestado02.cfm");
-
-                while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
-                {
-                    System.Windows.Forms.Application.DoEvents();
-                }
-
-                var documento = IE.Document;
-
-                var aa = ((IHTMLDocument3)documento);
-
-                aa.getElementsByName("Nome").item(0).setAttribute("value", txtNome.Text);
-                if (cmbSexo.SelectedValue.ToString() == "1")
-                {
-                    aa.getElementsByName("Sexo").item(0).setAttribute("value", "M");
-                }
-                else
-                {
-                    aa.getElementsByName("Sexo").item(0).setAttribute("value", "F");
-                }
-
-                aa.getElementsByName("Numero").item(0).setAttribute("value", txtRG.Text.Substring(0, txtRG.Text.Length - 1));
-                aa.getElementsByName("digito").item(0).setAttribute("value", txtRG.Text.Substring(txtRG.Text.Length - 1, 1));
-
-
-                aa.getElementsByName("txtDIAE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("dd"));
-                aa.getElementsByName("txtMESE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("MM"));
-                aa.getElementsByName("txtANOE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("yyyy"));
-
-
-                aa.getElementsByName("txtDIA").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("dd"));
-                aa.getElementsByName("txtMES").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("MM"));
-                aa.getElementsByName("txtANO").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("yyyy"));
-                aa.getElementsByName("NomeMae").item(0).setAttribute("value", txtNomeMae.Text);
-                aa.getElementsByName("NomePai").item(0).setAttribute("value", txtNomePai.Text);
-                aa.getElementById("pesquisa").click();
-
+                //IE.Visible = true;
+                //IE.Navigate2("http://www2.ssp.sp.gov.br/atestado/novo/Atestado02.cfm");
 
                 //while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
                 //{
-                //    Application.DoEvents();
+                //    System.Windows.Forms.Application.DoEvents();
                 //}
 
-                relogio.Start();
-                while (relogio.ElapsedMilliseconds < 5000)
-                {
-                    System.Windows.Forms.Application.DoEvents();
-                }
+                //var documento = IE.Document;
 
-                relogio.Stop();
+                //var aa = ((IHTMLDocument3)documento);
+
+                //aa.getElementsByName("Nome").item(0).setAttribute("value", txtNome.Text);
+                //if (cmbSexo.SelectedValue.ToString() == "1")
+                //{
+                //    aa.getElementsByName("Sexo").item(0).setAttribute("value", "M");
+                //}
+                //else
+                //{
+                //    aa.getElementsByName("Sexo").item(0).setAttribute("value", "F");
+                //}
+
+                //aa.getElementsByName("Numero").item(0).setAttribute("value", txtRG.Text.Substring(0, txtRG.Text.Length - 1));
+                //aa.getElementsByName("digito").item(0).setAttribute("value", txtRG.Text.Substring(txtRG.Text.Length - 1, 1));
+
+
+                //aa.getElementsByName("txtDIAE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("dd"));
+                //aa.getElementsByName("txtMESE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("MM"));
+                //aa.getElementsByName("txtANOE").item(0).setAttribute("value", Convert.ToDateTime(txtDataExpedicao.Text).ToString("yyyy"));
+
+
+                //aa.getElementsByName("txtDIA").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("dd"));
+                //aa.getElementsByName("txtMES").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("MM"));
+                //aa.getElementsByName("txtANO").item(0).setAttribute("value", Convert.ToDateTime(txtDataNascimento.Text).ToString("yyyy"));
+                //aa.getElementsByName("NomeMae").item(0).setAttribute("value", txtNomeMae.Text);
+                //aa.getElementsByName("NomePai").item(0).setAttribute("value", txtNomePai.Text);
+                //aa.getElementById("pesquisa").click();
+
+
+                ////while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
+                ////{
+                ////    Application.DoEvents();
+                ////}
+
+                //relogio.Start();
+                //while (relogio.ElapsedMilliseconds < 5000)
+                //{
+                //    System.Windows.Forms.Application.DoEvents();
+                //}
+
+                //relogio.Stop();
 
                 //IE.ExecWB(SHDocVw.OLECMDID.OLECMDID_PRINT, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER, 2);
 

@@ -132,10 +132,27 @@ namespace MaisGamers.Formularios.Cadastro
                 }
 
                 btnImprimir.Enabled = _mlocacao.StatusLocacao.IDStatus != 1;
+                
+
+                if (_mlocacao.StatusLocacao.IDStatus == 1)
+                {
+                    btnJogo.Enabled = true;
+                    btnExcluirJogo.Enabled = true;
+                    btnEntregarCliente.Enabled = true;
+
+
+                }
+                else
+                {
+                    btnJogo.Enabled = false;
+                    btnExcluirJogo.Enabled = false;
+                    btnEntregarCliente.Enabled = false;
+                }
+
 
                 if (_mlocacao.StatusLocacao.IDStatus != 1)
                 {
-
+                    btnJogo.Enabled = false;
                     if (_mlocacao.DataPrevisaoEntrega != null)
                     {
                         txtDataEntrega.Value = Convert.ToDateTime(_mlocacao.DataPrevisaoEntrega);
@@ -410,6 +427,9 @@ namespace MaisGamers.Formularios.Cadastro
                 fechamento.DataEntrega = DateTime.Now;
                 fechamento.ValorDevido =Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, MinHoraData(fechamento.DataLocacao), MinHoraData(DateTime.Now), true).ToString());
                 fechamento.ValorPagoLocacao = _mloc.ValorPagoInicial;
+                fechamento.ValorRestante = fechamento.ValorDevido - fechamento.ValorPagoLocacao;
+
+
 
                 fechamento.idLocacao = idLocacao;
                 fechamento.ShowDialog();
@@ -499,6 +519,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            
             try
             {
 
@@ -550,7 +571,6 @@ namespace MaisGamers.Formularios.Cadastro
                 else
                 {
                     texto.WriteLine("Valor a pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
-
                 }
                 texto.WriteLine("");
                 texto.WriteLine("");
@@ -566,7 +586,9 @@ namespace MaisGamers.Formularios.Cadastro
                     texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
                     texto.WriteLine("**********DEVOLUCAO**********");
                 }
-                
+
+                texto.WriteLine(" ***** Obrigado e volte sempre **** ");
+
                 texto.Close();
 
                 //PrintDialog printDialog = new PrintDialog();
