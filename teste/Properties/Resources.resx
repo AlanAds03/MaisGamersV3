@@ -124,6 +124,9 @@
   <data name="iconeprevisao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeprevisao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_115260 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_115260 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconeNintendo.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeNintendo.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,14 +136,17 @@
   <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit-document_icon-icons.com_54542 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-document_icon-icons.com_54542 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="celular&amp;tablet.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\celular&amp;tablet.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconemenos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconemenos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-2-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-2-32.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="12733635_1050964424968000_1427591934875655062_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12733635_1050964424968000_1427591934875655062_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconePAgamento32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconePAgamento32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +160,17 @@
   <data name="relatorio64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\relatorio64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="broom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\broom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconeCliente64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeCliente64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_115260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_115260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconecd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconecd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +187,14 @@
   <data name="arma32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arma32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_168133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_168133.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="contrato32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contrato32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconePagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconePagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,6 +204,9 @@
   </data>
   <data name="objetos64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\objetos64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="237034-file_document_add_plus-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\237034-file_document_add_plus-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="laptop_png8917" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\laptop_png8917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +223,16 @@
   <data name="iconenovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\iconenovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="12733635_1050964424968000_1427591934875655062_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\12733635_1050964424968000_1427591934875655062_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit-2-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-2-32.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-document_icon-icons.com_54542" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-document_icon-icons.com_54542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_remove_bin_icon-icons.com_72400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_remove_bin_icon-icons.com_72400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash-register" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

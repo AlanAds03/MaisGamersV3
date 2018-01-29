@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaisGamers.Model.Vendas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -57,6 +58,8 @@ namespace MaisGamers.Model.Cadastro
 
         public bool Lacrado { get; set; }
 
+       
+        public virtual ICollection<mVenda> Venda { get; set; }
 
 
 

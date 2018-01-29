@@ -39,8 +39,12 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void frmCadJogo_Load(object sender, EventArgs e)
         {
+
             Util.CentralizaGrupo(grpBotoes);
+            Util.CentralizaGrupo(grpBotoes2);
             Util.CentralizaTab(tabControl1);
+
+            picExcluir.Enabled = false;
 
             CarregaComboStatus(cmbStatus);
 
@@ -280,7 +284,7 @@ namespace MaisGamers.Formularios.Cadastro
                 idLocacao = lvPesquisa.ObterChave();
             }
 
-            btnExcluir.Enabled = e.Item.Checked;
+            picExcluir.Enabled = e.Item.Checked;
 
 
         }
@@ -442,7 +446,7 @@ namespace MaisGamers.Formularios.Cadastro
                     _locacao.FinalizarLocacao(idLocacao, fechamento.DataEntrega, fechamento.ValorDevido);
                 }
 
-                modo_tela = ModoTela.ALTERACAO;
+                modo_tela = ModoTela.CONSULTA;
                 atualizaTela();
 
 
@@ -664,6 +668,165 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            modo_tela = Util.ModoTela.NOVO;
+            atualizaTela();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            modo_tela = Util.ModoTela.ALTERACAO;
+            atualizaTela();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                bJogo _bJogo = new bJogo();
+                mJogo jogo = new mJogo();
+
+
+
+
+
+
+
+                if (_bJogo.InserirJogo(jogo))
+                {
+
+                    modo_tela = ModoTela.CONSULTA;
+                    atualizaTela();
+                }
+                else
+                {
+                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (modo_tela == Util.ModoTela.CONSULTA)
+            {
+                this.Close();
+                this.Dispose();
+            }
+            else
+            {
+                modo_tela = Util.ModoTela.CONSULTA;
+                atualizaTela();
+            }
+        }
+
+        private void picExcluir_Click(object sender, EventArgs e)
+        {
+
+            bLocacao _bLocacao = new bLocacao();
+
+            if (_bLocacao.Excluir(idLocacao))
+            {
+                Mensagem("Excluido com sucesso...", Frameworks.Classes.CMsgBox.TipoBotoes.OK,Frameworks.Classes.CMsgBox.TipoErro.Ok);
+            }
+            else
+            {
+                Mensagem("Erro ao excluir", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+            }
+        }
+
+        private void lblDataCadastro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

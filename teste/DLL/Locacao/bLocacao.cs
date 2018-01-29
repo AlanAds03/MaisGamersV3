@@ -19,6 +19,12 @@ namespace MaisGamers.DLL.Locacao
 
         }
 
+        public bool Excluir(int idLocacao)
+        {
+            dLocacao _dLocacao = new dLocacao();
+
+            return _dLocacao.Excluir(idLocacao);
+        }
         public List<mLocacaoJogos> ObterJogos(int idLocacao)
         {
             dLocacao _dlocacao = new dLocacao();
@@ -42,7 +48,7 @@ namespace MaisGamers.DLL.Locacao
             }
         }
 
-        public bool AtualizarDataPrevistaLocacao(int idLocaaco, DateTime dataPrevisao,double valorPagoLocacao)
+        public bool AtualizarDataPrevistaLocacao(int idLocaaco, DateTime dataPrevisao, double valorPagoLocacao)
         {
             try
             {
@@ -119,28 +125,28 @@ namespace MaisGamers.DLL.Locacao
 
         }
 
-            public List<dynamic> BuscarPrecosLoacao(int idLocacao)
-            {
+        public List<dynamic> BuscarPrecosLoacao(int idLocacao)
+        {
 
-                dLocacao _dlocacao = new dLocacao();
+            dLocacao _dlocacao = new dLocacao();
 
-                return _dlocacao.BuscarPrecosJogos(idLocacao);
+            return _dlocacao.BuscarPrecosJogos(idLocacao);
 
-            }
-
-
+        }
 
 
-            public decimal PrevisaoPreco(int idLocacao,DateTime dataLocacao, DateTime dataEntrega, bool utilizaPromocao)
+
+
+        public decimal PrevisaoPreco(int idLocacao, DateTime dataLocacao, DateTime dataEntrega, bool utilizaPromocao)
         {
             //Data Atual 11/02/2017 
             //entregar dia 13/02/2017 
 
             //Pegar quantos dias irá alugar .
-            
+
             decimal PrecoTotal = 0;
             int dia = 0;
-            
+
 
             //Desconsiderar Domingo
             while (dataLocacao < dataEntrega)
@@ -163,7 +169,7 @@ namespace MaisGamers.DLL.Locacao
                 }
                 else
                 {
-                    if (dia == 0 ||  dia == 1)
+                    if (dia == 0 || dia == 1)
                     {
                         PrecoTotal += Convert.ToDecimal(xxx.PrecoDia1);
                     }

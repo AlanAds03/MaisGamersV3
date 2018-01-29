@@ -41,13 +41,10 @@
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
             this.menuVendas = new System.Windows.Forms.RibbonTab();
-            this.Rbps4 = new System.Windows.Forms.RibbonPanel();
-            this.Rbxboxone = new System.Windows.Forms.RibbonPanel();
-            this.Rbps3 = new System.Windows.Forms.RibbonPanel();
-            this.Rbxbox360 = new System.Windows.Forms.RibbonPanel();
             this.menuLancamento = new System.Windows.Forms.RibbonTab();
-            this.menuCaixa = new System.Windows.Forms.RibbonTab();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.btnCliente = new System.Windows.Forms.RibbonButton();
             this.btnJogo = new System.Windows.Forms.RibbonButton();
@@ -56,10 +53,9 @@
             this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.btnRelatorio = new System.Windows.Forms.RibbonButton();
-            this.Rbiconeps4 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
-            this.Rbiconeps3 = new System.Windows.Forms.RibbonButton();
-            this.Rbx360 = new System.Windows.Forms.RibbonButton();
+            this.BotaoMenuVendas = new System.Windows.Forms.RibbonButton();
+            this.BotaoMenuRelatorioVendas = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
@@ -90,7 +86,6 @@
             this.ribbon1.Tabs.Add(this.menuJogos);
             this.ribbon1.Tabs.Add(this.menuVendas);
             this.ribbon1.Tabs.Add(this.menuLancamento);
-            this.ribbon1.Tabs.Add(this.menuCaixa);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.ribbon1.Text = "Manuntenção";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -149,52 +144,28 @@
             // 
             // menuVendas
             // 
-            this.menuVendas.Panels.Add(this.Rbps4);
-            this.menuVendas.Panels.Add(this.Rbxboxone);
-            this.menuVendas.Panels.Add(this.Rbps3);
-            this.menuVendas.Panels.Add(this.Rbxbox360);
-            this.menuVendas.Text = "Vendas";
-            // 
-            // Rbps4
-            // 
-            this.Rbps4.ButtonMoreEnabled = false;
-            this.Rbps4.ButtonMoreVisible = false;
-            this.Rbps4.Items.Add(this.Rbiconeps4);
-            this.Rbps4.Text = "PS4";
-            // 
-            // Rbxboxone
-            // 
-            this.Rbxboxone.ButtonMoreEnabled = false;
-            this.Rbxboxone.ButtonMoreVisible = false;
-            this.Rbxboxone.Items.Add(this.ribbonButton4);
-            this.Rbxboxone.Text = "Xbox One";
-            // 
-            // Rbps3
-            // 
-            this.Rbps3.ButtonMoreEnabled = false;
-            this.Rbps3.ButtonMoreVisible = false;
-            this.Rbps3.Items.Add(this.Rbiconeps3);
-            this.Rbps3.Text = "PS3";
-            // 
-            // Rbxbox360
-            // 
-            this.Rbxbox360.ButtonMoreEnabled = false;
-            this.Rbxbox360.ButtonMoreVisible = false;
-            this.Rbxbox360.Items.Add(this.Rbx360);
-            this.Rbxbox360.Text = "Xbox 360";
+            this.menuVendas.Panels.Add(this.ribbonPanel1);
+            this.menuVendas.Panels.Add(this.ribbonPanel2);
+            this.menuVendas.Text = "Caixa";
             // 
             // menuLancamento
             // 
             this.menuLancamento.Text = "Lançamento";
             // 
-            // menuCaixa
-            // 
-            this.menuCaixa.Text = "Caixa";
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifiacao";
             this.notifyIcon1.Visible = true;
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Items.Add(this.BotaoMenuVendas);
+            this.ribbonPanel1.Text = "Vendas";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Items.Add(this.BotaoMenuRelatorioVendas);
+            this.ribbonPanel2.Text = "Relatório";
             // 
             // ribbonButton1
             // 
@@ -243,25 +214,22 @@
             this.btnRelatorio.Image = global::MaisGamers.Properties.Resources.relatorio64;
             this.btnRelatorio.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.SmallImage")));
             // 
-            // Rbiconeps4
+            // BotaoMenuVendas
             // 
-            this.Rbiconeps4.Image = ((System.Drawing.Image)(resources.GetObject("Rbiconeps4.Image")));
-            this.Rbiconeps4.SmallImage = ((System.Drawing.Image)(resources.GetObject("Rbiconeps4.SmallImage")));
+            this.BotaoMenuVendas.Image = global::MaisGamers.Properties.Resources.cash_register;
+            this.BotaoMenuVendas.SmallImage = ((System.Drawing.Image)(resources.GetObject("BotaoMenuVendas.SmallImage")));
+            this.BotaoMenuVendas.Click += new System.EventHandler(this.BotaoMenuVendas_Click);
             // 
-            // ribbonButton4
+            // BotaoMenuRelatorioVendas
             // 
-            this.ribbonButton4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.Image")));
-            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
+            this.BotaoMenuRelatorioVendas.DropDownItems.Add(this.ribbonButton5);
+            this.BotaoMenuRelatorioVendas.Image = global::MaisGamers.Properties.Resources.relatorio64;
+            this.BotaoMenuRelatorioVendas.SmallImage = ((System.Drawing.Image)(resources.GetObject("BotaoMenuRelatorioVendas.SmallImage")));
             // 
-            // Rbiconeps3
+            // ribbonButton5
             // 
-            this.Rbiconeps3.Image = ((System.Drawing.Image)(resources.GetObject("Rbiconeps3.Image")));
-            this.Rbiconeps3.SmallImage = ((System.Drawing.Image)(resources.GetObject("Rbiconeps3.SmallImage")));
-            // 
-            // Rbx360
-            // 
-            this.Rbx360.Image = ((System.Drawing.Image)(resources.GetObject("Rbx360.Image")));
-            this.Rbx360.SmallImage = ((System.Drawing.Image)(resources.GetObject("Rbx360.SmallImage")));
+            this.ribbonButton5.Image = global::MaisGamers.Properties.Resources.relatorio64;
+            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
             // 
             // ribbonButton7
             // 
@@ -296,14 +264,6 @@
         private System.Windows.Forms.RibbonTab menuVendas;
         private System.Windows.Forms.RibbonPanel ribbonPanel5;
         private System.Windows.Forms.RibbonButton ribbonButton2;
-        private System.Windows.Forms.RibbonPanel Rbps4;
-        private System.Windows.Forms.RibbonButton Rbiconeps4;
-        private System.Windows.Forms.RibbonPanel Rbxboxone;
-        private System.Windows.Forms.RibbonPanel Rbps3;
-        private System.Windows.Forms.RibbonButton ribbonButton4;
-        private System.Windows.Forms.RibbonButton Rbiconeps3;
-        private System.Windows.Forms.RibbonButton Rbx360;
-        private System.Windows.Forms.RibbonPanel Rbxbox360;
         private System.Windows.Forms.RibbonTab menuCadastro;
         private System.Windows.Forms.RibbonPanel rbJogos;
         private System.Windows.Forms.RibbonButton btnJogo;
@@ -317,10 +277,14 @@
         private System.Windows.Forms.RibbonTab menuLancamento;
         private System.Windows.Forms.RibbonPanel rbRelatorio;
         private System.Windows.Forms.RibbonButton btnRelatorio;
-        private System.Windows.Forms.RibbonTab menuCaixa;
         private System.Windows.Forms.RibbonPanel rbConsole;
         private System.Windows.Forms.RibbonButton btnConsole;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonButton BotaoMenuVendas;
+        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonButton BotaoMenuRelatorioVendas;
+        private System.Windows.Forms.RibbonButton ribbonButton5;
     }
 }
 

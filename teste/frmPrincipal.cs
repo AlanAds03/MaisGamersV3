@@ -11,6 +11,7 @@ using MaisGamers.Model;
 using MaisGamers.Formularios.Cadastro;
 using MaisGamers.Formularios.LocacaoHora;
 using MaisGamers.Formularios.Orcamento;
+using MaisGamers.DLL.Venda;
 
 namespace MaisGamers
 {
@@ -201,6 +202,21 @@ namespace MaisGamers
         {
             frmProdutos frmProdutos = new frmProdutos();
             MostraFormulario(frmProdutos);
+        }
+
+        private void BotaoMenuVendas_Click(object sender, EventArgs e)
+        {
+            frmVendas vendas = new frmVendas();
+            bVenda _bVenda = new bVenda();
+
+            DateTime data = System.DateTime.Now;
+
+            //vendas.IDVenda = _bVenda.InserirVenda(new Model.Vendas.mVenda { dVenda = data });
+            vendas.IDVenda = 8;
+
+
+            MostraFormulario(vendas);
+
         }
     }
 }

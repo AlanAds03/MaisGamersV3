@@ -74,6 +74,12 @@
     <Compile Include="Componentes\SuperLV.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Componentes\SuperPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\SuperPictureBox.Designer.cs">
+      <DependentUpon>SuperPictureBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\SuperTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Content Include="NuGet\NuGetPackage.txt" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Componentes\SuperPictureBox.resx">
+      <DependentUpon>SuperPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Componentes\SuperTextBox.resx">
       <DependentUpon>SuperTextBox.cs</DependentUpon>
     </EmbeddedResource>

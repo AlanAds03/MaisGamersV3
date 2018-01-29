@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaisGamers.Model.Vendas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,6 +20,10 @@ namespace MaisGamers.Model.Cadastro
         public double Unitario { get; set; }
         public double Custo { get; set; }
         public string Fornecedor { get; set; }
+
+        
+        public virtual ICollection<mVenda> Venda { get; set; }
+
 
         [NotMapped]
         public string ColunasGrid { get; set; }

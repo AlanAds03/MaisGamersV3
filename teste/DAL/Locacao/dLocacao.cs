@@ -244,6 +244,46 @@ namespace MaisGamers.DAL.Locacao
 
         }
 
+        public bool Excluir(int idLocacao)
+        {
+            var db = new Contexto();
+
+            try
+            {
+                mLocacao locacao = db.Locacao.Find(idLocacao);
+                List<mLocacaoJogos> locacaoJogos;
+
+                locacaoJogos = db.LocacaoJogos.Where(x => x.IDLocacao == locacao).ToList();
+
+                if (locacao != null)
+                {
+                    foreach(mLocacaoJogos xx in locacaoJogos)
+                    {
+                        db.LocacaoJogos.Remove(xx);
+                    }
+                    
+                    db.Locacao.Remove(locacao);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw;
+            }
+
+
+
+        }
+
         public void MapObject(ref mLocacao source, ref mLocacao destination)
         {
 

@@ -26,7 +26,7 @@ namespace Frameworks.Componentes
             string colunaRenomeada = "";
             int tamanhoColuna = 0;
 
-            this.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             foreach (var x in _list)
             {
@@ -162,7 +162,7 @@ namespace Frameworks.Componentes
                     {
                         nova = col;
                     }
-                    PropertyInfo a = props.Where(y => y.Name == nova).First();
+                    PropertyInfo a = props.Where(y => y.Name.ToUpper().ToString() == nova.ToUpper().ToString()).First();
 
                     var valor = a.GetValue(x, null);
 

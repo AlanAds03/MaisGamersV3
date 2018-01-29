@@ -86,6 +86,7 @@
     <Compile Include="DAL\Locacao\dStatusLocacao.cs" />
     <Compile Include="DAL\Mapper.cs" />
     <Compile Include="DAL\Orcamento\dTipoOrcamento.cs" />
+    <Compile Include="DAL\Venda\dVenda.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bTipoCliente.cs" />
     <Compile Include="DLL\bEstado.cs" />
@@ -99,6 +100,13 @@
     <Compile Include="DLL\Locacao\bLocacao.cs" />
     <Compile Include="DLL\Locacao\bStatusClienteLocacao.cs" />
     <Compile Include="DLL\Locacao\bStatusLocacao.cs" />
+    <Compile Include="DLL\Venda\bVenda.cs" />
+    <Compile Include="Formularios\Cadastro\frmPesquisaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmPesquisaProduto.Designer.cs">
+      <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastro\frmProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +186,12 @@
     <Compile Include="Formularios\Orcamento\frmOrcamento.Designer.cs">
       <DependentUpon>frmOrcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Vendas\frmVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Vendas\frmVendas.Designer.cs">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +234,14 @@
     <Compile Include="Migrations\201801272048050_tabela Produto.Designer.cs">
       <DependentUpon>201801272048050_tabela Produto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801282115461_Venda_Produto_Jogo.cs" />
+    <Compile Include="Migrations\201801282115461_Venda_Produto_Jogo.Designer.cs">
+      <DependentUpon>201801282115461_Venda_Produto_Jogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801282138578_ trocando tabela.cs" />
+    <Compile Include="Migrations\201801282138578_ trocando tabela.Designer.cs">
+      <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -244,6 +266,8 @@
     <Compile Include="Model\Orcamento\mOrcamento.cs" />
     <Compile Include="Model\Orcamento\mTipoOrcamento.cs" />
     <Compile Include="Model\Orcamento\mTipoOrcamentoStatus.cs" />
+    <Compile Include="Model\Vendas\mVenda.cs" />
+    <Compile Include="Model\Vendas\mVendaProduto.cs" />
     <Compile Include="Modulos\CMsgBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +275,9 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Cadastro\frmPesquisaProduto.resx">
+      <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastro\frmProdutos.resx">
       <DependentUpon>frmProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +317,9 @@
     <EmbeddedResource Include="Formularios\Orcamento\frmOrcamento.resx">
       <DependentUpon>frmOrcamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Vendas\frmVendas.resx">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801272048050_tabela Produto.resx">
       <DependentUpon>201801272048050_tabela Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801282115461_Venda_Produto_Jogo.resx">
+      <DependentUpon>201801282115461_Venda_Produto_Jogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801282138578_ trocando tabela.resx">
+      <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -367,6 +403,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\cash-register.png" />
+    <None Include="Resources\img_168133.png" />
+    <None Include="Resources\237034-file_document_add_plus-128.png" />
+    <None Include="Resources\broom.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\img_115260 %281%29.png" />
+    <None Include="Resources\edit-document_icon-icons.com_54542 %281%29.png" />
+    <None Include="Resources\edit-document_icon-icons.com_54542.png" />
+    <None Include="Resources\img_115260.png" />
+    <None Include="Resources\delete_remove_bin_icon-icons.com_72400.png" />
     <None Include="Resources\12733635_1050964424968000_1427591934875655062_n.png" />
     <None Include="Resources\iconemenos.png" />
     <None Include="Resources\iconemais.png" />

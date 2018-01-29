@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocacao));
             this.grpFiltro = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,6 +68,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lvLocacao = new Frameworks.Componentes.SuperLV();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picExcluir = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grpBotoes2 = new System.Windows.Forms.GroupBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -77,6 +80,10 @@
             this.tpLocacao.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpGridLocacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExcluir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grpBotoes2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpFiltro
@@ -177,7 +184,7 @@
             this.grpBotoes.Controls.Add(this.btnFechar);
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.button2);
-            this.grpBotoes.Location = new System.Drawing.Point(132, 515);
+            this.grpBotoes.Location = new System.Drawing.Point(98, 48);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(691, 77);
             this.grpBotoes.TabIndex = 8;
@@ -185,7 +192,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Image = global::MaisGamers.Properties.Resources.delete_remove_bin_icon_icons_com_72400;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.Location = new System.Drawing.Point(297, 19);
             this.btnExcluir.Name = "btnExcluir";
@@ -194,6 +201,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // button3
             // 
@@ -210,7 +218,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.img_115260;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvar.Location = new System.Drawing.Point(200, 19);
             this.btnSalvar.Name = "btnSalvar";
@@ -258,6 +266,7 @@
             this.button2.Text = "Limpar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
             // 
@@ -315,102 +324,105 @@
             // lblDataCadastro
             // 
             this.lblDataCadastro.AutoSize = true;
-            this.lblDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataCadastro.Location = new System.Drawing.Point(761, 55);
+            this.lblDataCadastro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDataCadastro.Location = new System.Drawing.Point(812, 62);
             this.lblDataCadastro.Name = "lblDataCadastro";
-            this.lblDataCadastro.Size = new System.Drawing.Size(77, 24);
+            this.lblDataCadastro.Size = new System.Drawing.Size(66, 18);
             this.lblDataCadastro.TabIndex = 9;
             this.lblDataCadastro.Text = "label10";
+            this.lblDataCadastro.Click += new System.EventHandler(this.lblDataCadastro_Click);
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblStatus.Location = new System.Drawing.Point(761, 32);
+            this.lblStatus.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblStatus.Location = new System.Drawing.Point(436, 28);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(66, 24);
+            this.lblStatus.Size = new System.Drawing.Size(65, 22);
             this.lblStatus.TabIndex = 8;
             this.lblStatus.Text = "label9";
             // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPF.Location = new System.Drawing.Point(296, 55);
+            this.lblCPF.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(79, 57);
             this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(66, 24);
+            this.lblCPF.Size = new System.Drawing.Size(56, 18);
             this.lblCPF.TabIndex = 7;
             this.lblCPF.Text = "label8";
             // 
             // lblRG
             // 
             this.lblRG.AutoSize = true;
-            this.lblRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRG.Location = new System.Drawing.Point(104, 55);
+            this.lblRG.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRG.Location = new System.Drawing.Point(79, 39);
             this.lblRG.Name = "lblRG";
-            this.lblRG.Size = new System.Drawing.Size(61, 24);
+            this.lblRG.Size = new System.Drawing.Size(51, 18);
             this.lblRG.TabIndex = 6;
             this.lblRG.Text = "lblRG";
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(104, 32);
+            this.lblCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(79, 20);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(97, 24);
+            this.lblCliente.Size = new System.Drawing.Size(82, 18);
             this.lblCliente.TabIndex = 5;
             this.lblCliente.Text = "lblCliente";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkRed;
-            this.label7.Location = new System.Drawing.Point(683, 31);
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(364, 28);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 24);
+            this.label7.Size = new System.Drawing.Size(75, 22);
             this.label7.TabIndex = 4;
             this.label7.Text = "Status:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(610, 55);
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(656, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 24);
+            this.label6.Size = new System.Drawing.Size(157, 18);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Data Cadastro:";
+            this.label6.Text = "Data de  Cadastro:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(236, 55);
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 24);
+            this.label5.Size = new System.Drawing.Size(46, 18);
             this.label5.TabIndex = 2;
             this.label5.Text = "CPF:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 55);
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 24);
+            this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 1;
             this.label4.Text = "RG:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 32);
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 24);
+            this.label3.Size = new System.Drawing.Size(69, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Cliente:";
             // 
@@ -418,6 +430,7 @@
             // 
             this.grpGridLocacao.Controls.Add(this.btnImprimir);
             this.grpGridLocacao.Controls.Add(this.btnExcluirJogo);
+            this.grpGridLocacao.Controls.Add(this.grpBotoes);
             this.grpGridLocacao.Controls.Add(this.txtDataEntrega);
             this.grpGridLocacao.Controls.Add(this.label8);
             this.grpGridLocacao.Controls.Add(this.btnEntregarCliente);
@@ -540,15 +553,65 @@
             this.lvLocacao.UseCompatibleStateImageBehavior = false;
             this.lvLocacao.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvLocacao_ItemChecked);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::MaisGamers.Properties.Resources.img_168133;
+            this.pictureBox6.Location = new System.Drawing.Point(244, 14);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 25;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
+            // 
+            // picExcluir
+            // 
+            this.picExcluir.Image = global::MaisGamers.Properties.Resources.delete;
+            this.picExcluir.Location = new System.Drawing.Point(190, 14);
+            this.picExcluir.Name = "picExcluir";
+            this.picExcluir.Size = new System.Drawing.Size(48, 48);
+            this.picExcluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picExcluir.TabIndex = 22;
+            this.picExcluir.TabStop = false;
+            this.picExcluir.Click += new System.EventHandler(this.picExcluir_Click);
+            this.picExcluir.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.picExcluir.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MaisGamers.Properties.Resources.edit_document_icon_icons_com_54542__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(136, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // grpBotoes2
+            // 
+            this.grpBotoes2.Controls.Add(this.pictureBox6);
+            this.grpBotoes2.Controls.Add(this.pictureBox1);
+            this.grpBotoes2.Controls.Add(this.picExcluir);
+            this.grpBotoes2.Location = new System.Drawing.Point(235, 511);
+            this.grpBotoes2.Name = "grpBotoes2";
+            this.grpBotoes2.Size = new System.Drawing.Size(558, 68);
+            this.grpBotoes2.TabIndex = 27;
+            this.grpBotoes2.TabStop = false;
+            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1057, 585);
             this.ControlBox = false;
+            this.Controls.Add(this.grpBotoes2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.grpBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLocacao";
             this.ShowIcon = false;
@@ -568,6 +631,11 @@
             this.groupBox1.PerformLayout();
             this.grpGridLocacao.ResumeLayout(false);
             this.grpGridLocacao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExcluir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grpBotoes2.ResumeLayout(false);
+            this.grpBotoes2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -613,5 +681,9 @@
         private System.Windows.Forms.DateTimePicker txtDataEntrega;
         private System.Windows.Forms.Button btnExcluirJogo;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picExcluir;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.GroupBox grpBotoes2;
     }
 }

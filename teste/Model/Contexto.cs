@@ -2,6 +2,7 @@
 using MaisGamers.Model.Cadastro;
 using MaisGamers.Model.Locacao;
 using MaisGamers.Model.Orcamento;
+using MaisGamers.Model.Vendas;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,6 +28,8 @@ namespace MaisGamers.Model
         public DbSet<mTipoCliente> TipoCliente{ get; set; }
 
         public DbSet<mTipoJogo> TipoJogo { get; set; }
+
+        public DbSet<mVenda> Vendas { get; set; }
 
         public DbSet<mCaixa> Caixa { get; set; }
 
