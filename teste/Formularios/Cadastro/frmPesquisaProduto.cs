@@ -89,16 +89,13 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
                 bVenda _bVenda = new bVenda();
-                mVenda _mVenda = new mVenda();
-                mProduto _produto = new mProduto();
+             
                 
 
                 if(idProduto != 0)
                 {
-                    _mVenda.IDVenda = idVenda;
-                    _produto.IDProduto = idProduto;
-
-                    _bVenda.InserirVendaProduto(_mVenda, _produto);
+                 
+                    _bVenda.InserirVendaProduto(idVenda, idProduto);
                     
                 }
 
@@ -163,7 +160,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (e.Item.Checked == true)
             {
-                idProduto = lvPesquisa.ObterChave();
+                idProduto = Convert.ToInt32(lvPesquisa.ObterChave());
 
             }
 

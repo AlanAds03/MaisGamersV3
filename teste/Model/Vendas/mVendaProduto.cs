@@ -1,18 +1,23 @@
 ﻿using MaisGamers.Model.Cadastro;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MaisGamers.Model.Vendas
 {
+    [Table("VendaProduto")]
     public class mVendaProduto
     {
-        public mVenda Vendas;
-        //public List<mProduto> Produtos;
-        public string colunasGrid;
-        public string Produto;
+        [Key]
+        public int IDVendaProduto { get; set; }
+        public mVenda Venda { get; set; }
+        public mProduto Produto { get; set; }
+        
+        
 
     }
 }

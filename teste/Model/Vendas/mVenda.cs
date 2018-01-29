@@ -19,8 +19,13 @@ namespace MaisGamers.Model.Vendas
         public string rCliente { get; set; }
         public double vValorTotal { get; set; }
         public double vValorPago { get; set; }
-        public virtual ICollection<mProduto> Produto { get; set; }
-        public virtual ICollection<mJogo> Jogo { get; set; }
+
+        public virtual ICollection<mVendaProduto> VendaProduto { get; set; }
+
+
+
+        //public virtual ICollection<mProduto> Produto { get; set; }
+        //public virtual ICollection<mJogo> Jogo { get; set; }
 
     }
 }

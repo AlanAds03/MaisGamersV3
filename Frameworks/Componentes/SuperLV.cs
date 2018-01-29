@@ -14,6 +14,7 @@ namespace Frameworks.Componentes
     public class SuperLV : ListView
     {
         private int Chave { get; set; }
+        private string  ChaveComposta { get; set; }
 
         public void CarregaListaView<T>(List<T> _list)
         {
@@ -92,7 +93,7 @@ namespace Frameworks.Componentes
                                     }
                                 }
                             }
-                            if(colu.Length > 2)
+                            if(colu.Length >= 2)
                             {
                                 if(colu.Substring(0,2).ToUpper().Contains("ID"))
                                 {
@@ -166,7 +167,11 @@ namespace Frameworks.Componentes
 
                     var valor = a.GetValue(x, null);
 
-                    if (a.Name.ToUpper().Contains("ID"))
+                    if (a.Name.ToUpper().Contains("ID") && valor.ToString().Contains("|"))
+                    {
+                        this.ChaveComposta = valor.ToString();
+                    }
+                    else if(a.Name.ToUpper().Contains("ID"))
                     {
                         this.Chave = Convert.ToInt32(valor);
                     }
@@ -190,7 +195,10 @@ namespace Frameworks.Componentes
 
                     iCont += 1;
                 }
+
+                
                 this.Items.Add(item);
+                this.Controls.Add(new TextBox { Text = "asdasdsd" });
             }
 
             this.CheckBoxes = true;
@@ -322,13 +330,13 @@ namespace Frameworks.Componentes
 
 
 
-        public int ObterChave()
+        public object ObterChave()
         {
             for (var i = 0; i <= this.Items.Count - 1; i++)
             {
                 if (this.Items[i].Checked == true)
                 {
-                    return Convert.ToInt32(this.Items[i].Text);
+                    return this.Items[i].Text;
                 }
             }
 

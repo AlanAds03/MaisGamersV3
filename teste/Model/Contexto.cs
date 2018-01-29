@@ -51,6 +51,10 @@ namespace MaisGamers.Model
 
         public DbSet<mPrecoLocacao> PrecoLocacao { get; set; }
 
+        public DbSet<mVendaProduto> VendaProduto { get; set; }
+
+
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

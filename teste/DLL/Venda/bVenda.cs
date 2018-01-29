@@ -19,29 +19,38 @@ namespace MaisGamers.DLL.Venda
 
         }
 
-        public int InserirVendaProduto(mVenda venda,mProduto produto)
+        //public bool ExcluirProdutoVenda(int idVenda, int idProduto)
+        //{
+        //    dVenda _dVenda = new dVenda();
+
+        //    return _dVenda.ExcluirProdutoVenda(idVenda,idProduto);
+
+        //}
+
+
+        public int InserirVendaProduto(int idvenda, int idproduto)
         {
             dVenda _dVenda = new dVenda();
 
-            return _dVenda.InserirVendaProduto(venda, produto);
+            return _dVenda.InserirVendaProduto(idvenda, idproduto);
 
         }
 
-        public List<dynamic> CarregaGridVendas(int idVenda)
-        {
-            dVenda _dVenda = new dVenda();
+        //public List<dynamic> CarregaGridVendas(int idVenda)
+        //{
+        //    dVenda _dVenda = new dVenda();
 
-            return _dVenda.CarregaGridVendas(idVenda);
+        //    return _dVenda.CarregaGridVendas(idVenda);
 
-        }
+        //}
 
-        public double TotalVenda(int idVenda)
-        {
-            dVenda _dVenda = new dVenda();
+        //public double TotalVenda(int idVenda)
+        //{
+        //    dVenda _dVenda = new dVenda();
 
-            return _dVenda.TotalVenda(idVenda);
+        //    return _dVenda.TotalVenda(idVenda);
 
-        }
+        //}
 
     }
 }

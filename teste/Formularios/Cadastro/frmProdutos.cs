@@ -285,7 +285,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (e.Item.Checked == true)
             {
-                idProduto = lvPesquisa.ObterChave();
+                idProduto = Convert.ToInt32(lvPesquisa.ObterChave());
 
             }
 

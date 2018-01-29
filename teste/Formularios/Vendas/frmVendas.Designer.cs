@@ -271,6 +271,7 @@
             this.lvLocacao.Size = new System.Drawing.Size(822, 252);
             this.lvLocacao.TabIndex = 0;
             this.lvLocacao.UseCompatibleStateImageBehavior = false;
+            this.lvLocacao.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvLocacao_ItemChecked);
             // 
             // tabControl1
             // 
@@ -297,7 +298,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadJogo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmCadJogo_Load);
+            this.Load += new System.EventHandler(this.frmVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExcluir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

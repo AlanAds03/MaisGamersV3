@@ -241,6 +241,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
 
+
                 //json = _bCli.PesquisaCliente(cli, "Nome");
 
                 //if (!string.IsNullOrEmpty(json))
@@ -670,7 +671,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (e.Item.Checked == true)
             {
-                idClienteLocacao = lvPesquisa.ObterChave();
+                idClienteLocacao = Convert.ToInt32(lvPesquisa.ObterChave());
 
             }
 

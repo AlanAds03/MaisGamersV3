@@ -242,6 +242,14 @@
     <Compile Include="Migrations\201801282138578_ trocando tabela.Designer.cs">
       <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801292028230_remove n to n venda produto.cs" />
+    <Compile Include="Migrations\201801292028230_remove n to n venda produto.Designer.cs">
+      <DependentUpon>201801292028230_remove n to n venda produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801292045169_aa.cs" />
+    <Compile Include="Migrations\201801292045169_aa.Designer.cs">
+      <DependentUpon>201801292045169_aa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -355,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801282138578_ trocando tabela.resx">
       <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801292028230_remove n to n venda produto.resx">
+      <DependentUpon>201801292028230_remove n to n venda produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801292045169_aa.resx">
+      <DependentUpon>201801292045169_aa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

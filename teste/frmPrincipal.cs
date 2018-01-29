@@ -211,8 +211,8 @@ namespace MaisGamers
 
             DateTime data = System.DateTime.Now;
 
-            //vendas.IDVenda = _bVenda.InserirVenda(new Model.Vendas.mVenda { dVenda = data });
-            vendas.IDVenda = 8;
+            vendas.IDVenda = _bVenda.InserirVenda(new Model.Vendas.mVenda { dVenda = data });
+            //vendas.IDVenda = 9;
 
 
             MostraFormulario(vendas);

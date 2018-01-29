@@ -281,7 +281,7 @@ namespace MaisGamers.Formularios.Cadastro
             if (e.Item.Checked == true)
             {
 
-                idLocacao = lvPesquisa.ObterChave();
+                idLocacao = Convert.ToInt32(lvPesquisa.ObterChave());
             }
 
             picExcluir.Enabled = e.Item.Checked;
@@ -403,7 +403,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
             try
             {
-                idLocacaoJogo = lvLocacao.ObterChave();
+                idLocacaoJogo = Convert.ToInt32(lvLocacao.ObterChave());
             }
 
             catch (Exception)
