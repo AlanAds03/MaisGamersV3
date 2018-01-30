@@ -12,16 +12,13 @@ namespace MaisGamers.DAL
         
         public List<mEstado> CarregaEstado()
         {
-
             var db = new Contexto();
             try
             {
                 return db.Estado.ToList();
-
             }
             catch (Exception ex)
             {
-
                 return null;
             }
 

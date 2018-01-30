@@ -102,12 +102,13 @@ namespace MaisGamers.DAL.Venda
             {
                 //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
 
-                var query = (from p in db.Produtos
-                             from v in p.Venda.Where(x => x.IDVenda == idVenda)
-                             select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
+                //var query = (from p in db.Produtos
+                //             from v in p.Venda.Where(x => x.IDVenda == idVenda)
+                //             select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
 
 
-                return query.ToList<dynamic>();
+                // return query.ToList<dynamic>();
+                return null;
 
             }
             catch (Exception)

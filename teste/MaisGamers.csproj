@@ -198,57 +198,9 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712112132114_xxxxxlll.cs" />
-    <Compile Include="Migrations\201712112132114_xxxxxlll.Designer.cs">
-      <DependentUpon>201712112132114_xxxxxlll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.cs" />
-    <Compile Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.Designer.cs">
-      <DependentUpon>201712131340558_dataCadastro clienteLocacao13122017.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712140154269_datafinal locacao.cs" />
-    <Compile Include="Migrations\201712140154269_datafinal locacao.Designer.cs">
-      <DependentUpon>201712140154269_datafinal locacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712140208400_novadataaaa.cs" />
-    <Compile Include="Migrations\201712140208400_novadataaaa.Designer.cs">
-      <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712150040081_campo lacrado jogo.cs" />
-    <Compile Include="Migrations\201712150040081_campo lacrado jogo.Designer.cs">
-      <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712162105347_documentos 16122017.cs" />
-    <Compile Include="Migrations\201712162105347_documentos 16122017.Designer.cs">
-      <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801102007445_Adicionar status cliente.cs" />
-    <Compile Include="Migrations\201801102007445_Adicionar status cliente.Designer.cs">
-      <DependentUpon>201801102007445_Adicionar status cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801102031310_adicionar email cliente.cs" />
-    <Compile Include="Migrations\201801102031310_adicionar email cliente.Designer.cs">
-      <DependentUpon>201801102031310_adicionar email cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801272048050_tabela Produto.cs" />
-    <Compile Include="Migrations\201801272048050_tabela Produto.Designer.cs">
-      <DependentUpon>201801272048050_tabela Produto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801282115461_Venda_Produto_Jogo.cs" />
-    <Compile Include="Migrations\201801282115461_Venda_Produto_Jogo.Designer.cs">
-      <DependentUpon>201801282115461_Venda_Produto_Jogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801282138578_ trocando tabela.cs" />
-    <Compile Include="Migrations\201801282138578_ trocando tabela.Designer.cs">
-      <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801292028230_remove n to n venda produto.cs" />
-    <Compile Include="Migrations\201801292028230_remove n to n venda produto.Designer.cs">
-      <DependentUpon>201801292028230_remove n to n venda produto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801292045169_aa.cs" />
-    <Compile Include="Migrations\201801292045169_aa.Designer.cs">
-      <DependentUpon>201801292045169_aa.cs</DependentUpon>
+    <Compile Include="Migrations\201801292154268_campos restantes.cs" />
+    <Compile Include="Migrations\201801292154268_campos restantes.Designer.cs">
+      <DependentUpon>201801292154268_campos restantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
@@ -331,44 +283,8 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712112132114_xxxxxlll.resx">
-      <DependentUpon>201712112132114_xxxxxlll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712131340558_dataCadastro clienteLocacao13122017.resx">
-      <DependentUpon>201712131340558_dataCadastro clienteLocacao13122017.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712140154269_datafinal locacao.resx">
-      <DependentUpon>201712140154269_datafinal locacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712140208400_novadataaaa.resx">
-      <DependentUpon>201712140208400_novadataaaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712150040081_campo lacrado jogo.resx">
-      <DependentUpon>201712150040081_campo lacrado jogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712162105347_documentos 16122017.resx">
-      <DependentUpon>201712162105347_documentos 16122017.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801102007445_Adicionar status cliente.resx">
-      <DependentUpon>201801102007445_Adicionar status cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801102031310_adicionar email cliente.resx">
-      <DependentUpon>201801102031310_adicionar email cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801272048050_tabela Produto.resx">
-      <DependentUpon>201801272048050_tabela Produto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801282115461_Venda_Produto_Jogo.resx">
-      <DependentUpon>201801282115461_Venda_Produto_Jogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801282138578_ trocando tabela.resx">
-      <DependentUpon>201801282138578_ trocando tabela.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801292028230_remove n to n venda produto.resx">
-      <DependentUpon>201801292028230_remove n to n venda produto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801292045169_aa.resx">
-      <DependentUpon>201801292045169_aa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801292154268_campos restantes.resx">
+      <DependentUpon>201801292154268_campos restantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

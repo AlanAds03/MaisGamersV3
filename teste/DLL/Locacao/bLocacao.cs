@@ -179,11 +179,11 @@ namespace MaisGamers.DLL.Locacao
                     }
                     else if (dia == 3)
                     {
-                        PrecoTotal += Convert.ToDecimal(xxx.PrecoDia3);
+                        PrecoTotal += Convert.ToDecimal(xxx.PrecoDia3) ;
                     }
                     else
                     {
-                        PrecoTotal += (Convert.ToDecimal(xxx.PrecoDia3) + Convert.ToDecimal(xxx.PrecoDia1));
+                        PrecoTotal +=    Convert.ToDecimal(xxx.PrecoDia3) + (Convert.ToDecimal(xxx.PrecoDia1) * (dia -3));
                     }
                 }
             }

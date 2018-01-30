@@ -426,16 +426,19 @@ namespace MaisGamers.Formularios.Cadastro
                 mLocacao _mloc = new mLocacao();
                 _mloc = _locacao.Obter(idLocacao);
 
+                fechamento.idLocacao = idLocacao;
                 fechamento.DataLocacao = _mloc.DataLocacao;
                 fechamento.DataPrevisao = _mloc.DataPrevisaoEntrega;
                 fechamento.DataEntrega = DateTime.Now;
+                
+
                 fechamento.ValorDevido =Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, MinHoraData(fechamento.DataLocacao), MinHoraData(DateTime.Now), true).ToString());
                 fechamento.ValorPagoLocacao = _mloc.ValorPagoInicial;
                 fechamento.ValorRestante = fechamento.ValorDevido - fechamento.ValorPagoLocacao;
 
 
 
-                fechamento.idLocacao = idLocacao;
+                
                 fechamento.ShowDialog();
 
 
