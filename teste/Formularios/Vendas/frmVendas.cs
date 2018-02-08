@@ -320,24 +320,18 @@ namespace MaisGamers.Formularios.Cadastro
                 lista = _bVEnda.CarregaGridVendas(IDVenda);
 
                 texto.WriteLine("                                    ");
-                texto.WriteLine("Locadora Mais Gamers");
-                texto.WriteLine("CNPJ: 23.260.093/0001-87");
-                texto.WriteLine("Telefone: 11 4382-9388");
-                texto.WriteLine("Whatsapp: 11 94124-7585");
-
-                texto.WriteLine("****************************");
-                texto.WriteLine("COMPROVANTE DE PAGAMENTO");
-                texto.WriteLine("****************************");
-
-
+                texto.WriteLine("             LOCADORA MAIS GAMERS               ");
+                texto.WriteLine("             CNPJ: 23.260.093/0001-87           ");
+                texto.WriteLine("************************************************");
+                texto.WriteLine("             COMPROVANTE DE PAGAMENTO           ");
+                texto.WriteLine("             NOTA NAO FISCAL                    ");
+                texto.WriteLine("************************************************");
                 texto.WriteLine("CLIENTE : " + lista.FirstOrDefault().rCliente);
                 texto.WriteLine("DATA : " + System.DateTime.Now.ToString());
-
-                texto.WriteLine("****************************");
+                texto.WriteLine("************************************************");
 
                 texto.WriteLine("DESCRICAO                     VALOR");
 
-                
                 foreach (var item in lista)
                 {
                     
@@ -350,21 +344,24 @@ namespace MaisGamers.Formularios.Cadastro
                     texto.WriteLine(produto.PadRight(30,Convert.ToChar(" ")) + "R$ " + item.Valor.ToString("0.00"));
                 }
 
-                texto.WriteLine("****************************");
+                texto.WriteLine("************************************************");
 
-                texto.WriteLine("PAGAMENTO : " + (TipoPagamento)Convert.ToInt32(cmdTipoPagamento.ObterValor()));
+                string pagamento;
+
+                pagamento = "PAGAMENTO : " + (TipoPagamento)Convert.ToInt32(cmdTipoPagamento.ObterValor());
+                
 
                 if ((TipoPagamento)Convert.ToInt32(cmdTipoPagamento.ObterValor()) == TipoPagamento.PARCELADO)
                 {
-                    texto.WriteLine(cmbQuantidade.SelectedValue.ToString() + "x") ;
+                    pagamento = pagamento + cmbQuantidade.SelectedValue.ToString() + "x";
                 }
-
+                texto.WriteLine(pagamento);
 
                 texto.WriteLine("TOTAL : R$ " + txtTotal.Text);
                 texto.WriteLine("PAGO R$ : " + txtValorPago.Text);
                 texto.WriteLine("TROCO R$ : " + txtTroco.Text);
 
-                texto.WriteLine("****************************");
+                texto.WriteLine("************************************************");
                 texto.WriteLine("OBRIGADO E VOLTE SEMPRE");
                 
 
@@ -414,11 +411,19 @@ namespace MaisGamers.Formularios.Cadastro
         {
             bool retorno = true;
 
+
+            if (total == 0)
+            {
+                Mensagem(this, "Informar produto à venda", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Informacao);
+                return false;
+            }
             if (string.IsNullOrEmpty(txtTroco.Text))
             {
                 Mensagem(this, "Não foi possível  obter o troco informar valor total e valor pago", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
                 retorno = false;
             }
+
+
 
             return retorno;
         }
@@ -447,7 +452,11 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ImprimirComprovante();
+            if(total > 0)
+            {
+                ImprimirComprovante();
+            }
+            
         }
 
         //private void btnExcluirJogo_Click(object sender, EventArgs e)
