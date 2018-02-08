@@ -86,6 +86,7 @@
     <Compile Include="DAL\Locacao\dStatusLocacao.cs" />
     <Compile Include="DAL\Mapper.cs" />
     <Compile Include="DAL\Orcamento\dTipoOrcamento.cs" />
+    <Compile Include="DAL\Venda\dTipoPagamento.cs" />
     <Compile Include="DAL\Venda\dVenda.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bTipoCliente.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="DLL\Locacao\bLocacao.cs" />
     <Compile Include="DLL\Locacao\bStatusClienteLocacao.cs" />
     <Compile Include="DLL\Locacao\bStatusLocacao.cs" />
+    <Compile Include="DLL\Venda\bTipoPagamento.cs" />
     <Compile Include="DLL\Venda\bVenda.cs" />
     <Compile Include="Formularios\Cadastro\frmPesquisaProduto.cs">
       <SubType>Form</SubType>
@@ -202,6 +204,10 @@
     <Compile Include="Migrations\201801292154268_campos restantes.Designer.cs">
       <DependentUpon>201801292154268_campos restantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801301935391_TipoPagamento.cs" />
+    <Compile Include="Migrations\201801301935391_TipoPagamento.Designer.cs">
+      <DependentUpon>201801301935391_TipoPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cadastro\mAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
@@ -226,6 +232,7 @@
     <Compile Include="Model\Orcamento\mOrcamento.cs" />
     <Compile Include="Model\Orcamento\mTipoOrcamento.cs" />
     <Compile Include="Model\Orcamento\mTipoOrcamentoStatus.cs" />
+    <Compile Include="Model\Vendas\mTipoPagamento.cs" />
     <Compile Include="Model\Vendas\mVenda.cs" />
     <Compile Include="Model\Vendas\mVendaProduto.cs" />
     <Compile Include="Modulos\CMsgBox.cs">
@@ -285,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801292154268_campos restantes.resx">
       <DependentUpon>201801292154268_campos restantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301935391_TipoPagamento.resx">
+      <DependentUpon>201801301935391_TipoPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

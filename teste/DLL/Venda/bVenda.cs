@@ -19,15 +19,29 @@ namespace MaisGamers.DLL.Venda
 
         }
 
-        //public bool ExcluirProdutoVenda(int idVenda, int idProduto)
-        //{
-        //    dVenda _dVenda = new dVenda();
+        public bool ExcluirProdutoVenda(int idVendaProd)
+        {
+            dVenda _dVenda = new dVenda();
 
-        //    return _dVenda.ExcluirProdutoVenda(idVenda,idProduto);
+            return _dVenda.ExcluirProdutoVenda(idVendaProd);
 
-        //}
+        }
+
+        public int RetornoCodigoProduto(int idVendaProd)
+        {
+            dVenda _dVenda = new dVenda();
+
+            return _dVenda.RetornarCodigoProduto(idVendaProd);
+
+        }
 
 
+        public bool FinalizarVenda(mVenda _venda)
+        {
+            dVenda _dVenda = new dVenda();
+
+            return _dVenda.FinalizarVenda(_venda);
+        }
         public int InserirVendaProduto(int idvenda, int idproduto)
         {
             dVenda _dVenda = new dVenda();
@@ -36,21 +50,21 @@ namespace MaisGamers.DLL.Venda
 
         }
 
-        //public List<dynamic> CarregaGridVendas(int idVenda)
-        //{
-        //    dVenda _dVenda = new dVenda();
+        public List<dynamic> CarregaGridVendas(int idVenda)
+        {
+            dVenda _dVenda = new dVenda();
 
-        //    return _dVenda.CarregaGridVendas(idVenda);
+            return _dVenda.CarregaGridVendas(idVenda);
 
-        //}
+        }
 
-        //public double TotalVenda(int idVenda)
-        //{
-        //    dVenda _dVenda = new dVenda();
+        public double TotalVenda(int idVenda)
+        {
+            dVenda _dVenda = new dVenda();
 
-        //    return _dVenda.TotalVenda(idVenda);
+            return _dVenda.TotalVenda(idVenda);
 
-        //}
+        }
 
     }
 }

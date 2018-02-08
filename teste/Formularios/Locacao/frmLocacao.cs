@@ -222,7 +222,7 @@ namespace MaisGamers.Formularios.Cadastro
                 }
                 else
                 {
-                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                    Mensagem(this, "Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
                 }
 
             }
@@ -772,7 +772,7 @@ namespace MaisGamers.Formularios.Cadastro
                 }
                 else
                 {
-                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                    Mensagem(this, "Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
                 }
 
             }
@@ -814,11 +814,11 @@ namespace MaisGamers.Formularios.Cadastro
 
             if (_bLocacao.Excluir(idLocacao))
             {
-                Mensagem("Excluido com sucesso...", Frameworks.Classes.CMsgBox.TipoBotoes.OK,Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                Mensagem(this, "Excluido com sucesso...", Frameworks.Classes.CMsgBox.TipoBotoes.OK,Frameworks.Classes.CMsgBox.TipoErro.Ok);
             }
             else
             {
-                Mensagem("Erro ao excluir", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                Mensagem(this, "Erro ao excluir", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
             }
         }
 

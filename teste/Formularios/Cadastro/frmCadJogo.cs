@@ -244,11 +244,11 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     if(idJogo != 0)
                     {
-                        Mensagem("Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                        Mensagem(this,"Jogo alterado com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
                     }
                     else
                     {
-                        Mensagem("Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                        Mensagem(this, "Jogo inserido com sucesso", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
                     }
                     
                     modo_tela = ModoTela.CONSULTA;
@@ -256,7 +256,7 @@ namespace MaisGamers.Formularios.Cadastro
                 }
                 else
                 {
-                    Mensagem("Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                    Mensagem(this, "Jogo inserido com erro", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
                 }
 
             }
@@ -437,7 +437,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (Mensagem("Deseja excluir este jogo ?",Frameworks.Classes.CMsgBox.TipoBotoes.SimNao,Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+            if (Mensagem(this, "Deseja excluir este jogo ?",Frameworks.Classes.CMsgBox.TipoBotoes.SimNao,Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
                 using (var bJogo = new bJogo())
                 {

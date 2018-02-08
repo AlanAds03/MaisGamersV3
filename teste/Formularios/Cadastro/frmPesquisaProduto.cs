@@ -89,12 +89,16 @@ namespace MaisGamers.Formularios.Cadastro
             try
             {
                 bVenda _bVenda = new bVenda();
-             
+                bProduto _bProduto = new bProduto();
                 
 
                 if(idProduto != 0)
                 {
-                 
+                    if (_bProduto.ExisteEstoque(idProduto) == false)
+                    {
+                        Mensagem(this, "Este produto não tem estoque disponivel para venda", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Informacao);
+                        return;
+                    }
                     _bVenda.InserirVendaProduto(idVenda, idProduto);
                     
                 }

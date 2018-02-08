@@ -53,6 +53,8 @@ namespace MaisGamers.Model
 
         public DbSet<mVendaProduto> VendaProduto { get; set; }
 
+        public DbSet<mTipoPagamento> TipoPagamento { get; set; }
+
 
 
 

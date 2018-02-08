@@ -37,9 +37,19 @@ namespace MaisGamers
             var db = new Contexto();
 
             db.Database.CreateIfNotExists();
+            Timer time = new Timer();
+            time.Interval = 1000;
+            time.Tick += time_tick;
+            time.Start();
 
 
 
+        }
+
+        private void time_tick(object sender, EventArgs e)
+        {
+            stripHora.Text = System.DateTime.Now.ToString();
+            
         }
 
         private void posicionarBotoesFechar()
@@ -212,7 +222,7 @@ namespace MaisGamers
             DateTime data = System.DateTime.Now;
 
             vendas.IDVenda = _bVenda.InserirVenda(new Model.Vendas.mVenda { dVenda = data });
-            //vendas.IDVenda = 9;
+            //vendas.IDVenda = 12;
 
 
             MostraFormulario(vendas);

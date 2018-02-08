@@ -31,32 +31,36 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.menuCadastro = new System.Windows.Forms.RibbonTab();
             this.rbCliente = new System.Windows.Forms.RibbonPanel();
+            this.btnCliente = new System.Windows.Forms.RibbonButton();
             this.rbJogos = new System.Windows.Forms.RibbonPanel();
+            this.btnJogo = new System.Windows.Forms.RibbonButton();
             this.rbAnotacao = new System.Windows.Forms.RibbonPanel();
+            this.btnAnotacao = new System.Windows.Forms.RibbonButton();
             this.rbObjetos = new System.Windows.Forms.RibbonPanel();
+            this.btnObjeto = new System.Windows.Forms.RibbonButton();
             this.rbConsole = new System.Windows.Forms.RibbonPanel();
+            this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.menuJogos = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
-            this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
-            this.menuVendas = new System.Windows.Forms.RibbonTab();
-            this.menuLancamento = new System.Windows.Forms.RibbonTab();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
-            this.btnCliente = new System.Windows.Forms.RibbonButton();
-            this.btnJogo = new System.Windows.Forms.RibbonButton();
-            this.btnAnotacao = new System.Windows.Forms.RibbonButton();
-            this.btnObjeto = new System.Windows.Forms.RibbonButton();
-            this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
             this.btnRelatorio = new System.Windows.Forms.RibbonButton();
+            this.menuVendas = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.BotaoMenuVendas = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.BotaoMenuRelatorioVendas = new System.Windows.Forms.RibbonButton();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.menuLancamento = new System.Windows.Forms.RibbonTab();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stripHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -90,6 +94,13 @@
             this.ribbon1.Text = "Manuntenção";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
+            this.ribbonButton1.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Text = "ribbonButton1";
+            // 
             // menuCadastro
             // 
             this.menuCadastro.Panels.Add(this.rbCliente);
@@ -104,25 +115,54 @@
             this.rbCliente.Items.Add(this.btnCliente);
             this.rbCliente.Text = "Cliente";
             // 
+            // btnCliente
+            // 
+            this.btnCliente.Image = global::MaisGamers.Properties.Resources.iconeCliente64;
+            this.btnCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCliente.SmallImage")));
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
             // rbJogos
             // 
             this.rbJogos.Items.Add(this.btnJogo);
             this.rbJogos.Text = "Jogos";
+            // 
+            // btnJogo
+            // 
+            this.btnJogo.Image = ((System.Drawing.Image)(resources.GetObject("btnJogo.Image")));
+            this.btnJogo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnJogo.SmallImage")));
+            this.btnJogo.Click += new System.EventHandler(this.ribbonButton6_Click);
             // 
             // rbAnotacao
             // 
             this.rbAnotacao.Items.Add(this.btnAnotacao);
             this.rbAnotacao.Text = "Anotações";
             // 
+            // btnAnotacao
+            // 
+            this.btnAnotacao.Image = global::MaisGamers.Properties.Resources.nota64;
+            this.btnAnotacao.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAnotacao.SmallImage")));
+            this.btnAnotacao.Text = "";
+            // 
             // rbObjetos
             // 
             this.rbObjetos.Items.Add(this.btnObjeto);
             this.rbObjetos.Text = "Produtos";
             // 
+            // btnObjeto
+            // 
+            this.btnObjeto.Image = global::MaisGamers.Properties.Resources.objetos64;
+            this.btnObjeto.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnObjeto.SmallImage")));
+            this.btnObjeto.Click += new System.EventHandler(this.btnObjeto_Click);
+            // 
             // rbConsole
             // 
             this.rbConsole.Items.Add(this.btnConsole);
             this.rbConsole.Text = "Consoles";
+            // 
+            // btnConsole
+            // 
+            this.btnConsole.Image = global::MaisGamers.Properties.Resources.iconeNintendo_fw;
+            this.btnConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConsole.SmallImage")));
             // 
             // menuJogos
             // 
@@ -137,10 +177,21 @@
             this.ribbonPanel5.Items.Add(this.ribbonButton2);
             this.ribbonPanel5.Text = "Locação de Jogo";
             // 
+            // ribbonButton2
+            // 
+            this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
+            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
+            this.ribbonButton2.Click += new System.EventHandler(this.ribbonButton2_Click);
+            // 
             // rbRelatorio
             // 
             this.rbRelatorio.Items.Add(this.btnRelatorio);
             this.rbRelatorio.Text = "Relatórios";
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.Image = global::MaisGamers.Properties.Resources.relatorio64;
+            this.btnRelatorio.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.SmallImage")));
             // 
             // menuVendas
             // 
@@ -148,77 +199,21 @@
             this.menuVendas.Panels.Add(this.ribbonPanel2);
             this.menuVendas.Text = "Caixa";
             // 
-            // menuLancamento
-            // 
-            this.menuLancamento.Text = "Lançamento";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifiacao";
-            this.notifyIcon1.Visible = true;
-            // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.Items.Add(this.BotaoMenuVendas);
             this.ribbonPanel1.Text = "Vendas";
-            // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.Items.Add(this.BotaoMenuRelatorioVendas);
-            this.ribbonPanel2.Text = "Relatório";
-            // 
-            // ribbonButton1
-            // 
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "ribbonButton1";
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.Image = global::MaisGamers.Properties.Resources.iconeCliente64;
-            this.btnCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCliente.SmallImage")));
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
-            // 
-            // btnJogo
-            // 
-            this.btnJogo.Image = ((System.Drawing.Image)(resources.GetObject("btnJogo.Image")));
-            this.btnJogo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnJogo.SmallImage")));
-            this.btnJogo.Click += new System.EventHandler(this.ribbonButton6_Click);
-            // 
-            // btnAnotacao
-            // 
-            this.btnAnotacao.Image = global::MaisGamers.Properties.Resources.nota64;
-            this.btnAnotacao.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAnotacao.SmallImage")));
-            this.btnAnotacao.Text = "";
-            // 
-            // btnObjeto
-            // 
-            this.btnObjeto.Image = global::MaisGamers.Properties.Resources.objetos64;
-            this.btnObjeto.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnObjeto.SmallImage")));
-            this.btnObjeto.Click += new System.EventHandler(this.btnObjeto_Click);
-            // 
-            // btnConsole
-            // 
-            this.btnConsole.Image = global::MaisGamers.Properties.Resources.iconeNintendo_fw;
-            this.btnConsole.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConsole.SmallImage")));
-            // 
-            // ribbonButton2
-            // 
-            this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
-            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
-            this.ribbonButton2.Click += new System.EventHandler(this.ribbonButton2_Click);
-            // 
-            // btnRelatorio
-            // 
-            this.btnRelatorio.Image = global::MaisGamers.Properties.Resources.relatorio64;
-            this.btnRelatorio.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.SmallImage")));
             // 
             // BotaoMenuVendas
             // 
             this.BotaoMenuVendas.Image = global::MaisGamers.Properties.Resources.cash_register;
             this.BotaoMenuVendas.SmallImage = ((System.Drawing.Image)(resources.GetObject("BotaoMenuVendas.SmallImage")));
             this.BotaoMenuVendas.Click += new System.EventHandler(this.BotaoMenuVendas_Click);
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Items.Add(this.BotaoMenuRelatorioVendas);
+            this.ribbonPanel2.Text = "Relatório";
             // 
             // BotaoMenuRelatorioVendas
             // 
@@ -231,16 +226,61 @@
             this.ribbonButton5.Image = global::MaisGamers.Properties.Resources.relatorio64;
             this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
             // 
+            // menuLancamento
+            // 
+            this.menuLancamento.Text = "Lançamento";
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifiacao";
+            this.notifyIcon1.Visible = true;
+            // 
             // ribbonButton7
             // 
             this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Goldenrod;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2,
+            this.stripHora});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 544);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1362, 30);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // stripHora
+            // 
+            this.stripHora.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.stripHora.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.stripHora.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stripHora.ForeColor = System.Drawing.Color.White;
+            this.stripHora.Name = "stripHora";
+            this.stripHora.Size = new System.Drawing.Size(1148, 25);
+            this.stripHora.Spring = true;
+            this.stripHora.Text = "Hora";
+            this.stripHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel2.Image = global::MaisGamers.Properties.Resources.arma32;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(199, 25);
+            this.toolStripStatusLabel2.Text = "Usuário : Thays Silva";
+            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 574);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -252,7 +292,10 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,6 +328,9 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel2;
         private System.Windows.Forms.RibbonButton BotaoMenuRelatorioVendas;
         private System.Windows.Forms.RibbonButton ribbonButton5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel stripHora;
     }
 }
 

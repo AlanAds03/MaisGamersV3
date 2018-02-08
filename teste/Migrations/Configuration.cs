@@ -101,6 +101,17 @@ namespace teste.Migrations
 
                );
 
+            context.TipoPagamento.AddOrUpdate(
+              p => p.IDTipoPagamento,
+              new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 1, TipoPagamento="Dinheiro", Taxa = 0 },
+              new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 2, TipoPagamento = "Debito", Taxa = 2.49M },
+              new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 3, TipoPagamento = "Cartao", Taxa = 4.19M },
+              new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 4, TipoPagamento = "Parcelado", Taxa = 2.49M }
+
+
+
+              );
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

@@ -36,7 +36,7 @@ namespace Frameworks.Componentes
 
                 foreach (var pro in props)
                 {
-                    if (pro.Name == "ColunasGrid")
+                    if (pro.Name.ToUpper() == "COLUNASGRID")
                     {
                         colunasArray = pro.GetValue(x, null).ToString();
 
@@ -196,9 +196,8 @@ namespace Frameworks.Componentes
                     iCont += 1;
                 }
 
-                
                 this.Items.Add(item);
-                this.Controls.Add(new TextBox { Text = "asdasdsd" });
+                
             }
 
             this.CheckBoxes = true;
@@ -343,5 +342,59 @@ namespace Frameworks.Componentes
             return 0;
 
         }
+
+        public object ObterChaves(string limitador)
+        {
+            string listas = "";
+
+            try
+            {
+                for (var i = 0; i <= this.Items.Count - 1; i++)
+                {
+                    if (this.Items[i].Checked == true)
+                    {
+                        listas += this.Items[i].Text + limitador;
+                    }
+                }
+
+                return listas;
+
+
+            }
+            catch (Exception)
+            {
+                return null;
+                
+            }
+           
+
+        }
+
+        public object ObterTodosRegistros(string limitador)
+        {
+            string listas = "";
+
+            try
+            {
+                for (var i = 0; i <= this.Items.Count - 1; i++)
+                {
+                   
+                        listas += this.Items[i].Text + limitador;
+                    
+                }
+
+                return listas;
+
+
+            }
+            catch (Exception)
+            {
+                return null;
+
+            }
+
+
+        }
+
     }
 }

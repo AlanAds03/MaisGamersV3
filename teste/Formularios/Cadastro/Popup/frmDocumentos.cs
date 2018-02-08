@@ -81,11 +81,11 @@ namespace MaisGamers.Formularios.Cadastro.Popup
                 if (_bcliente.SalvarDocumento(idCLienteLocacao, _byte, documento, Path.GetExtension(file.FileName)))
                 {
 
-                    Util.Mensagem("Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
+                    Util.Mensagem(this,"Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
                 }
                 else
                 {
-                    Util.Mensagem("Erro ao salvar o documento", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
+                    Util.Mensagem(this,"Erro ao salvar o documento", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
                 }
 
 

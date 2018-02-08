@@ -23,7 +23,7 @@ namespace MaisGamers.DAL.Venda
 
         //        _venda.Produto.Remove(_prod);
         //        db.Entry(_venda).State = EntityState.Modified;
-        //            db.SaveChanges();
+        //        db.SaveChanges();
 
         //        return true;
 
@@ -36,62 +36,83 @@ namespace MaisGamers.DAL.Venda
         //    }
 
         //}
-        //public double TotalVenda(int idVenda)
-        //{
 
-        //    var db = new Contexto();
-        //    double total = 0;
+        public Int32 RetornarCodigoProduto(int idVEndaProduto)
+        {
+            var db = new Contexto();
+            try
+            {
+                var xx = (from v in db.VendaProduto
+                          where v.IDVendaProduto == idVEndaProduto
+                          select (decimal)v.Produto.IDProduto
+                          ).Single();
 
-        //    try
-        //    {
-        //        //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
+                return Convert.ToInt32(xx);
+            }
+            catch (Exception)
+            {
 
-        //        List<mProduto> query = (from p in db.Produtos
-        //                                from v in p.Venda.Where(x => x.IDVenda == idVenda)
-        //                                select p).ToList();
+                throw;
+            }
+        }
+        public bool ExcluirProdutoVenda(int idVEndaProduto)
+        {
+            var db = new Contexto();
+            try
+            {
+                mVendaProduto _vendaProduto = db.VendaProduto.Find(idVEndaProduto);
 
+                db.Entry(_vendaProduto).State = EntityState.Deleted;
+                db.SaveChanges();
 
-        //        foreach (mProduto prod in query)
-        //        {
-        //            total += prod.Unitario;
+                return true;
 
-        //        }
+            }
+            catch (Exception)
+            {
+                return false;
 
-        //        return total;
+                throw;
+            }
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return 0;
-        //        throw;
-        //    }
+        }
 
+        public double TotalVenda(int idVenda)
+        {
 
-        //}
-        //public List<dynamic> CarregaGridVendas(int idVenda)
-        //{
-        //    var db = new Contexto();
-
-        //    try
-        //    {
-        //        //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
-
-        //        var query = (from p in db.Produtos
-        //                     from v in p.Venda.Where(x=> x.IDVenda == idVenda)
-        //                     select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
-
-
-        //        return query.ToList<dynamic>();
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return null;
-        //        throw;
-        //    }
+            var db = new Contexto();
 
 
-        // }
+            try
+            {
+                //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
+
+                var xx = (from v in db.Vendas
+                          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
+                          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
+                          where vendaprod.Venda.IDVenda == idVenda
+                          group vendaprod by new { vendaprod.Produto.IDProduto, vendaprod.Venda.IDVenda } into g
+                          select new
+                          {
+                              Total = g.Sum(x => x.Produto.Unitario)
+                          });
+
+                if (xx.Count() == 0)
+                {
+                    return 0;
+                }
+
+
+                double total = xx.Sum(p => p.Total);
+                return total;
+
+            }
+            catch (Exception)
+            {
+                return 0;
+                throw;
+            }
+        }
 
 
         public List<dynamic> CarregaGridVendas(int idVenda)
@@ -102,13 +123,37 @@ namespace MaisGamers.DAL.Venda
             {
                 //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
 
+                db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
+                var xx = (from v in db.Vendas
+                          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
+                          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
+                          where vendaprod.Venda.IDVenda == idVenda
+                          select new
+                          {
+                              IDVenda = vendaprod.IDVendaProduto,
+                              Produto = d.Produto,
+                              Valor = d.Unitario,
+                              v.rCliente,
+                              colunasGrid = "IDVenda;Produto[300|Produto];Valor[200|Valor]"
+                              //group new { d, vendaprod } by new {d.Produto,d.Unitario} into g
+                              //select new {
+                              //    IDVenda = g.Key.IDVendaProduto,
+                              //    Descricao = g.Key.Produto,
+                              //    Total = g.Sum(x=> x.d.Unitario)
+
+                          }).ToList();
+
+
+
+
                 //var query = (from p in db.Produtos
                 //             from v in p.Venda.Where(x => x.IDVenda == idVenda)
                 //             select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
 
 
-                // return query.ToList<dynamic>();
-                return null;
+                return xx.ToList<dynamic>();
+
 
             }
             catch (Exception)
@@ -153,6 +198,7 @@ namespace MaisGamers.DAL.Venda
 
         }
 
+       
         public int InserirVendaProduto(int idVenda, int idProduto)
         {
 
@@ -216,6 +262,31 @@ namespace MaisGamers.DAL.Venda
 
             }
 
+        }
+
+        public bool FinalizarVenda(mVenda venda)
+        {
+
+            var db = new Contexto();
+
+            try
+            {
+
+                mVenda _venda = db.Vendas.Find(venda.IDVenda);
+
+                MapObject(ref venda, ref _venda);
+                db.Entry(_venda).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+
+            
         }
 
     }

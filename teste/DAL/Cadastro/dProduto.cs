@@ -23,7 +23,8 @@ namespace MaisGamers.DAL
                 using (var db = new Contexto())
                 {
                     var a = (from p in db.Produtos
-                             where p.Produto == _produto.Produto select p ).ToList();
+                             where p.Produto == _produto.Produto
+                             select p).ToList();
 
                     a.Select(x => x.ColunasGrid = "Produto;Quantidade;Unitario ");
 
@@ -37,14 +38,62 @@ namespace MaisGamers.DAL
 
         }
 
+        public bool ExisteEstoque(int idProduto)
+        {
+            try
+            {
+                using (var db = new Contexto())
+                {
+                    mProduto _prod = db.Produtos.Find(idProduto);
 
+                    if (_prod == null)
+                    {
+                        return false;
+                    }
+
+                    if (_prod.Quantidade <= 0)
+                    {
+                        return false;
+                    }
+
+                    return true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool BaixarEstoqueProduto(int idProduto)
+        {
+            try
+            {
+                using (var db = new Contexto())
+                {
+
+                    mProduto pro = db.Produtos.Find(idProduto);
+
+                    pro.Quantidade = pro.Quantidade - 1;
+                    db.Entry(pro).State = EntityState.Modified;
+                    db.SaveChanges();
+
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public bool IncluirProduto(mProduto produto)
         {
             try
             {
                 using (var db = new Contexto())
                 {
-                    
+
                     if (produto.IDProduto != 0)
                     {
                         mProduto ProdutoDB = db.Produtos.Find(produto.IDProduto);
@@ -97,30 +146,30 @@ namespace MaisGamers.DAL
             using (var db = new Contexto())
             {
                 return db.Produtos
-                    .Where(y=> y.IDProduto == idProduto).FirstOrDefault();
+                    .Where(y => y.IDProduto == idProduto).FirstOrDefault();
             }
         }
 
-        
+
 
 
         public List<mProduto> PesquisaProduto(mProduto produto, string order)
         {
             var db = new Contexto();
-            
+
 
             try
             {
 
                 List<mProduto> listProdutos = db.Produtos
-                          .Where(z=> z.Produto.Contains((string.IsNullOrEmpty(produto.Produto) ? z.Produto : produto.Produto)))
-                          
+                          .Where(z => z.Produto.Contains((string.IsNullOrEmpty(produto.Produto) ? z.Produto : produto.Produto)))
+
                           .ToList();
 
 
                 List<mProduto> nova = new List<mProduto>();
 
-                 nova = listProdutos.Select(x => {x.ColunasGrid = "IDProduto;Produto[300|Produto];Quantidade[100|Quantidade];Unitario[200|Preço];"; return x; }).ToList();
+                nova = listProdutos.Select(x => { x.ColunasGrid = "IDProduto;Produto[300|Produto];Quantidade[100|Quantidade];Unitario[200|Preço];"; return x; }).ToList();
 
 
                 return nova.ToList();

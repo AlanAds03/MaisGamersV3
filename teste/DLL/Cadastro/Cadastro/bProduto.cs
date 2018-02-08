@@ -15,6 +15,7 @@ namespace MaisGamers.DLL.Cadastro
             
         }
 
+
         public bool  InserirProduto(mProduto produto)
         {
             try
@@ -30,6 +31,40 @@ namespace MaisGamers.DLL.Cadastro
                 return false;
             }
         }
+
+
+        public bool BaixarEstoqueProduto(int idProduto)
+        {
+            try
+            {
+                dProduto _dProduto = new dProduto();
+
+                return _dProduto.BaixarEstoqueProduto(idProduto);
+
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public bool ExisteEstoque(int idProduto)
+        {
+            try
+            {
+                dProduto _dProduto = new dProduto();
+
+                return _dProduto.ExisteEstoque(idProduto);
+
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
 
         public bool ExcluirProduto(int idProduto)
         {

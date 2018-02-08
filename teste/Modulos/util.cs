@@ -27,6 +27,13 @@ namespace MaisGamers.Modulos
     public static class Util
     {
 
+        public enum TipoPagamento
+        {
+            DINHEIRO = 1,
+            DEBITO = 2,
+            CARTAO = 3,
+            PARCELADO = 4
+        }
         public enum ModoTela
         {
             CONSULTA = 1,
@@ -36,7 +43,7 @@ namespace MaisGamers.Modulos
 
         }
 
-        public static void CentralizaTab(System.Windows.Forms.TabControl tab)
+        public static void CentralizaTab(System.Windows.Forms.TabControl tab, bool ignorarBotoes = true)
         {
 
             int width = 0;
@@ -50,13 +57,27 @@ namespace MaisGamers.Modulos
                 tab.Left = width / 2 - tab.Width / 2;
 
 
-                if (height < 800)
+                if (ignorarBotoes)
                 {
-                    tab.Height = height - 280;
+                    if (height < 800)
+                    {
+                        tab.Height = height - 280;
+                    }
+                    else
+                    {
+                        tab.Height = height - 400;
+                    }
                 }
                 else
                 {
-                    tab.Height = height - 400;
+                    if (height < 800)
+                    {
+                        tab.Height = height - 200;
+                    }
+                    else
+                    {
+                        tab.Height = height - 320;
+                    }
                 }
 
             }
@@ -112,22 +133,32 @@ namespace MaisGamers.Modulos
             return DateTime.TryParse(valor, out data);
         }
 
-        public static DialogResult Mensagem(string mensagem, TipoBotoes botoes, TipoErro tipoErro)
+        public static DialogResult Mensagem(Form form, string mensagem, TipoBotoes botoes, TipoErro tipoErro)
         {
+            if (form != null)
+            {
+                form.Enabled = false;
+            }
+
             CMsgBox cmsg = new CMsgBox(mensagem, botoes, tipoErro);
             cmsg.ShowDialog();
+
+            if (form != null)
+            {
+                form.Enabled = true;
+            }
 
             return cmsg.result;
         }
 
-        
 
-            public static bool IsNumeric(this string s)
-            {
-                float output;
-                return float.TryParse(s, out output);
-            }
-        
+
+        public static bool IsNumeric(this string s)
+        {
+            float output;
+            return float.TryParse(s, out output);
+        }
+
 
         public static DateTime MinHoraData(DateTime dataAtual)
         {
@@ -158,7 +189,7 @@ namespace MaisGamers.Modulos
                 web.Encoding = Encoding.UTF8;
                 string retorno;
                 List<string> listretorno = new List<string>();
-                
+
 
                 web.Headers.Add(HttpRequestHeader.ContentType, "application/json");
 
@@ -172,7 +203,7 @@ namespace MaisGamers.Modulos
 
             catch (Exception ex)
             {
-                Mensagem("CEP inválido ou não encontrado", TipoBotoes.OK,TipoErro.Erro);
+                Mensagem(null, "CEP inválido ou não encontrado", TipoBotoes.OK, TipoErro.Erro);
                 return null;
 
 

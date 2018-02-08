@@ -521,12 +521,12 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 if (idClienteLocacao == 0)
                 {
-                    Mensagem("Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
+                    Mensagem(this, "Registro incluído com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
 
                 }
                 else
                 {
-                    Mensagem("Registro alterado com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
+                    Mensagem(this, "Registro alterado com sucesso", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Ok);
                 }
 
                 modo_tela = ModoTela.CONSULTA;
@@ -536,7 +536,7 @@ namespace MaisGamers.Formularios.Cadastro
             }
             else
             {
-                Mensagem("Erro ao incluir o registro", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
+                Mensagem(this, "Erro ao incluir o registro", CMsgBox.TipoBotoes.OK, CMsgBox.TipoErro.Erro);
 
             }
 
@@ -884,7 +884,7 @@ namespace MaisGamers.Formularios.Cadastro
         {
 
 
-            if (Mensagem("Deseja realmente excluir este registro?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+            if (Mensagem(this, "Deseja realmente excluir este registro?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
                 bClienteLocacao _cli = new bClienteLocacao();
                 _cli.ExcluirCliente(idClienteLocacao);
@@ -998,7 +998,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 image.Save(_save.FileName + ".png");
 
-                if (Mensagem("Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                if (Mensagem(this, "Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
                 {
                     Process.Start(_save.FileName + ".png");
                 }
@@ -1030,7 +1030,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 image.Save(_save.FileName + ".png");
 
-                if (Mensagem("Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                if (Mensagem(this, "Imagem gerada com sucesso, deseja abrir a imagem ?", CMsgBox.TipoBotoes.SimNao, CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
                 {
                     Process.Start(_save.FileName + ".png");
                 }
