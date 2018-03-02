@@ -6,24 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaisGamers.Model.Cadastro
+namespace MaisGamers.Model.Anotacao
 {
     [Table("Anotacao")]
     public class mAnotacao
     {
         [Key]
         public int IDAnotacao { get; set; }
+        public DateTime DataAnotacao { get; set; }
+        public string Descricao { get; set; }
+        public mStatusAnotacao StatusAnotacao { get; set; }
 
-        public string  Nome { get; set; }
-
-        public string Observacao { get; set; }
-
-        public string DataObservacao { get; set; }
-
-        public int StatusAnotacao { get; set; }
-
-
-
-
+        [NotMapped]
+        public int idStatusAnotacao { get; set; }
     }
 }

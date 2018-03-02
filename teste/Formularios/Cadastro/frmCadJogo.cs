@@ -409,9 +409,9 @@ namespace MaisGamers.Formularios.Cadastro
             if (cmbTipoJogo.SelectedValue.ToString() != "1")
             {
                 pnlEmail.Visible = true;
-                lblPago.Visible = false;
+                //lblPago.Visible = false;
                 lblVenda.Visible = false;
-                txtPrecoPago.Visible = false;
+                //txtPrecoPago.Visible = false;
                 txtPrecoVenda.Visible = false;
             }
             else

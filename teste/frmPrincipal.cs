@@ -12,6 +12,7 @@ using MaisGamers.Formularios.Cadastro;
 using MaisGamers.Formularios.LocacaoHora;
 using MaisGamers.Formularios.Orcamento;
 using MaisGamers.DLL.Venda;
+using MaisGamers.Formularios.Horas;
 
 namespace MaisGamers
 {
@@ -227,6 +228,12 @@ namespace MaisGamers
 
             MostraFormulario(vendas);
 
+        }
+
+        private void btnRelogio_Click(object sender, EventArgs e)
+        {
+            frmHoras horas = new frmHoras();
+            MostraFormulario(horas);
         }
     }
 }

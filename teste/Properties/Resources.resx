@@ -124,6 +124,9 @@
   <data name="iconeprevisao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeprevisao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cash-register" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="img_115260 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_115260 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,9 +136,6 @@
   <data name="nota64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nota64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="edit-document_icon-icons.com_54542 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-document_icon-icons.com_54542 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +144,9 @@
   </data>
   <data name="iconemenos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconemenos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contrato32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrato32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12733635_1050964424968000_1427591934875655062_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12733635_1050964424968000_1427591934875655062_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +193,8 @@
   <data name="img_168133" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_168133.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contrato32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contrato32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeFechar32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\iconeFechar32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,7 +235,7 @@
   <data name="delete_remove_bin_icon-icons.com_72400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_remove_bin_icon-icons.com_72400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cash-register" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash-register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="relogio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\relogio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Anotacao\dAnotacao.cs" />
     <Compile Include="DAL\Cadastro\dAnotacao.cs" />
     <Compile Include="DAL\Cadastro\dProduto.cs" />
     <Compile Include="DAL\Cadastro\dTipoJogo.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="DAL\Cadastro\dJogo.cs" />
     <Compile Include="DAL\dCidade.cs" />
     <Compile Include="DAL\dEstado.cs" />
+    <Compile Include="DAL\Hora\dHora.cs" />
     <Compile Include="DAL\Locacao\dClienteLocacao.cs" />
     <Compile Include="DAL\Locacao\dLocacaoJogo.cs" />
     <Compile Include="DAL\Locacao\dLocacao.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="DAL\Orcamento\dTipoOrcamento.cs" />
     <Compile Include="DAL\Venda\dTipoPagamento.cs" />
     <Compile Include="DAL\Venda\dVenda.cs" />
+    <Compile Include="DLL\Anotacao\bAnotacao.cs" />
     <Compile Include="DLL\bCidade.cs" />
     <Compile Include="DLL\bTipoCliente.cs" />
     <Compile Include="DLL\bEstado.cs" />
@@ -96,6 +99,7 @@
     <Compile Include="DLL\Cadastro\Cadastro\bProduto.cs" />
     <Compile Include="DLL\Cadastro\Cadastro\bTipoJogo.cs" />
     <Compile Include="DLL\Cadastro\Cadastro\bJogo.cs" />
+    <Compile Include="DLL\Hora\bHora.cs" />
     <Compile Include="DLL\Locacao\bClienteLocacao.cs" />
     <Compile Include="DLL\Locacao\bLocacaoJogo.cs" />
     <Compile Include="DLL\Locacao\bLocacao.cs" />
@@ -103,6 +107,12 @@
     <Compile Include="DLL\Locacao\bStatusLocacao.cs" />
     <Compile Include="DLL\Venda\bTipoPagamento.cs" />
     <Compile Include="DLL\Venda\bVenda.cs" />
+    <Compile Include="Formularios\Anotacao\frmAnotacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Anotacao\frmAnotacao.Designer.cs">
+      <DependentUpon>frmAnotacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastro\frmPesquisaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +161,12 @@
     </Compile>
     <Compile Include="Formularios\frmNewPrincipal.Designer.cs">
       <DependentUpon>frmNewPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Horas\frmHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Horas\frmHoras.Designer.cs">
+      <DependentUpon>frmHoras.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\LocacaoHora\frmlocacaohora.cs">
       <SubType>Form</SubType>
@@ -208,8 +224,25 @@
     <Compile Include="Migrations\201801301935391_TipoPagamento.Designer.cs">
       <DependentUpon>201801301935391_TipoPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802120414537_anotacao.cs" />
+    <Compile Include="Migrations\201802120414537_anotacao.Designer.cs">
+      <DependentUpon>201802120414537_anotacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121624496_ajuste.cs" />
+    <Compile Include="Migrations\201802121624496_ajuste.Designer.cs">
+      <DependentUpon>201802121624496_ajuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803012222572_Hora.cs" />
+    <Compile Include="Migrations\201803012222572_Hora.Designer.cs">
+      <DependentUpon>201803012222572_Hora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803012227328_ajuste preco hora.cs" />
+    <Compile Include="Migrations\201803012227328_ajuste preco hora.Designer.cs">
+      <DependentUpon>201803012227328_ajuste preco hora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Cadastro\mAnotacao.cs" />
+    <Compile Include="Model\Anotacao\mAnotacao.cs" />
+    <Compile Include="Model\Anotacao\mStatusAnotacao.cs" />
     <Compile Include="Model\Cadastro\mCaixa.cs" />
     <Compile Include="Model\Cadastro\mProduto.cs" />
     <Compile Include="Model\Cadastro\mTipoCliente.cs" />
@@ -220,6 +253,7 @@
     <Compile Include="Model\Contexto.cs" />
     <Compile Include="Model\DBConfiguracao.cs" />
     <Compile Include="Model\Documento\mDocumento.cs" />
+    <Compile Include="Model\Hora\mHora.cs" />
     <Compile Include="Model\Locacao\mClienteLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacao.cs" />
     <Compile Include="Model\Locacao\mLocacaoJogos.cs" />
@@ -242,6 +276,9 @@
     <Compile Include="Modulos\util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Anotacao\frmAnotacao.resx">
+      <DependentUpon>frmAnotacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastro\frmPesquisaProduto.resx">
       <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmNewPrincipal.resx">
       <DependentUpon>frmNewPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Horas\frmHoras.resx">
+      <DependentUpon>frmHoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LocacaoHora\frmlocacaohora.resx">
       <DependentUpon>frmlocacaohora.cs</DependentUpon>
@@ -295,6 +335,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301935391_TipoPagamento.resx">
       <DependentUpon>201801301935391_TipoPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120414537_anotacao.resx">
+      <DependentUpon>201802120414537_anotacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121624496_ajuste.resx">
+      <DependentUpon>201802121624496_ajuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803012222572_Hora.resx">
+      <DependentUpon>201803012222572_Hora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803012227328_ajuste preco hora.resx">
+      <DependentUpon>201803012227328_ajuste preco hora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
@@ -343,6 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\relogio.png" />
     <None Include="Resources\cash-register.png" />
     <None Include="Resources\img_168133.png" />
     <None Include="Resources\237034-file_document_add_plus-128.png" />

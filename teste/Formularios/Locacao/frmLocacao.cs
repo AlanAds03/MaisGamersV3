@@ -136,7 +136,7 @@ namespace MaisGamers.Formularios.Cadastro
                 }
 
                 btnImprimir.Enabled = _mlocacao.StatusLocacao.IDStatus != 1;
-                
+
 
                 if (_mlocacao.StatusLocacao.IDStatus == 1)
                 {
@@ -161,9 +161,9 @@ namespace MaisGamers.Formularios.Cadastro
                     {
                         txtDataEntrega.Value = Convert.ToDateTime(_mlocacao.DataPrevisaoEntrega);
                     }
-                    
+
                     txtDataEntrega.Enabled = false;
-                    
+
 
                 }
 
@@ -365,7 +365,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 bLocacao _bLocacao = new bLocacao();
 
-                lblTotal.Text =  _bLocacao.PrevisaoPreco(idLocacao,MinHoraData(DateTime.Now), MinHoraData(dataEntrega),true).ToString();
+                lblTotal.Text = _bLocacao.PrevisaoPreco(idLocacao, MinHoraData(DateTime.Now), MinHoraData(dataEntrega), true).ToString();
 
 
             }
@@ -390,7 +390,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 modo_tela = ModoTela.ALTERACAO;
                 atualizaTela();
-                
+
             }
             catch (Exception)
             {
@@ -411,7 +411,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -419,7 +419,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             try
             {
-                
+
                 frmPopupFehamento fechamento = new frmPopupFehamento();
 
                 bLocacao _locacao = new bLocacao();
@@ -430,15 +430,15 @@ namespace MaisGamers.Formularios.Cadastro
                 fechamento.DataLocacao = _mloc.DataLocacao;
                 fechamento.DataPrevisao = _mloc.DataPrevisaoEntrega;
                 fechamento.DataEntrega = DateTime.Now;
-                
 
-                fechamento.ValorDevido =Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, MinHoraData(fechamento.DataLocacao), MinHoraData(DateTime.Now), true).ToString());
+
+                fechamento.ValorDevido = Convert.ToDouble(_locacao.PrevisaoPreco(idLocacao, MinHoraData(fechamento.DataLocacao), MinHoraData(DateTime.Now), true).ToString());
                 fechamento.ValorPagoLocacao = _mloc.ValorPagoInicial;
                 fechamento.ValorRestante = fechamento.ValorDevido - fechamento.ValorPagoLocacao;
 
 
 
-                
+
                 fechamento.ShowDialog();
 
 
@@ -459,7 +459,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-           
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -481,21 +481,21 @@ namespace MaisGamers.Formularios.Cadastro
 
                 bLocacao _bLocacao = new bLocacao();
 
-              
+
 
                 _entrega.DataEntrega = txtDataEntrega.Value;
-                _entrega.ValorDevido = _bLocacao.PrevisaoPreco(idLocacao,MinHoraData( DateTime.Now),MinHoraData(dataEntrega), true).ToString();
+                _entrega.ValorDevido = _bLocacao.PrevisaoPreco(idLocacao, MinHoraData(DateTime.Now), MinHoraData(dataEntrega), true).ToString();
 
                 _entrega.ShowDialog();
 
-                if(_entrega.acao == "Concluir")
+                if (_entrega.acao == "Concluir")
                 {
                     _bLocacao.AtualizarDataPrevistaLocacao(idLocacao, _entrega.DataEntrega, _entrega.ValorPago);
                 }
 
                 modo_tela = ModoTela.ALTERACAO;
                 atualizaTela();
-                
+
             }
             catch (Exception)
             {
@@ -526,7 +526,7 @@ namespace MaisGamers.Formularios.Cadastro
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
 
@@ -538,11 +538,12 @@ namespace MaisGamers.Formularios.Cadastro
 
                 Jogos = _locacao.ObterJogos(idLocacao);
 
-                if (File.Exists(@"C:\Temp\1.txt")){
+                if (File.Exists(@"C:\Temp\1.txt"))
+                {
                     File.Delete(@"C:\Temp\1.txt");
                 }
 
-                
+
                 StreamWriter texto = new StreamWriter(@"C:\Temp\1.txt");
 
                 texto.WriteLine("                                    ");
@@ -563,15 +564,15 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     texto.WriteLine("Data de entrega : " + _mloc.DataLocacaoEntrega);
                 }
-                
+
                 foreach (mLocacaoJogos _jogo in Jogos)
                 {
                     texto.WriteLine("Jogo : " + _jogo.IDJogo.NomeJogo);
                 }
-                
+
                 texto.WriteLine("Valor pago na locacao : " + _mloc.ValorPagoInicial.ToString("0.00"));
 
-                if(StatusLocação == 2)
+                if (StatusLocação == 2)
                 {
                     texto.WriteLine("Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
                 }
@@ -627,7 +628,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 p.WaitForInputIdle();
                 System.Threading.Thread.Sleep(3000);
-              
+
 
 
                 //Process.Start(@"C:\Temp\1.txt");
@@ -638,7 +639,7 @@ namespace MaisGamers.Formularios.Cadastro
 
                 throw;
             }
-         
+
 
         }
 
@@ -812,13 +813,17 @@ namespace MaisGamers.Formularios.Cadastro
 
             bLocacao _bLocacao = new bLocacao();
 
-            if (_bLocacao.Excluir(idLocacao))
+            if (Mensagem(this, "Deseja realmente excluir ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao,Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
-                Mensagem(this, "Excluido com sucesso...", Frameworks.Classes.CMsgBox.TipoBotoes.OK,Frameworks.Classes.CMsgBox.TipoErro.Ok);
-            }
-            else
-            {
-                Mensagem(this, "Erro ao excluir", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+
+                if (_bLocacao.Excluir(idLocacao))
+                {
+                    Mensagem(this, "Excluido com sucesso...", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                }
+                else
+                {
+                    Mensagem(this, "Erro ao excluir", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Erro);
+                }
             }
         }
 

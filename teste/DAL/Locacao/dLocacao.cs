@@ -253,15 +253,16 @@ namespace MaisGamers.DAL.Locacao
                 mLocacao locacao = db.Locacao.Find(idLocacao);
                 List<mLocacaoJogos> locacaoJogos;
 
-                locacaoJogos = db.LocacaoJogos.Where(x => x.IDLocacao == locacao).ToList();
+                locacaoJogos = db.LocacaoJogos.Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
+
 
                 if (locacao != null)
                 {
-                    foreach(mLocacaoJogos xx in locacaoJogos)
+                    foreach (mLocacaoJogos xx in locacaoJogos)
                     {
                         db.LocacaoJogos.Remove(xx);
                     }
-                    
+
                     db.Locacao.Remove(locacao);
                     db.SaveChanges();
                     return true;
@@ -271,7 +272,7 @@ namespace MaisGamers.DAL.Locacao
                     return false;
                 }
 
-                
+
 
             }
             catch (Exception ex)

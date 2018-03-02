@@ -29,10 +29,10 @@ namespace teste.Migrations
                 p => p.idConsole,
                 new MaisGamers.Model.Cadastro.mConsole { idConsole = 1, NomeConsole = "PS4" },
                 new MaisGamers.Model.Cadastro.mConsole { idConsole = 4, NomeConsole = "PS3" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3, NomeConsole = "PS2" },
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 5, NomeConsole = "PS2" },
                 new MaisGamers.Model.Cadastro.mConsole { idConsole = 2, NomeConsole = "Xone" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3, NomeConsole = "Xbox 360" }
-
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3, NomeConsole = "Xbox 360" },
+                new MaisGamers.Model.Cadastro.mConsole { idConsole = 6, NomeConsole = "PS VR" }
 
                 );
 
@@ -77,7 +77,7 @@ namespace teste.Migrations
 
             context.PrecoLocacao.AddOrUpdate(
                 p => p.IDPrecoLocacao,
-                new MaisGamers.Model.Locacao.mPrecoLocacao {IDPrecoLocacao = 1,  PrecoDia1 =8,PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(1),IDTipoJogo= context.TipoJogo.Find(1)},
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 1,  PrecoDia1 =8,PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(1),IDTipoJogo= context.TipoJogo.Find(1)},
                 new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 2, PrecoDia1 = 8, PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(1) },
                 new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 3, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(3), IDTipoJogo = context.TipoJogo.Find(1) },
                 new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 4, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(4), IDTipoJogo = context.TipoJogo.Find(1) },
@@ -108,9 +108,16 @@ namespace teste.Migrations
               new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 3, TipoPagamento = "Cartao", Taxa = 4.19M },
               new MaisGamers.Model.Vendas.mTipoPagamento { IDTipoPagamento = 4, TipoPagamento = "Parcelado", Taxa = 2.49M }
 
-
-
               );
+
+            context.Hora.AddOrUpdate(
+             p => p.idPrecoConsoleHora,
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 1, Console = context.Console.Find(1), Descricao = "30 Minutos", vPreco = 3.00},
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 2, Console = context.Console.Find(1), Descricao = "1 Hora", vPreco = 5.00 },
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 3, Console = context.Console.Find(1), Descricao = "2 Horas", vPreco = 9.00 }
+
+             );
+
 
             //  This method will be called after migrating to the latest version.
 

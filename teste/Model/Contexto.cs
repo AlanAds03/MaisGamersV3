@@ -1,5 +1,7 @@
 ﻿using MaisGamers.DAL.Cadastro;
+using MaisGamers.Model.Anotacao;
 using MaisGamers.Model.Cadastro;
+using MaisGamers.Model.Hora;
 using MaisGamers.Model.Locacao;
 using MaisGamers.Model.Orcamento;
 using MaisGamers.Model.Vendas;
@@ -39,7 +41,7 @@ namespace MaisGamers.Model
 
         public DbSet<mStatusLocacao> StatusLocacao { get; set; }
 
-        public DbSet<mAnotacao> Anotacao { get; set; }
+        
 
         public DbSet<mStatusCliente> StatusCliente { get; set; }
 
@@ -55,6 +57,11 @@ namespace MaisGamers.Model
 
         public DbSet<mTipoPagamento> TipoPagamento { get; set; }
 
+        public DbSet<mAnotacao> Anotacao { get; set; }
+
+        public DbSet<mStatusAnotacao> StatusAnotacao { get; set; }
+
+        public DbSet<mHora> Hora { get; set; }
 
 
 

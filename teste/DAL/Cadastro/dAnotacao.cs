@@ -1,4 +1,5 @@
 ﻿using MaisGamers.Model;
+using MaisGamers.Model.Anotacao;
 using MaisGamers.Model.Cadastro;
 using System;
 using System.Collections.Generic;
