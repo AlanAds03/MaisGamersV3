@@ -114,7 +114,10 @@ namespace teste.Migrations
              p => p.idPrecoConsoleHora,
              new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 1, Console = context.Console.Find(1), Descricao = "30 Minutos", vPreco = 3.00},
              new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 2, Console = context.Console.Find(1), Descricao = "1 Hora", vPreco = 5.00 },
-             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 3, Console = context.Console.Find(1), Descricao = "2 Horas", vPreco = 9.00 }
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 3, Console = context.Console.Find(1), Descricao = "1 Hora e Meia", vPreco = 7.00 },
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 4, Console = context.Console.Find(1), Descricao = "2 Horas", vPreco = 9.00 },
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 5, Console = context.Console.Find(1), Descricao = "2 Horas e Meia", vPreco = 12.00 },
+             new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 6, Console = context.Console.Find(1), Descricao = "3 Horas", vPreco = 14.00 }
 
              );
 

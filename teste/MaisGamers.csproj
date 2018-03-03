@@ -395,6 +395,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\iconclock.png" />
+    <None Include="Resources\iconclock.fw.png" />
+    <None Include="Resources\Clock-80_icon-icons.com_57353.png" />
+    <None Include="Resources\img_386693.png" />
+    <None Include="Resources\0e62fc25-752d-437e-abfd-95b42e9fa835.png" />
+    <None Include="Resources\icontempo.fw.png" />
+    <None Include="Resources\icon-157350_960_720.png" />
     <None Include="Resources\relogio.png" />
     <None Include="Resources\cash-register.png" />
     <None Include="Resources\img_168133.png" />

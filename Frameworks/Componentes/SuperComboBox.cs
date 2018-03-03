@@ -167,6 +167,12 @@ namespace Frameworks.Componentes
                
                 a = this.SelectedValue.ToString();
 
+                if(a == "System.Data.DataRowView")
+                {
+                    return ""; 
+
+                }
+
                 return a;
 
             }
@@ -177,6 +183,33 @@ namespace Frameworks.Componentes
             }
            
         }
+
+        public string ObterTexto()
+        {
+            string a = "";
+
+            try
+            {
+
+                a = this.Text;
+
+                if (a == "System.Data.DataRowView")
+                {
+                    return "";
+
+                }
+
+                return a;
+
+            }
+            catch (Exception)
+            {
+
+                return "";
+            }
+
+        }
+
 
     }
 }

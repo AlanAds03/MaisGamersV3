@@ -63,6 +63,16 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0e62fc25_752d_437e_abfd_95b42e9fa835 {
+            get {
+                object obj = ResourceManager.GetObject("0e62fc25-752d-437e-abfd-95b42e9fa835", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12733635_1050964424968000_1427591934875655062_n {
             get {
                 object obj = ResourceManager.GetObject("12733635_1050964424968000_1427591934875655062_n", resourceCulture);
@@ -143,6 +153,16 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clock_80_icon_icons_com_57353 {
+            get {
+                object obj = ResourceManager.GetObject("Clock-80_icon-icons.com_57353", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contrato32 {
             get {
                 object obj = ResourceManager.GetObject("contrato32", resourceCulture);
@@ -216,6 +236,36 @@ namespace MaisGamers.Properties {
         internal static System.Drawing.Bitmap editorange {
             get {
                 object obj = ResourceManager.GetObject("editorange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_157350_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("icon-157350_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconclock {
+            get {
+                object obj = ResourceManager.GetObject("iconclock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconclock_fw {
+            get {
+                object obj = ResourceManager.GetObject("iconclock.fw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,6 +423,16 @@ namespace MaisGamers.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icontempo_fw {
+            get {
+                object obj = ResourceManager.GetObject("icontempo.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_115260 {
             get {
                 object obj = ResourceManager.GetObject("img_115260", resourceCulture);
@@ -396,6 +456,16 @@ namespace MaisGamers.Properties {
         internal static System.Drawing.Bitmap img_168133 {
             get {
                 object obj = ResourceManager.GetObject("img_168133", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_386693 {
+            get {
+                object obj = ResourceManager.GetObject("img_386693", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
