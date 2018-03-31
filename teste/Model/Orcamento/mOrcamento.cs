@@ -15,26 +15,27 @@ namespace MaisGamers.Model.Orcamento
         [Key]
         public int IDOrcamento { get; set; }
 
-        public mTipoOrcamento IDTipoOrcamento { get; set; }
+        public mStatusOrcamento StatusOrcamento { get; set; }
 
-        public mClienteLocacao IDClienteLocacao { get; set; }
+        [NotMapped]
+        public int IdStatusOrcamento { get; set; }
+
+        public string NomeCliente { get; set; }
+
+        public string Produto { get; set; }
 
         public string NumeroSerie { get; set; }
+        public string Defeito { get; set; }
+
+        public DateTime Data_Entrada { get; set; }
+        public DateTime? Data_Retorno { get; set; }
+        public DateTime? Data_Entrega { get; set; }
+        public string Telefone1 { get; set; }
+        public string Telefone2 { get; set; }
         public string Observacao { get; set; }
-
         public decimal ValorOrcamento { get; set; }
-
-        public decimal ValorPago     { get; set; }
-
-        public mTipoOrcamentoStatus IDTipoOrcamentoStatus { get; set; }
-
-        public DateTime DataEntrada { get; set; }
-
-        public DateTime DataRetirada { get; set; }
-
         public int Garantia { get; set; }
 
-        public byte[] Foto { get; set; }
 
 
     }

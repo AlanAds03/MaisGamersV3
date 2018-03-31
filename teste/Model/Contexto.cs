@@ -47,9 +47,9 @@ namespace MaisGamers.Model
 
         public DbSet<mProduto> Produtos { get; set; }
 
-        public DbSet<mTipoOrcamento> TipoOrcamento { get; set; }
+        public DbSet<mOrcamento> Orcamento { get; set; }
 
-        public DbSet<mTipoOrcamentoStatus> TipoOrcamentoStatus { get; set; }
+        public DbSet<mStatusOrcamento> StatusOrcamento { get; set; }
 
         public DbSet<mPrecoLocacao> PrecoLocacao { get; set; }
 

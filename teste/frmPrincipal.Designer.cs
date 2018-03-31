@@ -37,6 +37,7 @@
             this.rbAnotacao = new System.Windows.Forms.RibbonPanel();
             this.rbObjetos = new System.Windows.Forms.RibbonPanel();
             this.rbConsole = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.menuJogos = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.rbRelatorio = new System.Windows.Forms.RibbonPanel();
@@ -47,7 +48,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stripHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.btnCliente = new System.Windows.Forms.RibbonButton();
@@ -56,6 +57,7 @@
             this.btnObjeto = new System.Windows.Forms.RibbonButton();
             this.btnConsole = new System.Windows.Forms.RibbonButton();
             this.btnRelogio = new System.Windows.Forms.RibbonButton();
+            this.rbOrcamento = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.btnRelatorio = new System.Windows.Forms.RibbonButton();
             this.BotaoMenuVendas = new System.Windows.Forms.RibbonButton();
@@ -104,6 +106,7 @@
             this.menuCadastro.Panels.Add(this.rbObjetos);
             this.menuCadastro.Panels.Add(this.rbConsole);
             this.menuCadastro.Panels.Add(this.ribbonPanel3);
+            this.menuCadastro.Panels.Add(this.ribbonPanel4);
             this.menuCadastro.Text = "Cadastro";
             // 
             // rbCliente
@@ -130,6 +133,11 @@
             // 
             this.rbConsole.Items.Add(this.btnConsole);
             this.rbConsole.Text = "Consoles";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Items.Add(this.btnRelogio);
+            this.ribbonPanel3.Text = "Horas";
             // 
             // menuJogos
             // 
@@ -198,10 +206,10 @@
             this.stripHora.Text = "Hora";
             this.stripHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ribbonPanel3
+            // ribbonPanel4
             // 
-            this.ribbonPanel3.Items.Add(this.btnRelogio);
-            this.ribbonPanel3.Text = "Horas";
+            this.ribbonPanel4.Items.Add(this.rbOrcamento);
+            this.ribbonPanel4.Text = "Orcamento";
             // 
             // toolStripStatusLabel2
             // 
@@ -255,6 +263,12 @@
             this.btnRelogio.Image = global::MaisGamers.Properties.Resources.relogio;
             this.btnRelogio.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRelogio.SmallImage")));
             this.btnRelogio.Click += new System.EventHandler(this.btnRelogio_Click);
+            // 
+            // rbOrcamento
+            // 
+            this.rbOrcamento.Image = global::MaisGamers.Properties.Resources.iconeOrcamento;
+            this.rbOrcamento.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbOrcamento.SmallImage")));
+            this.rbOrcamento.Click += new System.EventHandler(this.rbOrcamento_Click);
             // 
             // ribbonButton2
             // 
@@ -347,6 +361,8 @@
         private System.Windows.Forms.ToolStripStatusLabel stripHora;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton btnRelogio;
+        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonButton rbOrcamento;
     }
 }
 

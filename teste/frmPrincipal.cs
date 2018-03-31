@@ -235,5 +235,11 @@ namespace MaisGamers
             frmHoras horas = new frmHoras();
             MostraFormulario(horas);
         }
+
+        private void rbOrcamento_Click(object sender, EventArgs e)
+        {
+            frmOrcamento orcamento = new frmOrcamento();
+            MostraFormulario(orcamento);
+        }
     }
 }

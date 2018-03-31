@@ -42,25 +42,16 @@ namespace teste.Migrations
                 new MaisGamers.Model.Cadastro.mTipoJogo { IDTipoJogo = 2, NomeTipoJogo = "Digital" }
                 );
 
-            context.TipoOrcamento.AddOrUpdate(
+            
 
-                p => p.IDTipoOrcamento,
-                new MaisGamers.Model.Orcamento.mTipoOrcamento { IDTipoOrcamento = 1, TipoOrcamento = "Controle" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamento { IDTipoOrcamento = 2, TipoOrcamento = "Video Game" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamento { IDTipoOrcamento = 3, TipoOrcamento = "Desktop" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamento { IDTipoOrcamento = 3, TipoOrcamento = "Notebook" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamento { IDTipoOrcamento = 3, TipoOrcamento = "Celular" }
-                );
+            context.StatusOrcamento.AddOrUpdate(
 
-            context.TipoOrcamentoStatus.AddOrUpdate(
-
-                p => p.IDTipoOrcamentoStatus,
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 1 ,TipoOrcamentoStatus = "Em aberto"},
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 2, TipoOrcamentoStatus = "Em análise" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 3, TipoOrcamentoStatus = "Aguardando aprovação do cliente" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 4, TipoOrcamentoStatus = "Concertando" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 5, TipoOrcamentoStatus = "Devolvido" },
-                new MaisGamers.Model.Orcamento.mTipoOrcamentoStatus { IDTipoOrcamentoStatus = 6, TipoOrcamentoStatus = "Concluído" }
+                p => p.IDStatusOrcamento,
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 1 ,StatusOrcamento = "Em aberto"},
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 2, StatusOrcamento = "Em análise" },
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 3, StatusOrcamento = "Aguardando aprovação do cliente" },
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 5, StatusOrcamento = "Devolvido" },
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 6, StatusOrcamento = "Concluído" }
 
                 );
 
@@ -120,6 +111,8 @@ namespace teste.Migrations
              new MaisGamers.Model.Hora.mHora { idPrecoConsoleHora = 6, Console = context.Console.Find(1), Descricao = "3 Horas", vPreco = 14.00 }
 
              );
+
+            
 
 
             //  This method will be called after migrating to the latest version.

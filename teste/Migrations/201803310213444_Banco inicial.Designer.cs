@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class anotacao : IMigrationMetadata
+    public sealed partial class Bancoinicial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(anotacao));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Bancoinicial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802120414537_anotacao"; }
+            get { return "201803310213444_Banco inicial"; }
         }
         
         string IMigrationMetadata.Source
