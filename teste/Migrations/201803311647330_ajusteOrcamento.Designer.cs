@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ajustetabelasorcamentos : IMigrationMetadata
+    public sealed partial class ajusteOrcamento : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ajustetabelasorcamentos));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ajusteOrcamento));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803310258484_ajuste tabelas orcamentos"; }
+            get { return "201803311647330_ajusteOrcamento"; }
         }
         
         string IMigrationMetadata.Source

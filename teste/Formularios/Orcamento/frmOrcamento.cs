@@ -31,27 +31,27 @@ namespace MaisGamers.Formularios.Orcamento
 
         private void CarregaComboStatus()
         {
-            
-
-                List<mStatusOrcamento> list = new List<mStatusOrcamento>();
-
-                try
-                {
-                    bStatusOrcamento _bStatus = new bStatusOrcamento();
-
-                    list = _bStatus.CarregaStatusOrcamento();
 
 
-                    cmdStatusPesquisa.CarregaCombo(list, "IDStatusOrcamento", "StatusOrcamento", SuperComboBox.PrimeiraLinha.Selecione);
-                    cmdStatus.CarregaCombo(list, "IDStatusOrcamento", "StatusOrcamento", SuperComboBox.PrimeiraLinha.Selecione);
+            List<mStatusOrcamento> list = new List<mStatusOrcamento>();
+
+            try
+            {
+                bStatusOrcamento _bStatus = new bStatusOrcamento();
+
+                list = _bStatus.CarregaStatusOrcamento();
+
+
+                cmdStatusPesquisa.CarregaCombo(list, "IDStatusOrcamento", "StatusOrcamento", SuperComboBox.PrimeiraLinha.Selecione);
+                cmdStatus.CarregaCombo(list, "IDStatusOrcamento", "StatusOrcamento", SuperComboBox.PrimeiraLinha.Selecione);
 
             }
-                catch (Exception ex)
-                {
+            catch (Exception ex)
+            {
 
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                MessageBox.Show(ex.Message.ToString());
             }
+        }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -61,11 +61,11 @@ namespace MaisGamers.Formularios.Orcamento
 
         private void atualizaTela()
         {
-            
+
             if (modo_tela == ModoTela.NOVO)
             {
 
-                
+
                 tbControl.SelectTab("tpCadastro");
                 tbControl.Refresh();
                 idOrcamento = 0;
@@ -81,6 +81,36 @@ namespace MaisGamers.Formularios.Orcamento
 
 
             }
+            else if (modo_tela == ModoTela.ALTERACAO)
+            {
+                tbControl.SelectTab("tpCadastro");
+                tbControl.Refresh();
+                LimpaCampos();
+
+                bOrcamento _orcamento = new bOrcamento();
+                mOrcamento _mOrcamento = new mOrcamento();
+
+                _mOrcamento = _orcamento.Obter(idOrcamento);
+
+
+                txtNome.Text = _mOrcamento.NomeCliente;
+                txtProduto.Text = _mOrcamento.Produto;
+                txtDefeito.Text = _mOrcamento.Defeito;
+                txtObservacao.Text = _mOrcamento.Observacao;
+                txtTelefone1.Text = _mOrcamento.Telefone1;
+                txtTelefone2.Text = _mOrcamento.Telefone2;
+                txtNumeroSerie.Text = _mOrcamento.NumeroSerie;
+                txtValor.Text = _mOrcamento.ValorOrcamento.ToString();
+                txtGarantia.Text = _mOrcamento.Garantia.ToString();
+                txtDataEntrada.Value = Convert.ToDateTime(_mOrcamento.Data_Entrada);
+
+                cmdStatus.SelectedValue = _mOrcamento.StatusOrcamento.IDStatusOrcamento;
+
+
+
+            }
+
+
         }
 
         private void LimpaCampos()
@@ -101,34 +131,46 @@ namespace MaisGamers.Formularios.Orcamento
         {
             try
             {
-                if(idOrcamento == 0)
+
+
+                mOrcamento orcamento = new mOrcamento();
+                bOrcamento _b = new bOrcamento();
+
+                //inserir novo orcamento 
+                if (!ValidateChildren())
+                {
+                    return;
+                }
+
+
+
+
+                orcamento.NomeCliente = txtNome.Text;
+                
+                orcamento.Produto = txtProduto.Text;
+                orcamento.Defeito = txtDefeito.Text;
+                orcamento.Observacao = txtObservacao.Text;
+                orcamento.Telefone1 = txtTelefone1.Text;
+                orcamento.Telefone2 = txtTelefone2.Text;
+                orcamento.Data_Entrada = txtDataEntrada.Value;
+                orcamento.Data_Entrega = null;
+                orcamento.Data_Retorno = null;
+                orcamento.NumeroSerie = txtNumeroSerie.Text;
+
+                orcamento.IdStatusOrcamento = Convert.ToInt32(cmdStatus.ObterValor());
+
+                if (idOrcamento > 0)
+                {
+                    orcamento.IDOrcamento = idOrcamento;
+                }
+
+
+
+                if (_b.Inserir(orcamento))
                 {
 
-                    mOrcamento orcamento = new mOrcamento();
-                    bOrcamento _b = new bOrcamento();
-
-                    //inserir novo orcamento 
-                    if (!ValidateChildren()){
-                        return;
-                    }
-
-
-                    
-
-                    orcamento.NomeCliente = txtNome.Text;
-                    orcamento.IdStatusOrcamento = Convert.ToInt32(cmdStatus.ObterValor());
-                    orcamento.Produto = txtProduto.Text;
-                    orcamento.Defeito = txtDefeito.Text;
-                    orcamento.Observacao = txtObservacao.Text;
-                    orcamento.Telefone1 = txtTelefone1.Text;
-                    orcamento.Telefone2 = txtTelefone2.Text;
-                    orcamento.Data_Entrada = txtDataEntrada.Value;
-                    orcamento.Data_Entrega = null;
-                    orcamento.Data_Retorno = null;
-
-                    if (_b.Inserir(orcamento))
-                    {
-                        if (Mensagem(this,"Orçamento inserido com sucesso , deseja imprimir o comprovante ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                    if (idOrcamento == 0)
+                        if (Mensagem(this, "Orçamento inserido com sucesso , deseja imprimir o comprovante ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
                         {
                             //imprimindo 
                         }
@@ -136,13 +178,14 @@ namespace MaisGamers.Formularios.Orcamento
                         {
                             this.Close();
                         }
-
-                        
+                    else
+                    {
+                        Mensagem(this, "Orçamento alterado com sucesso.", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao);
                     }
-
-
-
                 }
+
+
+
             }
             catch (Exception)
             {
@@ -154,6 +197,54 @@ namespace MaisGamers.Formularios.Orcamento
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+
+            PesquisarOrcamento();
+        }
+
+        public void PesquisarOrcamento()
+        {
+
+            List<dynamic> lista = new List<dynamic>();
+            try
+            {
+                bOrcamento _orcamento = new bOrcamento();
+
+
+                lista = _orcamento.PesquisarOrcamento(txtPesqNome.Text, txtProdutoPesq.Text, Convert.ToInt32(cmdStatusPesquisa.ObterValor()));
+
+                if (lista != null)
+                {
+                    lvPesquisa.CarregaListaView<dynamic>(lista);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private void lvPesquisa_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked == true)
+            {
+
+                idOrcamento = Convert.ToInt32(lvPesquisa.ObterChave());
+            }
+
+            btnEditar.Enabled = e.Item.Checked;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            modo_tela = ModoTela.ALTERACAO;
+            atualizaTela();
+
         }
     }
 }

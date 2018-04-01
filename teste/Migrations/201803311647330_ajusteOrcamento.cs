@@ -3,7 +3,7 @@ namespace teste.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ajustetabelasorcamentos : DbMigration
+    public partial class ajusteOrcamento : DbMigration
     {
         public override void Up()
         {
@@ -17,8 +17,8 @@ namespace teste.Migrations
                         NumeroSerie = c.String(),
                         Defeito = c.String(),
                         Data_Entrada = c.DateTime(nullable: false),
-                        Data_Retorno = c.DateTime(nullable: false),
-                        Data_Entrega = c.DateTime(nullable: false),
+                        Data_Retorno = c.DateTime(),
+                        Data_Entrega = c.DateTime(),
                         Telefone1 = c.String(),
                         Telefone2 = c.String(),
                         Observacao = c.String(),

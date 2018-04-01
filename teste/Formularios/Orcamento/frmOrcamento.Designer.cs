@@ -31,25 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
-            this.txtProdutoPesq = new Frameworks.Componentes.SuperTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
-            this.cmdStatusPesquisa = new Frameworks.Componentes.SuperComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
-            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnComprovante = new System.Windows.Forms.Button();
-            this.cmbTipoPagamento = new Frameworks.Componentes.SuperComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnCaixa = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -57,28 +52,33 @@
             this.txtDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.btnTirarFoto = new System.Windows.Forms.Button();
-            this.txtGarantia = new Frameworks.Componentes.SuperTextBox();
-            this.txtValor = new Frameworks.Componentes.SuperTextBox();
-            this.txtTelefone2 = new Frameworks.Componentes.SuperTextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtTelefone1 = new Frameworks.Componentes.SuperTextBox();
-            this.txtNumeroSerie = new Frameworks.Componentes.SuperTextBox();
-            this.txtProduto = new Frameworks.Componentes.SuperTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtObservacao = new Frameworks.Componentes.SuperTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtDefeito = new Frameworks.Componentes.SuperTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmdStatus = new Frameworks.Componentes.SuperComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtProdutoPesq = new Frameworks.Componentes.SuperTextBox();
+            this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
+            this.cmdStatusPesquisa = new Frameworks.Componentes.SuperComboBox();
+            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
+            this.cmbTipoPagamento = new Frameworks.Componentes.SuperComboBox();
+            this.txtGarantia = new Frameworks.Componentes.SuperTextBox();
+            this.txtValor = new Frameworks.Componentes.SuperTextBox();
+            this.txtTelefone2 = new Frameworks.Componentes.SuperTextBox();
+            this.txtTelefone1 = new Frameworks.Componentes.SuperTextBox();
+            this.txtNumeroSerie = new Frameworks.Componentes.SuperTextBox();
+            this.txtProduto = new Frameworks.Componentes.SuperTextBox();
+            this.txtObservacao = new Frameworks.Componentes.SuperTextBox();
+            this.txtDefeito = new Frameworks.Componentes.SuperTextBox();
+            this.cmdStatus = new Frameworks.Componentes.SuperComboBox();
+            this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -114,23 +114,13 @@
             this.grpFiltro.Controls.Add(this.label1);
             this.grpFiltro.Controls.Add(this.label2);
             this.grpFiltro.Controls.Add(this.cmdStatusPesquisa);
-            this.grpFiltro.Controls.Add(this.button4);
+            this.grpFiltro.Controls.Add(this.btnPesquisar);
             this.grpFiltro.Location = new System.Drawing.Point(18, 6);
             this.grpFiltro.Name = "grpFiltro";
             this.grpFiltro.Size = new System.Drawing.Size(762, 121);
             this.grpFiltro.TabIndex = 6;
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtro";
-            // 
-            // txtProdutoPesq
-            // 
-            this.txtProdutoPesq.CampoObrigatorio = false;
-            this.txtProdutoPesq.DescricaoObrigatorio = null;
-            this.txtProdutoPesq.Location = new System.Drawing.Point(105, 44);
-            this.txtProdutoPesq.Name = "txtProdutoPesq";
-            this.txtProdutoPesq.Size = new System.Drawing.Size(185, 20);
-            this.txtProdutoPesq.TabIndex = 5;
-            this.txtProdutoPesq.TipoTexto = null;
             // 
             // label11
             // 
@@ -141,37 +131,18 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "Status:";
             // 
-            // txtPesqNome
+            // btnPesquisar
             // 
-            this.txtPesqNome.CampoObrigatorio = false;
-            this.txtPesqNome.DescricaoObrigatorio = null;
-            this.txtPesqNome.Location = new System.Drawing.Point(105, 19);
-            this.txtPesqNome.Name = "txtPesqNome";
-            this.txtPesqNome.Size = new System.Drawing.Size(277, 20);
-            this.txtPesqNome.TabIndex = 3;
-            this.txtPesqNome.TipoTexto = null;
-            // 
-            // cmdStatusPesquisa
-            // 
-            this.cmdStatusPesquisa.CampoObrigatorio = false;
-            this.cmdStatusPesquisa.Carregado = false;
-            this.cmdStatusPesquisa.FormattingEnabled = true;
-            this.cmdStatusPesquisa.Location = new System.Drawing.Point(105, 70);
-            this.cmdStatusPesquisa.Name = "cmdStatusPesquisa";
-            this.cmdStatusPesquisa.Size = new System.Drawing.Size(185, 21);
-            this.cmdStatusPesquisa.TabIndex = 2;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(317, 63);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 32);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Pesquisar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Image = global::MaisGamers.Properties.Resources.iconeSearch32X32;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisar.Location = new System.Drawing.Point(317, 63);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(105, 32);
+            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // grpGrid
             // 
@@ -182,38 +153,31 @@
             this.grpGrid.TabIndex = 7;
             this.grpGrid.TabStop = false;
             // 
-            // lvPesquisa
-            // 
-            this.lvPesquisa.Location = new System.Drawing.Point(6, 14);
-            this.lvPesquisa.Name = "lvPesquisa";
-            this.lvPesquisa.Size = new System.Drawing.Size(727, 330);
-            this.lvPesquisa.TabIndex = 5;
-            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
-            // 
             // grpBotoes
             // 
-            this.grpBotoes.Controls.Add(this.button3);
+            this.grpBotoes.Controls.Add(this.btnEditar);
             this.grpBotoes.Controls.Add(this.btnSalvar);
             this.grpBotoes.Controls.Add(this.btnNovo);
-            this.grpBotoes.Controls.Add(this.button2);
+            this.grpBotoes.Controls.Add(this.btnLimpar);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Location = new System.Drawing.Point(117, 583);
+            this.grpBotoes.Location = new System.Drawing.Point(153, 471);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(490, 77);
             this.grpBotoes.TabIndex = 8;
             this.grpBotoes.TabStop = false;
             // 
-            // button3
+            // btnEditar
             // 
-            this.button3.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(103, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Editar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditar.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(103, 19);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(91, 50);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalvar
             // 
@@ -241,17 +205,17 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // button2
+            // btnLimpar
             // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(297, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpar.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(297, 19);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(93, 50);
+            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // btnFechar
             // 
@@ -273,7 +237,7 @@
             this.tbControl.Location = new System.Drawing.Point(40, 38);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(806, 528);
+            this.tbControl.Size = new System.Drawing.Size(806, 427);
             this.tbControl.TabIndex = 9;
             // 
             // tpPesquisa
@@ -294,7 +258,7 @@
             this.tpCadastro.Location = new System.Drawing.Point(4, 22);
             this.tpCadastro.Name = "tpCadastro";
             this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastro.Size = new System.Drawing.Size(798, 502);
+            this.tpCadastro.Size = new System.Drawing.Size(798, 401);
             this.tpCadastro.TabIndex = 1;
             this.tpCadastro.Text = "Cadastro";
             this.tpCadastro.UseVisualStyleBackColor = true;
@@ -332,9 +296,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(34, 25);
+            this.groupBox1.Location = new System.Drawing.Point(24, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(627, 471);
+            this.groupBox1.Size = new System.Drawing.Size(749, 377);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
@@ -343,7 +307,7 @@
             // 
             this.btnComprovante.Image = global::MaisGamers.Properties.Resources.iconeimpressora;
             this.btnComprovante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprovante.Location = new System.Drawing.Point(448, 425);
+            this.btnComprovante.Location = new System.Drawing.Point(624, 295);
             this.btnComprovante.Name = "btnComprovante";
             this.btnComprovante.Size = new System.Drawing.Size(110, 40);
             this.btnComprovante.TabIndex = 89;
@@ -351,22 +315,11 @@
             this.btnComprovante.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnComprovante.UseVisualStyleBackColor = true;
             // 
-            // cmbTipoPagamento
-            // 
-            this.cmbTipoPagamento.CampoObrigatorio = false;
-            this.cmbTipoPagamento.Carregado = false;
-            this.cmbTipoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoPagamento.FormattingEnabled = true;
-            this.cmbTipoPagamento.Location = new System.Drawing.Point(45, 390);
-            this.cmbTipoPagamento.Name = "cmbTipoPagamento";
-            this.cmbTipoPagamento.Size = new System.Drawing.Size(149, 28);
-            this.cmbTipoPagamento.TabIndex = 13;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(41, 367);
+            this.label14.Location = new System.Drawing.Point(375, 260);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(151, 20);
             this.label14.TabIndex = 87;
@@ -376,7 +329,7 @@
             // 
             this.btnCaixa.Image = global::MaisGamers.Properties.Resources.iconePAgamento32;
             this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(348, 425);
+            this.btnCaixa.Location = new System.Drawing.Point(624, 240);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(94, 40);
             this.btnCaixa.TabIndex = 86;
@@ -388,7 +341,7 @@
             // 
             this.button5.Image = global::MaisGamers.Properties.Resources.iconeimpressora;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(248, 425);
+            this.button5.Location = new System.Drawing.Point(625, 193);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(94, 40);
             this.button5.TabIndex = 85;
@@ -419,7 +372,7 @@
             // 
             this.button1.Image = global::MaisGamers.Properties.Resources.camera32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(149, 425);
+            this.button1.Location = new System.Drawing.Point(625, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 40);
             this.button1.TabIndex = 82;
@@ -431,46 +384,13 @@
             // 
             this.btnTirarFoto.Image = global::MaisGamers.Properties.Resources.camera32;
             this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTirarFoto.Location = new System.Drawing.Point(47, 425);
+            this.btnTirarFoto.Location = new System.Drawing.Point(625, 87);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(93, 40);
             this.btnTirarFoto.TabIndex = 81;
             this.btnTirarFoto.Text = "Tirar Fotos";
             this.btnTirarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTirarFoto.UseVisualStyleBackColor = true;
-            // 
-            // txtGarantia
-            // 
-            this.txtGarantia.CampoObrigatorio = false;
-            this.txtGarantia.DescricaoObrigatorio = null;
-            this.txtGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarantia.Location = new System.Drawing.Point(149, 338);
-            this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.Size = new System.Drawing.Size(99, 26);
-            this.txtGarantia.TabIndex = 10;
-            this.txtGarantia.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
-            // 
-            // txtValor
-            // 
-            this.txtValor.CampoObrigatorio = false;
-            this.txtValor.DescricaoObrigatorio = null;
-            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(45, 338);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(89, 26);
-            this.txtValor.TabIndex = 9;
-            this.txtValor.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
-            // 
-            // txtTelefone2
-            // 
-            this.txtTelefone2.CampoObrigatorio = false;
-            this.txtTelefone2.DescricaoObrigatorio = null;
-            this.txtTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone2.Location = new System.Drawing.Point(208, 286);
-            this.txtTelefone2.Name = "txtTelefone2";
-            this.txtTelefone2.Size = new System.Drawing.Size(149, 26);
-            this.txtTelefone2.TabIndex = 8;
-            this.txtTelefone2.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
             // 
             // label16
             // 
@@ -481,39 +401,6 @@
             this.label16.Size = new System.Drawing.Size(88, 20);
             this.label16.TabIndex = 28;
             this.label16.Text = "Telefone 2:";
-            // 
-            // txtTelefone1
-            // 
-            this.txtTelefone1.CampoObrigatorio = true;
-            this.txtTelefone1.DescricaoObrigatorio = null;
-            this.txtTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone1.Location = new System.Drawing.Point(45, 286);
-            this.txtTelefone1.Name = "txtTelefone1";
-            this.txtTelefone1.Size = new System.Drawing.Size(149, 26);
-            this.txtTelefone1.TabIndex = 7;
-            this.txtTelefone1.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
-            // 
-            // txtNumeroSerie
-            // 
-            this.txtNumeroSerie.CampoObrigatorio = true;
-            this.txtNumeroSerie.DescricaoObrigatorio = null;
-            this.txtNumeroSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroSerie.Location = new System.Drawing.Point(346, 101);
-            this.txtNumeroSerie.Name = "txtNumeroSerie";
-            this.txtNumeroSerie.Size = new System.Drawing.Size(180, 26);
-            this.txtNumeroSerie.TabIndex = 4;
-            this.txtNumeroSerie.TipoTexto = null;
-            // 
-            // txtProduto
-            // 
-            this.txtProduto.CampoObrigatorio = true;
-            this.txtProduto.DescricaoObrigatorio = null;
-            this.txtProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduto.Location = new System.Drawing.Point(45, 101);
-            this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(295, 26);
-            this.txtProduto.TabIndex = 3;
-            this.txtProduto.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NENHUM;
             // 
             // label15
             // 
@@ -544,18 +431,6 @@
             this.label10.Size = new System.Drawing.Size(50, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "Valor:";
-            // 
-            // txtObservacao
-            // 
-            this.txtObservacao.CampoObrigatorio = true;
-            this.txtObservacao.DescricaoObrigatorio = "Informar a observação";
-            this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservacao.Location = new System.Drawing.Point(45, 218);
-            this.txtObservacao.Multiline = true;
-            this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(481, 39);
-            this.txtObservacao.TabIndex = 6;
-            this.txtObservacao.TipoTexto = null;
             // 
             // label9
             // 
@@ -597,18 +472,6 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Status:";
             // 
-            // txtDefeito
-            // 
-            this.txtDefeito.CampoObrigatorio = true;
-            this.txtDefeito.DescricaoObrigatorio = null;
-            this.txtDefeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDefeito.Location = new System.Drawing.Point(45, 153);
-            this.txtDefeito.Multiline = true;
-            this.txtDefeito.Name = "txtDefeito";
-            this.txtDefeito.Size = new System.Drawing.Size(481, 39);
-            this.txtDefeito.TabIndex = 5;
-            this.txtDefeito.TipoTexto = null;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -629,6 +492,166 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Número S/N:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Cliente:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Produto:";
+            // 
+            // txtProdutoPesq
+            // 
+            this.txtProdutoPesq.CampoObrigatorio = false;
+            this.txtProdutoPesq.DescricaoObrigatorio = null;
+            this.txtProdutoPesq.Location = new System.Drawing.Point(105, 44);
+            this.txtProdutoPesq.Name = "txtProdutoPesq";
+            this.txtProdutoPesq.Size = new System.Drawing.Size(185, 20);
+            this.txtProdutoPesq.TabIndex = 5;
+            this.txtProdutoPesq.TipoTexto = null;
+            // 
+            // txtPesqNome
+            // 
+            this.txtPesqNome.CampoObrigatorio = false;
+            this.txtPesqNome.DescricaoObrigatorio = null;
+            this.txtPesqNome.Location = new System.Drawing.Point(105, 19);
+            this.txtPesqNome.Name = "txtPesqNome";
+            this.txtPesqNome.Size = new System.Drawing.Size(277, 20);
+            this.txtPesqNome.TabIndex = 3;
+            this.txtPesqNome.TipoTexto = null;
+            // 
+            // cmdStatusPesquisa
+            // 
+            this.cmdStatusPesquisa.CampoObrigatorio = false;
+            this.cmdStatusPesquisa.Carregado = false;
+            this.cmdStatusPesquisa.FormattingEnabled = true;
+            this.cmdStatusPesquisa.Location = new System.Drawing.Point(105, 70);
+            this.cmdStatusPesquisa.Name = "cmdStatusPesquisa";
+            this.cmdStatusPesquisa.Size = new System.Drawing.Size(185, 21);
+            this.cmdStatusPesquisa.TabIndex = 2;
+            // 
+            // lvPesquisa
+            // 
+            this.lvPesquisa.Location = new System.Drawing.Point(6, 14);
+            this.lvPesquisa.Name = "lvPesquisa";
+            this.lvPesquisa.Size = new System.Drawing.Size(727, 330);
+            this.lvPesquisa.TabIndex = 5;
+            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
+            this.lvPesquisa.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvPesquisa_ItemChecked);
+            // 
+            // cmbTipoPagamento
+            // 
+            this.cmbTipoPagamento.CampoObrigatorio = false;
+            this.cmbTipoPagamento.Carregado = false;
+            this.cmbTipoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoPagamento.FormattingEnabled = true;
+            this.cmbTipoPagamento.Location = new System.Drawing.Point(379, 283);
+            this.cmbTipoPagamento.Name = "cmbTipoPagamento";
+            this.cmbTipoPagamento.Size = new System.Drawing.Size(149, 28);
+            this.cmbTipoPagamento.TabIndex = 13;
+            // 
+            // txtGarantia
+            // 
+            this.txtGarantia.CampoObrigatorio = false;
+            this.txtGarantia.DescricaoObrigatorio = null;
+            this.txtGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGarantia.Location = new System.Drawing.Point(149, 338);
+            this.txtGarantia.Name = "txtGarantia";
+            this.txtGarantia.Size = new System.Drawing.Size(99, 26);
+            this.txtGarantia.TabIndex = 10;
+            this.txtGarantia.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
+            // 
+            // txtValor
+            // 
+            this.txtValor.CampoObrigatorio = false;
+            this.txtValor.DescricaoObrigatorio = null;
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.Location = new System.Drawing.Point(45, 338);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(89, 26);
+            this.txtValor.TabIndex = 9;
+            this.txtValor.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
+            // 
+            // txtTelefone2
+            // 
+            this.txtTelefone2.CampoObrigatorio = false;
+            this.txtTelefone2.DescricaoObrigatorio = null;
+            this.txtTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone2.Location = new System.Drawing.Point(208, 286);
+            this.txtTelefone2.Name = "txtTelefone2";
+            this.txtTelefone2.Size = new System.Drawing.Size(149, 26);
+            this.txtTelefone2.TabIndex = 8;
+            this.txtTelefone2.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
+            // 
+            // txtTelefone1
+            // 
+            this.txtTelefone1.CampoObrigatorio = true;
+            this.txtTelefone1.DescricaoObrigatorio = null;
+            this.txtTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone1.Location = new System.Drawing.Point(45, 286);
+            this.txtTelefone1.Name = "txtTelefone1";
+            this.txtTelefone1.Size = new System.Drawing.Size(149, 26);
+            this.txtTelefone1.TabIndex = 7;
+            this.txtTelefone1.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NUMERO;
+            // 
+            // txtNumeroSerie
+            // 
+            this.txtNumeroSerie.CampoObrigatorio = true;
+            this.txtNumeroSerie.DescricaoObrigatorio = null;
+            this.txtNumeroSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroSerie.Location = new System.Drawing.Point(346, 101);
+            this.txtNumeroSerie.Name = "txtNumeroSerie";
+            this.txtNumeroSerie.Size = new System.Drawing.Size(180, 26);
+            this.txtNumeroSerie.TabIndex = 4;
+            this.txtNumeroSerie.TipoTexto = null;
+            // 
+            // txtProduto
+            // 
+            this.txtProduto.CampoObrigatorio = true;
+            this.txtProduto.DescricaoObrigatorio = null;
+            this.txtProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProduto.Location = new System.Drawing.Point(45, 101);
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.Size = new System.Drawing.Size(295, 26);
+            this.txtProduto.TabIndex = 3;
+            this.txtProduto.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NENHUM;
+            // 
+            // txtObservacao
+            // 
+            this.txtObservacao.CampoObrigatorio = true;
+            this.txtObservacao.DescricaoObrigatorio = "Informar a observação";
+            this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacao.Location = new System.Drawing.Point(45, 218);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(481, 39);
+            this.txtObservacao.TabIndex = 6;
+            this.txtObservacao.TipoTexto = null;
+            // 
+            // txtDefeito
+            // 
+            this.txtDefeito.CampoObrigatorio = true;
+            this.txtDefeito.DescricaoObrigatorio = null;
+            this.txtDefeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDefeito.Location = new System.Drawing.Point(45, 153);
+            this.txtDefeito.Multiline = true;
+            this.txtDefeito.Name = "txtDefeito";
+            this.txtDefeito.Size = new System.Drawing.Size(481, 39);
+            this.txtDefeito.TabIndex = 5;
+            this.txtDefeito.TipoTexto = null;
+            // 
             // cmdStatus
             // 
             this.cmdStatus.CampoObrigatorio = false;
@@ -640,16 +663,6 @@
             this.cmdStatus.Size = new System.Drawing.Size(183, 28);
             this.cmdStatus.TabIndex = 2;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Cliente:";
-            // 
             // txtNome
             // 
             this.txtNome.CampoObrigatorio = true;
@@ -660,16 +673,6 @@
             this.txtNome.Size = new System.Drawing.Size(295, 26);
             this.txtNome.TabIndex = 0;
             this.txtNome.TipoTexto = null;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(41, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Produto:";
             // 
             // frmOrcamento
             // 
@@ -709,12 +712,12 @@
         private Frameworks.Componentes.SuperLV lvPesquisa;
         private System.Windows.Forms.GroupBox grpFiltro;
         private System.Windows.Forms.GroupBox grpGrid;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox grpBotoes;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TabControl tbControl;
         private System.Windows.Forms.TabPage tpPesquisa;

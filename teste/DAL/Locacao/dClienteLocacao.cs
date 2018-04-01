@@ -69,8 +69,6 @@ namespace MaisGamersV2.DAL.Locacao
                 {
                     mClienteLocacao cliente = db.ClienteLocacao.Find(_clienteLocacao.idClienteLocacao);
 
-
-
                     MapObject(ref _clienteLocacao, ref cliente);
                     db.Entry(cliente).State = EntityState.Modified;
                     db.SaveChanges();
