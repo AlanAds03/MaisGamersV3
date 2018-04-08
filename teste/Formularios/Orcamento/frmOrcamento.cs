@@ -1,5 +1,6 @@
 ﻿using Frameworks.Componentes;
 using MaisGamers.DLL.Orcamento;
+using MaisGamers.Formularios.Cadastro;
 using MaisGamers.Model.Orcamento;
 using MaisGamers.Modulos;
 using System;
@@ -245,6 +246,58 @@ namespace MaisGamers.Formularios.Orcamento
             modo_tela = ModoTela.ALTERACAO;
             atualizaTela();
 
+        }
+
+        private void btnTirarFoto_Click(object sender, EventArgs e)
+        {
+            
+            bFotosOrcamento _bFotos = new bFotosOrcamento();
+            mFotosOrcamento _mfoto = new mFotosOrcamento();
+            int contador = 0;
+
+            try
+            {
+
+                frmFoto _foto = new frmFoto();
+                _foto.ShowDialog();
+
+                if (_foto.fotos.Count  == 0)
+                {
+                    return;
+                }
+
+                foreach(Byte[] _byte in _foto.fotos)
+                {
+                    _mfoto = new mFotosOrcamento();
+                    _mfoto.DataCriacao = System.DateTime.Now;
+                    _mfoto.Foto = _byte;
+                    _mfoto.IDOrcamento = new mOrcamento();
+                    _mfoto.IDOrcamento.IDOrcamento = idOrcamento;
+
+                    if (_bFotos.InserirFoto(_mfoto))
+                    {
+                        contador += 1;
+                    }
+                }
+
+                if (contador > 0)
+                {
+                    Mensagem(this, "Foram incluidas " + contador.ToString() + " Fotos", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                }
+                else
+                {
+                    Mensagem(this, "Não Foram incluidas nenhuma imagem", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
+                }
+
+                
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

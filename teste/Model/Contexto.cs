@@ -63,6 +63,8 @@ namespace MaisGamers.Model
 
         public DbSet<mHora> Hora { get; set; }
 
+        public DbSet<mFotosOrcamento> FotosOrcamento { get; set; }
+
 
 
 

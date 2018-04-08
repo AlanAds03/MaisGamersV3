@@ -1,4 +1,5 @@
 ﻿using MaisGamers.Formularios;
+using MaisGamers.Formularios.Cadastro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace MaisGamers
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmPrincipal());
             Application.Run(new frmPrincipal());
+            //Application.Run(new frmFoto());
         }
     }
 }

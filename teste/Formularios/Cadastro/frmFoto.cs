@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaisGamers.Modulos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,10 @@ namespace MaisGamers.Formularios.Cadastro
             Start();
         }
 
-        private int m_Width = 500;
-        private int m_Height = 500;
-        public Byte[] foto;
+        private int m_Width = 800;
+        private int m_Height = 800;
+        private int posicao = 0;
+        public List<Byte[]> fotos = new List<byte[]>();
 
 
         // Altura e largura da imagem gerada pela WebCam
@@ -233,19 +235,61 @@ namespace MaisGamers.Formularios.Cadastro
         {
             Image image = pictureBox1.Image;
 
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                foto = ms.ToArray();
-            }
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            //    fotos.Add(ms.ToArray());
+            //}
 
             Stop();
-            this.Close();
+
+            PictureBox picture1 = new PictureBox();
+            Random rando = new Random(999999999);
+            pnlFotos.AutoScrollPosition = new Point(0, 0);
+
+            picture1.Height = 300;
+            picture1.Width = 300;
+            picture1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture1.Image = image;
+            picture1.Name = rando.Next().ToString();
+            picture1.Location = new Point(posicao, 0);
+
+            posicao += 300;
+
+            pnlFotos.Controls.Add(picture1);
+
+            
+            Start();
+            
         }
 
         private void frmFoto_Load(object sender, EventArgs e)
         {
+            pnlFotos.Width = Screen.PrimaryScreen.Bounds.Width - 100;
+            pnlFotos.HorizontalScroll.Enabled = true;
+            pnlFotos.AutoSize = false;
+        }
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+
+            foreach (Control xx in pnlFotos.Controls)
+            {
+
+                if (((PictureBox)xx).Image != null)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ((PictureBox)xx).Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        fotos.Add(ms.ToArray());
+                    }
+                
+                
+                }
+                
+            }
+
+            this.Close();
         }
     }
 }

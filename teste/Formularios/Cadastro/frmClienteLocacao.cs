@@ -769,7 +769,7 @@ namespace MaisGamers.Formularios.Cadastro
                     frmFoto _foto = new frmFoto();
                     _foto.ShowDialog();
 
-                    if (_foto.foto == null)
+                    if (_foto.fotos == null)
                     {
                         return;
                     }
@@ -777,23 +777,23 @@ namespace MaisGamers.Formularios.Cadastro
 
 
                     {
-                        pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                        pictureLocatario.Image = Image.FromStream(new MemoryStream(_foto.fotos[0]));
                         pictureLocatario.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.fotos[0]);
                         
                     }
                     else
                     {
-                        if (_foto.foto == null)
+                        if (_foto.fotos[0] == null)
                         {
                             return;
                         }
 
-                        pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.foto));
+                        pictureAutorizado.Image = Image.FromStream(new MemoryStream(_foto.fotos[0]));
                         pictureAutorizado.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.foto);
+                        _bcliente.IncluirFoto(idClienteLocacao, rbLocatario.Checked, _foto.fotos[0]);
                         
 
                     }
