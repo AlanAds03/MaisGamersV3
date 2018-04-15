@@ -66,6 +66,7 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+teste/App.config
 
 # Chutzpah Test files
 _Chutzpah*
