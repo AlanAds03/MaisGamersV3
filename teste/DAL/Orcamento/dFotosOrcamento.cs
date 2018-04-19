@@ -16,6 +16,7 @@ namespace MaisGamers.DAL.Orcamento
             var db = new Contexto();
             try
             {
+                _fotosOrcamento.IDOrcamento = db.Orcamento.Find(_fotosOrcamento.IDOrcamento.IDOrcamento);
                 db.FotosOrcamento.Add(_fotosOrcamento);
                 db.SaveChanges();
                 return true;
@@ -26,6 +27,27 @@ namespace MaisGamers.DAL.Orcamento
                 return false;
                 throw;
             }
+        }
+
+        internal List<byte[]> BuscarFotos(int idFotoOrcamento)
+        {
+            
+                var db = new Contexto();
+                try
+                {
+                var a = from x in db.FotosOrcamento
+                        where x.IDOrcamento.IDOrcamento == idFotoOrcamento
+                        select x.Foto;
+
+                return a.ToList<byte[]>();
+
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+
+            
         }
     }
 }

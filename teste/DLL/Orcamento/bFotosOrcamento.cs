@@ -17,5 +17,12 @@ namespace MaisGamers.DLL.Orcamento
             return _dFotos.InserirFoto(_fotosOrcamento);
 
         }
+
+        public List<Byte[]> BuscarFotos(int idFotoOrcamento)
+        {
+            dFotosOrcamento _dFotos = new dFotosOrcamento();
+
+            return _dFotos.BuscarFotos(idFotoOrcamento);
+        }
     }
 }

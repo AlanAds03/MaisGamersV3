@@ -121,6 +121,12 @@
     <Compile Include="Formularios\Anotacao\frmAnotacao.Designer.cs">
       <DependentUpon>frmAnotacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Cadastro\frmVisualizaFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastro\frmVisualizaFoto.Designer.cs">
+      <DependentUpon>frmVisualizaFoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastro\frmPesquisaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Anotacao\frmAnotacao.resx">
       <DependentUpon>frmAnotacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cadastro\frmVisualizaFoto.resx">
+      <DependentUpon>frmVisualizaFoto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cadastro\frmPesquisaProduto.resx">
       <DependentUpon>frmPesquisaProduto.cs</DependentUpon>

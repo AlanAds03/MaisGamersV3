@@ -299,5 +299,25 @@ namespace MaisGamers.Formularios.Orcamento
                 throw;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                frmVisualizaFoto _visualiza = new frmVisualizaFoto();
+
+                _visualiza.id = idOrcamento;
+                _visualiza.ShowDialog();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
