@@ -72,6 +72,7 @@ namespace MaisGamers.Formularios.Orcamento
                 tbControl.Refresh();
                 idOrcamento = 0;
                 LimpaCampos();
+                btnFechar.Text = "Voltar";
 
                 txtValor.Enabled = false;
                 txtDataEntrega.ShowCheckBox = true;
@@ -109,9 +110,16 @@ namespace MaisGamers.Formularios.Orcamento
                 txtDataEntrada.Value = Convert.ToDateTime(_mOrcamento.Data_Entrada);
 
                 cmdStatus.SelectedValue = _mOrcamento.StatusOrcamento.IDStatusOrcamento;
+                btnFechar.Text = "Voltar";
 
 
 
+            }
+            else if(modo_tela == ModoTela.CONSULTA)
+            {
+                tbControl.SelectTab("tpPesquisa");
+                tbControl.Refresh();
+                btnFechar.Text = "Fechar";
             }
 
 
@@ -202,7 +210,16 @@ namespace MaisGamers.Formularios.Orcamento
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(modo_tela == ModoTela.ALTERACAO)
+            {
+                modo_tela = ModoTela.CONSULTA;
+                atualizaTela();
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
