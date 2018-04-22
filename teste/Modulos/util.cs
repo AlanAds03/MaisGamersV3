@@ -1,6 +1,7 @@
 ﻿using Frameworks.Classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -280,6 +281,32 @@ namespace MaisGamers.Modulos
             }
         }
 
+        public static void Imprimir(string arquivo)
+        {
+            try
+            {
+
+                ProcessStartInfo info = new ProcessStartInfo();
+                info.Verb = "print";
+                info.FileName = arquivo;
+                info.Arguments = "\\Fiscal4\\";
+
+                info.CreateNoWindow = true;
+                info.WindowStyle = ProcessWindowStyle.Hidden;
+
+                Process p = new Process();
+                p.StartInfo = info;
+                p.Start();
+
+                p.WaitForInputIdle();
+                System.Threading.Thread.Sleep(3000);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

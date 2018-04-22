@@ -614,20 +614,7 @@ namespace MaisGamers.Formularios.Cadastro
 
 
 
-                ProcessStartInfo info = new ProcessStartInfo();
-                info.Verb = "print";
-                info.FileName = @"C:\Temp\1.txt";
-                info.Arguments = "\\Fiscal4\\";
-
-                info.CreateNoWindow = true;
-                info.WindowStyle = ProcessWindowStyle.Hidden;
-
-                Process p = new Process();
-                p.StartInfo = info;
-                p.Start();
-
-                p.WaitForInputIdle();
-                System.Threading.Thread.Sleep(3000);
+                Util.Imprimir(@"C:\Temp\1.txt");
 
 
 

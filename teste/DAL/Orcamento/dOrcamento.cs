@@ -37,7 +37,8 @@ namespace MaisGamers.DAL.Orcamento
                 var orcamento = from o in db.Orcamento 
                                 join s in db.StatusOrcamento on o.StatusOrcamento.IDStatusOrcamento equals s.IDStatusOrcamento
                                 where o.NomeCliente.Contains(string.IsNullOrEmpty(cliente) ? o.NomeCliente : cliente)
-                                select new { ColunasGrid = "IDOrcamento;NomeCliente[300|Cliente];StatusOrcamento[300|Status];Data_Entrada[200|Data Entrada]", o.IDOrcamento, o.NomeCliente,s.StatusOrcamento,o.Data_Entrada};
+                                orderby o.Data_Entrada descending
+                                select new { ColunasGrid = "IDOrcamento;NomeCliente[300|Cliente];Produto[200|Produto];StatusOrcamento[300|Status];Data_Entrada[200|Data Entrada]", o.IDOrcamento, o.NomeCliente,o.Produto, s.StatusOrcamento,o.Data_Entrada} ;
                 
 
                 return orcamento.ToList<dynamic>();

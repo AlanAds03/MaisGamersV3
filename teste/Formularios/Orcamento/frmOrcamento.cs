@@ -29,6 +29,7 @@ namespace MaisGamers.Formularios.Orcamento
             Util.CentralizaTab(tbControl);
 
             CarregaComboStatus();
+            
         }
 
         private void CarregaComboStatus()
@@ -83,6 +84,7 @@ namespace MaisGamers.Formularios.Orcamento
                 cmdStatus.Enabled = false;
                 btnTirarFoto.Enabled = false;
                 btnVerFotos.Enabled = false;
+                txtDataEntrada.Value = System.DateTime.Now;
 
 
             }
@@ -186,6 +188,7 @@ namespace MaisGamers.Formularios.Orcamento
                         {
                             btnTirarFoto.Enabled = true;
                             btnVerFotos.Enabled = true;
+                            GerarArquivo();
                             //imprimindo 
                         }
                         else
@@ -409,7 +412,7 @@ namespace MaisGamers.Formularios.Orcamento
                 arquivo.WriteLine("      Telefone: (11)4382 - 9388        ");
                 arquivo.WriteLine("      Whatsapp: (11 94124-7585         ");
                 arquivo.WriteLine("---------------------------------------");
-                arquivo.WriteLine("------------Orçamento------------------");
+                arquivo.WriteLine("------------Orcamento------------------");
                 arquivo.WriteLine("---------------------------------------");
                 arquivo.WriteLine("                                       ");
                 if(txtNome.Text.Length > 35)
@@ -427,15 +430,17 @@ namespace MaisGamers.Formularios.Orcamento
                 arquivo.WriteLine("Data Entrada: " + txtDataEntrada.Value.ToShortDateString());
                 arquivo.WriteLine("S/N:" + txtNumeroSerie.Text);
                 arquivo.WriteLine("Defeito:" + txtDefeito.Text);
-                arquivo.WriteLine("Observação:" + txtObservacao.Text);
-                arquivo.WriteLine("Previsão Orçamento:" + txtDataEntrada.Value.AddDays(3).ToShortDateString());
+                arquivo.WriteLine("Observacao:" + txtObservacao.Text);
+                arquivo.WriteLine("Previsão Orcamento:" + txtDataEntrada.Value.AddDays(3).ToShortDateString());
                 arquivo.WriteLine("----------------------------------");
                 arquivo.WriteLine("");
                 arquivo.WriteLine("");
-                arquivo.WriteLine("Orçamentos aprovados e não retirados em 90 dias,");
-                arquivo.WriteLine("o mesmo será vendido para pagamento do serviço");
+                arquivo.WriteLine("Orcamentos aprovados e nao retirados em 90 dias,");
+                arquivo.WriteLine("o mesmo sera vendido para pagamento do servico");
                 arquivo.WriteLine("prestado");
-                arquivo.WriteLine("");
+                arquivo.WriteLine("                                  ");
+                arquivo.WriteLine("                                  ");
+                arquivo.WriteLine("                                  ");
 
                 arquivo.WriteLine("__________________________________");
                 arquivo.WriteLine("        " + txtNome.Text + "     ");
@@ -444,6 +449,7 @@ namespace MaisGamers.Formularios.Orcamento
                 arquivo.WriteLine("*****Obrigado e volte sempre*****");
                 arquivo.Close();
 
+                Util.Imprimir(caminhoArquivo + nomeArquivo);
 
             }
             catch (Exception)
@@ -451,6 +457,11 @@ namespace MaisGamers.Formularios.Orcamento
 
                 throw;
             }
+        }
+
+        private void lvPesquisa_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+
         }
     }
 }

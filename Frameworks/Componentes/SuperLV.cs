@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Frameworks.Componentes
 {
     public class SuperLV : ListView
     {
+        public bool lstViewSort = false;
+
         private int Chave { get; set; }
         private string  ChaveComposta { get; set; }
 
@@ -396,5 +399,49 @@ namespace Frameworks.Componentes
 
         }
 
+        protected override void OnColumnClick(ColumnClickEventArgs e)
+        {
+            if  (lstViewSort == false)
+            {
+                this.ListViewItemSorter = new ListViewItemComparer(e.Column,SortOrder.Ascending);
+                lstViewSort = true;
+            }
+            else
+            {
+                this.ListViewItemSorter = new ListViewItemComparer(e.Column, SortOrder.Descending);
+                lstViewSort = false;
+            }
+           
+            this.Sort();
+        }
+        
     }
+
+
+    class ListViewItemComparer : IComparer
+    {
+        public SortOrder Order = SortOrder.Ascending;
+        public int Column;
+
+        public ListViewItemComparer()
+        {
+            Column = 0;
+        }
+        public ListViewItemComparer(int column , SortOrder order)
+        {
+            Column = column;
+            Order = order;
+        }
+        public int Compare(object x, object y)
+        {
+            int returnVal = String.Compare(((ListViewItem)x).SubItems[Column].Text,
+            ((ListViewItem)y).SubItems[Column].Text);
+
+            if (Order == SortOrder.Descending)
+                return -returnVal;
+            else
+                return returnVal;
+        }
+    }
+
 }

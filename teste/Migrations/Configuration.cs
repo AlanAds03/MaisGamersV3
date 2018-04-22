@@ -45,13 +45,12 @@ namespace teste.Migrations
             
 
             context.StatusOrcamento.AddOrUpdate(
-
                 p => p.IDStatusOrcamento,
                 new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 1 ,StatusOrcamento = "Em aberto"},
                 new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 2, StatusOrcamento = "Em análise" },
                 new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 3, StatusOrcamento = "Aguardando aprovação do cliente" },
-                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 5, StatusOrcamento = "Devolvido" },
-                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 6, StatusOrcamento = "Concluído" }
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 4, StatusOrcamento = "Devolvido" },
+                new MaisGamers.Model.Orcamento.mStatusOrcamento { IDStatusOrcamento = 5, StatusOrcamento = "Concluído" }
 
                 );
 

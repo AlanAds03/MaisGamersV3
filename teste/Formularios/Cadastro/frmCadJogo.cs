@@ -123,6 +123,8 @@ namespace MaisGamers.Formularios.Cadastro
 
                 txtPrecoPrimaria.Text = _mJogo.PrecoPrimaria.ToString("0.00");
                 txtPrecoSecundaria.Text = _mJogo.PrecoSecundaria.ToString("0.00");
+                txtValorVendaPrimaria.Text = _mJogo.ValorVendaPrimaria.ToString();
+                txtValorVendaSecundaria.Text = _mJogo.ValorVendaSecundaria.ToString();
 
 
             }
@@ -156,9 +158,10 @@ namespace MaisGamers.Formularios.Cadastro
             txtContaPai.Text = string.Empty;
             txtPrimariaVendidoPara.Text = string.Empty;
             txtSecundariaVendidoPara.Text = string.Empty;
-
             txtPrecoPrimaria.Text = string.Empty;
             txtPrecoSecundaria.Text = string.Empty;
+            txtValorVendaPrimaria.Text = string.Empty;
+            txtValorVendaSecundaria.Text = string.Empty;
 
         }
 

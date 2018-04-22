@@ -229,22 +229,6 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803311647330_ajusteOrcamento.cs" />
-    <Compile Include="Migrations\201803311647330_ajusteOrcamento.Designer.cs">
-      <DependentUpon>201803311647330_ajusteOrcamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803311723464_ajuste.cs" />
-    <Compile Include="Migrations\201803311723464_ajuste.Designer.cs">
-      <DependentUpon>201803311723464_ajuste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804081853070_adicionarFotoOrcamento.cs" />
-    <Compile Include="Migrations\201804081853070_adicionarFotoOrcamento.Designer.cs">
-      <DependentUpon>201804081853070_adicionarFotoOrcamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804081858079_ajuste foto orcamento.cs" />
-    <Compile Include="Migrations\201804081858079_ajuste foto orcamento.Designer.cs">
-      <DependentUpon>201804081858079_ajuste foto orcamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Anotacao\mAnotacao.cs" />
     <Compile Include="Model\Anotacao\mStatusAnotacao.cs" />
@@ -337,18 +321,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803311647330_ajusteOrcamento.resx">
-      <DependentUpon>201803311647330_ajusteOrcamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803311723464_ajuste.resx">
-      <DependentUpon>201803311723464_ajuste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804081853070_adicionarFotoOrcamento.resx">
-      <DependentUpon>201804081853070_adicionarFotoOrcamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804081858079_ajuste foto orcamento.resx">
-      <DependentUpon>201804081858079_ajuste foto orcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>
