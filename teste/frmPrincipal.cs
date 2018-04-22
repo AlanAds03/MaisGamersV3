@@ -13,6 +13,7 @@ using MaisGamers.Formularios.LocacaoHora;
 using MaisGamers.Formularios.Orcamento;
 using MaisGamers.DLL.Venda;
 using MaisGamers.Formularios.Horas;
+using MaisGamers.Modulos;
 
 namespace MaisGamers
 {
@@ -32,16 +33,25 @@ namespace MaisGamers
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
 
-            CentralizaMenus();
+                Util.LogaErro("Inicializando Sistema Mais Gamers");
+                Util.LogaErro("Centralizando os menus");
+                CentralizaMenus();
 
-            var db = new Contexto();
+                var db = new Contexto();
 
-            db.Database.CreateIfNotExists();
-            Timer time = new Timer();
-            time.Interval = 1000;
-            time.Tick += time_tick;
-            time.Start();
+                db.Database.CreateIfNotExists();
+                Timer time = new Timer();
+                time.Interval = 1000;
+                time.Tick += time_tick;
+                time.Start();
+            }
+            catch (Exception ex)
+            {
+                Util.TratarErro(ex);
+            }
 
 
 
@@ -240,6 +250,11 @@ namespace MaisGamers
         {
             frmOrcamento orcamento = new frmOrcamento();
             MostraFormulario(orcamento);
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Util.LogaErro("Fechando sistema MaisGamers");
         }
     }
 }

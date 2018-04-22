@@ -1,6 +1,7 @@
 ﻿using Frameworks.Classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -10,6 +11,7 @@ using static Frameworks.Classes.CMsgBox;
 
 namespace MaisGamers.Modulos
 {
+    
 
     public class EnderecoCEP
     {
@@ -26,7 +28,75 @@ namespace MaisGamers.Modulos
     }
     public static class Util
     {
+        public static bool bLogaErro = true;
 
+
+        public static void LogaErro(string mensagem)
+        {
+            string caminho = string.Empty;
+            string nomeArquivo = string.Empty;
+            StreamWriter arquivo = null;
+            try
+            {
+                if (bLogaErro)
+                {
+                    caminho = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), "MAISGAMERS_LOG");
+
+                    nomeArquivo = @"\Log" + System.DateTime.Now.ToString("yyyyMMdd") + ".txt";
+
+
+                    if (!Directory.Exists(caminho))
+                    {
+                        Directory.CreateDirectory(caminho);
+                    }
+
+                    arquivo = new StreamWriter(caminho + nomeArquivo, true);
+                    arquivo.WriteLine(System.DateTime.Now.ToString("HH:mm:ss") + "-" + mensagem);
+                    arquivo.Close();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public static void  TratarErro(Exception ex)
+        {
+            string caminho = string.Empty;
+            string nomeArquivo = string.Empty;
+            StreamWriter arquivo = null;
+            try
+            {
+                if (bLogaErro)
+                {
+                    caminho = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), "MAISGAMERS_LOG");
+
+                    nomeArquivo = @"\LogException" + System.DateTime.Now.ToString("yyyyMMdd") + ".txt";
+
+
+                    if (!Directory.Exists(caminho))
+                    {
+                        Directory.CreateDirectory(caminho);
+                    }
+
+                    arquivo = new StreamWriter(caminho + nomeArquivo,true);
+                    arquivo.WriteLine(System.DateTime.Now.ToString("hh:mm:ss") + "-" + ex.Message.ToString());
+                    arquivo.Close();
+
+                    Mensagem(null, ex.Message.ToString(), TipoBotoes.OK, TipoErro.Erro);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
         public enum TipoPagamento
         {
             DINHEIRO = 1,

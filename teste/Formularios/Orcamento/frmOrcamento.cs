@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,8 @@ namespace MaisGamers.Formularios.Orcamento
                 cmbTipoPagamento.Enabled = false;
                 cmdStatus.SelectedValue = "1";
                 cmdStatus.Enabled = false;
+                btnTirarFoto.Enabled = false;
+                btnVerFotos.Enabled = false;
 
 
             }
@@ -173,6 +176,8 @@ namespace MaisGamers.Formularios.Orcamento
                     if (idOrcamento == 0)
                         if (Mensagem(this, "Orçamento inserido com sucesso , deseja imprimir o comprovante ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
                         {
+                            btnTirarFoto.Enabled = true;
+                            btnVerFotos.Enabled = true;
                             //imprimindo 
                         }
                         else
@@ -310,6 +315,117 @@ namespace MaisGamers.Formularios.Orcamento
                 _visualiza.id = idOrcamento;
                 _visualiza.ShowDialog();
 
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void imgPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarOrcamento();
+        }
+
+        private void imgPesquisar_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            imgPesquisar.BackColor = Color.WhiteSmoke;
+        }
+
+        private void imgPesquisar_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            imgPesquisar.BackColor = Color.Transparent;
+        }
+
+        private void btnComprovante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Util.LogaErro("Gerando arquivo Orcamento");
+                GerarArquivo();
+
+            }
+            catch (Exception ex)
+            {
+                Util.TratarErro(ex);
+            }
+        }
+
+        private void GerarArquivo()
+        {
+            string caminhoArquivo = string.Empty;
+            string nomeArquivo = string.Empty;
+
+
+            try
+            {
+                caminhoArquivo = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), "MAISGAMERS_ARQ");
+
+                if (!Directory.Exists(caminhoArquivo))
+                {
+                    Directory.CreateDirectory(caminhoArquivo);
+                }
+
+                nomeArquivo = @"\" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
+
+                if (File.Exists(caminhoArquivo + nomeArquivo))
+                {
+                    File.Delete(caminhoArquivo + nomeArquivo);
+                }
+
+                StreamWriter arquivo = new StreamWriter(caminhoArquivo + nomeArquivo);
+                
+
+                arquivo.WriteLine("---------------------------------------");
+                arquivo.WriteLine("--------Locadora Mais Gamers-----------");
+                arquivo.WriteLine("      CNPJ: 23.260.093/0001-87         ");
+                arquivo.WriteLine("      Telefone: (11)4382 - 9388        ");
+                arquivo.WriteLine("      Whatsapp: (11 94124-7585         ");
+                arquivo.WriteLine("---------------------------------------");
+                arquivo.WriteLine("------------Orçamento------------------");
+                arquivo.WriteLine("---------------------------------------");
+                arquivo.WriteLine("                                       ");
+                if(txtNome.Text.Length > 35)
+                {
+                    arquivo.WriteLine("Cliente:" + txtNome.Text.Substring(0,35).ToString());
+                }
+                else
+                {
+                    arquivo.WriteLine("Cliente:" + txtNome.Text);
+                }
+                
+                arquivo.WriteLine("Telefone:" + txtTelefone1.Text);
+                arquivo.WriteLine("Telefone 2:" + txtTelefone2.Text);
+                arquivo.WriteLine("Produto:" + txtProduto.Text);
+                arquivo.WriteLine("Data Entrada: " + txtDataEntrada.Value.ToShortDateString());
+                arquivo.WriteLine("S/N:" + txtNumeroSerie.Text);
+                arquivo.WriteLine("Defeito:" + txtDefeito.Text);
+                arquivo.WriteLine("Observação:" + txtObservacao.Text);
+                arquivo.WriteLine("Previsão Orçamento:" + txtDataEntrada.Value.AddDays(3).ToShortDateString());
+                arquivo.WriteLine("----------------------------------");
+                arquivo.WriteLine("");
+                arquivo.WriteLine("");
+                arquivo.WriteLine("Orçamentos aprovados e não retirados em 90 dias,");
+                arquivo.WriteLine("o mesmo será vendido para pagamento do serviço");
+                arquivo.WriteLine("prestado");
+                arquivo.WriteLine("");
+
+                arquivo.WriteLine("__________________________________");
+                arquivo.WriteLine("        " + txtNome.Text + "     ");
+
+
+                arquivo.WriteLine("*****Obrigado e volte sempre*****");
+                arquivo.Close();
 
 
             }
