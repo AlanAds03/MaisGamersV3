@@ -151,6 +151,10 @@ namespace MaisGamers.Formularios.Orcamento
                 bOrcamento _b = new bOrcamento();
 
                 //inserir novo orcamento 
+                if (!Validate())
+                {
+                    return;
+                }
                 if (!ValidateChildren())
                 {
                     return;
@@ -184,12 +188,15 @@ namespace MaisGamers.Formularios.Orcamento
                 {
 
                     if (idOrcamento == 0)
-                        if (Mensagem(this, "Orçamento inserido com sucesso , deseja imprimir o comprovante ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                        if (Mensagem(this, "Orçamento inserido com sucesso , deseja tirar foto ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
                         {
-                            btnTirarFoto.Enabled = true;
-                            btnVerFotos.Enabled = true;
-                            GerarArquivo();
-                            //imprimindo 
+                            TirarFoto();
+
+                            if (Mensagem(this, "Deseja imprimir o comprovante ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+                            {
+                                GerarArquivo();
+                            }
+                                
                         }
                         else
                         {
@@ -273,9 +280,8 @@ namespace MaisGamers.Formularios.Orcamento
 
         }
 
-        private void btnTirarFoto_Click(object sender, EventArgs e)
+        public void TirarFoto()
         {
-            
             bFotosOrcamento _bFotos = new bFotosOrcamento();
             mFotosOrcamento _mfoto = new mFotosOrcamento();
             int contador = 0;
@@ -286,12 +292,12 @@ namespace MaisGamers.Formularios.Orcamento
                 frmFoto _foto = new frmFoto();
                 _foto.ShowDialog();
 
-                if (_foto.fotos.Count  == 0)
+                if (_foto.fotos.Count == 0)
                 {
                     return;
                 }
 
-                foreach(Byte[] _byte in _foto.fotos)
+                foreach (Byte[] _byte in _foto.fotos)
                 {
                     _mfoto = new mFotosOrcamento();
                     _mfoto.DataCriacao = System.DateTime.Now;
@@ -314,7 +320,7 @@ namespace MaisGamers.Formularios.Orcamento
                     Mensagem(this, "Não Foram incluidas nenhuma imagem", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Ok);
                 }
 
-                
+
 
 
             }
@@ -323,6 +329,12 @@ namespace MaisGamers.Formularios.Orcamento
 
                 throw;
             }
+        }
+        private void btnTirarFoto_Click(object sender, EventArgs e)
+        {
+            TirarFoto();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
