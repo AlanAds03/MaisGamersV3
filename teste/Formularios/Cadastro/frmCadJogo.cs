@@ -21,6 +21,8 @@ namespace MaisGamers.Formularios.Cadastro
     {
         public Util.ModoTela modo_tela;
         public int idJogo;
+        public bool bVisualizaSenha = false;
+        public bool bVisualizaSenhaConta = false;
         public frmCadJogo()
         {
             InitializeComponent();
@@ -125,6 +127,9 @@ namespace MaisGamers.Formularios.Cadastro
                 txtPrecoSecundaria.Text = _mJogo.PrecoSecundaria.ToString("0.00");
                 txtValorVendaPrimaria.Text = _mJogo.ValorVendaPrimaria.ToString();
                 txtValorVendaSecundaria.Text = _mJogo.ValorVendaSecundaria.ToString();
+
+                bVisualizaSenha = false;
+                bVisualizaSenhaConta = false;
 
 
             }
@@ -456,6 +461,36 @@ namespace MaisGamers.Formularios.Cadastro
             {
                 PesquisaGrid(txtPesqNome.Text, cmbConsolePesquisa.SelectedValue.ToString(),chkFiltroLacrado.Checked);
             }
+        }
+
+        private void btnVisualisarSenha_Click(object sender, EventArgs e)
+        {
+            if (bVisualizaSenha == false)
+            {
+                txtSenha.PasswordChar = '\0';
+                bVisualizaSenha = true;
+            }
+            else
+            {
+                txtSenha.PasswordChar = Convert.ToChar("*");
+                bVisualizaSenha = false;
+            }
+            
+        }
+
+        private void btnVisualizaSenhaConta_Click(object sender, EventArgs e)
+        {
+            if (bVisualizaSenhaConta == false)
+            {
+                txtSenhaPSN.PasswordChar = '\0';
+                bVisualizaSenhaConta = true;
+            }
+            else
+            {
+                txtSenhaPSN.PasswordChar = Convert.ToChar("*");
+                bVisualizaSenhaConta = false;
+            }
+
         }
     }
 }

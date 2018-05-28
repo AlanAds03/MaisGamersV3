@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadJogo));
             this.grpFiltro = new System.Windows.Forms.GroupBox();
+            this.chkFiltroLacrado = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
-            this.cmbConsolePesquisa = new Frameworks.Componentes.SuperComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
-            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
             this.grpBotoes = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,49 +47,53 @@
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkLacrado = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlEmail = new System.Windows.Forms.Panel();
-            this.txtDataVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
-            this.txtDataVEndaPrimaria = new Frameworks.Componentes.SuperTextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtContaPai = new Frameworks.Componentes.SuperTextBox();
-            this.txtDataNascimentoConta = new Frameworks.Componentes.SuperTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtValorVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
-            this.txtSecundariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtValorVendaPrimaria = new Frameworks.Componentes.SuperTextBox();
-            this.txtPrimariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSenhaPSN = new Frameworks.Componentes.SuperTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtEmail = new Frameworks.Componentes.SuperTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPrecoSecundaria = new Frameworks.Componentes.SuperTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPrecoPrimaria = new Frameworks.Componentes.SuperTextBox();
-            this.txtSenha = new Frameworks.Componentes.SuperTextBox();
             this.lblVenda = new System.Windows.Forms.Label();
             this.lblPago = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnVisualisarSenha = new System.Windows.Forms.Button();
+            this.txtPesqNome = new Frameworks.Componentes.SuperTextBox();
+            this.cmbConsolePesquisa = new Frameworks.Componentes.SuperComboBox();
+            this.lvPesquisa = new Frameworks.Componentes.SuperLV();
+            this.txtDataVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtDataVEndaPrimaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtContaPai = new Frameworks.Componentes.SuperTextBox();
+            this.txtDataNascimentoConta = new Frameworks.Componentes.SuperTextBox();
+            this.txtValorVendaSecundaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtSecundariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
+            this.txtValorVendaPrimaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtPrimariaVendidoPara = new Frameworks.Componentes.SuperTextBox();
+            this.txtSenhaPSN = new Frameworks.Componentes.SuperTextBox();
+            this.txtEmail = new Frameworks.Componentes.SuperTextBox();
+            this.txtPrecoSecundaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtPrecoPrimaria = new Frameworks.Componentes.SuperTextBox();
+            this.txtSenha = new Frameworks.Componentes.SuperTextBox();
             this.txtPrecoVenda = new Frameworks.Componentes.SuperTextBox();
             this.txtPrecoPago = new Frameworks.Componentes.SuperTextBox();
             this.cmbTipoJogo = new Frameworks.Componentes.SuperComboBox();
             this.txtQuantidade = new Frameworks.Componentes.SuperTextBox();
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
             this.cmbConsole = new Frameworks.Componentes.SuperComboBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkLacrado = new System.Windows.Forms.CheckBox();
-            this.chkFiltroLacrado = new System.Windows.Forms.CheckBox();
+            this.btnVisualizaSenhaConta = new System.Windows.Forms.Button();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.grpBotoes.SuspendLayout();
@@ -118,6 +120,16 @@
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtro";
             // 
+            // chkFiltroLacrado
+            // 
+            this.chkFiltroLacrado.AutoSize = true;
+            this.chkFiltroLacrado.Location = new System.Drawing.Point(552, 43);
+            this.chkFiltroLacrado.Name = "chkFiltroLacrado";
+            this.chkFiltroLacrado.Size = new System.Drawing.Size(65, 17);
+            this.chkFiltroLacrado.TabIndex = 7;
+            this.chkFiltroLacrado.Text = "Lacrado";
+            this.chkFiltroLacrado.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -137,28 +149,6 @@
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
-            // 
-            // txtPesqNome
-            // 
-            this.txtPesqNome.CampoObrigatorio = false;
-            this.txtPesqNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesqNome.Location = new System.Drawing.Point(29, 36);
-            this.txtPesqNome.Name = "txtPesqNome";
-            this.txtPesqNome.Size = new System.Drawing.Size(277, 26);
-            this.txtPesqNome.TabIndex = 3;
-            this.txtPesqNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesqNome_KeyPress);
-            // 
-            // cmbConsolePesquisa
-            // 
-            this.cmbConsolePesquisa.CampoObrigatorio = false;
-            this.cmbConsolePesquisa.Carregado = false;
-            this.cmbConsolePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConsolePesquisa.FormattingEnabled = true;
-            this.cmbConsolePesquisa.Location = new System.Drawing.Point(330, 36);
-            this.cmbConsolePesquisa.Name = "cmbConsolePesquisa";
-            this.cmbConsolePesquisa.Size = new System.Drawing.Size(181, 28);
-            this.cmbConsolePesquisa.TabIndex = 2;
-            this.cmbConsolePesquisa.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -183,17 +173,6 @@
             this.grpGrid.Size = new System.Drawing.Size(762, 295);
             this.grpGrid.TabIndex = 7;
             this.grpGrid.TabStop = false;
-            // 
-            // lvPesquisa
-            // 
-            this.lvPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lvPesquisa.Location = new System.Drawing.Point(19, 31);
-            this.lvPesquisa.Name = "lvPesquisa";
-            this.lvPesquisa.Size = new System.Drawing.Size(727, 227);
-            this.lvPesquisa.TabIndex = 5;
-            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
-            this.lvPesquisa.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvPesquisa_ItemChecked);
             // 
             // grpBotoes
             // 
@@ -343,6 +322,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
+            // chkLacrado
+            // 
+            this.chkLacrado.AutoSize = true;
+            this.chkLacrado.Location = new System.Drawing.Point(547, 87);
+            this.chkLacrado.Name = "chkLacrado";
+            this.chkLacrado.Size = new System.Drawing.Size(65, 17);
+            this.chkLacrado.TabIndex = 31;
+            this.chkLacrado.Text = "Lacrado";
+            this.chkLacrado.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(720, 389);
@@ -354,6 +343,8 @@
             // 
             // pnlEmail
             // 
+            this.pnlEmail.Controls.Add(this.btnVisualizaSenhaConta);
+            this.pnlEmail.Controls.Add(this.btnVisualisarSenha);
             this.pnlEmail.Controls.Add(this.txtDataVendaSecundaria);
             this.pnlEmail.Controls.Add(this.txtDataVEndaPrimaria);
             this.pnlEmail.Controls.Add(this.label19);
@@ -385,24 +376,6 @@
             this.pnlEmail.Size = new System.Drawing.Size(804, 221);
             this.pnlEmail.TabIndex = 28;
             // 
-            // txtDataVendaSecundaria
-            // 
-            this.txtDataVendaSecundaria.CampoObrigatorio = false;
-            this.txtDataVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataVendaSecundaria.Location = new System.Drawing.Point(506, 178);
-            this.txtDataVendaSecundaria.Name = "txtDataVendaSecundaria";
-            this.txtDataVendaSecundaria.Size = new System.Drawing.Size(140, 26);
-            this.txtDataVendaSecundaria.TabIndex = 45;
-            // 
-            // txtDataVEndaPrimaria
-            // 
-            this.txtDataVEndaPrimaria.CampoObrigatorio = false;
-            this.txtDataVEndaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataVEndaPrimaria.Location = new System.Drawing.Point(506, 129);
-            this.txtDataVEndaPrimaria.Name = "txtDataVEndaPrimaria";
-            this.txtDataVEndaPrimaria.Size = new System.Drawing.Size(140, 26);
-            this.txtDataVEndaPrimaria.TabIndex = 44;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -412,24 +385,6 @@
             this.label19.Size = new System.Drawing.Size(83, 17);
             this.label19.TabIndex = 43;
             this.label19.Text = "Conta Pai:";
-            // 
-            // txtContaPai
-            // 
-            this.txtContaPai.CampoObrigatorio = false;
-            this.txtContaPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContaPai.Location = new System.Drawing.Point(581, 80);
-            this.txtContaPai.Name = "txtContaPai";
-            this.txtContaPai.Size = new System.Drawing.Size(152, 26);
-            this.txtContaPai.TabIndex = 42;
-            // 
-            // txtDataNascimentoConta
-            // 
-            this.txtDataNascimentoConta.CampoObrigatorio = false;
-            this.txtDataNascimentoConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNascimentoConta.Location = new System.Drawing.Point(359, 80);
-            this.txtDataNascimentoConta.Name = "txtDataNascimentoConta";
-            this.txtDataNascimentoConta.Size = new System.Drawing.Size(123, 26);
-            this.txtDataNascimentoConta.TabIndex = 41;
             // 
             // label18
             // 
@@ -471,24 +426,6 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "Valor:";
             // 
-            // txtValorVendaSecundaria
-            // 
-            this.txtValorVendaSecundaria.CampoObrigatorio = false;
-            this.txtValorVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorVendaSecundaria.Location = new System.Drawing.Point(359, 178);
-            this.txtValorVendaSecundaria.Name = "txtValorVendaSecundaria";
-            this.txtValorVendaSecundaria.Size = new System.Drawing.Size(85, 26);
-            this.txtValorVendaSecundaria.TabIndex = 36;
-            // 
-            // txtSecundariaVendidoPara
-            // 
-            this.txtSecundariaVendidoPara.CampoObrigatorio = false;
-            this.txtSecundariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecundariaVendidoPara.Location = new System.Drawing.Point(29, 178);
-            this.txtSecundariaVendidoPara.Name = "txtSecundariaVendidoPara";
-            this.txtSecundariaVendidoPara.Size = new System.Drawing.Size(313, 26);
-            this.txtSecundariaVendidoPara.TabIndex = 35;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -509,24 +446,6 @@
             this.label13.TabIndex = 33;
             this.label13.Text = "Valor:";
             // 
-            // txtValorVendaPrimaria
-            // 
-            this.txtValorVendaPrimaria.CampoObrigatorio = false;
-            this.txtValorVendaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorVendaPrimaria.Location = new System.Drawing.Point(359, 129);
-            this.txtValorVendaPrimaria.Name = "txtValorVendaPrimaria";
-            this.txtValorVendaPrimaria.Size = new System.Drawing.Size(85, 26);
-            this.txtValorVendaPrimaria.TabIndex = 32;
-            // 
-            // txtPrimariaVendidoPara
-            // 
-            this.txtPrimariaVendidoPara.CampoObrigatorio = false;
-            this.txtPrimariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimariaVendidoPara.Location = new System.Drawing.Point(29, 129);
-            this.txtPrimariaVendidoPara.Name = "txtPrimariaVendidoPara";
-            this.txtPrimariaVendidoPara.Size = new System.Drawing.Size(313, 26);
-            this.txtPrimariaVendidoPara.TabIndex = 31;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -546,15 +465,6 @@
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 29;
             this.label5.Text = "Senha PSN/XONE:";
-            // 
-            // txtSenhaPSN
-            // 
-            this.txtSenhaPSN.CampoObrigatorio = false;
-            this.txtSenhaPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaPSN.Location = new System.Drawing.Point(581, 31);
-            this.txtSenhaPSN.Name = "txtSenhaPSN";
-            this.txtSenhaPSN.Size = new System.Drawing.Size(213, 26);
-            this.txtSenhaPSN.TabIndex = 28;
             // 
             // label6
             // 
@@ -577,15 +487,6 @@
             this.label12.Text = "Digital Secundária:";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // txtEmail
-            // 
-            this.txtEmail.CampoObrigatorio = false;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(29, 31);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(313, 26);
-            this.txtEmail.TabIndex = 3;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -597,16 +498,6 @@
             this.label10.Text = "Digital Primária:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // txtPrecoSecundaria
-            // 
-            this.txtPrecoSecundaria.CampoObrigatorio = false;
-            this.txtPrecoSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoSecundaria.Location = new System.Drawing.Point(201, 80);
-            this.txtPrecoSecundaria.Name = "txtPrecoSecundaria";
-            this.txtPrecoSecundaria.Size = new System.Drawing.Size(123, 26);
-            this.txtPrecoSecundaria.TabIndex = 25;
-            this.txtPrecoSecundaria.Leave += new System.EventHandler(this.txtPrecoSecundaria_Leave);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -616,25 +507,6 @@
             this.label7.Size = new System.Drawing.Size(102, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Senha email:";
-            // 
-            // txtPrecoPrimaria
-            // 
-            this.txtPrecoPrimaria.CampoObrigatorio = false;
-            this.txtPrecoPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoPrimaria.Location = new System.Drawing.Point(29, 80);
-            this.txtPrecoPrimaria.Name = "txtPrecoPrimaria";
-            this.txtPrecoPrimaria.Size = new System.Drawing.Size(123, 26);
-            this.txtPrecoPrimaria.TabIndex = 24;
-            this.txtPrecoPrimaria.Leave += new System.EventHandler(this.txtPrecoPrimaria_Leave);
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.CampoObrigatorio = false;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(359, 31);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(213, 26);
-            this.txtSenha.TabIndex = 4;
             // 
             // lblVenda
             // 
@@ -696,23 +568,223 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Nome:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btnVisualisarSenha
+            // 
+            this.btnVisualisarSenha.Location = new System.Drawing.Point(527, 3);
+            this.btnVisualisarSenha.Name = "btnVisualisarSenha";
+            this.btnVisualisarSenha.Size = new System.Drawing.Size(36, 23);
+            this.btnVisualisarSenha.TabIndex = 46;
+            this.btnVisualisarSenha.Text = "...";
+            this.btnVisualisarSenha.UseVisualStyleBackColor = true;
+            this.btnVisualisarSenha.Click += new System.EventHandler(this.btnVisualisarSenha_Click);
+            // 
+            // txtPesqNome
+            // 
+            this.txtPesqNome.CampoObrigatorio = false;
+            this.txtPesqNome.DescricaoObrigatorio = null;
+            this.txtPesqNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesqNome.Location = new System.Drawing.Point(29, 36);
+            this.txtPesqNome.Name = "txtPesqNome";
+            this.txtPesqNome.Size = new System.Drawing.Size(277, 26);
+            this.txtPesqNome.TabIndex = 3;
+            this.txtPesqNome.TipoTexto = null;
+            this.txtPesqNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesqNome_KeyPress);
+            // 
+            // cmbConsolePesquisa
+            // 
+            this.cmbConsolePesquisa.CampoObrigatorio = false;
+            this.cmbConsolePesquisa.Carregado = false;
+            this.cmbConsolePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbConsolePesquisa.FormattingEnabled = true;
+            this.cmbConsolePesquisa.Location = new System.Drawing.Point(330, 36);
+            this.cmbConsolePesquisa.Name = "cmbConsolePesquisa";
+            this.cmbConsolePesquisa.Size = new System.Drawing.Size(181, 28);
+            this.cmbConsolePesquisa.TabIndex = 2;
+            this.cmbConsolePesquisa.SelectedIndexChanged += new System.EventHandler(this.cmbConsolePesquisa_SelectedIndexChanged);
+            // 
+            // lvPesquisa
+            // 
+            this.lvPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvPesquisa.Location = new System.Drawing.Point(19, 31);
+            this.lvPesquisa.Name = "lvPesquisa";
+            this.lvPesquisa.Size = new System.Drawing.Size(727, 227);
+            this.lvPesquisa.TabIndex = 5;
+            this.lvPesquisa.UseCompatibleStateImageBehavior = false;
+            this.lvPesquisa.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvPesquisa_ItemChecked);
+            // 
+            // txtDataVendaSecundaria
+            // 
+            this.txtDataVendaSecundaria.CampoObrigatorio = false;
+            this.txtDataVendaSecundaria.DescricaoObrigatorio = null;
+            this.txtDataVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataVendaSecundaria.Location = new System.Drawing.Point(506, 178);
+            this.txtDataVendaSecundaria.Name = "txtDataVendaSecundaria";
+            this.txtDataVendaSecundaria.Size = new System.Drawing.Size(140, 26);
+            this.txtDataVendaSecundaria.TabIndex = 45;
+            this.txtDataVendaSecundaria.TipoTexto = null;
+            // 
+            // txtDataVEndaPrimaria
+            // 
+            this.txtDataVEndaPrimaria.CampoObrigatorio = false;
+            this.txtDataVEndaPrimaria.DescricaoObrigatorio = null;
+            this.txtDataVEndaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataVEndaPrimaria.Location = new System.Drawing.Point(506, 129);
+            this.txtDataVEndaPrimaria.Name = "txtDataVEndaPrimaria";
+            this.txtDataVEndaPrimaria.Size = new System.Drawing.Size(140, 26);
+            this.txtDataVEndaPrimaria.TabIndex = 44;
+            this.txtDataVEndaPrimaria.TipoTexto = null;
+            // 
+            // txtContaPai
+            // 
+            this.txtContaPai.CampoObrigatorio = false;
+            this.txtContaPai.DescricaoObrigatorio = null;
+            this.txtContaPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContaPai.Location = new System.Drawing.Point(581, 80);
+            this.txtContaPai.Name = "txtContaPai";
+            this.txtContaPai.Size = new System.Drawing.Size(152, 26);
+            this.txtContaPai.TabIndex = 42;
+            this.txtContaPai.TipoTexto = null;
+            // 
+            // txtDataNascimentoConta
+            // 
+            this.txtDataNascimentoConta.CampoObrigatorio = false;
+            this.txtDataNascimentoConta.DescricaoObrigatorio = null;
+            this.txtDataNascimentoConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNascimentoConta.Location = new System.Drawing.Point(359, 80);
+            this.txtDataNascimentoConta.Name = "txtDataNascimentoConta";
+            this.txtDataNascimentoConta.Size = new System.Drawing.Size(123, 26);
+            this.txtDataNascimentoConta.TabIndex = 41;
+            this.txtDataNascimentoConta.TipoTexto = null;
+            // 
+            // txtValorVendaSecundaria
+            // 
+            this.txtValorVendaSecundaria.CampoObrigatorio = false;
+            this.txtValorVendaSecundaria.DescricaoObrigatorio = null;
+            this.txtValorVendaSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorVendaSecundaria.Location = new System.Drawing.Point(359, 178);
+            this.txtValorVendaSecundaria.Name = "txtValorVendaSecundaria";
+            this.txtValorVendaSecundaria.Size = new System.Drawing.Size(85, 26);
+            this.txtValorVendaSecundaria.TabIndex = 36;
+            this.txtValorVendaSecundaria.TipoTexto = null;
+            // 
+            // txtSecundariaVendidoPara
+            // 
+            this.txtSecundariaVendidoPara.CampoObrigatorio = false;
+            this.txtSecundariaVendidoPara.DescricaoObrigatorio = null;
+            this.txtSecundariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecundariaVendidoPara.Location = new System.Drawing.Point(29, 178);
+            this.txtSecundariaVendidoPara.Name = "txtSecundariaVendidoPara";
+            this.txtSecundariaVendidoPara.Size = new System.Drawing.Size(313, 26);
+            this.txtSecundariaVendidoPara.TabIndex = 35;
+            this.txtSecundariaVendidoPara.TipoTexto = null;
+            // 
+            // txtValorVendaPrimaria
+            // 
+            this.txtValorVendaPrimaria.CampoObrigatorio = false;
+            this.txtValorVendaPrimaria.DescricaoObrigatorio = null;
+            this.txtValorVendaPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorVendaPrimaria.Location = new System.Drawing.Point(359, 129);
+            this.txtValorVendaPrimaria.Name = "txtValorVendaPrimaria";
+            this.txtValorVendaPrimaria.Size = new System.Drawing.Size(85, 26);
+            this.txtValorVendaPrimaria.TabIndex = 32;
+            this.txtValorVendaPrimaria.TipoTexto = null;
+            // 
+            // txtPrimariaVendidoPara
+            // 
+            this.txtPrimariaVendidoPara.CampoObrigatorio = false;
+            this.txtPrimariaVendidoPara.DescricaoObrigatorio = null;
+            this.txtPrimariaVendidoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimariaVendidoPara.Location = new System.Drawing.Point(29, 129);
+            this.txtPrimariaVendidoPara.Name = "txtPrimariaVendidoPara";
+            this.txtPrimariaVendidoPara.Size = new System.Drawing.Size(313, 26);
+            this.txtPrimariaVendidoPara.TabIndex = 31;
+            this.txtPrimariaVendidoPara.TipoTexto = null;
+            // 
+            // txtSenhaPSN
+            // 
+            this.txtSenhaPSN.CampoObrigatorio = false;
+            this.txtSenhaPSN.DescricaoObrigatorio = null;
+            this.txtSenhaPSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaPSN.Location = new System.Drawing.Point(581, 31);
+            this.txtSenhaPSN.Name = "txtSenhaPSN";
+            this.txtSenhaPSN.PasswordChar = '*';
+            this.txtSenhaPSN.Size = new System.Drawing.Size(209, 26);
+            this.txtSenhaPSN.TabIndex = 28;
+            this.txtSenhaPSN.TipoTexto = null;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CampoObrigatorio = false;
+            this.txtEmail.DescricaoObrigatorio = null;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(29, 31);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(313, 26);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TipoTexto = null;
+            // 
+            // txtPrecoSecundaria
+            // 
+            this.txtPrecoSecundaria.CampoObrigatorio = false;
+            this.txtPrecoSecundaria.DescricaoObrigatorio = null;
+            this.txtPrecoSecundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoSecundaria.Location = new System.Drawing.Point(201, 80);
+            this.txtPrecoSecundaria.Name = "txtPrecoSecundaria";
+            this.txtPrecoSecundaria.Size = new System.Drawing.Size(123, 26);
+            this.txtPrecoSecundaria.TabIndex = 25;
+            this.txtPrecoSecundaria.TipoTexto = null;
+            this.txtPrecoSecundaria.Leave += new System.EventHandler(this.txtPrecoSecundaria_Leave);
+            // 
+            // txtPrecoPrimaria
+            // 
+            this.txtPrecoPrimaria.CampoObrigatorio = false;
+            this.txtPrecoPrimaria.DescricaoObrigatorio = null;
+            this.txtPrecoPrimaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoPrimaria.Location = new System.Drawing.Point(29, 80);
+            this.txtPrecoPrimaria.Name = "txtPrecoPrimaria";
+            this.txtPrecoPrimaria.Size = new System.Drawing.Size(123, 26);
+            this.txtPrecoPrimaria.TabIndex = 24;
+            this.txtPrecoPrimaria.TipoTexto = null;
+            this.txtPrecoPrimaria.Leave += new System.EventHandler(this.txtPrecoPrimaria_Leave);
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.CampoObrigatorio = false;
+            this.txtSenha.DescricaoObrigatorio = null;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(359, 31);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(204, 26);
+            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TipoTexto = null;
+            // 
             // txtPrecoVenda
             // 
             this.txtPrecoVenda.CampoObrigatorio = false;
+            this.txtPrecoVenda.DescricaoObrigatorio = null;
             this.txtPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoVenda.Location = new System.Drawing.Point(365, 85);
             this.txtPrecoVenda.Name = "txtPrecoVenda";
             this.txtPrecoVenda.Size = new System.Drawing.Size(123, 26);
             this.txtPrecoVenda.TabIndex = 7;
+            this.txtPrecoVenda.TipoTexto = null;
             // 
             // txtPrecoPago
             // 
             this.txtPrecoPago.CampoObrigatorio = false;
+            this.txtPrecoPago.DescricaoObrigatorio = null;
             this.txtPrecoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoPago.Location = new System.Drawing.Point(207, 85);
             this.txtPrecoPago.Name = "txtPrecoPago";
             this.txtPrecoPago.Size = new System.Drawing.Size(123, 26);
             this.txtPrecoPago.TabIndex = 6;
+            this.txtPrecoPago.TipoTexto = null;
             // 
             // cmbTipoJogo
             // 
@@ -730,20 +802,24 @@
             // txtQuantidade
             // 
             this.txtQuantidade.CampoObrigatorio = false;
+            this.txtQuantidade.DescricaoObrigatorio = null;
             this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantidade.Location = new System.Drawing.Point(35, 85);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(68, 26);
             this.txtQuantidade.TabIndex = 5;
+            this.txtQuantidade.TipoTexto = null;
             // 
             // txtNome
             // 
             this.txtNome.CampoObrigatorio = true;
+            this.txtNome.DescricaoObrigatorio = null;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(35, 36);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(295, 26);
             this.txtNome.TabIndex = 0;
+            this.txtNome.TipoTexto = null;
             // 
             // cmbConsole
             // 
@@ -756,29 +832,15 @@
             this.cmbConsole.Size = new System.Drawing.Size(156, 28);
             this.cmbConsole.TabIndex = 1;
             // 
-            // errorProvider1
+            // btnVisualizaSenhaConta
             // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // chkLacrado
-            // 
-            this.chkLacrado.AutoSize = true;
-            this.chkLacrado.Location = new System.Drawing.Point(547, 87);
-            this.chkLacrado.Name = "chkLacrado";
-            this.chkLacrado.Size = new System.Drawing.Size(65, 17);
-            this.chkLacrado.TabIndex = 31;
-            this.chkLacrado.Text = "Lacrado";
-            this.chkLacrado.UseVisualStyleBackColor = true;
-            // 
-            // chkFiltroLacrado
-            // 
-            this.chkFiltroLacrado.AutoSize = true;
-            this.chkFiltroLacrado.Location = new System.Drawing.Point(552, 43);
-            this.chkFiltroLacrado.Name = "chkFiltroLacrado";
-            this.chkFiltroLacrado.Size = new System.Drawing.Size(65, 17);
-            this.chkFiltroLacrado.TabIndex = 7;
-            this.chkFiltroLacrado.Text = "Lacrado";
-            this.chkFiltroLacrado.UseVisualStyleBackColor = true;
+            this.btnVisualizaSenhaConta.Location = new System.Drawing.Point(754, 3);
+            this.btnVisualizaSenhaConta.Name = "btnVisualizaSenhaConta";
+            this.btnVisualizaSenhaConta.Size = new System.Drawing.Size(36, 23);
+            this.btnVisualizaSenhaConta.TabIndex = 47;
+            this.btnVisualizaSenhaConta.Text = "...";
+            this.btnVisualizaSenhaConta.UseVisualStyleBackColor = true;
+            this.btnVisualizaSenhaConta.Click += new System.EventHandler(this.btnVisualizaSenhaConta_Click);
             // 
             // frmCadJogo
             // 
@@ -876,5 +938,7 @@
         private Frameworks.Componentes.SuperTextBox txtDataVEndaPrimaria;
         private System.Windows.Forms.CheckBox chkLacrado;
         private System.Windows.Forms.CheckBox chkFiltroLacrado;
+        private System.Windows.Forms.Button btnVisualisarSenha;
+        private System.Windows.Forms.Button btnVisualizaSenhaConta;
     }
 }
