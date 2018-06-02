@@ -85,21 +85,21 @@ namespace Frameworks.Componentes
         {
 
             
-            if (CampoObrigatorio == false)
-            {
-                return;
-            }
+            //if (CampoObrigatorio == false)
+            //{
+            //    return;
+            //}
 
-            if (string.IsNullOrEmpty(this.Text))
-            {
-                provider.SetError(this, "Informar o nome");
-            }
-            else
-            {
-                provider.SetError(this, string.Empty);
-                provider.Dispose();
+            //if (string.IsNullOrEmpty(this.Text))
+            //{
+            //    provider.SetError(this, "Informar o nome");
+            //}
+            //else
+            //{
+            //    provider.SetError(this, string.Empty);
+            //    provider.Dispose();
 
-            }
+            //}
 
 
 

@@ -79,7 +79,7 @@ namespace MaisGamers.Formularios.Orcamento
                 txtDataEntrega.ShowCheckBox = true;
                 txtDataEntrega.Checked = false;
                 txtGarantia.Enabled = false;
-                cmbTipoPagamento.Enabled = false;
+                //cmbTipoPagamento.Enabled = false;
                 cmdStatus.SelectedValue = "1";
                 cmdStatus.Enabled = false;
                 btnTirarFoto.Enabled = false;
@@ -151,6 +151,7 @@ namespace MaisGamers.Formularios.Orcamento
                 bOrcamento _b = new bOrcamento();
 
                 //inserir novo orcamento 
+                
                 if (!ValidateChildren())
                 {
                     return;
@@ -170,6 +171,16 @@ namespace MaisGamers.Formularios.Orcamento
                 orcamento.Data_Entrega = null;
                 orcamento.Data_Retorno = null;
                 orcamento.NumeroSerie = txtNumeroSerie.Text;
+                if (!string.IsNullOrEmpty(txtValor.Text))
+                {
+                    orcamento.ValorOrcamento = Convert.ToDecimal(txtValor.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtGarantia.Text))
+                {
+                    orcamento.Garantia = Convert.ToInt32(txtGarantia.Text);
+                }
+                
 
                 orcamento.IdStatusOrcamento = Convert.ToInt32(cmdStatus.ObterValor());
 
@@ -197,7 +208,7 @@ namespace MaisGamers.Formularios.Orcamento
                         }
                     else
                     {
-                        Mensagem(this, "Orçamento alterado com sucesso.", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao);
+                        Mensagem(this, "Orçamento alterado com sucesso.", Frameworks.Classes.CMsgBox.TipoBotoes.OK, Frameworks.Classes.CMsgBox.TipoErro.Informacao);
                     }
                 }
 
