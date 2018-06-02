@@ -64,6 +64,9 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +97,7 @@
             this.ribbon1.Tabs.Add(this.menuJogos);
             this.ribbon1.Tabs.Add(this.menuVendas);
             this.ribbon1.Tabs.Add(this.menuLancamento);
+            this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.ribbon1.Text = "Manuntenção";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -303,6 +307,20 @@
             this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
             // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab1.Text = "Horas";
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Text = "ribbonPanel6";
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Text = "ribbonPanel7";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -364,6 +382,9 @@
         private System.Windows.Forms.RibbonButton btnRelogio;
         private System.Windows.Forms.RibbonPanel ribbonPanel4;
         private System.Windows.Forms.RibbonButton rbOrcamento;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonPanel ribbonPanel6;
+        private System.Windows.Forms.RibbonPanel ribbonPanel7;
     }
 }
 
