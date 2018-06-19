@@ -21,7 +21,7 @@ namespace MaisGamers.Model.Cadastro
         public double Custo { get; set; }
         public string Fornecedor { get; set; }
 
-        public virtual ICollection<mVendaProduto> VendaProduto { get; set; }
+        //public virtual ICollection<mVendaProduto> VendaProduto { get; set; }
 
         // public virtual ICollection<mVenda> Venda { get; set; }
 

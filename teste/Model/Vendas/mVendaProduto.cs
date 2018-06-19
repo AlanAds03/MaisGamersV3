@@ -15,8 +15,11 @@ namespace MaisGamers.Model.Vendas
         [Key]
         public int IDVendaProduto { get; set; }
         public mVenda Venda { get; set; }
-        public mProduto Produto { get; set; }
+        //public mProduto Produto { get; set; }
         
+        public int IDOrigem { get; set; }
+
+        public string Descricao { get; set; }
         
 
     }

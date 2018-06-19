@@ -28,6 +28,8 @@ namespace MaisGamers.Formularios.Orcamento
             Util.CentralizaGrupo(grpBotoes);
             Util.CentralizaTab(tbControl);
 
+            pnlCadastro.AutoScroll = true;
+            pnlCadastro.Height = tbControl.Height;
             CarregaComboStatus();
             
         }

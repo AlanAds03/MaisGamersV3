@@ -47,22 +47,23 @@
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpCadastro = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTirarFoto = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnVerFotos = new System.Windows.Forms.Button();
+            this.btnCaixa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlCadastro = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNome = new Frameworks.Componentes.SuperTextBox();
-            this.btnCaixa = new System.Windows.Forms.Button();
             this.cmdStatus = new Frameworks.Componentes.SuperComboBox();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtDefeito = new Frameworks.Componentes.SuperTextBox();
-            this.btnVerFotos = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnTirarFoto = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGarantia = new Frameworks.Componentes.SuperTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.txtNumeroSerie = new Frameworks.Componentes.SuperTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtProduto = new Frameworks.Componentes.SuperTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPesquisar)).BeginInit();
             this.grpGrid.SuspendLayout();
@@ -85,9 +85,9 @@
             this.tbControl.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
             this.tpCadastro.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlCadastro.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -146,7 +146,7 @@
             this.txtProdutoPesq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdutoPesq.Location = new System.Drawing.Point(10, 91);
             this.txtProdutoPesq.Name = "txtProdutoPesq";
-            this.txtProdutoPesq.Size = new System.Drawing.Size(280, 26);
+            this.txtProdutoPesq.Size = new System.Drawing.Size(376, 26);
             this.txtProdutoPesq.TabIndex = 5;
             this.txtProdutoPesq.TipoTexto = null;
             // 
@@ -208,7 +208,7 @@
             this.grpBotoes.Controls.Add(this.btnNovo);
             this.grpBotoes.Controls.Add(this.btnLimpar);
             this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Location = new System.Drawing.Point(197, 624);
+            this.grpBotoes.Location = new System.Drawing.Point(196, 675);
             this.grpBotoes.Name = "grpBotoes";
             this.grpBotoes.Size = new System.Drawing.Size(490, 75);
             this.grpBotoes.TabIndex = 8;
@@ -285,7 +285,7 @@
             this.tbControl.Location = new System.Drawing.Point(40, 38);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(994, 554);
+            this.tbControl.Size = new System.Drawing.Size(944, 612);
             this.tbControl.TabIndex = 9;
             // 
             // tpPesquisa
@@ -295,29 +295,94 @@
             this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
             this.tpPesquisa.Name = "tpPesquisa";
             this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesquisa.Size = new System.Drawing.Size(986, 528);
+            this.tpPesquisa.Size = new System.Drawing.Size(936, 586);
             this.tpPesquisa.TabIndex = 0;
             this.tpPesquisa.Text = "Pesquisa";
             this.tpPesquisa.UseVisualStyleBackColor = true;
             // 
             // tpCadastro
             // 
+            this.tpCadastro.Controls.Add(this.groupBox2);
             this.tpCadastro.Controls.Add(this.groupBox1);
             this.tpCadastro.Location = new System.Drawing.Point(4, 22);
             this.tpCadastro.Name = "tpCadastro";
             this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastro.Size = new System.Drawing.Size(986, 528);
+            this.tpCadastro.Size = new System.Drawing.Size(936, 586);
             this.tpCadastro.TabIndex = 1;
             this.tpCadastro.Text = "Cadastro";
             this.tpCadastro.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnTirarFoto);
+            this.groupBox2.Controls.Add(this.btnImprimir);
+            this.groupBox2.Controls.Add(this.btnVerFotos);
+            this.groupBox2.Controls.Add(this.btnCaixa);
+            this.groupBox2.Location = new System.Drawing.Point(767, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(144, 505);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Operações";
+            // 
+            // btnTirarFoto
+            // 
+            this.btnTirarFoto.Image = global::MaisGamers.Properties.Resources.camera32;
+            this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTirarFoto.Location = new System.Drawing.Point(6, 19);
+            this.btnTirarFoto.Name = "btnTirarFoto";
+            this.btnTirarFoto.Size = new System.Drawing.Size(126, 40);
+            this.btnTirarFoto.TabIndex = 81;
+            this.btnTirarFoto.Text = "Tirar Fotos";
+            this.btnTirarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTirarFoto.UseVisualStyleBackColor = true;
+            this.btnTirarFoto.Click += new System.EventHandler(this.btnTirarFoto_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = global::MaisGamers.Properties.Resources.iconeimpressora;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(5, 107);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(127, 40);
+            this.btnImprimir.TabIndex = 85;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnVerFotos
+            // 
+            this.btnVerFotos.Image = global::MaisGamers.Properties.Resources.camera32;
+            this.btnVerFotos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerFotos.Location = new System.Drawing.Point(6, 65);
+            this.btnVerFotos.Name = "btnVerFotos";
+            this.btnVerFotos.Size = new System.Drawing.Size(126, 40);
+            this.btnVerFotos.TabIndex = 82;
+            this.btnVerFotos.Text = "Ver Fotos";
+            this.btnVerFotos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerFotos.UseVisualStyleBackColor = true;
+            this.btnVerFotos.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCaixa
+            // 
+            this.btnCaixa.Image = global::MaisGamers.Properties.Resources.iconePAgamento32;
+            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCaixa.Location = new System.Drawing.Point(5, 148);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(127, 40);
+            this.btnCaixa.TabIndex = 86;
+            this.btnCaixa.Text = "Caixa";
+            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCaixa.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.pnlCadastro);
             this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(959, 545);
+            this.groupBox1.Size = new System.Drawing.Size(755, 505);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orçamento";
@@ -325,6 +390,7 @@
             // pnlCadastro
             // 
             this.pnlCadastro.AutoScroll = true;
+            this.pnlCadastro.AutoScrollMinSize = new System.Drawing.Size(600, 600);
             this.pnlCadastro.Controls.Add(this.label3);
             this.pnlCadastro.Controls.Add(this.label4);
             this.pnlCadastro.Controls.Add(this.txtNome);
@@ -351,7 +417,7 @@
             this.pnlCadastro.Controls.Add(this.txtProduto);
             this.pnlCadastro.Location = new System.Drawing.Point(6, 19);
             this.pnlCadastro.Name = "pnlCadastro";
-            this.pnlCadastro.Size = new System.Drawing.Size(737, 453);
+            this.pnlCadastro.Size = new System.Drawing.Size(737, 462);
             this.pnlCadastro.TabIndex = 10;
             // 
             // label3
@@ -385,18 +451,6 @@
             this.txtNome.TabIndex = 1;
             this.txtNome.TipoTexto = null;
             // 
-            // btnCaixa
-            // 
-            this.btnCaixa.Image = global::MaisGamers.Properties.Resources.iconePAgamento32;
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(5, 148);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(127, 40);
-            this.btnCaixa.TabIndex = 86;
-            this.btnCaixa.Text = "Caixa";
-            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCaixa.UseVisualStyleBackColor = true;
-            // 
             // cmdStatus
             // 
             this.cmdStatus.CampoObrigatorio = false;
@@ -407,19 +461,6 @@
             this.cmdStatus.Name = "cmdStatus";
             this.cmdStatus.Size = new System.Drawing.Size(183, 28);
             this.cmdStatus.TabIndex = 2;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Image = global::MaisGamers.Properties.Resources.iconeimpressora;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(5, 107);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(127, 40);
-            this.btnImprimir.TabIndex = 85;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label6
             // 
@@ -456,7 +497,7 @@
             this.txtDataEntrada.Enabled = false;
             this.txtDataEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDataEntrada.Location = new System.Drawing.Point(357, 137);
+            this.txtDataEntrada.Location = new System.Drawing.Point(345, 139);
             this.txtDataEntrada.Name = "txtDataEntrada";
             this.txtDataEntrada.Size = new System.Drawing.Size(100, 26);
             this.txtDataEntrada.TabIndex = 11;
@@ -473,19 +514,6 @@
             this.txtDefeito.TabIndex = 7;
             this.txtDefeito.TipoTexto = null;
             // 
-            // btnVerFotos
-            // 
-            this.btnVerFotos.Image = global::MaisGamers.Properties.Resources.camera32;
-            this.btnVerFotos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerFotos.Location = new System.Drawing.Point(6, 65);
-            this.btnVerFotos.Name = "btnVerFotos";
-            this.btnVerFotos.Size = new System.Drawing.Size(126, 40);
-            this.btnVerFotos.TabIndex = 82;
-            this.btnVerFotos.Text = "Ver Fotos";
-            this.btnVerFotos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerFotos.UseVisualStyleBackColor = true;
-            this.btnVerFotos.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -496,24 +524,11 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Status:";
             // 
-            // btnTirarFoto
-            // 
-            this.btnTirarFoto.Image = global::MaisGamers.Properties.Resources.camera32;
-            this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTirarFoto.Location = new System.Drawing.Point(6, 19);
-            this.btnTirarFoto.Name = "btnTirarFoto";
-            this.btnTirarFoto.Size = new System.Drawing.Size(126, 40);
-            this.btnTirarFoto.TabIndex = 81;
-            this.btnTirarFoto.Text = "Tirar Fotos";
-            this.btnTirarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTirarFoto.UseVisualStyleBackColor = true;
-            this.btnTirarFoto.Click += new System.EventHandler(this.btnTirarFoto_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(348, 116);
+            this.label5.Location = new System.Drawing.Point(337, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 17;
@@ -524,7 +539,7 @@
             this.txtGarantia.CampoObrigatorio = false;
             this.txtGarantia.DescricaoObrigatorio = null;
             this.txtGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarantia.Location = new System.Drawing.Point(154, 473);
+            this.txtGarantia.Location = new System.Drawing.Point(166, 473);
             this.txtGarantia.Name = "txtGarantia";
             this.txtGarantia.Size = new System.Drawing.Size(120, 26);
             this.txtGarantia.TabIndex = 10;
@@ -545,7 +560,7 @@
             this.txtValor.CampoObrigatorio = false;
             this.txtValor.DescricaoObrigatorio = null;
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(24, 473);
+            this.txtValor.Location = new System.Drawing.Point(27, 473);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 26);
             this.txtValor.TabIndex = 9;
@@ -598,7 +613,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 450);
+            this.label10.Location = new System.Drawing.Point(23, 450);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 20);
             this.label10.TabIndex = 21;
@@ -640,7 +655,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(150, 450);
+            this.label15.Location = new System.Drawing.Point(162, 453);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 20);
             this.label15.TabIndex = 24;
@@ -657,26 +672,13 @@
             this.txtProduto.TabIndex = 4;
             this.txtProduto.TipoTexto = Frameworks.Componentes.SuperTextBox.eTipoTexto.NENHUM;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnTirarFoto);
-            this.groupBox2.Controls.Add(this.btnImprimir);
-            this.groupBox2.Controls.Add(this.btnVerFotos);
-            this.groupBox2.Controls.Add(this.btnCaixa);
-            this.groupBox2.Location = new System.Drawing.Point(765, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(144, 453);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Operações";
-            // 
             // frmOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1082, 790);
+            this.ClientSize = new System.Drawing.Size(1082, 788);
             this.ControlBox = false;
             this.Controls.Add(this.tbControl);
             this.Controls.Add(this.grpBotoes);
@@ -695,10 +697,10 @@
             this.tbControl.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
             this.tpCadastro.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.pnlCadastro.ResumeLayout(false);
             this.pnlCadastro.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

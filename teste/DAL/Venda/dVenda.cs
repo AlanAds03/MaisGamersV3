@@ -39,21 +39,22 @@ namespace MaisGamers.DAL.Venda
 
         public Int32 RetornarCodigoProduto(int idVEndaProduto)
         {
-            var db = new Contexto();
-            try
-            {
-                var xx = (from v in db.VendaProduto
-                          where v.IDVendaProduto == idVEndaProduto
-                          select (decimal)v.Produto.IDProduto
-                          ).Single();
+            //var db = new Contexto();
+            //try
+            //{
+            //    var xx = (from v in db.VendaProduto
+            //              where v.IDVendaProduto == idVEndaProduto
+            //              select (decimal)v.Produto.IDProduto
+            //              ).Single();
 
-                return Convert.ToInt32(xx);
-            }
-            catch (Exception)
-            {
+            //    return Convert.ToInt32(xx);
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
+            return -1;
         }
         public bool ExcluirProdutoVenda(int idVEndaProduto)
         {
@@ -87,24 +88,26 @@ namespace MaisGamers.DAL.Venda
             {
                 //List<dynamic> asdasd = db.Vendas.Include(x => x.Produto).Where(x => x.IDVenda == idVenda).Select(x=> x.Produto);
 
-                var xx = (from v in db.Vendas
-                          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
-                          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
-                          where vendaprod.Venda.IDVenda == idVenda
-                          group vendaprod by new { vendaprod.Produto.IDProduto, vendaprod.Venda.IDVenda } into g
-                          select new
-                          {
-                              Total = g.Sum(x => x.Produto.Unitario)
-                          });
+                //var xx = (from v in db.Vendas
+                //          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
+                //          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
+                //          where vendaprod.Venda.IDVenda == idVenda
+                //          group vendaprod by new { vendaprod.Produto.IDProduto, vendaprod.Venda.IDVenda } into g
+                //          select new
+                //          {
+                //              Total = g.Sum(x => x.Produto.Unitario)
+                //          });
+                //var xx;
+                //if (xx.Count() == 0)
+                //{
+                //    return 0;
+                //}
 
-                if (xx.Count() == 0)
-                {
-                    return 0;
-                }
 
+                //double total = xx.Sum(p => p.Total);
+                //return total;
 
-                double total = xx.Sum(p => p.Total);
-                return total;
+                return 0;
 
             }
             catch (Exception)
@@ -125,34 +128,36 @@ namespace MaisGamers.DAL.Venda
 
                 db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
 
-                var xx = (from v in db.Vendas
-                          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
-                          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
-                          where vendaprod.Venda.IDVenda == idVenda
-                          select new
-                          {
-                              IDVenda = vendaprod.IDVendaProduto,
-                              Produto = d.Produto,
-                              Valor = d.Unitario,
-                              v.rCliente,
-                              colunasGrid = "IDVenda;Produto[300|Produto];Valor[200|Valor]"
-                              //group new { d, vendaprod } by new {d.Produto,d.Unitario} into g
-                              //select new {
-                              //    IDVenda = g.Key.IDVendaProduto,
-                              //    Descricao = g.Key.Produto,
-                              //    Total = g.Sum(x=> x.d.Unitario)
+                //var xx = (from v in db.Vendas
+                //          join vendaprod in db.VendaProduto on v.IDVenda equals vendaprod.Venda.IDVenda
+                //          join d in db.Produtos on vendaprod.Produto.IDProduto equals d.IDProduto
+                //          where vendaprod.Venda.IDVenda == idVenda
+                //          select new
+                //          {
+                //              IDVenda = vendaprod.IDVendaProduto,
+                //              Produto = d.Produto,
+                //              Valor = d.Unitario,
+                //              v.rCliente,
+                //              colunasGrid = "IDVenda;Produto[300|Produto];Valor[200|Valor]"
+                //              //group new { d, vendaprod } by new {d.Produto,d.Unitario} into g
+                //              //select new {
+                //              //    IDVenda = g.Key.IDVendaProduto,
+                //              //    Descricao = g.Key.Produto,
+                //              //    Total = g.Sum(x=> x.d.Unitario)
 
-                          }).ToList();
-
-
+                //          }).ToList();
 
 
-                //var query = (from p in db.Produtos
-                //             from v in p.Venda.Where(x => x.IDVenda == idVenda)
-                //             select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
 
 
-                return xx.ToList<dynamic>();
+                ////var query = (from p in db.Produtos
+                ////             from v in p.Venda.Where(x => x.IDVenda == idVenda)
+                ////             select new { ColunasGrid = "IDProduto;Produto[400|Produto];Preço", IDProduto = p.IDProduto, p.Produto, Preço = p.Unitario }).ToList();
+
+
+                //return xx.ToList<dynamic>();
+
+                return null;
 
 
             }
@@ -213,7 +218,7 @@ namespace MaisGamers.DAL.Venda
                 _vendas = db.Vendas.Find(idVenda);
                 _produtos = db.Produtos.Find(idProduto);
 
-                _vendaProduto.Produto = _produtos;
+                //_vendaProduto.Produto = _produtos;
                 _vendaProduto.Venda = _vendas;
 
                 db.VendaProduto.Add(_vendaProduto);

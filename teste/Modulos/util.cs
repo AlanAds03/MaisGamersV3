@@ -125,7 +125,7 @@ namespace MaisGamers.Modulos
                 width = Screen.PrimaryScreen.Bounds.Width;
                 height = Screen.PrimaryScreen.Bounds.Height;
 
-                tab.Left = width / 2 - tab.Width / 2;
+                tab.Left = (width / 2 - tab.Width / 2) - 30;
 
 
                 if (ignorarBotoes)
