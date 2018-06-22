@@ -9,7 +9,7 @@ namespace teste.Migrations
         {
             DropForeignKey("dbo.VendaProduto", "mProduto_IDProduto", "dbo.Produto");
             DropIndex("dbo.VendaProduto", new[] { "mProduto_IDProduto" });
-            DropColumn("dbo.VendaProduto", "mProduto_IDProduto");
+            //DropColumn("dbo.VendaProduto", "mProduto_IDProduto");
         }
         
         public override void Down()

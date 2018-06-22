@@ -256,5 +256,14 @@ namespace MaisGamers
         {
             Util.LogaErro("Fechando sistema MaisGamers");
         }
+
+        private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F10)
+            {
+                frmVendas vendas = new frmVendas();
+                vendas.ShowDialog();
+            }
+        }
     }
 }

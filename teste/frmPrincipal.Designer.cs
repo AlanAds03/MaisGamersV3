@@ -59,14 +59,14 @@
             this.BotaoMenuRelatorioVendas = new System.Windows.Forms.RibbonButton();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.menuLancamento = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,6 +262,20 @@
             // 
             this.menuLancamento.Text = "Lançamento";
             // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab1.Text = "Horas";
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Text = "ribbonPanel6";
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Text = "ribbonPanel7";
+            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifiacao";
@@ -307,20 +321,6 @@
             this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
             // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Panels.Add(this.ribbonPanel6);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel7);
-            this.ribbonTab1.Text = "Horas";
-            // 
-            // ribbonPanel6
-            // 
-            this.ribbonPanel6.Text = "ribbonPanel6";
-            // 
-            // ribbonPanel7
-            // 
-            this.ribbonPanel7.Text = "ribbonPanel7";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -339,6 +339,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
