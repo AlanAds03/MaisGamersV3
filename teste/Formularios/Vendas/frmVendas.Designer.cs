@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaisGamers.Modulos;
+using System;
 using System.Windows.Forms;
 
 namespace MaisGamers.Formularios.Cadastro
@@ -229,7 +230,7 @@ namespace MaisGamers.Formularios.Cadastro
                 
                 dataGridView1.Rows.Add(row);
 
-                AjustarGrid();
+                Util.AjustarGrid(dataGridView1);
 
             }
             catch (Exception exc)

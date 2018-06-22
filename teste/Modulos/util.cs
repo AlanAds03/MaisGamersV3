@@ -308,5 +308,26 @@ namespace MaisGamers.Modulos
             }
         }
 
+        public static void AjustarGrid(DataGridView dataGridView1)
+        {
+            try
+            {
+
+                int tamanho = 0;
+                foreach (DataGridViewColumn coluna in dataGridView1.Columns)
+                {
+                    tamanho += coluna.Width;
+                }
+
+                dataGridView1.Width = tamanho + 42;
+
+            }
+            catch (Exception ex)
+            {
+                Util.LogaErro("Erro em frmVendas : " + ex.ToString());
+                throw;
+            }
+        }
+
     }
 }

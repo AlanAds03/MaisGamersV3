@@ -48,32 +48,25 @@ namespace MaisGamers.Formularios.Cadastro
 
         }
 
-        private void AjustarGrid()
-        {
-            try
-            {
-
-                int tamanho  = 0 ; 
-                foreach (DataGridViewColumn coluna in dataGridView1.Columns)
-                {
-                    tamanho += coluna.Width;
-                }
-
-                dataGridView1.Width = tamanho + 42;
-
-            }
-            catch (Exception ex)
-            {
-                Util.LogaErro("Erro em frmVendas : " + ex.ToString());
-                throw;
-            }
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] row = new string[] { "1", "Desbloqueio Xbox 360", "1000", "1111", "10" };
+            //string[] row = new string[] { "1", "Desbloqueio Xbox 360", "1000", "1111", "10" };
 
-            dataGridView1.Rows.Add(row);
+            //dataGridView1.Rows.Add(row);
+
+            try
+            {
+                frmPesquisaProdutoNovo produto = new frmPesquisaProdutoNovo();
+
+                produto.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                Util.LogaErro("Erro em FrmVendas :" + ex.Message.ToString());
+            }
         }
 
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)

@@ -47,6 +47,9 @@ namespace MaisGamers
                 time.Interval = 1000;
                 time.Tick += time_tick;
                 time.Start();
+
+                
+
             }
             catch (Exception ex)
             {
@@ -235,8 +238,8 @@ namespace MaisGamers
             vendas.IDVenda = _bVenda.InserirVenda(new Model.Vendas.mVenda { dVenda = data });
             //vendas.IDVenda = 12;
 
-
-            MostraFormulario(vendas);
+            vendas.ShowDialog();
+            //MostraFormulario(vendas);
 
         }
 
@@ -259,11 +262,24 @@ namespace MaisGamers
 
         private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F10)
+            try
             {
-                frmVendas vendas = new frmVendas();
-                vendas.ShowDialog();
+               
+                if (e.KeyCode == Keys.F10)
+                {
+                    frmVendas vendas = new frmVendas();
+                    vendas.ShowDialog();
+                    this.Focus();
+                    vendas.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                Util.LogaErro("Erro em frmPrincipal:" + ex.Message.ToString());
+            }
+            
         }
+
+       
     }
 }
