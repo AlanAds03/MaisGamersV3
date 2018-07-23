@@ -36,13 +36,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.grpGrid = new System.Windows.Forms.GroupBox();
             this.lvPesquisa = new Frameworks.Componentes.SuperLV();
-            this.grpBotoes = new System.Windows.Forms.GroupBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.tpLocacao = new System.Windows.Forms.TabPage();
@@ -74,7 +67,6 @@
             this.grpBotoes2 = new System.Windows.Forms.GroupBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
-            this.grpBotoes.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
             this.tpLocacao.SuspendLayout();
@@ -123,11 +115,13 @@
             // txtPesqNome
             // 
             this.txtPesqNome.CampoObrigatorio = false;
+            this.txtPesqNome.DescricaoObrigatorio = null;
             this.txtPesqNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesqNome.Location = new System.Drawing.Point(29, 36);
             this.txtPesqNome.Name = "txtPesqNome";
             this.txtPesqNome.Size = new System.Drawing.Size(277, 26);
             this.txtPesqNome.TabIndex = 3;
+            this.txtPesqNome.TipoTexto = null;
             // 
             // cmbStatus
             // 
@@ -175,98 +169,6 @@
             this.lvPesquisa.TabIndex = 5;
             this.lvPesquisa.UseCompatibleStateImageBehavior = false;
             this.lvPesquisa.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvPesquisa_ItemChecked);
-            // 
-            // grpBotoes
-            // 
-            this.grpBotoes.Controls.Add(this.btnExcluir);
-            this.grpBotoes.Controls.Add(this.button3);
-            this.grpBotoes.Controls.Add(this.btnSalvar);
-            this.grpBotoes.Controls.Add(this.btnFechar);
-            this.grpBotoes.Controls.Add(this.btnNovo);
-            this.grpBotoes.Controls.Add(this.button2);
-            this.grpBotoes.Location = new System.Drawing.Point(98, 48);
-            this.grpBotoes.Name = "grpBotoes";
-            this.grpBotoes.Size = new System.Drawing.Size(691, 77);
-            this.grpBotoes.TabIndex = 8;
-            this.grpBotoes.TabStop = false;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Image = global::MaisGamers.Properties.Resources.delete_remove_bin_icon_icons_com_72400;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(297, 19);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(91, 50);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::MaisGamers.Properties.Resources.iconeSalvar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(103, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Editar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = global::MaisGamers.Properties.Resources.img_115260;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(200, 19);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(91, 50);
-            this.btnSalvar.TabIndex = 7;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Image = global::MaisGamers.Properties.Resources.iconeFechar32;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(493, 19);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(91, 50);
-            this.btnFechar.TabIndex = 5;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::MaisGamers.Properties.Resources.iconenovo;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(6, 19);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(91, 50);
-            this.btnNovo.TabIndex = 6;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::MaisGamers.Properties.Resources.iconeLimpar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(394, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
             // 
@@ -430,7 +332,6 @@
             // 
             this.grpGridLocacao.Controls.Add(this.btnImprimir);
             this.grpGridLocacao.Controls.Add(this.btnExcluirJogo);
-            this.grpGridLocacao.Controls.Add(this.grpBotoes);
             this.grpGridLocacao.Controls.Add(this.txtDataEntrega);
             this.grpGridLocacao.Controls.Add(this.label8);
             this.grpGridLocacao.Controls.Add(this.btnEntregarCliente);
@@ -623,7 +524,6 @@
             this.grpFiltro.ResumeLayout(false);
             this.grpFiltro.PerformLayout();
             this.grpGrid.ResumeLayout(false);
-            this.grpBotoes.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
             this.tpLocacao.ResumeLayout(false);
@@ -647,18 +547,11 @@
         private System.Windows.Forms.GroupBox grpFiltro;
         private System.Windows.Forms.GroupBox grpGrid;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox grpBotoes;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpPesquisa;
         private System.Windows.Forms.TabPage tpLocacao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnExcluir;
         private Frameworks.Componentes.SuperLV lvLocacao;
         private System.Windows.Forms.GroupBox grpGridLocacao;
         private System.Windows.Forms.Label lblTotal;

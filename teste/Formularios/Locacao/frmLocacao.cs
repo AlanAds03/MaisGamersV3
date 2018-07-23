@@ -20,6 +20,7 @@ using MaisGamers.Formularios.Locacao;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing.Printing;
+using Frameworks.Modulos;
 
 namespace MaisGamers.Formularios.Cadastro
 {
@@ -40,7 +41,7 @@ namespace MaisGamers.Formularios.Cadastro
         private void frmCadJogo_Load(object sender, EventArgs e)
         {
 
-            Util.CentralizaGrupo(grpBotoes);
+
             Util.CentralizaGrupo(grpBotoes2);
             Util.CentralizaTab(tabControl1);
 
@@ -112,13 +113,11 @@ namespace MaisGamers.Formularios.Cadastro
             if (modo_tela == Util.ModoTela.CONSULTA)
             {
                 tabControl1.SelectTab("tpPesquisa");
-                btnFechar.Text = "Fechar";
                 PesquisaGrid(txtPesqNome.Text, Convert.ToInt32(cmbStatus.SelectedValue.ToString()));
             }
             else if (modo_tela == Util.ModoTela.ALTERACAO)
             {
                 tabControl1.SelectTab("tpLocacao");
-                btnFechar.Text = "Voltar";
 
                 _mClienteLocacao = _bclienteLocacao.BuscarClienteLocacao(idLocacao);
 
@@ -527,103 +526,152 @@ namespace MaisGamers.Formularios.Cadastro
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
+            List<mImpressao> linhas = new List<mImpressao>();
+            bLocacao _locacao = new bLocacao();
+            mLocacao _mloc = new mLocacao();
+            bool bDigital = false;
+
+
             try
             {
 
-                bLocacao _locacao = new bLocacao();
-                mLocacao _mloc = new mLocacao();
                 _mloc = _locacao.Obter(idLocacao);
 
                 List<mLocacaoJogos> Jogos = new List<mLocacaoJogos>();
 
                 Jogos = _locacao.ObterJogos(idLocacao);
 
-                if (File.Exists(@"C:\Temp\1.txt"))
-                {
-                    File.Delete(@"C:\Temp\1.txt");
-                }
-
-
-                StreamWriter texto = new StreamWriter(@"C:\Temp\1.txt");
-
-                texto.WriteLine("                                    ");
-                texto.WriteLine("Locadora Mais Gamers");
-                texto.WriteLine("CNPJ: 23.260.093/0001-87");
-                texto.WriteLine("                                  ");
-                texto.WriteLine("Telefone: 11 4382-9388");
-                texto.WriteLine("Whatsapp: 11 94124-7585");
-                texto.WriteLine("                                  ");
-                texto.WriteLine("Cliente : " + _mloc.IDClienteLocacao.Nome);
-                texto.WriteLine("Data Locacao : " + _mloc.DataLocacao);
+                FontFamily FAMI = new FontFamily("Arial");
+                Font font = new Font(FAMI, 16.0f);
+                linhas.Add(new mImpressao { linha = "Locadora Mais Gamers", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                //linhas.Add(new mImpressao { linha = "CNPJ: 23.260.093/0001-87", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Telefone: 11 4382-9388", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Whatsapp: 11 94124-7585", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Comprovante de Locação", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Cliente : " + _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
 
                 if (StatusLocação == 2)
                 {
-                    texto.WriteLine("Data Previsao : " + _mloc.DataPrevisaoEntrega);
+                    linhas.Add(new mImpressao { linha = "Data da locação : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.DataLocacao.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Expiração em : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.DataPrevisaoEntrega.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 }
                 else
                 {
-                    texto.WriteLine("Data de entrega : " + _mloc.DataLocacaoEntrega);
+                    linhas.Add(new mImpressao { linha = "Data de entrega : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.DataLocacaoEntrega.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 }
 
                 foreach (mLocacaoJogos _jogo in Jogos)
                 {
-                    texto.WriteLine("Jogo : " + _jogo.IDJogo.NomeJogo);
+                    linhas.Add(new mImpressao { linha = "Jogo : " + _jogo.IDJogo.NomeJogo, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+
+                    if (StatusLocação == 2)
+                    {
+                        if (_jogo.IDJogo.IDTipoJogo.NomeTipoJogo == "Digital")
+                        {
+                            bDigital = true;
+                            linhas.Add(new mImpressao { linha = "Email : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = _jogo.IDJogo.Email, Fonte = new Font(FAMI, 10.0F,FontStyle.Underline), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = "Senha : " + _jogo.IDJogo.SenhaPSN, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                        }
+                    }
                 }
 
-                texto.WriteLine("Valor pago na locacao : " + _mloc.ValorPagoInicial.ToString("0.00"));
 
                 if (StatusLocação == 2)
                 {
-                    texto.WriteLine("Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
+                    linhas.Add(new mImpressao { linha = "Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 }
                 else
                 {
-                    texto.WriteLine("Valor a pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
+                    linhas.Add(new mImpressao { linha = "Valor pago : " + _mloc.ValorPagoFinal.ToString("0.00"), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 }
-                texto.WriteLine("");
-                texto.WriteLine("");
-                texto.WriteLine("");
+
+
                 if (StatusLocação == 2)
                 {
-                    texto.WriteLine("______________________________");
-                    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
-
+                    if (bDigital == false)
+                    {
+                        linhas.Add(new mImpressao { linha = "______________________________", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                        linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    }
+                    
                 }
                 else
                 {
-                    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
-                    texto.WriteLine("**********DEVOLUCAO**********");
+                    linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "**********DEVOLUCAO**********", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 }
 
-                texto.WriteLine(" ***** Obrigado e volte sempre **** ");
 
-                texto.Close();
 
-                //PrintDialog printDialog = new PrintDialog();
-                //PrintDocument printDocument = new PrintDocument();
-                //printDialog.Document = printDocument;
 
-                //printDocument.PrintPage += new PrintPageEventHandler(PrintReceiptPage);
+                ImpressaoTermica termica = new ImpressaoTermica(linhas);
+                termica.Imprimir();
 
-                //DialogResult result = printDialog.ShowDialog();
 
-                //if (result == DialogResult.OK)
+                //texto.WriteLine("                                  ");
+                //texto.WriteLine("Cliente : " + _mloc.IDClienteLocacao.Nome);
+                //texto.WriteLine("Data Locacao : " + _mloc.DataLocacao);
+
+                //if (StatusLocação == 2)
                 //{
-                //    printDocument.Print();
+                //    texto.WriteLine("Data Previsao : " + _mloc.DataPrevisaoEntrega);
+                //}
+                //else
+                //{
+                //    texto.WriteLine("Data de entrega : " + _mloc.DataLocacaoEntrega);
                 //}
 
 
 
-                Util.Imprimir(@"C:\Temp\1.txt");
+                //texto.WriteLine("Valor pago na locacao : " + _mloc.ValorPagoInicial.ToString("0.00"));
+
+                //if (StatusLocação == 2)
+                //{
+                //    texto.WriteLine("Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true).ToString("0.00"));
+                //}
+                //else
+                //{
+                //    texto.WriteLine("Valor a pagar : " + _mloc.ValorPagoFinal.ToString("0.00"));
+                //}
+                //texto.WriteLine("");
+                //texto.WriteLine("");
+                //texto.WriteLine("");
+                //if (StatusLocação == 2)
+                //{
+                //    texto.WriteLine("______________________________");
+                //    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
+
+                //}
+                //else
+                //{
+                //    texto.WriteLine("(" + _mloc.IDClienteLocacao.Nome + ")");
+                //    texto.WriteLine("**********DEVOLUCAO**********");
+                //}
+
+                //texto.WriteLine(" ***** Obrigado e volte sempre **** ");
+
+                //texto.Close();
 
 
 
-                //Process.Start(@"C:\Temp\1.txt");
+
+                //Util.Imprimir(@"C:\Temp\1.txt");
+
+
+
+
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Util.LogaErro("Erro em frmLocacao:" + ex.Message.ToString());
                 throw;
             }
 
@@ -800,7 +848,7 @@ namespace MaisGamers.Formularios.Cadastro
 
             bLocacao _bLocacao = new bLocacao();
 
-            if (Mensagem(this, "Deseja realmente excluir ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao,Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
+            if (Mensagem(this, "Deseja realmente excluir ?", Frameworks.Classes.CMsgBox.TipoBotoes.SimNao, Frameworks.Classes.CMsgBox.TipoErro.Informacao) == DialogResult.Yes)
             {
 
                 if (_bLocacao.Excluir(idLocacao))

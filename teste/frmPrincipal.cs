@@ -14,6 +14,8 @@ using MaisGamers.Formularios.Orcamento;
 using MaisGamers.DLL.Venda;
 using MaisGamers.Formularios.Horas;
 using MaisGamers.Modulos;
+using System.Drawing.Printing;
+using Frameworks.Modulos;
 
 namespace MaisGamers
 {
@@ -277,6 +279,13 @@ namespace MaisGamers
             {
                 Util.LogaErro("Erro em frmPrincipal:" + ex.Message.ToString());
             }
+            
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            String texto;
+            
             
         }
 

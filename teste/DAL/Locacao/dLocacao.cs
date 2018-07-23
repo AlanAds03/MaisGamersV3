@@ -181,7 +181,7 @@ namespace MaisGamers.DAL.Locacao
             var db = new Contexto();
             try
             {
-                lista = db.LocacaoJogos.Include(x => x.IDLocacao).Include(x=> x.IDJogo).Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
+                lista = db.LocacaoJogos.Include(x => x.IDLocacao).Include(x=> x.IDJogo).Include(x=> x.IDJogo.IDTipoJogo).Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
                 return lista;
             }
             catch (Exception)
