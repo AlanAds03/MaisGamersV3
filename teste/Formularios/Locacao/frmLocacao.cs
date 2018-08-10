@@ -552,6 +552,9 @@ namespace MaisGamers.Formularios.Cadastro
                 linhas.Add(new mImpressao { linha = "Comprovante de Locação", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "Cliente : " + _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Cliente : " + _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+
 
                 if (StatusLocação == 2)
                 {
