@@ -262,7 +262,7 @@ namespace MaisGamersV2.DAL.Locacao
                      .Include(x => x.TipoCliente)
                      .Include(y => y.StatusCliente)
                      .Where(z => z.Nome.Contains((string.IsNullOrEmpty(_clienteLocacao.Nome) ? z.Nome : _clienteLocacao.Nome)))
-                    // .Where(y => y.NomeFilho.Contains((string.IsNullOrEmpty(_clienteLocacao.NomeFilho) ? y.NomeFilho : _clienteLocacao.NomeFilho)))
+                     //.Where(y => y.NomeFilho.Contains(string.IsNullOrEmpty(_clienteLocacao.NomeFilho) ?  y.NomeFilho : "Thays"))
                      //.Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
                      .ToList();
 

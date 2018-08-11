@@ -65,6 +65,7 @@
             this.picExcluir = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpBotoes2 = new System.Windows.Forms.GroupBox();
+            this.chkAutorizado = new System.Windows.Forms.CheckBox();
             this.grpFiltro.SuspendLayout();
             this.grpGrid.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -330,6 +331,7 @@
             // 
             // grpGridLocacao
             // 
+            this.grpGridLocacao.Controls.Add(this.chkAutorizado);
             this.grpGridLocacao.Controls.Add(this.btnImprimir);
             this.grpGridLocacao.Controls.Add(this.btnExcluirJogo);
             this.grpGridLocacao.Controls.Add(this.txtDataEntrega);
@@ -504,6 +506,16 @@
             this.grpBotoes2.TabIndex = 27;
             this.grpBotoes2.TabStop = false;
             // 
+            // chkAutorizado
+            // 
+            this.chkAutorizado.AutoSize = true;
+            this.chkAutorizado.Location = new System.Drawing.Point(391, 280);
+            this.chkAutorizado.Name = "chkAutorizado";
+            this.chkAutorizado.Size = new System.Drawing.Size(80, 17);
+            this.chkAutorizado.TabIndex = 27;
+            this.chkAutorizado.Text = "checkBox1";
+            this.chkAutorizado.UseVisualStyleBackColor = true;
+            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,5 +590,6 @@
         private System.Windows.Forms.PictureBox picExcluir;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.GroupBox grpBotoes2;
+        private System.Windows.Forms.CheckBox chkAutorizado;
     }
 }

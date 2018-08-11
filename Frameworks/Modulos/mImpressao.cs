@@ -69,20 +69,29 @@ namespace Frameworks.Modulos
 
             string linha = "";
             string linha2 = "";
+
+            int limiteLinhas = 25; 
+
+
             foreach (mImpressao imp in linhas)
             {
-                if (imp.linha.Length > 25)
-                {
-                    linha = imp.linha.Substring(0, 25);
-                    linha2 = imp.linha.Substring(25, imp.linha.Length - 25);
-                    e.Graphics.DrawString(linha, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
-                    tamanho += 25;
-                    e.Graphics.DrawString(linha2, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
-                }
-                else
-                {
-                    e.Graphics.DrawString(imp.linha, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
-                }
+
+               
+                    if (imp.linha.Length > limiteLinhas && imp.Fonte.Size > 8)
+                    {
+                        linha = imp.linha.Substring(0, limiteLinhas);
+                        linha2 = imp.linha.Substring(limiteLinhas, imp.linha.Length - limiteLinhas);
+                        e.Graphics.DrawString(linha, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
+                        tamanho += limiteLinhas;
+                        e.Graphics.DrawString(linha2, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
+                    }
+                    else
+                    {
+                        e.Graphics.DrawString(imp.linha, imp.Fonte, imp.brush, new Point(imp.posicao.X, tamanho));
+                    }
+                
+               
+                
                 
                 tamanho += 15;
             }

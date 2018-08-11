@@ -126,6 +126,17 @@ namespace MaisGamers.Formularios.Cadastro
                 lblCPF.Text = _mClienteLocacao.CPF;
                 lblDataCadastro.Text = _mClienteLocacao.DataCadastrado.ToShortDateString().ToString();
 
+
+                if (string.IsNullOrEmpty(_mClienteLocacao.NomeFilho))
+                {
+                    chkAutorizado.Visible = false;
+                }
+                else
+                {
+                    chkAutorizado.Text = _mClienteLocacao.NomeFilho;
+                    chkAutorizado.Visible = true;
+                }
+
                 _mlocacao = _blocacao.Obter(idLocacao);
 
                 if (_mlocacao != null)
@@ -543,44 +554,54 @@ namespace MaisGamers.Formularios.Cadastro
 
                 FontFamily FAMI = new FontFamily("Arial");
                 Font font = new Font(FAMI, 16.0f);
-                linhas.Add(new mImpressao { linha = "Locadora Mais Gamers", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Locadora Mais Gamers", Fonte = new Font(FAMI, 12.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
                 //linhas.Add(new mImpressao { linha = "CNPJ: 23.260.093/0001-87", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "Telefone: 11 4382-9388", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "Whatsapp: 11 94124-7585", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
-                linhas.Add(new mImpressao { linha = "Comprovante de Locação", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
+                linhas.Add(new mImpressao { linha = "Comprovante de Locação", Fonte = new Font(FAMI, 10.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
                 linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
-                linhas.Add(new mImpressao { linha = "Cliente : " + _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                linhas.Add(new mImpressao { linha = "                   ", Fonte = new Font(FAMI, 12.0F), brush = new SolidBrush(Color.Black) });
-                linhas.Add(new mImpressao { linha = "Cliente : " + _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+
+                if (chkAutorizado.Checked)
+                {
+                    linhas.Add(new mImpressao { linha = "Autorizado : ", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.IDClienteLocacao.NomeFilho, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Responsável : ", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                }
+                else
+                {
+                    linhas.Add(new mImpressao { linha = "Cliente : ", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.IDClienteLocacao.Nome, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                }
+                
 
 
                 if (StatusLocação == 2)
                 {
-                    linhas.Add(new mImpressao { linha = "Data da locação : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = _mloc.DataLocacao.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = "Expiração em : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = _mloc.DataPrevisaoEntrega.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Data locação:" + _mloc.DataLocacao.ToString(), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Expira em:" + _mloc.DataPrevisaoEntrega.ToString(), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
                 }
                 else
                 {
-                    linhas.Add(new mImpressao { linha = "Data de entrega : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = _mloc.DataLocacaoEntrega.ToString(), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Data de entrega : ", Fonte = new Font(FAMI, 8), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = _mloc.DataLocacaoEntrega.ToString(), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
                 }
 
                 foreach (mLocacaoJogos _jogo in Jogos)
                 {
-                    linhas.Add(new mImpressao { linha = "Jogo : " + _jogo.IDJogo.NomeJogo, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Jogo : " + _jogo.IDJogo.NomeJogo, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Console : " + _jogo.IDJogo.IDConsole.NomeConsole, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
 
                     if (StatusLocação == 2)
                     {
                         if (_jogo.IDJogo.IDTipoJogo.NomeTipoJogo == "Digital")
                         {
                             bDigital = true;
-                            linhas.Add(new mImpressao { linha = "Email : ", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                            linhas.Add(new mImpressao { linha = _jogo.IDJogo.Email, Fonte = new Font(FAMI, 10.0F,FontStyle.Underline), brush = new SolidBrush(Color.Black) });
-                            linhas.Add(new mImpressao { linha = "Senha : " + _jogo.IDJogo.SenhaPSN, Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = "Email : ", Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = _jogo.IDJogo.Email, Fonte = new Font(FAMI, 8.0F, FontStyle.Underline), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = "Senha : " + _jogo.IDJogo.SenhaPSN, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
                         }
                     }
                 }
@@ -588,11 +609,13 @@ namespace MaisGamers.Formularios.Cadastro
 
                 if (StatusLocação == 2)
                 {
-                    linhas.Add(new mImpressao { linha = "Valor a pagar : " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Valor a pagar : R$ " + _locacao.PrevisaoPreco(idLocacao, MinHoraData(_mloc.DataLocacao), MinHoraData(_mloc.DataPrevisaoEntrega), true), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Valor pago : R$ " + _mloc.ValorPagoInicial.ToString("0.00"), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
                 }
                 else
                 {
-                    linhas.Add(new mImpressao { linha = "Valor pago : " + _mloc.ValorPagoFinal.ToString("0.00"), Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Valor pago na locação : R$ " + _mloc.ValorPagoInicial.ToString("0.00"), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "Valor total : R$ " + _mloc.ValorPagoFinal.ToString("0.00"), Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
                 }
 
 
@@ -600,15 +623,25 @@ namespace MaisGamers.Formularios.Cadastro
                 {
                     if (bDigital == false)
                     {
-                        linhas.Add(new mImpressao { linha = "______________________________", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                        linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                        if (chkAutorizado.Checked)
+                        {
+                            linhas.Add(new mImpressao { linha = "______________________________", Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.NomeFilho + ")", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                        }
+                        else
+                        {
+                            linhas.Add(new mImpressao { linha = "______________________________", Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                            linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                        }
+
+                        
                     }
-                    
+
                 }
                 else
                 {
-                    linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = "**********DEVOLUCAO**********", Fonte = new Font(FAMI, 10.0F), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "(" + _mloc.IDClienteLocacao.Nome + ")", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
+                    linhas.Add(new mImpressao { linha = "**********DEVOLUCAO**********", Fonte = new Font(FAMI, 8.0F, FontStyle.Bold), brush = new SolidBrush(Color.Black) });
                 }
 
 
