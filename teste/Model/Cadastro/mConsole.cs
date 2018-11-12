@@ -13,7 +13,8 @@ namespace MaisGamers.Model.Cadastro
     public class mConsole
     {
         [Key]
-        public int idConsole { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDConsole { get; set; }
 
         [MaxLength(100,ErrorMessage = "Máximo de 100 caracteres") , Required(ErrorMessage ="Necessário informar o Console")]
         public string NomeConsole { get; set; }

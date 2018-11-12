@@ -9,7 +9,9 @@ namespace teste.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
+
             ContextKey = "MaisGamers.Model.Contexto";
         }
 
@@ -26,13 +28,13 @@ namespace teste.Migrations
                 );
 
             context.Console.AddOrUpdate(
-                p => p.idConsole,
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 1, NomeConsole = "PS4" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 4, NomeConsole = "PS3" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 5, NomeConsole = "PS2" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 2, NomeConsole = "Xone" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 3, NomeConsole = "Xbox 360" },
-                new MaisGamers.Model.Cadastro.mConsole { idConsole = 6, NomeConsole = "PS VR" }
+                p => p.IDConsole,
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 1, NomeConsole = "PS4" },
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 4, NomeConsole = "PS3" },
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 5, NomeConsole = "PS2" },
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 2, NomeConsole = "Xone" },
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 3, NomeConsole = "Xbox 360" },
+                new MaisGamers.Model.Cadastro.mConsole { IDConsole = 6, NomeConsole = "PS VR" }
 
                 );
 
@@ -65,19 +67,19 @@ namespace teste.Migrations
             //context.Database.Connection.Open();
             //context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT PrecoLocacao ON");
 
+            //Alan
             context.PrecoLocacao.AddOrUpdate(
                 p => p.IDPrecoLocacao,
-                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 1,  PrecoDia1 =8,PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(1),IDTipoJogo= context.TipoJogo.Find(1)},
-                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 2, PrecoDia1 = 8, PrecoDia2 = 13, PrecoDia3 = 18, IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(1) },
-                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 3, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(3), IDTipoJogo = context.TipoJogo.Find(1) },
-                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 4, PrecoDia1 = 5, PrecoDia2 = 8, PrecoDia3 = 11, IDConsole = context.Console.Find(4), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 1, PrecoDia1 = 4, PrecoDia2 = 8, PrecoDia3 = 12, IDConsole = context.Console.Find(1), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 2, PrecoDia1 = 4, PrecoDia2 = 8, PrecoDia3 = 12, IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 3, PrecoDia1 = 4, PrecoDia2 = 8, PrecoDia3 = 12, IDConsole = context.Console.Find(3), IDTipoJogo = context.TipoJogo.Find(1) },
+                new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 4, PrecoDia1 = 4, PrecoDia2 = 8, PrecoDia3 = 12, IDConsole = context.Console.Find(4), IDTipoJogo = context.TipoJogo.Find(1) },
                 new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 5, PrecoDia1 = Convert.ToDecimal(2.5), PrecoDia2 = Convert.ToDecimal(2.5), PrecoDia3 = Convert.ToDecimal(2.5), IDConsole = context.Console.Find(1), IDTipoJogo = context.TipoJogo.Find(2) },
                 new MaisGamers.Model.Locacao.mPrecoLocacao { IDPrecoLocacao = 6, PrecoDia1 = Convert.ToDecimal(2.5), PrecoDia2 = Convert.ToDecimal(2.5), PrecoDia3 = Convert.ToDecimal(2.5), IDConsole = context.Console.Find(2), IDTipoJogo = context.TipoJogo.Find(2) }
 
 
 
-                //5.00    10.00   15.00   1   2
-                //5.00    10.00   15.00   2   2
+            
 
                 );
 

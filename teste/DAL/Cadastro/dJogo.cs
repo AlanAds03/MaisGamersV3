@@ -166,7 +166,7 @@ namespace MaisGamers.DAL
                           .Include(x => x.IDTipoJogo)
                           .Include(y => y.IDConsole)
                           .Where(z=> z.NomeJogo.Contains((string.IsNullOrEmpty(jogo.NomeJogo) ? z.NomeJogo : jogo.NomeJogo)))
-                          .Where(z => z.IDConsole.idConsole == (jogo.cIdConsole == 0 ? z.IDConsole.idConsole : jogo.cIdConsole))
+                          .Where(z => z.IDConsole.IDConsole == (jogo.cIdConsole == 0 ? z.IDConsole.IDConsole : jogo.cIdConsole))
                           .Where(z=> z.Lacrado == Lacrado)
                           .ToList();
 

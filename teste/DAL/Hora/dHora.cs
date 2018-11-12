@@ -17,7 +17,7 @@ namespace MaisGamers.DAL.Hora
             using (var db = new Contexto())
             {
 
-                var lista = (from p in db.Hora where p.Console.idConsole == idConsole select p).ToList();
+                var lista = (from p in db.Hora where p.Console.IDConsole == idConsole select p).ToList();
 
                 return lista.ToList();
 

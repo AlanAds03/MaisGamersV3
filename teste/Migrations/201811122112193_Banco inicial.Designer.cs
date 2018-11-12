@@ -7,13 +7,13 @@ namespace teste.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ajusteproduto : IMigrationMetadata
+    public sealed partial class Bancoinicial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ajusteproduto));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Bancoinicial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806192237302_ajuste produto"; }
+            get { return "201811122112193_Banco inicial"; }
         }
         
         string IMigrationMetadata.Source

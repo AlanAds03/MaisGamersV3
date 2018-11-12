@@ -592,7 +592,8 @@ namespace MaisGamers.Formularios.Cadastro
                 foreach (mLocacaoJogos _jogo in Jogos)
                 {
                     linhas.Add(new mImpressao { linha = "Jogo : " + _jogo.IDJogo.NomeJogo, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
-                    linhas.Add(new mImpressao { linha = "Console : " + _jogo.IDJogo.IDConsole.NomeConsole, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
+                    //alan
+                    //linhas.Add(new mImpressao { linha = "Console : " + _jogo.IDJogo.IDConsole.NomeConsole, Fonte = new Font(FAMI, 8.0F), brush = new SolidBrush(Color.Black) });
 
                     if (StatusLocação == 2)
                     {

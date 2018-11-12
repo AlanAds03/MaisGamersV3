@@ -235,13 +235,9 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806192236131_ajuste VendaProduto.cs" />
-    <Compile Include="Migrations\201806192236131_ajuste VendaProduto.Designer.cs">
-      <DependentUpon>201806192236131_ajuste VendaProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806192237302_ajuste produto.cs" />
-    <Compile Include="Migrations\201806192237302_ajuste produto.Designer.cs">
-      <DependentUpon>201806192237302_ajuste produto.cs</DependentUpon>
+    <Compile Include="Migrations\201811122112193_Banco inicial.cs" />
+    <Compile Include="Migrations\201811122112193_Banco inicial.Designer.cs">
+      <DependentUpon>201811122112193_Banco inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Anotacao\mAnotacao.cs" />
@@ -339,11 +335,8 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806192236131_ajuste VendaProduto.resx">
-      <DependentUpon>201806192236131_ajuste VendaProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806192237302_ajuste produto.resx">
-      <DependentUpon>201806192237302_ajuste produto.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811122112193_Banco inicial.resx">
+      <DependentUpon>201811122112193_Banco inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CMsgBox.resx">
       <DependentUpon>CMsgBox.cs</DependentUpon>

@@ -107,7 +107,7 @@ namespace MaisGamers.Formularios.Cadastro
                 _mJogo = _bJogo.PesquisaJogoID(idJogo);
 
                 txtNome.Text = _mJogo.NomeJogo;
-                cmbConsole.SelectedValue = _mJogo.IDConsole.idConsole;
+                cmbConsole.SelectedValue = _mJogo.IDConsole.IDConsole;
                 cmbTipoJogo.SelectedValue = _mJogo.IDTipoJogo.IDTipoJogo;
                 txtEmail.Text = _mJogo.Email;
                 txtSenha.Text = _mJogo.Senha;
