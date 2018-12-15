@@ -181,8 +181,8 @@ namespace MaisGamers.DAL.Locacao
             var db = new Contexto();
             try
             {
-                //alan
-                //lista = db.LocacaoJogos.Include(x => x.IDLocacao).Include(x=> x.IDJogo).Include(x=> x.IDJogo.IDTipoJogo).Include(x=> x.IDJogo.IDConsole).Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
+                
+                lista = db.LocacaoJogos.Include(x => x.IDLocacao).Include(x=> x.IDJogo).Include(x=> x.IDJogo.IDTipoJogo).Include(x=> x.IDJogo.IDConsole).Where(x => x.IDLocacao.IDLocacao == idLocacao).ToList();
                 return lista;
             }
             catch (Exception)
@@ -197,14 +197,14 @@ namespace MaisGamers.DAL.Locacao
             var db = new Contexto();
             try
             {
-                var a = new List<dynamic>();
-                //var a = from x in db.LocacaoJogos
-                //        join z in db.Locacao on x.IDLocacao.IDLocacao equals z.IDLocacao
-                //        join y in db.Jogo on x.IDJogo.IDJogo equals y.IDJogo
-                //        join w in db.PrecoLocacao on y.IDConsole equals w.IDConsole where (w.IDTipoJogo.IDTipoJogo == y.IDTipoJogo.IDTipoJogo)
-                //        join m in db.TipoJogo on y.IDTipoJogo.IDTipoJogo equals m.IDTipoJogo
-                //        where z.IDLocacao == idLocacao
-                //        select new { ColunasGrid = "PrecoDia1[100|1 Dia];PrecoDia2[100|2 Dia];PrecoDia3[100|3 Dia];NomeTipoJogo[100|Tipo]", w.PrecoDia1, w.PrecoDia2, w.PrecoDia3, m.NomeTipoJogo };
+                
+                var a = from x in db.LocacaoJogos
+                        join z in db.Locacao on x.IDLocacao.IDLocacao equals z.IDLocacao
+                        join y in db.Jogo on x.IDJogo.IDJogo equals y.IDJogo
+                        join w in db.PrecoLocacao on y.IDConsole equals w.IDConsole where (w.IDTipoJogo.IDTipoJogo == y.IDTipoJogo.IDTipoJogo)
+                        join m in db.TipoJogo on y.IDTipoJogo.IDTipoJogo equals m.IDTipoJogo
+                        where z.IDLocacao == idLocacao
+                        select new { ColunasGrid = "PrecoDia1[100|1 Dia];PrecoDia2[100|2 Dia];PrecoDia3[100|3 Dia];NomeTipoJogo[100|Tipo]", w.PrecoDia1, w.PrecoDia2, w.PrecoDia3, m.NomeTipoJogo };
 
                 return a.ToList<dynamic>();
             }

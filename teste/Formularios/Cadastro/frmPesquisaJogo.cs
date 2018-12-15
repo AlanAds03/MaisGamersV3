@@ -44,7 +44,7 @@ namespace MaisGamers.Formularios.Cadastro
                     List<mConsole> console = new List<mConsole>();
 
                     console = _bConsole.CarregaConsole();
-                    combo.CarregaCombo(console, "idConsole", "NomeConsole", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
+                    combo.CarregaCombo(console, "IDConsole", "NomeConsole", Frameworks.Componentes.SuperComboBox.PrimeiraLinha.Selecione);
                 
             }
             catch (Exception ex)
