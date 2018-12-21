@@ -9,6 +9,7 @@
     <Style TargetType="{x:Type MenuItem}">
         <Setter Property="Background" Value="Red"></Setter>
         <Setter Property="FontSize" Value="50px"></Setter>
+        
     </Style>
 
 </ResourceDictionary>

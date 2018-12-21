@@ -1,5 +1,6 @@
 ﻿<Window x:Class="MaisGamersWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,8 +15,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Content/css/Estilo.xaml">
-                    
                 </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>    
     </Window.Resources>
@@ -24,7 +25,12 @@
         
     
     <Grid>
-        <Grid Style="{StaticResource GridMenu}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Style="{StaticResource GridMenu}" Grid.Column="0">
             <Grid.Resources>
                 <Style x:Key="GridMenu"></Style>
             </Grid.Resources>
@@ -32,8 +38,35 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel>
-                <Button Content="Clientes"></Button>
+                <ListView>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <EventSetter Event="PreviewMouseDown" Handler="ListViewItem_PreviewMouseDown"></EventSetter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListViewItem>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <materialDesign:PackIcon Kind="Home" VerticalAlignment="Center" Width="30" Height="30"></materialDesign:PackIcon>
+                            <TextBlock Text="Home" Margin="10" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="listOrcamento">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <materialDesign:PackIcon Kind="Games" VerticalAlignment="Center" Width="30" Height="30"></materialDesign:PackIcon>
+                            <TextBlock Text="Orçamento" Margin="10" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    
+
+                </ListView>
+                
+                
+                
             </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1"  Background="{DynamicResource MaterialDesignPaper}">
+            <Frame x:Name="framePrincipal" ></Frame>
         </Grid>
     </Grid>
 </Window>

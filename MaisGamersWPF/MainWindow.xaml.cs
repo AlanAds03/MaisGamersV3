@@ -24,5 +24,29 @@ namespace MaisGamersWPF
         {
             InitializeComponent();
         }
+
+        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            try
+            {
+                ListViewItem item = (ListViewItem)sender;
+
+                if (item.Name == "listOrcamento")
+                {
+                    framePrincipal.Source = new Uri("Orcamento.xaml", UriKind.RelativeOrAbsolute);
+                }
+                else
+                {
+                    framePrincipal.Source = null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+        }
     }
 }
